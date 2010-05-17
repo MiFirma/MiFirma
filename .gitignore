@@ -1,0 +1,12 @@
+.DS_Store
+Capfile
+log/
+tmp/
+config/*.yml
+config/deploy.rb
+db/*.sqlite3
+db/development_structure.sql
+config/development.sphinx.conf
+db/sphinx/
+public/system
+rerun.txt
