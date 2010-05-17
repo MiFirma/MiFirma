@@ -1,6 +1,7 @@
 class CreateProposals < ActiveRecord::Migration
   def self.up
     create_table :proposals do |t|
+      t.string :name
       t.text :problem
       t.text :howto_solve
       t.integer :position

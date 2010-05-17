@@ -4,8 +4,8 @@
 
 Proposal:
   fields:
-    list: position
-    form: problem, howto_solve
+    list: name, position
+    form: name, problem, howto_solve
   order_by: position
   relationships: 
   filters: 
@@ -14,7 +14,7 @@ Proposal:
 
 Signature:
   fields:
-    list: proposal_id
+    list: proposal_id, created_at
     form: proposal_id
   order_by: 
   relationships: 
