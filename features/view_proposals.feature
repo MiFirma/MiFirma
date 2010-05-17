@@ -4,21 +4,27 @@ Feature: View proposals
   I want to view list and details of current proposals
 
   Scenario: View all proposals
-    Given exist a proposal with name "Acabar la crisis", problem "description 1" and how to solve "howto 1"
-	  And exist a proposal with name "Mejorar hipotecas", problem "description 2" and how to solve "howto 2"
+    Given the following proposals:
+      |name|problem|howto_solve|
+      |Acabar la crisis|description 1|howto 1|
+      |Mejorar hipotecas|description 2|howto 3|
 	  When I go to the home page
     Then I should see "Acabar la crisis"
 	  And I should see "Mejorar hipotecas"
 
   Scenario: View one proposal
-  	Given exist a proposal with name "Acabar la crisis", problem "description 1" and how to solve "howto 1"
+    Given the following proposals:
+      |name|problem|howto_solve|
+      |Acabar la crisis|description 1|howto 1|
 	  When I go to "Acabar la crisis" proposal page
     Then I should see "Acabar la crisis"
 	  And I should not see "Mejorar hipotecas"
 
   Scenario: Go to a proposal from home paga
-    Given exist a proposal with name "Acabar la crisis", problem "description 1" and how to solve "howto 1"
-	  And exist a proposal with name "Mejorar hipotecas", problem "description 2" and how to solve "howto 2"
+    Given the following proposals:
+      |name|problem|howto_solve|
+      |Acabar la crisis|description 1|howto 1|
+      |Mejorar hipotecas|description 2|howto 3|
 	  When I go to the home page
 	  And I follow "Mejorar hipotecas"
 	  Then I should be on "Mejorar hipotecas" proposal page
