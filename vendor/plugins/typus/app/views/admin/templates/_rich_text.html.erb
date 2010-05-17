@@ -1,0 +1,9 @@
+<%
+  custom = { :width => 680, :height => 200, :toolbar => 'Basic' }
+  options = options.merge!(custom)
+%>
+
+<li>
+  <%= form.label attribute, label_text %>
+  <%= form.cktext_area attribute, options %>
+</li>
