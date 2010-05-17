@@ -3,3 +3,21 @@
 Web app to allow people to sign proposals.
 
 Developed in Ruby on Rails 2.3.5
+
+== Models
+ * Proposal:
+ **  problem, howto_solve, position
+ * Signature:
+ ** proposal_id
+
+== Controllers & actions
+ * Proposals:
+ ** index --> list of proposals (main page)
+ ** show --> single proposal view.
+ * Signatures:
+ ** new --> form for signup a proposal.
+ ** create --> create the signature.
+ 
+
+== To spec
+ - Finished proposals? states?
