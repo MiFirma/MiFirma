@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  problem: MyText
+  howto_solve: MyText
+  position: 1
+
+two:
+  problem: MyText
+  howto_solve: MyText
+  position: 1
