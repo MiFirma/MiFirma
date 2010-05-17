@@ -9,9 +9,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100517060830) do
+ActiveRecord::Schema.define(:version => 20100517061028) do
 
   create_table "proposals", :force => true do |t|
+    t.string   "name"
     t.text     "problem"
     t.text     "howto_solve"
     t.integer  "position"
@@ -21,6 +22,20 @@ ActiveRecord::Schema.define(:version => 20100517060830) do
 
   create_table "signatures", :force => true do |t|
     t.integer  "proposal_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "typus_users", :force => true do |t|
+    t.string   "first_name",       :default => "",    :null => false
+    t.string   "last_name",        :default => "",    :null => false
+    t.string   "role",                                :null => false
+    t.string   "email",                               :null => false
+    t.boolean  "status",           :default => false
+    t.string   "token",                               :null => false
+    t.string   "salt",                                :null => false
+    t.string   "crypted_password",                    :null => false
+    t.string   "preferences"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
