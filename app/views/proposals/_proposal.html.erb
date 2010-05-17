@@ -1,0 +1,16 @@
+<% div_for proposal do %>
+  <h1><%= link_to proposal.name, proposal_url(proposal) %></h1>
+  
+  <p class="problem">
+    <%= proposal.problem %>
+  </p>
+  
+  <p class="howtoSolve">
+    <%= proposal.howto_solve %>
+  </p>
+  
+  <div class="sign">
+    <%= button_to "Firmar" %>
+    <strong><%= proposal.signatures.size %></strong> Firmas recogidas
+  </div>
+<% end %>
