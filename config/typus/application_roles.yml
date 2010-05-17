@@ -1,0 +1,7 @@
+# Typus Roles Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+admin:
+  Proposal: create, read, update, delete
+  Signature: create, read, update, delete

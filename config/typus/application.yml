@@ -1,0 +1,24 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Proposal:
+  fields:
+    list: position
+    form: problem, howto_solve
+  order_by: position
+  relationships: 
+  filters: 
+  search: 
+  application: mifirma
+
+Signature:
+  fields:
+    list: proposal_id
+    form: proposal_id
+  order_by: 
+  relationships: 
+  filters: 
+  search: 
+  application: mifirma
+
