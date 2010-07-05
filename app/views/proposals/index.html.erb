@@ -1,1 +1,16 @@
-<%= render @proposals %>
+<div class="page">
+  
+        <div class="page-content">
+        <h4>Propuestas disponibles</h4>
+        
+        <%= render @proposals %>
+        
+        </div>
+  
+        <div class="page-sidebar">
+          <%= render :partial => 'shared/reasons' %>
+        </div>
+  
+  <div class="clear">&nbsp;</div>
+    </div>
+

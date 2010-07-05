@@ -1,0 +1,2715 @@
+# Logfile created on Tue Jun 15 12:31:51 +0200 2010  [4;36;1mSQL (1.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (4.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProposals (20100517060655)
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCREATE TABLE "proposals" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "problem" text, "howto_solve" text, "position" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100517060655')[0m
+Migrating to CreateSignatures (20100517060830)
+  [4;36;1mSQL (2.1ms)[0m   [0;1mCREATE TABLE "signatures" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "proposal_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100517060830')[0m
+Migrating to CreateTypusUsers (20100517061028)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "typus_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255) DEFAULT '' NOT NULL, "last_name" varchar(255) DEFAULT '' NOT NULL, "role" varchar(255) NOT NULL, "email" varchar(255) NOT NULL, "status" boolean DEFAULT 'f', "token" varchar(255) NOT NULL, "salt" varchar(255) NOT NULL, "crypted_password" varchar(255) NOT NULL, "preferences" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100517061028')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("proposals")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("signatures")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("typus_users")[0m
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:32:07) [GET]
+  [4;36;1mProposal Load (2.9ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+Rendered shared/_menu (2.8ms)
+Rendered shared/_menu (1.6ms)
+Rendered shared/_footer (3.0ms)
+Completed in 146ms (View: 114, DB: 3) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:32:17) [GET]
+  [4;35;1mProposal Load (0.6ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+Rendered shared/_menu (1.0ms)
+Rendered shared/_menu (0.6ms)
+Rendered shared/_footer (1.0ms)
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:32:21) [GET]
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+Rendered shared/_menu (0.5ms)
+Rendered shared/_menu (0.8ms)
+Rendered shared/_footer (1.3ms)
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:32:22) [GET]
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+Rendered shared/_menu (1.0ms)
+Rendered shared/_menu (1.2ms)
+Rendered shared/_footer (1.4ms)
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:32:24) [GET]
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+Rendered shared/_menu (0.9ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_footer (1.0ms)
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:32:25) [GET]
+  [4;35;1mProposal Load (0.6ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+Rendered shared/_menu (0.8ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_footer (0.9ms)
+Completed in 14ms (View: 6, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing TypusController#dashboard (for 192.168.2.101 at 2010-06-15 12:32:35) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+Redirected to http://ubuntu:3000/admin/sign_in
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 113ms (DB: 0) | 302 Found [http://ubuntu/admin]
+
+
+Processing TypusController#sign_in (for 192.168.2.101 at 2010-06-15 12:32:35) [GET]
+  Parameters: {"action"=>"sign_in", "controller"=>"typus"}
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "typus_users" [0m
+Redirected to http://ubuntu:3000/admin/sign_up
+Completed in 7ms (DB: 1) | 302 Found [http://ubuntu/admin/sign_in]
+
+
+Processing TypusController#sign_up (for 192.168.2.101 at 2010-06-15 12:32:35) [GET]
+  Parameters: {"action"=>"sign_up", "controller"=>"typus"}
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM "typus_users" [0m
+Rendering template within layouts/typus
+Rendering typus/sign_up
+Rendered admin/helpers/_flash_message (1.5ms)
+Rendered admin/shared/_footer (2.0ms)
+Completed in 59ms (View: 35, DB: 1) | 200 OK [http://ubuntu/admin/sign_up]
+
+
+Processing TypusController#sign_up (for 192.168.2.101 at 2010-06-15 12:32:52) [POST]
+  Parameters: {"typus_user"=>{"email"=>"admin@mifirma.com"}, "commit"=>"Sign up", "action"=>"sign_up", "authenticity_token"=>"ocWmiUiPYOcGr+icPQQ4ygKqIMVzN486vCcvW3b593Y=", "controller"=>"typus"}
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "typus_users" [0m
+  [4;35;1mTypusUser Load (0.2ms)[0m   [0mSELECT "typus_users".id FROM "typus_users" WHERE ("typus_users"."email" = 'admin@mifirma.com') LIMIT 1[0m
+  [4;36;1mTypusUser Create (0.7ms)[0m   [0;1mINSERT INTO "typus_users" ("status", "salt", "updated_at", "crypted_password", "preferences", "token", "role", "first_name", "last_name", "email", "created_at") VALUES('t', '64c68c662bfd289ab0498847a2d644a3cfeae1df', '2010-06-15 10:32:52', '6a9170128e72f821ccfa555e056916cd4a2c6a54', '--- 
+:locale: :en
+', 'd6d267f25f66', 'admin', '', '', 'admin@mifirma.com', '2010-06-15 10:32:52')[0m
+Redirected to http://ubuntu:3000/admin
+Completed in 82ms (DB: 2) | 302 Found [http://ubuntu/admin/sign_up]
+
+
+Processing TypusController#dashboard (for 192.168.2.101 at 2010-06-15 12:32:52) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;35;1mTypusUser Load (1.3ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (1.8ms)
+Rendered admin/helpers/_applications (9.8ms)
+Rendered admin/helpers/_header (1.4ms)
+Rendered admin/helpers/_login_info (1.7ms)
+Rendered admin/helpers/_flash_message (0.1ms)
+Rendered admin/shared/_footer (0.8ms)
+Rendered admin/shared/_feedback (2.7ms)
+Completed in 255ms (View: 241, DB: 1) | 200 OK [http://ubuntu/admin]
+
+
+Processing Admin::ProposalsController#new (for 192.168.2.101 at 2010-06-15 12:32:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"admin/proposals"}
+  [4;36;1mTypusUser Load (1.0ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/resources/new
+Rendered admin/helpers/_list (1.4ms)
+Rendered admin/templates/_string (4.6ms)
+Rendered admin/templates/_text (1.9ms)
+Rendered admin/templates/_text (4.2ms)
+Rendered admin/resources/_form (28.0ms)
+Rendered admin/helpers/_header (0.3ms)
+Rendered admin/helpers/_login_info (1.0ms)
+Rendered admin/shared/_footer (0.6ms)
+Rendered admin/shared/_feedback (1.7ms)
+Completed in 94ms (View: 62, DB: 1) | 200 OK [http://ubuntu/admin/proposals/new]
+
+
+Processing Admin::ProposalsController#create (for 192.168.2.101 at 2010-06-15 12:34:20) [POST]
+  Parameters: {"commit"=>"Create Proposal", "action"=>"create", "authenticity_token"=>"ocWmiUiPYOcGr+icPQQ4ygKqIMVzN486vCcvW3b593Y=", "controller"=>"admin/proposals", "proposal"=>{"name"=>"Arreglar el mundo", "howto_solve"=>"Arreglar el mundo. Eliminar la crisis y las guerras. \r\n\r\n<b> Debe quedar bien! </b>", "problem"=>"El mundo está muy mal\r\nTenemos la crisis\r\nLas guerras\r\n<b> No puede seguir así </b>"}}
+  [4;35;1mTypusUser Load (1.3ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" WHERE (1 = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mProposal Create (0.5ms)[0m   [0mINSERT INTO "proposals" ("name", "updated_at", "howto_solve", "problem", "position", "created_at") VALUES('Arreglar el mundo', '2010-06-15 10:34:20', 'Arreglar el mundo. Eliminar la crisis y las guerras. 
+
+<b> Debe quedar bien! </b>', 'El mundo está muy mal
+Tenemos la crisis
+Las guerras
+<b> No puede seguir así </b>', 1, '2010-06-15 10:34:20')[0m
+Redirected to http://ubuntu:3000/admin/proposals/edit/1
+Completed in 111ms (DB: 2) | 302 Found [http://ubuntu/admin/proposals/create]
+
+
+Processing Admin::ProposalsController#edit (for 192.168.2.101 at 2010-06-15 12:34:20) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"admin/proposals"}
+  [4;36;1mTypusUser Load (1.0ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mProposal Load (0.6ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+  [4;36;1mProposal Load (0.2ms)[0m   [0;1mSELECT id FROM "proposals" WHERE (id < 1) ORDER BY id DESC LIMIT 1[0m
+  [4;35;1mProposal Load (0.1ms)[0m   [0mSELECT id FROM "proposals" WHERE (id > 1) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (0.3ms)
+Rendered admin/templates/_string (3.5ms)
+Rendered admin/templates/_text (1.1ms)
+Rendered admin/templates/_text (1.0ms)
+Rendered admin/resources/_form (11.5ms)
+Rendered admin/helpers/_header (0.6ms)
+Rendered admin/helpers/_login_info (0.9ms)
+Rendered admin/helpers/_flash_message (0.2ms)
+Rendered admin/shared/_footer (0.9ms)
+Rendered admin/shared/_feedback (1.6ms)
+Completed in 74ms (View: 39, DB: 2) | 200 OK [http://ubuntu/admin/proposals/edit/1]
+
+
+Processing TypusController#dashboard (for 192.168.2.101 at 2010-06-15 12:34:25) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;36;1mTypusUser Load (1.1ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (0.4ms)
+Rendered admin/helpers/_applications (5.7ms)
+Rendered admin/helpers/_header (0.2ms)
+Rendered admin/helpers/_login_info (0.9ms)
+Rendered admin/shared/_footer (0.8ms)
+Rendered admin/shared/_feedback (1.4ms)
+Completed in 49ms (View: 41, DB: 1) | 200 OK [http://ubuntu/admin]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:34:27) [GET]
+  [4;35;1mProposal Load (0.7ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (18.2ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_menu (1.4ms)
+Rendered shared/_footer (1.8ms)
+Completed in 37ms (View: 28, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#create (for 192.168.2.101 at 2010-06-15 12:34:45) [POST]
+  Parameters: {"authenticity_token"=>"ocWmiUiPYOcGr+icPQQ4ygKqIMVzN486vCcvW3b593Y="}
+
+ActionController::UnknownAction (No action responded to create. Actions: index and show):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:35:46) [GET]
+  [4;35;1mProposal Load (0.4ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (13.5ms)
+Rendered shared/_menu (0.9ms)
+Rendered shared/_menu (0.5ms)
+Rendered shared/_footer (0.9ms)
+Completed in 30ms (View: 19, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:35:48) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (14.2ms)
+Rendered shared/_menu (1.3ms)
+Rendered shared/_menu (0.9ms)
+Rendered shared/_footer (1.2ms)
+Completed in 30ms (View: 20, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:35:49) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (5.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (13.2ms)
+Rendered shared/_menu (0.5ms)
+Rendered shared/_menu (0.8ms)
+Rendered shared/_footer (1.2ms)
+Completed in 28ms (View: 15, DB: 6) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:35:50) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.4ms)
+Rendered shared/_menu (0.9ms)
+Rendered shared/_menu (0.8ms)
+Rendered shared/_footer (1.1ms)
+Completed in 93ms (View: 82, DB: 3) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-15 12:37:14) [GET]
+  [4;35;1mProposal Load (1.0ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (14.2ms)
+Rendered shared/_menu (0.8ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_footer (0.9ms)
+Completed in 30ms (View: 20, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-22 07:27:03) [GET]
+  [4;36;1mProposal Load (3.3ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (127.2ms)
+Rendered shared/_menu (3.1ms)
+Rendered shared/_menu (0.9ms)
+Rendered shared/_footer (3.0ms)
+Completed in 239ms (View: 214, DB: 4) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-22 07:29:12) [GET]
+  [4;36;1mProposal Load (1.6ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (13.0ms)
+Rendered shared/_menu (0.8ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_footer (1.0ms)
+Completed in 30ms (View: 19, DB: 2) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-22 07:29:14) [GET]
+  [4;36;1mProposal Load (1.1ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (13.1ms)
+Rendered shared/_menu (0.9ms)
+Rendered shared/_menu (1.1ms)
+Rendered shared/_footer (1.4ms)
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.101 at 2010-06-22 07:29:16) [GET]
+  [4;36;1mProposal Load (0.8ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.9ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_menu (0.6ms)
+Rendered shared/_footer (1.1ms)
+Completed in 29ms (View: 18, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 09:39:49) [GET]
+  [4;36;1mProposal Load (3.2ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (126.9ms)
+Rendered shared/_menu (2.4ms)
+Rendered shared/_menu (0.8ms)
+Rendered shared/_footer (2.3ms)
+Completed in 232ms (View: 208, DB: 4) | 200 OK [http://ubuntu/]
+
+
+Processing TypusController#dashboard (for 192.168.2.100 at 2010-07-03 09:39:53) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+Redirected to http://ubuntu:3000/admin/sign_in
+Filter chain halted as [:require_login] rendered_or_redirected.
+Completed in 11ms (DB: 0) | 302 Found [http://ubuntu/admin]
+
+
+Processing TypusController#sign_in (for 192.168.2.100 at 2010-07-03 09:39:53) [GET]
+  Parameters: {"action"=>"sign_in", "controller"=>"typus"}
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "typus_users" [0m
+Rendering template within layouts/typus
+Rendering typus/sign_in
+Rendered admin/shared/_footer (3.8ms)
+Completed in 59ms (View: 52, DB: 1) | 200 OK [http://ubuntu/admin/sign_in]
+  [4;36;1mTypusUser Load (2.6ms)[0m   [0;1mSELECT * FROM "typus_users" LIMIT 1[0m
+
+
+Processing TypusController#sign_in (for 192.168.2.100 at 2010-07-03 09:41:51) [POST]
+  Parameters: {"typus_user"=>{"password"=>"[FILTERED]", "email"=>"admin@mifirma.com"}, "commit"=>"Sign in", "action"=>"sign_in", "authenticity_token"=>"gAjq5+DPdtQvA6Ggx6jHIzxJMyKyGM5gBJZ0rswDnn8=", "controller"=>"typus"}
+  [4;35;1mSQL (2.1ms)[0m   [0mSELECT count(*) AS count_all FROM "typus_users" [0m
+  [4;36;1mTypusUser Load (1.1ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."status" = 't' AND "typus_users"."email" = 'admin@mifirma.com') LIMIT 1[0m
+Redirected to http://ubuntu:3000/admin
+Completed in 23ms (DB: 3) | 302 Found [http://ubuntu/admin/sign_in]
+
+
+Processing TypusController#dashboard (for 192.168.2.100 at 2010-07-03 09:41:51) [GET]
+  Parameters: {"action"=>"dashboard", "controller"=>"typus"}
+  [4;35;1mTypusUser Load (1.0ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering typus/dashboard
+Rendered admin/dashboard/_sidebar (7.5ms)
+Rendered admin/helpers/_applications (13.0ms)
+Rendered admin/helpers/_header (1.5ms)
+Rendered admin/helpers/_login_info (3.8ms)
+Rendered admin/shared/_footer (0.8ms)
+Rendered admin/shared/_feedback (4.1ms)
+Completed in 275ms (View: 267, DB: 1) | 200 OK [http://ubuntu/admin]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 09:42:31) [GET]
+  [4;36;1mProposal Load (0.1ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (16.7ms)
+Rendered shared/_menu (0.9ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (1.0ms)
+Completed in 31ms (View: 22, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-03 09:42:41) [GET]
+
+ActionController::RoutingError (No route matches "/post" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-03 09:42:46) [GET]
+
+ActionController::RoutingError (No route matches "/sobre-nosotros" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 09:59:48) [GET]
+  [4;36;1mProposal Load (1.5ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.2ms)
+Rendered shared/_menu (1.0ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.5ms)
+Completed in 115ms (View: 106, DB: 2) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:03:49) [GET]
+  [4;36;1mProposal Load (1.0ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (13.3ms)
+Rendered shared/_reasons (2.1ms)
+Rendered shared/_menu (0.5ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.5ms)
+Completed in 59ms (View: 48, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing Admin::ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:05:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"admin/proposals"}
+  [4;36;1mTypusUser Load (1.0ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "proposals" [0m
+Rendering template within layouts/admin
+Rendering admin/resources/index
+Rendered admin/helpers/_list (2.5ms)
+  [4;36;1mProposal Load (1.4ms)[0m   [0;1mSELECT "proposals".* FROM "proposals" ORDER BY proposals.position ASC LIMIT 15 OFFSET 0[0m
+  [4;35;1mProposal Load (0.6ms)[0m   [0mSELECT * FROM "proposals" WHERE (1 = 1) ORDER BY position DESC LIMIT 1[0m
+Rendered admin/helpers/_header (2.1ms)
+Rendered admin/helpers/_login_info (0.9ms)
+Rendered admin/shared/_footer (1.0ms)
+Rendered admin/shared/_feedback (1.8ms)
+Completed in 71ms (View: 39, DB: 3) | 200 OK [http://ubuntu/admin/proposals]
+
+
+Processing Admin::ProposalsController#edit (for 192.168.2.100 at 2010-07-03 10:05:13) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"admin/proposals"}
+  [4;36;1mTypusUser Load (0.4ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mProposal Load (0.7ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+  [4;36;1mProposal Load (0.3ms)[0m   [0;1mSELECT id FROM "proposals" WHERE (id < 1) ORDER BY id DESC LIMIT 1[0m
+  [4;35;1mProposal Load (0.2ms)[0m   [0mSELECT id FROM "proposals" WHERE (id > 1) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (0.5ms)
+Rendered admin/templates/_string (5.5ms)
+Rendered admin/templates/_text (4.3ms)
+Rendered admin/templates/_text (0.9ms)
+Rendered admin/resources/_form (26.7ms)
+Rendered admin/helpers/_header (0.2ms)
+Rendered admin/helpers/_login_info (0.8ms)
+Rendered admin/shared/_footer (0.8ms)
+Rendered admin/shared/_feedback (1.4ms)
+Completed in 93ms (View: 58, DB: 1) | 200 OK [http://ubuntu/admin/proposals/edit/1]
+
+
+Processing Admin::ProposalsController#update (for 192.168.2.100 at 2010-07-03 10:06:22) [PUT]
+  Parameters: {"commit"=>"Save Proposal", "action"=>"update", "_method"=>"put", "authenticity_token"=>"gAjq5+DPdtQvA6Ggx6jHIzxJMyKyGM5gBJZ0rswDnn8=", "id"=>"1", "controller"=>"admin/proposals", "proposal"=>{"name"=>"Cambio de ley de energías renovable", "howto_solve"=>"<ul>\r\n                 <li>En España hay más de 40 millones de hipotecas. </li>\r\n                 <li>Cuando una familia no puede afrontar el pago, la casa se pasa a subasta pública, subastas en las que normalmente el banco se adjudica la casa por un precio inferior al de la hipoteca. (...)  <a href=\"/post\">Leer más</a></li>\r\n                 </ul>", "problem"=>"<p>En España hay más de 40 millones de hipotecas. Cuando una familia no puede afrontar el pago, la casa se pasa a subasta pública, subastas en las que normalmente el banco se adjudica la casa por un precio. (...) <a href=\"/post\">Leer más</a> </p>"}}
+  [4;36;1mTypusUser Load (0.9ms)[0m   [0;1mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;35;1mProposal Load (0.4ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+  [4;36;1mProposal Update (0.5ms)[0m   [0;1mUPDATE "proposals" SET "name" = 'Cambio de ley de energías renovable', "problem" = '<p>En España hay más de 40 millones de hipotecas. Cuando una familia no puede afrontar el pago, la casa se pasa a subasta pública, subastas en las que normalmente el banco se adjudica la casa por un precio. (...) <a href="/post">Leer más</a> </p>', "howto_solve" = '<ul>
+ <li>En España hay más de 40 millones de hipotecas. </li>
+ <li>Cuando una familia no puede afrontar el pago, la casa se pasa a subasta pública, subastas en las que normalmente el banco se adjudica la casa por un precio inferior al de la hipoteca. (...) <a href="/post">Leer más</a></li>
+ </ul>', "updated_at" = '2010-07-03 08:06:22' WHERE "id" = 1[0m
+Redirected to http://ubuntu:3000/admin/proposals/edit/1
+Completed in 41ms (DB: 2) | 302 Found [http://ubuntu/admin/proposals/update/1]
+
+
+Processing Admin::ProposalsController#edit (for 192.168.2.100 at 2010-07-03 10:06:22) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"admin/proposals"}
+  [4;35;1mTypusUser Load (0.3ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mProposal Load (0.3ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+  [4;35;1mProposal Load (0.4ms)[0m   [0mSELECT id FROM "proposals" WHERE (id < 1) ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mProposal Load (0.2ms)[0m   [0;1mSELECT id FROM "proposals" WHERE (id > 1) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (0.2ms)
+Rendered admin/templates/_string (4.2ms)
+Rendered admin/templates/_text (1.8ms)
+Rendered admin/templates/_text (1.1ms)
+Rendered admin/resources/_form (13.2ms)
+Rendered admin/helpers/_header (1.8ms)
+Rendered admin/helpers/_login_info (1.9ms)
+Rendered admin/helpers/_flash_message (3.1ms)
+Rendered admin/shared/_footer (0.8ms)
+Rendered admin/shared/_feedback (1.4ms)
+Completed in 85ms (View: 48, DB: 1) | 200 OK [http://ubuntu/admin/proposals/edit/1]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:07:36) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (18.7ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (1.3ms)
+Completed in 39ms (View: 28, DB: 2) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:09:13) [GET]
+  [4;35;1mProposal Load (1.0ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (3.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (13.9ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 28ms (View: 16, DB: 4) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:09:20) [GET]
+  [4;35;1mProposal Load (1.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (18.2ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.3ms)
+Completed in 37ms (View: 27, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:09:37) [GET]
+  [4;35;1mProposal Load (0.0ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.0ms)
+Rendered proposals/_proposal (1.0ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.3ms)
+Completed in 32ms (View: 23, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:09:43) [GET]
+  [4;35;1mProposal Load (0.7ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.5ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.5ms)
+Completed in 31ms (View: 22, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:11:18) [GET]
+  [4;35;1mProposal Load (1.1ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.6ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (3.1ms)
+Completed in 33ms (View: 23, DB: 2) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:12:40) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.2ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (2.8ms)
+Completed in 34ms (View: 23, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:14:35) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (134.8ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 160ms (View: 140, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:14:37) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.4ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.0ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.6ms)
+Completed in 28ms (View: 17, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:14:49) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.2ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.5ms)
+Completed in 25ms (View: 17, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:16:23) [GET]
+  [4;35;1mProposal Load (1.6ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (66.5ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 83ms (View: 72, DB: 2) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:16:30) [GET]
+  [4;35;1mProposal Load (1.0ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (23.2ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.5ms)
+Completed in 66ms (View: 40, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:16:32) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (3.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.5ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.6ms)
+Completed in 25ms (View: 12, DB: 5) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:17:20) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (66.8ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.6ms)
+Completed in 81ms (View: 72, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:17:34) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (21.1ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.7ms)
+Completed in 69ms (View: 38, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:17:36) [GET]
+  [4;35;1mProposal Load (0.7ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.4ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:17:43) [GET]
+  [4;35;1mProposal Load (1.1ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (11.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (43.8ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.6ms)
+Completed in 169ms (View: 39, DB: 12) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:17:45) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.4ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 26ms (View: 15, DB: 3) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:18:08) [GET]
+  [4;35;1mProposal Load (0.6ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (23.6ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (1.1ms)
+Completed in 61ms (View: 29, DB: 2) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:18:10) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.2ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 81ms (View: 17, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:18:37) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.3ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.6ms)
+Completed in 36ms (View: 24, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:18:41) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.2ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 25ms (View: 15, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:18:42) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.6ms)
+Rendered shared/_reasons (0.5ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.5ms)
+Completed in 26ms (View: 16, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:18:47) [GET]
+  [4;35;1mProposal Load (1.2ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.6ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 26ms (View: 16, DB: 2) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:19:00) [GET]
+  [4;35;1mProposal Load (0.7ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (22.0ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.6ms)
+Completed in 62ms (View: 39, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:19:04) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.2ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.6ms)
+Completed in 27ms (View: 17, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:19:16) [GET]
+  [4;35;1mProposal Load (1.0ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (31.4ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 58ms (View: 36, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:19:18) [GET]
+  [4;35;1mProposal Load (1.0ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.0ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.5ms)
+Completed in 25ms (View: 15, DB: 2) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:19:46) [GET]
+  [4;35;1mProposal Load (1.0ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (35.6ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.6ms)
+Completed in 65ms (View: 55, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:19:48) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.8ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 26ms (View: 16, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:19:55) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (21.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (29.8ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 68ms (View: 37, DB: 22) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:20:24) [GET]
+  [4;35;1mProposal Load (1.1ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.1ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 28ms (View: 17, DB: 2) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:20:41) [GET]
+  [4;35;1mProposal Load (1.2ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (23.0ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 49ms (View: 27, DB: 2) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:20:43) [GET]
+  [4;35;1mProposal Load (1.0ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (1.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (9.2ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.5ms)
+Completed in 27ms (View: 15, DB: 3) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:20:51) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (23.1ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 60ms (View: 39, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:20:53) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.6ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.6ms)
+Completed in 29ms (View: 18, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:21:20) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.2ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (4.0ms)
+Completed in 32ms (View: 20, DB: 3) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:23:11) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (16.1ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.8ms)
+Completed in 36ms (View: 26, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:23:12) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.6ms)
+Completed in 74ms (View: 62, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing Admin::ProposalsController#update (for 192.168.2.100 at 2010-07-03 10:29:54) [PUT]
+  Parameters: {"commit"=>"Save Proposal", "action"=>"update", "_method"=>"put", "authenticity_token"=>"gAjq5+DPdtQvA6Ggx6jHIzxJMyKyGM5gBJZ0rswDnn8=", "id"=>"1", "controller"=>"admin/proposals", "proposal"=>{"name"=>"Cambio de ley de energías renovable", "howto_solve"=>"<ul>\r\n                 <li>En España hay más de 40 millones de hipotecas. </li>\r\n                 <li>Cuando una familia no puede afrontar el pago, la casa se pasa a subasta pública, subastas en las que normalmente el banco se adjudica la casa por un precio inferior al de la hipoteca. (...)  <a href=\"/post\">Leer más</a></li>\r\n                 </ul>", "problem"=>"<p>En España hay más de 40 millones de hipotecas. Cuando una familia no puede afrontar el pago, la casa se pasa a subasta pública, subastas en las que normalmente el banco se adjudica la casa por un precio. (...) <a href=\"/post\">Leer más</a> </p>"}}
+  [4;35;1mTypusUser Load (0.9ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Redirected to http://ubuntu:3000/admin/proposals/edit/1
+Completed in 35ms (DB: 1) | 302 Found [http://ubuntu/admin/proposals/update/1]
+
+
+Processing Admin::ProposalsController#edit (for 192.168.2.100 at 2010-07-03 10:29:54) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"admin/proposals"}
+  [4;35;1mTypusUser Load (1.3ms)[0m   [0mSELECT * FROM "typus_users" WHERE ("typus_users"."id" = 1) [0m
+  [4;36;1mProposal Load (0.5ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT id FROM "proposals" WHERE (id < 1) ORDER BY id DESC LIMIT 1[0m
+  [4;36;1mProposal Load (0.2ms)[0m   [0;1mSELECT id FROM "proposals" WHERE (id > 1) ORDER BY id ASC LIMIT 1[0m
+Rendering template within layouts/admin
+Rendering admin/resources/edit
+Rendered admin/helpers/_list (1.4ms)
+Rendered admin/templates/_string (4.4ms)
+Rendered admin/templates/_text (0.8ms)
+Rendered admin/templates/_text (0.9ms)
+Rendered admin/resources/_form (11.1ms)
+Rendered admin/helpers/_header (0.2ms)
+Rendered admin/helpers/_login_info (1.0ms)
+Rendered admin/helpers/_flash_message (0.2ms)
+Rendered admin/shared/_footer (1.1ms)
+Rendered admin/shared/_feedback (1.1ms)
+Completed in 66ms (View: 30, DB: 3) | 200 OK [http://ubuntu/admin/proposals/edit/1]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:29:59) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.5ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 48ms (View: 39, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:30:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (8.4ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.5ms)
+Completed in 24ms (View: 13, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:31:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 94ms (View: 23, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:32:44) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.4ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.7ms)
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:33:14) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.6ms)
+Completed in 26ms (View: 13, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:36:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (2.5ms)
+Rendered shared/_how_it_works (4.7ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 76ms (View: 62, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:37:29) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.3ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_menu (0.1ms)
+Rendered shared/_footer (0.4ms)
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:38:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (1.8ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (2.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 31ms (View: 20, DB: 2) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:38:42) [GET]
+  [4;35;1mProposal Load (1.4ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.8ms)
+Rendered shared/_reasons (1.0ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_footer (1.1ms)
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:39:09) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.2ms)
+Rendered shared/_reasons (0.5ms)
+Rendered shared/_menu (2.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 32ms (View: 23, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:39:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-03 10:43:47) [GET]
+
+ActionController::RoutingError (No route matches "/sobre-nosotros" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-03 10:44:32) [GET]
+
+ActionController::RoutingError (No route matches "/sobre-nosotros" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:44:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (2.6ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 33ms (View: 21, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:44:35) [GET]
+
+ActionView::MissingTemplate (Missing template main/about_us.erb in view path app/views:vendor/plugins/typus/app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:44:40) [GET]
+
+ActionView::MissingTemplate (Missing template main/about_us.erb in view path app/views:vendor/plugins/typus/app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:44:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (1.5ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 32ms (View: 20, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:44:43) [GET]
+
+ActionView::MissingTemplate (Missing template main/about_us.erb in view path app/views:vendor/plugins/typus/app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:47:42) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (1.5ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 39ms (View: 36, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:48:12) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.7ms)
+Completed in 78ms (View: 75, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:48:23) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.8ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (1.0ms)
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:56:00) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+ERROR: compiling _run_erb_app47views47main47about_us46html46erb RAISED compile error
+/home/ubuntu/development/mifirma/app/views/main/about_us.html.erb:1: syntax error, unexpected '{', expecting kEND
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :bodyclass {"about-us"} ; @output_buffer.concat "  \r\n"
+                                                                                                                       ^
+/home/ubuntu/development/mifirma/app/views/main/about_us.html.erb:1: syntax error, unexpected '}', expecting kEND
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :bodyclass {"about-us"} ; @output_buffer.concat "  \r\n"
+                                                                                                                                  ^
+Function body:           def _run_erb_app47views47main47about_us46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :bodyclass {"about-us"} ; @output_buffer.concat "  \r\n"
+@output_buffer.concat "\r\n"
+@output_buffer.concat "\r\n"
+@output_buffer.concat "<div class=\"page\">\r\n"
+@output_buffer.concat "\r\n"
+@output_buffer.concat "    <div class=\"page-content\">\r\n"
+@output_buffer.concat "    \r\n"
+@output_buffer.concat "    <h1> \302\277Quines somos?</h1>\r\n"
+@output_buffer.concat "    \r\n"
+@output_buffer.concat "    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac nisi eu enim ultricies hendrerit vitae tristique risus. Donec pulvinar feugiat ligula, placerat semper eros iaculis id. Maecenas sit amet mauris sit amet arcu sodales pharetra congue non nulla. Vestibulum iaculis ultricies mauris id consectetur. Phasellus accumsan venenatis sagittis. Praesent eget leo odio, eu consequat nisl. </p>\r\n"
+@output_buffer.concat "    \r\n"
+@output_buffer.concat "    \r\n"
+@output_buffer.concat "    <ul>\r\n"
+@output_buffer.concat "    \r\n"
+@output_buffer.concat "    "; @output_buffer.concat(( render :partial => 'member' ).to_s); @output_buffer.concat "\r\n"
+@output_buffer.concat "    "; @output_buffer.concat(( render :partial => 'member' ).to_s); @output_buffer.concat "\r\n"
+@output_buffer.concat "    "; @output_buffer.concat(( render :partial => 'member' ).to_s); @output_buffer.concat "\r\n"
+@output_buffer.concat "    "; @output_buffer.concat(( render :partial => 'member' ).to_s); @output_buffer.concat "\r\n"
+@output_buffer.concat "    </ul>\r\n"
+@output_buffer.concat "    \r\n"
+@output_buffer.concat "    </div>\r\n"
+@output_buffer.concat "\r\n"
+@output_buffer.concat "      <r:snippet name=\"sidebar-about-us\" />\r\n"
+@output_buffer.concat "  \r\n"
+@output_buffer.concat "  <div class=\"clear\">&nbsp;</div>\r\n"
+@output_buffer.concat "  </div>"; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/ubuntu/development/mifirma/app/views/main/about_us.html.erb:29:in `compile!'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:61:in `compile'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/renderable.rb:28:in `render'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/template.rb:205:in `render_template'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:265:in `render'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:348:in `_render_with_layout'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_view/base.rb:262:in `render'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1250:in `render_for_file'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/ubuntu/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/ubuntu/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/home/ubuntu/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:51:in `render'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1326:in `default_render'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/ubuntu/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/ubuntu/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/home/ubuntu/.gem/ruby/1.8/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:391:in `process'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/base.rb:386:in `call'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/routing/route_set.rb:437:in `call'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `call'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+/home/ubuntu/.gem/ruby/1.8/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/home/ubuntu/.gem/ruby/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.5/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/ubuntu/development/mifirma/app/views/main/about_us.html.erb:1: syntax error, unexpected '{', expecting kEND
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :bodyclass {"about-us"} ; @output_buffer.concat "  \r\n"
+                                                                                                                       ^
+/home/ubuntu/development/mifirma/app/views/main/about_us.html.erb:1: syntax error, unexpected '}', expecting kEND
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ;  content_for :bodyclass {"about-us"} ; @output_buffer.concat "  \r\n"
+                                                                                                                                  ^) on line #1 of app/views/main/about_us.html.erb:
+1: <% content_for :bodyclass {"about-us"} %>  
+2: 
+3: 
+4: <div class="page">
+
+    app/views/main/about_us.html.erb:29:in `compile!'
+
+Rendered rescues/_trace (52.5ms)
+Rendered rescues/_request_and_response (3.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:56:11) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:56:35) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:56:48) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.7ms)
+Completed in 16ms (View: 13, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:57:14) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.5ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 27ms (View: 17, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:57:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.4ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.5ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.8ms)
+Completed in 36ms (View: 24, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:57:30) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:58:37) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (1.8ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 17ms (View: 14, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:58:46) [GET]
+  [4;35;1mProposal Load (1.0ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.2ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.5ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.9ms)
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 10:58:51) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.4ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:58:53) [GET]
+  [4;35;1mProposal Load (0.9ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.7ms)
+Rendered shared/_reasons (0.8ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 28ms (View: 18, DB: 2) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 10:58:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.4ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.8ms)
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 10:59:04) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.3ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 11:00:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.6ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (1.0ms)
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-03 11:01:05) [GET]
+  [4;35;1mProposal Load (0.8ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.1ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 27ms (View: 15, DB: 3) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-03 11:02:10) [GET]
+
+ActionController::RoutingError (No route matches "/post" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-03 11:02:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.5ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 25ms (View: 14, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-03 11:02:32) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:23:45) [GET]
+  [4;36;1mProposal Load (4.5ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (3.9ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (100.5ms)
+Rendered shared/_reasons (2.5ms)
+Rendered shared/_menu (1.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (2.2ms)
+Completed in 215ms (View: 187, DB: 8) | 200 OK [http://ubuntu/]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:25:50) [GET]
+  [4;36;1mProposal Load (0.7ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (15.2ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://ubuntu/]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:25:50) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:25:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-middle-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:25:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-bottom-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:25:55) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (2.3ms)
+Rendered shared/_how_it_works (1.9ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 49ms (View: 37, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:25:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:25:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-middle-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:25:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-bottom-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:26:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.5ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:26:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:26:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-middle-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:26:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-bottom-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:26:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.5ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.3ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 29ms (View: 14, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:26:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:26:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-middle-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:26:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-bottom-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:26:05) [GET]
+  [4;36;1mProposal Load (0.9ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.5ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 26ms (View: 16, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:26:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:26:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-middle-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:26:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-bottom-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:26:08) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (1.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 37ms (View: 34, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:27:48) [GET]
+  [4;36;1mProposal Load (1.3ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.0ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.0ms)
+Rendered shared/_footer (0.1ms)
+Completed in 24ms (View: 16, DB: 2) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-middle-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-bottom-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:27:50) [GET]
+  [4;36;1mProposal Load (2.0ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.3ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 28ms (View: 18, DB: 2) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/header-bkg.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/libreta.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/bullet-1.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/bullet-2.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/bullet-3.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/cross-ico.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/tick-ico.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/firmar-btn.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/ico-chat.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/ico-card.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/ico-write.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/page-frame-l.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-middle-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/firmar-btn-bgk.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:27:51) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-bottom-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+  [4;36;1mProposal Load (0.8ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.5ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 28ms (View: 18, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/header-bkg.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/logo.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/libreta.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/bullet-1.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/bullet-2.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/bullet-3.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/cross-ico.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/tick-ico.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/firmar-btn.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/ico-chat.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:28:59) [GET]
+
+ActionController::RoutingError (No route matches "/images/ico-card.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:29:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/ico-write.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:29:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/page-frame-l.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:29:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/firmar-btn-bgk.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:30:44) [GET]
+  [4;36;1mProposal Load (1.1ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.1ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.6ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 27ms (View: 17, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:30:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:30:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.5ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_footer (1.8ms)
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:30:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/pdf-ico.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:30:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/pen-ico.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:30:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/twitter-btn.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:30:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/meneame-btn.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:30:55) [GET]
+
+ActionController::RoutingError (No route matches "/images/page-frame-m.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:31:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (1.9ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.7ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.8ms)
+Completed in 26ms (View: 15, DB: 2) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:31:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/pdf-ico.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:31:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/pen-ico.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:31:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/twitter-btn.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:31:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/meneame-btn.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:31:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/page-frame-m.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:31:42) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.7ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.5ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.8ms)
+Completed in 28ms (View: 15, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:31:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.4ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 26ms (View: 15, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:31:50) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (1.4ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.7ms)
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:31:52) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:31:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/header-bkg-long.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:31:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/avatar.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:31:53) [GET]
+
+ActionController::RoutingError (No route matches "/images/page-frame-s.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:32:05) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.5ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.4ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:32:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/avatar.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:32:05) [GET]
+
+ActionController::RoutingError (No route matches "/images/page-frame-s.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:32:06) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/avatar.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 192.168.2.100 at 2010-07-05 12:32:06) [GET]
+
+ActionController::RoutingError (No route matches "/images/page-frame-s.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:32:20) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:32:22) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (1.1ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.9ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.8ms)
+Completed in 10ms (View: 7, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:32:23) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:32:26) [GET]
+  [4;36;1mProposal Load (1.3ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (12.0ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 26ms (View: 17, DB: 2) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:32:27) [GET]
+  [4;36;1mProposal Load (0.3ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.2ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:32:28) [GET]
+  [4;36;1mProposal Load (0.9ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.8ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.5ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.8ms)
+Completed in 25ms (View: 15, DB: 2) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:32:29) [GET]
+  [4;36;1mProposal Load (1.3ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.1ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.8ms)
+Completed in 28ms (View: 16, DB: 2) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:32:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (2.9ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 26ms (View: 15, DB: 3) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:32:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.5ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 27ms (View: 15, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:32:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (1.8ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 81ms (View: 70, DB: 2) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:32:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (2.1ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.3ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 26ms (View: 13, DB: 3) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:33:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.3ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.6ms)
+Rendered shared/_footer (1.0ms)
+Completed in 28ms (View: 15, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#show (for 192.168.2.100 at 2010-07-05 12:33:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProposal Load (0.6ms)[0m   [0;1mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.2ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.5ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.9ms)
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://ubuntu/proposals/1]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:33:23) [GET]
+  [4;36;1mProposal Load (1.8ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.9ms)
+Rendered shared/_reasons (0.5ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 26ms (View: 18, DB: 2) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:33:26) [GET]
+  [4;36;1mProposal Load (0.8ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.2ms)
+Rendered shared/_reasons (1.1ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_footer (0.9ms)
+Completed in 39ms (View: 28, DB: 3) | 200 OK [http://ubuntu/proposals]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:33:28) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.5ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 66ms (View: 8, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing MainController#about_us (for 192.168.2.100 at 2010-07-05 12:33:30) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.2ms)
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.2ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.6ms)
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://ubuntu/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:33:32) [GET]
+  [4;36;1mProposal Load (1.9ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (1.6ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (10.5ms)
+Rendered shared/_reasons (0.3ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 25ms (View: 15, DB: 4) | 200 OK [http://ubuntu/proposals]
+
+
+Processing ProposalsController#index (for 192.168.2.100 at 2010-07-05 12:33:33) [GET]
+  [4;36;1mProposal Load (0.8ms)[0m   [0;1mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (11.0ms)
+Rendered shared/_reasons (0.2ms)
+Rendered shared/_menu (0.4ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_footer (0.7ms)
+Completed in 27ms (View: 17, DB: 1) | 200 OK [http://ubuntu/proposals]
