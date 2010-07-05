@@ -1,33 +1,56 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="es">
 <head>
-	<title><%= @title || "MiFirma" %></title>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-	
-	<%= javascript_include_tag :defaults %>
-	<%= stylesheet_link_tag "main" %>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  
+      <title><%= @title || "MiFirma" %></title>
+  
+      <link href="/stylesheets/screen.css" media="screen" rel="stylesheet" type="text/css">
+      <%= javascript_include_tag :defaults %>
   
 </head>
-<body>
-	
-	<div id="page">
-	
-	<div id="header">
-		<a id="logo" href="/">
-			MiFirma
-		</a>
-		<%= render :partial => "/shared/menu" %>
-	</div>	  
+<body class="<%= yield(:bodyclass) || 'home' %>">
 
-	<div id="content">	
-	  <%= yield %>
-	</div>
-	
-	</div>
-
-	<div id="footer">
-		<%= render :partial => "/shared/footer" %>
-	</div>
-	
+  <div class="main-wr">
+    <div class="main">
+    <div class="header-top">
+      <a class="logo" href="/"><img class="pngfix" src="/images/logo.png" alt="" /></a>
+      <%= render :partial => "/shared/menu" %>
+ 
+    </div>
+    <div class="header-bottom">
+      <div class="lh">
+        <img class="pngfix" src="/images/libreta.png" alt="" />
+      </div>
+      <div class="rh">
+        <h2>Por primera vez puedes cambiar las <br /> cosas. Con tu firma</h2>
+        
+        <ul>
+        <li><img class="bullet pngfix" src="/images/bullet-1.png" alt="" /> <div><b>Creamos propuestas</b> <br />de interés social</div></li>
+        <li><img class="bullet pngfix" src="/images/bullet-2.png" alt="" /><div><b>Recogemos firmas</b> <br />aptas electrónicamente</div></li>
+        <li><img class="bullet pngfix" src="/images/bullet-3.png" alt="" /><div><b>Cambiamos las cosas</b> <br />con el voto de todos</div></li>
+        </ul>
+      </div>
+    </div>
+    
+    
+        
+        
+        <%= yield %>
+    </div>
+  </div>
+  
+  
+  <%= render :partial => "/shared/footer" %>
+  
+  <!--[if lt IE 7]> 
+    <script type="text/javascript" src="/javascripts/DD_belatedPNG_min.js"></script>
+    <script type="text/javascript">DD_belatedPNG.fix('*.pngfix');
+    </script>
+  <![endif]-->
 </body>
 </html>
+
+
+
+

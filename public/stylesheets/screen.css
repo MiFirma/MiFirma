@@ -1,0 +1,552 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+:focus { outline: 0; }
+body {
+  line-height: 1;
+  color: black;
+  background: white;
+}
+ol, ul { list-style: none; }
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before { content: ""; }
+blockquote:after { content: ""; }
+q:before { content: ""; }
+q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+.left {
+  display: block;
+  float: left;
+}
+.right {
+  display: block;
+  float: right;
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.inline { display: inline-block; }
+.clear { clear: both; }
+.invisible { visibility: hidden; }
+.hidden { display: none; }
+.scrollable { overflow: auto; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.x_horizontal_center_outer {
+  *text-align: center;
+  *width: 100%;
+}
+.debug { background-color: #ffe59f; }
+body {
+  background: white url(/images/header-bkg.png) 0 0 repeat-x;
+  background-color: white;
+  font-family: Georgia, Georgia, serif;
+  font-size: 12px;
+  *text-align: center;
+  *width: 100%;
+}
+body.about-us { background: white url(/images/header-bkg-long.png) 0 0 repeat-x; }
+div.main-wr {
+  width: 960px;
+  *text-align: left;
+  margin: 0 auto;
+}
+div.header-top a.logo {
+  line-height: 50px;
+  text-decoration: none;
+  display: inline;
+  margin-left: 16px;
+}
+div.header-top a.logo img { vertical-align: middle; }
+div.header-top a.logo:visited {
+  line-height: 50px;
+  text-decoration: none;
+  display: inline;
+  margin-left: 16px;
+}
+div.header-top a.logo:visited img { vertical-align: middle; }
+div.header-top ul {
+  height: 50px;
+  padding-left: 50px;
+  display: inline;
+}
+div.header-top ul li {
+  display: inline;
+  color: white;
+  height: 50px;
+}
+div.header-top ul li span.li-sep { margin: 0 14px; }
+div.header-top ul li a {
+  line-height: 50px;
+  text-decoration: none;
+  color: white;
+}
+div.header-top ul li a:visited {
+  line-height: 50px;
+  text-decoration: none;
+  color: white;
+}
+div.header-bottom { height: 195px; }
+div.header-bottom .lh {
+  padding-top: 33px;
+  padding-left: 5px;
+  float: left;
+  width: 243px;
+}
+div.header-bottom .rh {
+  float: left;
+  padding-top: 20px;
+}
+div.header-bottom .rh h2 {
+  font-size: 30px;
+  font-style: italic;
+  line-height: 40px;
+  display: inline;
+}
+div.header-bottom .rh ul {
+  width: 712px;
+  margin-top: 20px;
+}
+div.header-bottom .rh li {
+  float: left;
+  font-size: 17px;
+  width: 237px;
+  line-height: 24px;
+}
+div.header-bottom .rh li b { letter-spacing: -1px; }
+div.header-bottom .rh li img { float: left; }
+div.header-bottom .rh li div {
+  float: left;
+  margin-left: 15px;
+  padding-top: 2px;
+}
+div.page {
+  padding: 20px 20px 20px 22px;
+  margin-top: 4px;
+  margin-left: 5px;
+  width: 956px;
+}
+div.page h4 {
+  font-size: 17px;
+  font-family: Arial;
+  line-height: 20px;
+  padding-left: 4px;
+  margin-bottom: 11px;
+}
+.about-us div.page {
+  padding: 27px 20px 20px 22px;
+  margin-top: 4px;
+  margin-left: 5px;
+  width: 956px;
+}
+.about-us div.page h1 {
+  font-size: 26px;
+  font-family: Arial;
+  font-weight: bold;
+  line-height: 20px;
+  padding-left: 4px;
+  margin-bottom: 16px;
+  margin-left: -3px;
+}
+.about-us div.page p { line-height: 25px; }
+.about-us div.page ul { margin-top: 20px; }
+.about-us div.page ul li {
+  clear: both;
+  margin-top: 20px;
+  *margin-top: 0px;
+}
+.about-us div.page ul li b {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+.about-us div.page ul li a {
+  margin-right: 85px;
+  float: right;
+  color: #507bab;
+  text-decoration: none;
+  line-height: 14px;
+  margin-top: 2px;
+  *margin-top: -12px;
+}
+.about-us div.page ul li a:visited {
+  margin-right: 85px;
+  float: right;
+  color: #507bab;
+  text-decoration: none;
+  line-height: 14px;
+  margin-top: 2px;
+  *margin-top: -12px;
+}
+.about-us div.page ul li p { margin-top: 5px; }
+.about-us div.page ul li img {
+  float: left;
+  margin-right: 25px;
+  margin-bottom: 2px;
+}
+.about-us div.page ul li div {
+  float: left;
+  display: block;
+  width: 380px;
+}
+.about-us div.page ul li hr {
+  clear: both;
+  visibility: hidden;
+}
+.home div.page { background: transparent url(/images/page-frame-l.png) 0 0 no-repeat; }
+.proposal div.page { background: transparent url(/images/page-frame-m.png) 0 0 no-repeat; }
+.about-us div.page { background: transparent url(/images/page-frame-s.png) 0 0 no-repeat; }
+div.page-content {
+  width: 617px;
+  float: left;
+}
+.about-us div.page-content {
+  width: 612px;
+  float: left;
+  padding-left: 5px;
+}
+div.proposal-wr {
+  background: transparent url(/images/proposal-top-frame.png) 0 0 no-repeat;
+  padding-top: 9px;
+}
+div.proposal {
+  background: transparent url(/images/proposal-middle-frame.png) 0 0 repeat-y;
+  width: 569px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+div.proposal hr {
+  color: #ececec;
+  border: 1px solid;
+  clear: both;
+}
+div.proposal h1 {
+  font-size: 25px;
+  line-height: 32px;
+  padding: 12px 0px;
+  width: 470px;
+  float: left;
+}
+div.proposal h1 a {
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal h1 a:visited {
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal a.pdf-link {
+  margin-top: 20px;
+  margin-left: 7px;
+  width: 92px;
+  color: #507bab;
+  text-decoration: none;
+  float: right;
+  font-weight: bold;
+}
+div.proposal a.pdf-link img { vertical-align: middle; }
+div.proposal a.pdf-link:visited {
+  margin-top: 20px;
+  margin-left: 7px;
+  width: 92px;
+  color: #507bab;
+  text-decoration: none;
+  float: right;
+  font-weight: bold;
+}
+div.proposal a.pdf-link:visited img { vertical-align: middle; }
+div.proposal div.fb-like {
+  border-top: 1px dotted #bdbdbd;
+  margin-top: 15;
+  padding-left: 5px;
+  padding-top: 10px;
+}
+div.proposal div.fb-like p {
+  margin-top: 10px;
+  font-family: Arial;
+  font-size: 12px;
+}
+div.proposal-issue {
+  margin-top: 15px;
+  margin-bottom: 27px;
+}
+div.proposal-issue h4 {
+  margin-left: -3px;
+  float: left;
+  font-family: Arial;
+  font-size: 19px;
+  margin-bottom: 10px;
+  width: 475px;
+}
+div.proposal-issue img.cross-ico {
+  float: left;
+  margin-right: 15px;
+}
+div.proposal-issue div.proposal-issue-content {
+  float: left;
+  width: 479px;
+  line-height: 22px;
+}
+div.proposal-solving { margin-top: 10px; }
+div.proposal-solving h4 {
+  margin-left: -3px;
+  float: left;
+  font-family: Arial;
+  font-size: 19px;
+  margin-bottom: 10px;
+  width: 475px;
+}
+div.proposal-solving img.tick-ico {
+  float: left;
+  margin-right: 15px;
+}
+div.proposal-solving div.proposal-solving-content {
+  float: left;
+  width: 479px;
+  line-height: 22px;
+}
+div.proposal-solving div.proposal-solving-content li {
+  margin-bottom: 7px;
+  list-style-position: inside;
+  list-style-type: disc;
+}
+div.proposal-solving div.proposal-solving-content p { margin-bottom: 10px; }
+div.proposal-solving div.proposal-solving-content p a {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-solving div.proposal-solving-content p a:visited {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-solving div.proposal-solving-content ul { margin-bottom: 10px; }
+div.proposal-solving div.proposal-solving-content ul a {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-solving div.proposal-solving-content ul a:visited {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-solving div.proposal-reaching-content li {
+  margin-bottom: 7px;
+  list-style-position: inside;
+  list-style-type: disc;
+}
+div.proposal-solving div.proposal-reaching-content p { margin-bottom: 10px; }
+div.proposal-solving div.proposal-reaching-content p a {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-solving div.proposal-reaching-content p a:visited {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-solving div.proposal-reaching-content ul { margin-bottom: 10px; }
+div.proposal-solving div.proposal-reaching-content ul a {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-solving div.proposal-reaching-content ul a:visited {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-issue-content a {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-issue-content a:visited {
+  display: inline;
+  color: #507bab;
+  text-decoration: none;
+}
+div.proposal-reaching { margin-top: 10px; }
+div.proposal-reaching h4 {
+  float: left;
+  font-family: Arial;
+  font-size: 19px;
+  margin-bottom: 10px;
+  width: 475px;
+}
+div.proposal-reaching img.pen-ico {
+  float: left;
+  margin-right: 15px;
+}
+div.proposal-reaching div.proposal-reaching-content {
+  float: left;
+  width: 479px;
+  line-height: 22px;
+}
+div.sign {
+  margin-top: 28px;
+  margin-left: 5px;
+  _padding-top: 16px;
+  height: 60px;
+  display: block;
+  background: transparent url(/images/firmar-btn-bgk.png) 0 0 no-repeat;
+  padding-left: 8px;
+  line-height: 60px;
+  margin-bottom: 20px;
+}
+div.sign input {
+  vertical-align: middle;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+div.sign span {
+  font-family: Arial;
+  font-size: 20px;
+  line-height: 60px;
+}
+div.sign span b { font-size: 24px; }
+div.proposal-bottom {
+  background: transparent url(/images/proposal-bottom-frame.png) 0 0 no-repeat;
+  height: 12px;
+  margin-bottom: 25px;
+  width: 617px;
+}
+div.page-sidebar {
+  width: 265px;
+  float: left;
+  margin-left: 22px;
+  margin-top: 2px;
+}
+div.page-sidebar dl.reasons {
+  padding: 15px;
+  background-color: #f2f2f2;
+}
+div.page-sidebar dl.reasons dt {
+  font-size: 14px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d6d6d6;
+  margin-bottom: 6px;
+}
+div.page-sidebar dl.reasons dd {
+  display: block;
+  clear: both;
+  margin-bottom: 10px;
+}
+div.page-sidebar dl.reasons dd img {
+  float: left;
+  margin-left: -5px;
+  margin-top: 6px;
+}
+div.page-sidebar dl.reasons dd span {
+  float: left;
+  width: 170px;
+  display: block;
+  margin-left: 15px;
+  line-height: 20px;
+}
+div.page-sidebar dl.reasons dd hr {
+  color: transparent;
+  visibility: hidden;
+  clear: both;
+}
+div.page-sidebar div.share {
+  background-color: #ddeef6;
+  padding: 12px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+  border: 1px solid #c2d1d9;
+}
+div.page-sidebar div.share p {
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+}
+div.page-sidebar div.share div.share-buttons-left {
+  margin-top: 15px;
+  margin-left: 5px;
+}
+div.page-sidebar div.share div.share-buttons-left img {
+  display: block;
+  margin-bottom: 10px;
+}
+div.footer-wr {
+  height: 110px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #d8d8d8;
+  padding-top: 30px;
+  padding-left: 20px;
+}
+div.footer {
+  width: 960px;
+  margin: 0 auto;
+}
+div.footer div.footer-nav {
+  float: left;
+  width: 660px;
+  text-align: left;
+}
+div.footer div.footer-nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+div.footer div.footer-nav a:visited {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+div.footer div.footer-nav ul {
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+div.footer div.footer-nav ul li { display: inline; }
+div.footer div.footer-nav ul li span.li-sep {
+  margin: 0 1px;
+  padding-right: 2px;
+}
+div.footer div.footer-nav p {
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+div.footer div.footer-signatures {
+  float: left;
+  margin-left: 30px;
+}
+div.footer div.footer-signatures img {
+  float: left;
+  margin-right: 15px;
+}
+div.footer div.footer-signatures span {
+  float: left;
+  display: block;
+  width: 150px;
+  line-height: 20px;
+}
+div.footer div.footer-signatures span b {
+  font-size: 20px;
+  letter-spacing: -1px;
+  font-family: Arial;
+  line-height: 30px;
+}

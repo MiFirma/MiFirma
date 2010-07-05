@@ -1,0 +1,664 @@
+@import "basics.css";
+@import "lib-centering";
+
+@line-grey-color: #ececec;
+@proposal-link-color: #507bab;
+
+ .debug{
+	background-color:#FFE59F;
+}
+ 
+html{
+	
+}
+
+body{
+	background:white url(/images/header-bkg.png) 0 0 repeat-x;
+	background-color:white;
+	
+	font-family: Georgia, Georgia, serif;
+	font-size: 12px;
+	
+	.x_horizontal_center_outer;
+}
+
+body.about-us{
+  background:white url(/images/header-bkg-long.png) 0 0 repeat-x;
+}
+
+div.main-wr{
+	.x_horizontal_center_inner(960px);
+	
+} 
+
+
+div.header-top{
+	a.logo,
+	a.logo:visited{
+		line-height:50px;
+		text-decoration: none;
+		display: inline;
+		img{vertical-align:middle}
+		margin-left: 16px;
+	}
+	
+	
+	ul{
+		height: 50px;
+		padding-left: 50px;
+		display:inline;
+		
+		
+		li{
+			display:inline;
+			color:white;
+			height: 50px;
+						
+			span.li-sep{
+				margin: 0 14px;
+				
+			}
+			a,
+			a:visited{
+				line-height: 50px;
+				text-decoration:none;
+				color:white;
+			}
+		}
+	}
+	
+}
+
+div.header-bottom{
+	height: 195px;
+	
+	.lh{
+		padding-top: 33px;
+		padding-left: 5px;
+		float:left;
+		width: 243px;
+	}
+	
+	.rh{
+		float:left;
+		padding-top: 20px;
+		
+		
+		h2{
+			font-size: 30px;
+			font-style:italic;
+			line-height: 40px;
+			display: inline;
+			
+		}
+		
+
+		ul{
+			width: 712px;
+			margin-top: 20px;
+			
+			
+		}
+		
+		li{
+			float:left;
+			font-size: 17px;
+			width: 237px;
+			line-height: 24px;
+			
+			b{
+				letter-spacing: -1px;
+			}
+					
+			img{
+				float:left;
+			}
+			div{
+				float:left;
+				margin-left: 15px;
+				padding-top: 2px;
+			
+			}
+	
+		}
+	}
+	
+}
+
+
+
+div.page{
+  
+	padding:20px 20px 20px 22px;
+       margin-top: 4px;
+	margin-left: 5px;
+	width: 956px;
+
+      h4{
+        font-size: 17px;
+        font-family: Arial;
+        line-height: 20px;
+        padding-left: 4px;
+        margin-bottom: 11px;
+      }
+
+}
+
+
+.about-us div.page{
+      padding:27px 20px 20px 22px;
+       margin-top: 4px;
+        margin-left: 5px;
+        width: 956px;
+
+      h1{
+        font-size: 26px;
+        font-family: Arial;
+        font-weight: bold;
+        
+        line-height: 20px;
+        padding-left: 4px;
+        margin-bottom: 16px;
+        margin-left: -3px;
+        
+      }
+      
+      p{
+        line-height: 25px;
+        
+      }
+      
+      ul{
+        margin-top: 20px;
+        li{
+          clear:both;
+          margin-top: 20px;
+          *margin-top: 0px;
+          
+          b {
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: -1px;
+          }
+          
+         
+          a,
+          a:visited{
+            margin-right: 85px;
+            float:right;
+            color: @proposal-link-color;
+            text-decoration:none;
+            line-height: 14px;
+            
+            margin-top: 2px;
+            *margin-top: -12px;
+          
+            
+            
+            
+          }
+          
+          p{
+            margin-top: 5px;
+            
+          }
+          img{
+            float:left;
+            margin-right: 25px;
+            margin-bottom: 2px;
+
+            
+          }
+          
+          div{
+            float:left;
+            display: block;
+            width: 380px;
+            
+            
+            
+            
+          }
+          
+          hr{
+            clear:both;
+            visibility:hidden;
+            
+          }
+        }
+        
+      }
+  
+}
+
+
+.home div.page{
+  background:transparent url(/images/page-frame-l.png) 0 0 no-repeat;
+}
+.proposal div.page{
+  background:transparent url(/images/page-frame-m.png) 0 0 no-repeat;
+}
+
+.about-us div.page{
+  background:transparent url(/images/page-frame-s.png) 0 0 no-repeat;
+}
+
+
+div.page-content{
+  width: 617px;
+  float:left;
+  
+}
+.about-us div.page-content{
+  width: 612px;
+  float:left;
+  padding-left: 5px;
+  
+}
+
+
+
+
+div.proposal-wr{
+    background:transparent url(/images/proposal-top-frame.png) 0 0 no-repeat;
+    
+    padding-top: 9px;
+
+}
+
+
+div.proposal{
+  
+    background:transparent url(/images/proposal-middle-frame.png) 0 0 repeat-y;
+    width: 569px;
+    padding-left: 24px;
+    padding-right: 24px;
+    
+    hr{
+      color: @line-grey-color;
+      border: 1px solid;
+      clear:both;
+    }
+    
+    h1{
+      font-size: 25px;
+      line-height: 32px;
+      padding: 12px 0px;
+      
+      width: 470px;
+      float:left;
+      
+      
+      a,
+      a:visited{
+        color: @proposal-link-color;
+        text-decoration:none;
+      }
+    }
+    
+    
+    a.pdf-link,
+    a.pdf-link:visited{
+      margin-top: 20px;
+      margin-left: 7px;
+      
+      
+      width: 92px;
+      color: @proposal-link-color;
+      text-decoration:none;
+      float:right;
+      font-weight:bold;
+      img{
+        vertical-align:middle;
+      }
+      
+      
+    }
+    div.fb-like{
+      
+      
+      border-top: 1px dotted #bdbdbd;
+      margin-top: 15;
+      padding-left: 5px;
+      padding-top: 10px;
+ 
+      p{
+        margin-top: 10px;
+        font-family: Arial;
+        font-size: 12px;
+         
+      }
+    }
+}
+
+div.proposal-issue{
+  
+  margin-top: 15px;
+  margin-bottom: 27px;
+  
+  h4{
+    margin-left: -3px;
+    
+    float:left;
+    font-family: Arial;
+    font-size: 19px;
+    margin-bottom: 10px;
+    
+    width: 475px;
+    
+  }
+  
+  img.cross-ico{
+    float:left;
+    margin-right: 15px;
+  
+  }
+  
+  div.proposal-issue-content{
+    float:left;
+    width: 479px;
+    line-height: 22px;
+    
+  }
+}
+
+div.proposal-solving{
+   margin-top: 10px;
+
+  
+   h4{
+    margin-left: -3px;
+    float:left;
+    font-family: Arial;
+    font-size: 19px;
+    margin-bottom: 10px;
+    
+    width: 475px;
+    
+  }
+  
+  img.tick-ico{
+    float:left;
+    margin-right: 15px;
+  
+  }
+  
+  div.proposal-solving-content{
+    float:left;
+    width: 479px;
+    line-height: 22px;
+}
+
+
+div.proposal-solving-content,
+div.proposal-reaching-content{
+    
+    li{
+      margin-bottom: 7px;
+      list-style-position:inside;
+      list-style-type:disc;
+    }
+    
+    p,ul{
+      margin-bottom: 10px;
+      
+      a,
+      a:visited{
+     
+      display:inline;
+      color: @proposal-link-color;
+      text-decoration: none;
+      
+    }
+      
+    }
+  }
+}
+
+div.proposal-issue-content a,
+div.proposal-issue-content a:visited{
+    display:inline;
+      color: @proposal-link-color;
+      text-decoration: none;
+}
+
+div.proposal-reaching{
+   margin-top: 10px;
+
+  
+   h4{
+    float:left;
+    font-family: Arial;
+    font-size: 19px;
+    margin-bottom: 10px;
+    
+    width: 475px;
+    
+  }
+  
+  img.pen-ico{
+    float:left;
+    margin-right: 15px;
+  
+  }
+  
+  div.proposal-reaching-content{
+    float:left;
+    width: 479px;
+    line-height: 22px;
+  }
+
+}
+
+
+
+div.sign{
+  margin-top: 28px;
+  margin-left: 5px;
+  _padding-top: 16px;
+  
+  height: 60px;
+  display: block;
+  background:transparent url(/images/firmar-btn-bgk.png) 0 0 no-repeat;
+ 
+  padding-left: 8px;
+  line-height: 60px;
+  margin-bottom: 20px;
+   
+  input{
+     vertical-align: middle;
+    margin-right: 10px;
+    margin-top: -10px;
+  }
+  
+  span{
+    font-family:Arial;
+  
+    font-size: 20px;
+    line-height: 60px;
+    b{
+      font-size: 24px;
+      
+    }
+    
+    
+  }
+
+}
+
+div.proposal-bottom{
+background:transparent url(/images/proposal-bottom-frame.png) 0 0 no-repeat;  
+  height: 12px;
+  margin-bottom: 25px;
+  width: 617px;
+  
+  
+  
+}
+
+div.page-sidebar{
+    width: 265px;
+    
+    float:left;
+    margin-left: 22px;
+    margin-top: 2px;
+    
+    
+    dl.reasons{
+      padding: 15px;
+      
+      
+      background-color:#f2f2f2;
+      
+      dt{
+      font-size: 14px;
+      font-weight: bold;
+      padding-bottom: 10px;
+      
+      border-bottom: 1px solid #d6d6d6;
+      margin-bottom: 6px;
+      }
+      dd{
+        display:block;
+        clear:both;
+        margin-bottom: 10px;
+        
+          img{
+            float:left;
+            margin-left: -5px;
+            
+            margin-top:6px;
+            
+          }
+        
+          span{
+            float:left;
+            width: 170px;    
+            display: block;
+             margin-left: 15px;
+             line-height: 20px;
+          }
+          
+          hr{
+            color: transparent;
+            visibility:hidden;
+            clear:both;
+          }
+        }
+      }
+    
+    div.share{
+      background-color: #ddeef6;
+       padding: 12px;
+       padding-bottom: 5px;
+       
+       margin-bottom: 20px;
+       border: 1px solid #c2d1d9;
+       
+       
+       p{
+         text-align:center;
+         font-size:14px;
+         line-height:20px;
+       }
+       
+       div.share-buttons-left{
+         margin-top: 15px;
+         margin-left: 5px;
+         img{
+           display:block;
+           margin-bottom: 10px;
+      
+         }
+         
+       }
+    }
+}
+  
+
+div.footer-wr{
+  height: 110px;
+  background-color:#f2f2f2;
+  border-top: 1px solid #d8d8d8;
+  padding-top: 30px;
+  padding-left: 20px;
+  
+  
+}
+
+div.footer{
+    width: 960px;
+  margin: 0 auto;
+  
+  div.footer-nav{
+    float:left;
+    width: 660px;
+    
+    text-align: left;
+    a,
+  a:visited{
+    text-decoration:none;
+    color: black;
+    font-weight:bold;
+  }
+  
+    ul{
+      font-size:11px;
+      margin-bottom: 15px;
+      li{
+        display:inline;
+          span.li-sep{
+          margin: 0 1px;
+          padding-right: 2px;
+ 
+          }
+      }
+    }
+    p{
+      
+    font-size:11px;
+    margin-bottom: 15px;
+    }
+  }
+  
+  div.footer-signatures{
+    float:left;
+    margin-left: 30px;
+    
+    
+    img{
+      float:left;
+      margin-right: 15px;  
+    }
+    
+    span{
+      float:left;
+      display:block;
+      width: 150px;
+      line-height: 20px;
+      
+      
+      
+      b{
+        font-size: 20px;
+         letter-spacing: -1px;
+        font-family:Arial;
+        line-height: 30px;
+      }
+      
+      
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+

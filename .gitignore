@@ -10,3 +10,5 @@ config/development.sphinx.conf
 db/sphinx/
 public/system
 rerun.txt
+*.sublime-project
+.gitignore

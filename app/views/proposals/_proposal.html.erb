@@ -1,16 +1,54 @@
-<% div_for proposal do %>
-  <h1><%= link_to proposal.name, proposal_url(proposal) %></h1>
+<div class="proposal-wr">
+          <div class="proposal">
+          <h1> <%= link_to proposal.name, proposal_path(proposal) %></h1>
+          <hr />
+              <div class="proposal-issue">
+              
+                <img class="cross-ico" src="/images/cross-ico.png" alt=""/>
+                
+                <h4>¿Qué está ocurriendo?</h4>
   
-  <p class="problem">
-    <%= proposal.problem %>
-  </p>
-  
-  <p class="howtoSolve">
-    <%= proposal.howto_solve %>
-  </p>
-  
-  <div class="sign">
-    <%= button_to "Firmar" %>
-    <strong><%= proposal.signatures.size %></strong> Firmas recogidas
+                <div class="proposal-issue-content">
+                <%= proposal.problem %>
+                </div>
+                <div class="clear"></div> 
+              
+              </div>
+              <div class="proposal-solving">
+              
+              <img class="tick-ico" src="/images/tick-ico.png" alt=""/>
+               
+               <h4>¿Qué queremos conseguir?</h4>
+               
+               <div class="proposal-solving-content">
+                 <%= proposal.howto_solve %>
+               </div>
+               <div class="clear"></div>  
+              </div>  
+          
+          <div class="sign pngfix">
+              
+            <input type="image" src="/images/firmar-btn.png" alt="Firmar" /> <span><b><%= proposal.signatures.size %></b> firmas recogidas</span>
+
+             
+              </div>
+          
+          <div class="fb-like">
+               <p> <b>¿Estás a favor?</b></p>
+              <p>Muestra tu apoyo clicando en “Me gusta”</p>  
+          <br /> <br />
+              </div>
+
+          </div>
+          
   </div>
-<% end %>
+      <div class="proposal-bottom"></div>
+
+
+
+
+
+
+
+
+
