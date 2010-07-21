@@ -63,7 +63,7 @@ body {
   *text-align: center;
   *width: 100%;
 }
-body.about-us { background: white url(/images/header-bkg-long.png) 0 0 repeat-x; }
+body.about-us, body.como-funciona { background: white url(/images/header-bkg-long.png) 0 0 repeat-x; }
 div.main-wr {
   width: 960px;
   *text-align: left;
@@ -211,9 +211,69 @@ div.page h4 {
   clear: both;
   visibility: hidden;
 }
+.como-funciona div.page {
+  padding: 27px 20px 20px 22px;
+  margin-top: 4px;
+  margin-left: 5px;
+  width: 956px;
+}
+.como-funciona div.page h1 {
+  font-size: 26px;
+  font-family: Arial;
+  font-weight: bold;
+  line-height: 20px;
+  padding-left: 4px;
+  margin-bottom: 20px;
+  margin-left: -3px;
+}
+.como-funciona div.page h2 {
+  font-size: 18px;
+  font-family: Arial;
+  font-weight: bold;
+  line-height: 20px;
+  padding-left: 4px;
+  margin-bottom: 10px;
+  margin-left: -3px;
+}
+.como-funciona div.page div.grey-frame {
+  width: 613px;
+  height: 315px;
+  margin-bottom: 22px;
+  background-color: #ebebeb;
+}
+.como-funciona div.page p { line-height: 25px; }
+.como-funciona div.page ul { *padding-top: 20px; }
+.como-funciona div.page ul li {
+  clear: both;
+  margin-top: 20px;
+  *margin-top: 0px;
+  padding-left: 5px;
+}
+.como-funciona div.page ul li b {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+.como-funciona div.page ul li div.proposal-example-content { padding-top: 10px; }
+.como-funciona div.page ul li p { margin-top: 5px; }
+.como-funciona div.page ul li img {
+  float: left;
+  margin-right: 12px;
+  margin-bottom: 2px;
+}
+.como-funciona div.page ul li div {
+  float: left;
+  display: block;
+  width: 380px;
+}
+.como-funciona div.page ul li hr {
+  clear: both;
+  visibility: hidden;
+}
 .home div.page { background: transparent url(/images/page-frame-l.png) 0 0 no-repeat; }
 .proposal div.page { background: transparent url(/images/page-frame-m.png) 0 0 no-repeat; }
 .about-us div.page { background: transparent url(/images/page-frame-s.png) 0 0 no-repeat; }
+.como-funciona div.page { background: transparent url(/images/page-frame-s.png) 0 0 no-repeat; }
 div.page-content {
   width: 617px;
   float: left;
