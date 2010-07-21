@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+  before_filter :master_authentication
+
+  def master_authentication
+    authenticate_or_request_with_http_basic do |user_name, password|
+      user_name == "mifirma" && password == "secret"
+    end
+  end
+
 end
