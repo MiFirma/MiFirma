@@ -348,3 +348,214 @@ Rendered shared/_menu (0.2ms)
 Rendered shared/_menu (0.2ms)
 Rendered shared/_footer (0.3ms)
 Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 127.0.0.1 at 2010-09-17 18:55:40) [GET]
+  [4;35;1mProposal Load (0.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (49.3ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 57ms (View: 52, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 18:55:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-middle-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 18:55:40) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 18:55:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-bottom-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#index (for 127.0.0.1 at 2010-09-17 18:55:42) [GET]
+  [4;35;1mProposal Load (0.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (4.3ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 18:55:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 18:55:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-middle-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 18:55:42) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-bottom-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:22:59) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (1.5ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 127.0.0.1 at 2010-09-17 19:26:48) [GET]
+  [4;35;1mProposal Load (0.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (6.3ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (1.2ms)
+Completed in 19ms (View: 15, DB: 0) | 200 OK [http://localhost/proposals]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:26:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:27:01) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered main/_proposal_example (0.5ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:27:07) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (1.6ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:27:07) [GET]
+
+ActionController::RoutingError (No route matches "/images/avatar_tu.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:27:07) [GET]
+
+ActionController::RoutingError (No route matches "/images/avatar_tu.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:28:27) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:28:27) [GET]
+
+ActionController::RoutingError (No route matches "/images/avatar_tu.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:28:27) [GET]
+
+ActionController::RoutingError (No route matches "/images/avatar_tu.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:28:30) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:28:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/avatar_tu.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:28:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/avatar_tu.jpg" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:29:20) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
