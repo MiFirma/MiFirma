@@ -58,7 +58,7 @@ blockquote, q { quotes: "" ""; }
 body {
   background: white url(/images/header-bkg.png) 0 0 repeat-x;
   background-color: white;
-  font-family: Georgia, Georgia, serif;
+  font-family: arial;
   font-size: 12px;
   *text-align: center;
   *width: 100%;
@@ -121,6 +121,8 @@ div.header-bottom .rh h2 {
   line-height: 40px;
   display: inline;
   color: #333333;
+  font-family: Georgia, Georgia, serif;
+  font-style: italic;
 }
 div.header-bottom .rh ul {
   width: 712px;
@@ -310,6 +312,8 @@ div.proposal h1 {
   font-size: 25px;
   line-height: 32px;
   padding: 12px 0px;
+  font-family: Georgia, Georgia, serif;
+  font-style: italic;
   width: 470px;
   float: left;
 }
