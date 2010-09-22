@@ -255,12 +255,16 @@ div.page h4 {
   color: #333333;
   margin-bottom: 15px;
 }
-.como-funciona div.page ul { *padding-top: 20px; }
+.como-funciona div.page ul {
+  color: #333333;
+  font-size: 14px;
+  line-height: 30px;
+  margin-bottom: 15px;
+  list-style-type: square;
+}
 .como-funciona div.page ul li {
   clear: both;
-  margin-top: 20px;
-  *margin-top: 0px;
-  padding-left: 5px;
+  margin-left: 15px;
 }
 .como-funciona div.page ul li b {
   font-size: 16px;
