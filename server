@@ -559,3 +559,329 @@ Rendered shared/_menu (0.2ms)
 Rendered shared/_menu (0.2ms)
 Rendered shared/_footer (0.3ms)
 Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:29:53) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 127.0.0.1 at 2010-09-17 19:29:56) [GET]
+  [4;35;1mProposal Load (0.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (4.2ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/proposals]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:29:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:29:58) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered main/_proposal_example (0.1ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.3ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:29:59) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:30:00) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered main/_proposal_example (0.1ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:35:46) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered main/_proposal_example (0.4ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered main/_proposal_example (0.1ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:35:48) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:35:50) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered main/_proposal_example (0.1ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:35:52) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered main/_proposal_example (0.1ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing ProposalsController#index (for 127.0.0.1 at 2010-09-17 19:35:52) [GET]
+  [4;35;1mProposal Load (0.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (4.3ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/proposals]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:35:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#index (for 127.0.0.1 at 2010-09-17 19:36:37) [GET]
+  [4;35;1mProposal Load (0.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (4.3ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:36:38) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:45:49) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered main/_proposal_example (0.1ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered main/_proposal_example (0.0ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 17ms (View: 16, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:46:05) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:46:48) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:46:53) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing ProposalsController#index (for 127.0.0.1 at 2010-09-17 19:46:57) [GET]
+  [4;35;1mProposal Load (0.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (6.9ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 20ms (View: 16, DB: 0) | 200 OK [http://localhost/proposals]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:46:57) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing MainController#como_funciona (for 127.0.0.1 at 2010-09-17 19:47:04) [GET]
+Rendering template within layouts/application
+Rendering main/como_funciona
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/como_funciona]
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:47:05) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (0.1ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:47:50) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (1.9ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing MainController#about_us (for 127.0.0.1 at 2010-09-17 19:47:59) [GET]
+Rendering template within layouts/application
+Rendering main/about_us
+Rendered main/_member (1.5ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/sobre_nosotros]
+
+
+Processing ProposalsController#index (for 127.0.0.1 at 2010-09-17 19:49:00) [GET]
+  [4;35;1mProposal Load (0.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (4.9ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.3ms)
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/proposals]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:49:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#show (for 127.0.0.1 at 2010-09-17 19:49:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProposal Load (0.1ms)[0m   [0mSELECT * FROM "proposals" WHERE ("proposals"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering proposals/show
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered shared/_share (0.7ms)
+Rendered shared/_how_it_works (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 71ms (View: 67, DB: 0) | 200 OK [http://localhost/proposals/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-17 19:49:04) [GET]
+
+ActionController::RoutingError (No route matches "/images/proposal-top-frame.png" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ProposalsController#index (for 127.0.0.1 at 2010-09-17 19:49:12) [GET]
+  [4;35;1mProposal Load (0.3ms)[0m   [0mSELECT * FROM "proposals" [0m
+Rendering template within layouts/application
+Rendering proposals/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "signatures" WHERE ("signatures".proposal_id = 1) [0m
+Rendered proposals/_proposal (4.6ms)
+Rendered shared/_reasons (0.1ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_menu (0.2ms)
+Rendered shared/_footer (0.4ms)
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/proposals]
+^CExiting
+bash-3.2$ sudo script/server -p 80
