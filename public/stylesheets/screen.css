@@ -192,20 +192,20 @@ div.page h4 {
 }
 .about-us div.page ul li a {
   margin-right: 85px;
-  float: right;
   color: #507bab;
   text-decoration: none;
   line-height: 14px;
   margin-top: 2px;
+  margin-left: 12px;
   *margin-top: -12px;
 }
 .about-us div.page ul li a:visited {
   margin-right: 85px;
-  float: right;
   color: #507bab;
   text-decoration: none;
   line-height: 14px;
   margin-top: 2px;
+  margin-left: 12px;
   *margin-top: -12px;
 }
 .about-us div.page ul li p { margin-top: 5px; }
