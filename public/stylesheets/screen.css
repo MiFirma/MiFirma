@@ -249,7 +249,12 @@ div.page h4 {
   margin-bottom: 22px;
   background-color: #ebebeb;
 }
-.como-funciona div.page p { line-height: 25px; }
+.como-funciona div.page p {
+  line-height: 30px;
+  font-size: 14px;
+  color: #333333;
+  margin-bottom: 15px;
+}
 .como-funciona div.page ul { *padding-top: 20px; }
 .como-funciona div.page ul li {
   clear: both;
