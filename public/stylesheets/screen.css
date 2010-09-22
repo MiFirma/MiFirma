@@ -69,6 +69,7 @@ div.main-wr {
   *text-align: left;
   margin: 0 auto;
 }
+div.tractis { margin-top: 20px; }
 div.header-top a.logo {
   line-height: 50px;
   text-decoration: none;
@@ -270,6 +271,7 @@ div.page h4 {
   clear: both;
   margin-left: 15px;
 }
+.como-funciona div.page ul li a { color: #36679f; }
 .como-funciona div.page ul li b {
   font-size: 16px;
   font-weight: bold;
