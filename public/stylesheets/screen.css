@@ -149,12 +149,13 @@ div.page {
   width: 956px;
 }
 div.page h4 {
-  font-size: 18px;
+  font-size: 26px;
   font-family: Arial;
+  font-weight: normal;
   line-height: 20px;
   padding-left: 4px;
-  margin-bottom: 11px;
-  color: #333333;
+  margin-bottom: 20px;
+  margin-left: -3px;
 }
 .about-us div.page {
   padding: 27px 20px 20px 22px;
@@ -165,7 +166,7 @@ div.page h4 {
 .about-us div.page h1 {
   font-size: 26px;
   font-family: Arial;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 20px;
   padding-left: 4px;
   margin-bottom: 16px;
@@ -225,7 +226,7 @@ div.page h4 {
 .como-funciona div.page h1 {
   font-size: 26px;
   font-family: Arial;
-  font-weight: bold;
+  font-weight: normal;
   line-height: 20px;
   padding-left: 4px;
   margin-bottom: 20px;
