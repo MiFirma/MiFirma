@@ -30,13 +30,11 @@ body.como-funciona{
   background:white url(/images/header-bkg-long.png) 0 0 repeat-x;
 }
 
-
 .rounded_corners (@radius: 5px) {
   -moz-border-radius: @radius;
   -webkit-border-radius: @radius;
   border-radius: @radius;
 }
-
 
 div.main-wr{
   .x_horizontal_center_inner(960px);
@@ -69,12 +67,17 @@ div.header-top{
         margin: 0 14px;
 
       }
-      a,
-      a:visited{
+      a, a:visited{
         line-height: 50px;
         text-decoration:none;
         color:white;
+        
+        :hover {
+          text-decoration:underline;
+        }
+        
       }
+      
     }
   }
 
@@ -345,6 +348,7 @@ div.page{
 
 .proposal div.page{
   background:transparent url(/images/page-frame-m.png) 0 0 no-repeat;
+  
 }
 
 .about-us div.page{
@@ -400,10 +404,14 @@ div.proposal{
     float:left;
 
 
-    a,
-    a:visited{
+    a, a:visited{
       color: @proposal-link-color;
       text-decoration:none;
+      
+      :hover {
+        text-decoration:underline;
+      }
+      
     }
   }
 
