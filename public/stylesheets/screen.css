@@ -179,6 +179,14 @@ div.page h4 {
   font-size: 14px;
   margin-bottom: 15px;
 }
+.about-us div.page .quote {
+  font-weight: bold;
+  color: #444444;
+}
+.about-us div.page .quote em {
+  font-style: italic;
+  display: block;
+}
 .about-us div.page ul { margin-top: 20px; }
 .about-us div.page ul li {
   clear: both;
@@ -188,7 +196,6 @@ div.page h4 {
 .about-us div.page ul li b {
   font-size: 16px;
   font-weight: bold;
-  letter-spacing: -1px;
 }
 .about-us div.page ul li a {
   margin-right: 85px;
@@ -273,7 +280,6 @@ div.page h4 {
 .como-funciona div.page ul li b {
   font-size: 16px;
   font-weight: bold;
-  letter-spacing: -1px;
 }
 .como-funciona div.page ul li div.proposal-example-content { padding-top: 10px; }
 .como-funciona div.page ul li p { margin-top: 5px; }
@@ -648,7 +654,6 @@ div.footer div.footer-signatures span {
 }
 div.footer div.footer-signatures span b {
   font-size: 20px;
-  letter-spacing: -1px;
   font-family: Arial;
   line-height: 30px;
 }
