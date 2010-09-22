@@ -208,12 +208,12 @@ div.page{
       a,
       a:visited{
         margin-right: 85px;
+        float:right;
         color: @proposal-link-color;
         text-decoration:none;
         line-height: 14px;
 
         margin-top: 2px;
-        margin-left: 12px;
         *margin-top: -12px;
 
 
@@ -694,10 +694,10 @@ div.page-sidebar{
     background-color: #ddeef6;
     padding: 12px;
     padding-bottom: 5px;
-
     margin-bottom: 20px;
     border: 1px solid #c2d1d9;
-
+    .rounded_corners;
+    overflow:hidden;
 
     p{
       text-align:center;
@@ -708,7 +708,8 @@ div.page-sidebar{
     div.share-buttons-left{
       margin-top: 15px;
       margin-left: 5px;
-      
+      width:118px;
+      float:left;
       
       img{
         display:block;
@@ -717,7 +718,13 @@ div.page-sidebar{
       }
 
     }
-  
+    
+    .fb_like {
+      float:right;
+      margin-top:17px;
+      margin-right:25px;
+    }
+    
   }
 
 }
