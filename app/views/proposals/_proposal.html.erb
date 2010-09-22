@@ -28,7 +28,7 @@
 
     <div class="sign pngfix">
 
-      <input type="image" src="/images/firmar-btn.png" alt="Firmar" /> <span><b><%= proposal.signatures.size %></b> firmas recogidas</span>
+      <input type="image" src="/images/firmar-btn.png" alt="Firmar" onmouseover="this.src='/images/firmar-btn_over.png'" onmouseout="this.src='/images/firmar-btn.png'" onClick="javascript:this.src='/images/firmar-btn_press.png'"/> <span><b><%= proposal.signatures.size %></b> firmas recogidas</span>
 
 
     </div>

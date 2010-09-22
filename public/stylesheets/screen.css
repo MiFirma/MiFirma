@@ -99,11 +99,13 @@ div.header-top ul li a {
   text-decoration: none;
   color: white;
 }
+div.header-top ul li a:hover { text-decoration: underline; }
 div.header-top ul li a:visited {
   line-height: 50px;
   text-decoration: none;
   color: white;
 }
+div.header-top ul li a:visited:hover { text-decoration: underline; }
 div.header-bottom { height: 195px; }
 div.header-bottom .lh {
   padding-top: 33px;
@@ -322,10 +324,12 @@ div.proposal h1 a {
   color: #507bab;
   text-decoration: none;
 }
+div.proposal h1 a:hover { text-decoration: underline; }
 div.proposal h1 a:visited {
   color: #507bab;
   text-decoration: none;
 }
+div.proposal h1 a:visited:hover { text-decoration: underline; }
 div.proposal .shadow {
   width: 220px;
   height: 10px;
