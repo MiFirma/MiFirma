@@ -2,67 +2,7 @@
 
 <div class="page">
   <div class="page-content">
-    <div class="proposal-wr">
-      <div class="proposal">
-        <h1> <%= link_to @proposal.name, proposal_path(@proposal) %></h1>
-        <a href="/pdf" class="pdf-link"> <img src="/images/pdf-ico.png" alt=""> Descargar </a>
-        <hr />
-        <div class="proposal-issue">
-
-          <img class="cross-ico" src="/images/cross-ico.png" alt=""/>
-
-          <h4>¿Qué está ocurriendo?</h4>
-
-          <div class="proposal-issue-content">
-            <%= @proposal.problem %>
-          </div>
-          <div class="clear"></div> 
-
-        </div>
-        <div class="proposal-solving">
-
-          <img class="tick-ico" src="/images/tick-ico.png" alt=""/>
-
-          <h4>¿Qué queremos conseguir?</h4>
-
-          <div class="proposal-solving-content">
-            <%= @proposal.howto_solve %>
-          </div>
-          <div class="clear"></div>  
-        </div>  
-
-
-        <div class="proposal-reaching">
-
-          <img class="pen-ico" src="/images/pen-ico.png" alt=""/>
-
-          <h4>¿Cómo puedes conseguirlo?</h4>
-
-          <div class="proposal-reaching-content">
-            Con tu firma
-          </div>
-          <div class="clear"></div>  
-        </div>  
-
-        <div class="sign">
-
-           <input type="image" src="/images/firmar-btn.png" alt="Firmar" onmouseover="this.src='/images/firmar-btn_over.png'" onmouseout="this.src='/images/firmar-btn.png'" onClick="javascript:this.src='/images/firmar-btn_press.png'"/> <span><b><%= @proposal.signatures.size %></b> firmas recogidas</span>
-
-
-        </div>
-
-        <div class="fb-like">
-          <p> <b>¿Estás a favor?</b></p>
-          <p>Muestra tu apoyo clicando en “Me gusta”</p>  
-            <iframe src="http://www.facebook.com/plugins/like.php?href=www.mifrima.com&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px; margin-top:15px;" allowTransparency="true"></iframe>
-          </div>
-
-          <span class="shadow"></span>
-
-      </div>
-
-    </div>
-
+    <%= render @proposal %>
   </div>
 
   <div class="page-sidebar">
