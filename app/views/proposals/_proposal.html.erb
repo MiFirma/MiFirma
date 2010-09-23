@@ -1,6 +1,7 @@
 <div class="proposal-wr">
   <div class="proposal">
     <h1> <%= link_to proposal.name, proposal_path(proposal) %></h1>
+    <a href="/pdf" class="pdf-link"> <img src="/images/pdf-ico.png" alt=""> Descargar </a>
     <hr />
     <div class="proposal-issue">
 
@@ -28,8 +29,10 @@
 
     <div class="sign pngfix">
 
-      <input type="image" src="/images/firmar-btn.png" alt="Firmar" onmouseover="this.src='/images/firmar-btn_over.png'" onmouseout="this.src='/images/firmar-btn.png'" onClick="javascript:this.src='/images/firmar-btn_press.png'"/> <span><b><%= proposal.signatures.size %></b> firmas recogidas</span>
-
+      <span class="sign_form">
+        <%= proposal.tractis_signature_html %>
+      </span>
+      <span><b><%= proposal.signatures.size %></b> firmas recogidas</span>
 
     </div>
 
