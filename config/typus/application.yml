@@ -5,7 +5,7 @@
 Proposal:
   fields:
     list: name, position
-    form: name, problem, howto_solve, tractis_signature_html
+    form: name, problem, howto_solve
   order_by: position
   relationships: 
   filters: 
