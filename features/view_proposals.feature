@@ -31,3 +31,7 @@ Feature: View proposals
 	  And I should see "Mejorar hipotecas"
     And I should not see "Acabar la crisis"
 
+  Scenario: Like MiFirma
+  Scenario: Like one proposal
+  Scenario: Download proposal pdf
+  
