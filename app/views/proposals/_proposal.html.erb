@@ -29,9 +29,10 @@
 
     <div class="sign pngfix">
 
-      <span class="sign_form">
-        <%= proposal.tractis_signature_html %>
-      </span>
+      <input type="image" src="/images/firmar-btn.png" alt="Firmar"
+             onmouseover="this.src='/images/firmar-btn_over.png'" 
+             onmouseout="this.src='/images/firmar-btn.png'" onClick="javascript:this.src='/images/firmar-btn_press.png'"/>
+
       <span><b><%= proposal.signatures.size %></b> firmas recogidas</span>
 
     </div>
