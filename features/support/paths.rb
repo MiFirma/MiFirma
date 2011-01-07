@@ -10,6 +10,10 @@ module NavigationHelpers
 
     when /the home\s?page/
       '/'
+    when /how works page/
+      '/como_funciona'
+    when /about us/
+      '/sobre_nosotros'
 
     when /^"(.*)" proposal page$/i
       proposal_path(Proposal.find_by_name($1))
