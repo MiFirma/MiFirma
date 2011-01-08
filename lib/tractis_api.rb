@@ -20,19 +20,19 @@ class TractisApi
  	 # response.headers["Location"]
   end
   
-  def self.contract(contract_id="604622863")
+  def self.contract(contract_code="604622863")
     sess = Patron::Session.new
     sess.base_url = "https://sergio.espeja%40gmail.com:testmifirma@www.tractis.com"
     sess.headers['Accept'] = 'application/xml'
-  	response = sess.get("/contracts/#{contract_id}")
+  	response = sess.get("/contracts/#{contract_code}")
     # (Hpricot(response.body)/"signed").text
   end
   
-  def self.get_signatures(contract_id="604622863")
+  def self.get_signatures(contract_code="604622863")
     sess = Patron::Session.new
     sess.base_url = "https://sergio.espeja%40gmail.com:testmifirma@www.tractis.com"
 #    sess.headers['Accept'] = 'application/xml'
-  	response = sess.get("/contracts/#{contract_id}/get_signatures")    
+  	response = sess.get("/contracts/#{contract_code}/get_signatures")    
   end
   
 end
