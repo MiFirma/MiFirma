@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100517061028) do
+ActiveRecord::Schema.define(:version => 20110108203804) do
 
   create_table "proposals", :force => true do |t|
     t.string   "name"
@@ -24,6 +24,11 @@ ActiveRecord::Schema.define(:version => 20100517061028) do
     t.integer  "proposal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.integer  "state"
+    t.string   "token"
+    t.string   "tractis_contract_location"
+    t.string   "tractis_contract_code"
   end
 
   create_table "typus_users", :force => true do |t|
