@@ -8,7 +8,20 @@
   </div>
 
   <div class="page-sidebar">
-    <%= render :partial => 'shared/reasons' %>
+    <%#= render :partial => 'shared/reasons' %>
+    <div class="signature_box home">
+      <h4><strong>12.300</strong> firmas</h4>
+      <div class="form">
+        <label for="email">Introduce tu <strong>email</strong> para firmar</label>
+        <input type="text" name="email" value="tu email" id="email">
+        <div class="tos">
+          <input type="checkbox" name="agree" value="yes" />
+          Acepto los <a href="#">términos y condiciones</a>
+        </div>
+        <a href="#" class="btn_sign">Firma electónica</a>
+        <p>Si no dispones de <strong>DNI electrónico</strong> puedes mostrar tu apoyo con una <a href="#">firma tradicional</a></p>
+      </div>
+    </div>
   </div>
 
   <div class="clear">&nbsp;</div>
