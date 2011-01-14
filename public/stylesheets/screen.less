@@ -460,6 +460,7 @@ div.proposal{
   }
 
   a.pdf-link,
+ 
   a.pdf-link:visited{
     margin-top: 20px;
     margin-left: 7px;
@@ -476,21 +477,64 @@ div.proposal{
 
 
   }
-  div.fb-like{
-
-
+  
+  div.fb-like {
+    background:#F4F9F3;
     border-top: 1px dotted #bdbdbd;
-    margin-top: 15;
+    margin-top: 15px;
     padding-left: 5px;
     padding-top: 10px;
-
-    p{
-      margin-top: 10px;
-      font-family: Arial;
-      font-size: 12px;
-
+    padding:20px;
+    margin-bottom:20px;
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    
+    
+    h3 {
+      font-size:16px;
+      margin-bottom:8px;
+      color:#333;
+      font-weight:bold;
     }
+    
+    h5 {
+      font-size:12px;
+      color:#333 + #111;
+    }
+    
+    h6 {
+      font-size:13px;
+      margin-bottom:8px;
+      color:#333 + #111;
+      font-weight:bold;
+    }
+    
+    .share {
+      overflow:hidden;
+      margin-bottom:15px;
+      
+      li {
+        float:left;
+      }
+    }
+    
+    input[type=text] {
+      background:fff;
+      border:1px solid #E8E8E8;
+      border-top:2px solid #E8E8E8;
+      padding:8px;
+      width:330px;
+      font-size:14px;
+      color:#666666;
+      margin-bottom:5px;
+    }
+    
   }
+  
 }
 
 div.proposal-issue{
@@ -765,7 +809,7 @@ div.page-sidebar{
     }
     
     .form {
-      margin-bottom:10px;
+      margin-bottom:5px;
       
       label {
         display:block;
@@ -805,8 +849,8 @@ div.page-sidebar{
         width:171px;
         height:33px;
         text-indent:-9999px;
-        margin-top:5px;
-        margin-bottom:5px;
+        margin-top:10px;
+        margin-bottom:15px;
       }
 
       p {

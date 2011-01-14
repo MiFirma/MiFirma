@@ -27,7 +27,7 @@
       <div class="clear"></div>  
     </div>  
 
-    <div class="sign pngfix">
+    <!-- <div class="sign pngfix">
 
       <% form_tag signatures_path do %>
       <%= text_field_tag :email %>
@@ -37,14 +37,27 @@
 
       <span><b><%= proposal.signatures.size %></b> firmas recogidas</span>
       <% end -%>
-    </div>
+    </div> -->
 
     <div class="fb-like">
-      <p> <b>¿Estás a favor?</b></p>
-      <p>Muestra tu apoyo clicando en “Me gusta”</p>  
-      <iframe src="http://www.facebook.com/plugins/like.php?href=www.mifrima.com&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px; margin-top:15px;" allowTransparency="true"></iframe>
+      <h3>¿Estás a favor?</h3>
+      <h5>Muestra tu apoyo clicando en “Me gusta”</h5>  
+      <iframe src="http://www.facebook.com/plugins/like.php?href=http://www.herzio.com&amp;layout=standard&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px; margin-top:15px;" allowTransparency="true"></iframe>
+      
+      <h6>Comparte esta propuesta</h6>
+      
+      <ul class="share">
+        <li><a href="#"><img src="/images/share/ico_fb.png" width="86" height="21" alt="Ico Fb"></a></li>
+        <li><a href="#"><img src="/images/share/ico_meneame.png" width="86" height="21" alt="Ico Fb"></a></li>
+        <li><a href="#"><img src="/images/share/ico_twitter.png" width="86" height="21" alt="Ico Fb"></a></li>
+      </ul>
+      
+      <h6>Url de la propuesta</h6>
+      
+      <input type="text" name="email" value="http://localhost:3000/proposals/1" id="email">
+      
     </div>
-
+    
     <span class="shadow"></span>
     
   </div>
