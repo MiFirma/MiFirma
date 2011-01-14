@@ -1,23 +1,25 @@
 class TractisApi
   
-  def self.signature_request
+  def self.signature_request(signature)
     sess = Patron::Session.new
     sess.base_url = "https://sergio.espeja%40gmail.com:testmifirma@www.tractis.com"
-    data = '<contract>
- 	   <name>Apoyo a campaña Z</name>
- 	   <redirect-when-signed>http://www.mifirma.es/confirm_signature/XCJXW223KESJKDFSD23SWJSDFSDFSDFSDFSDF</redirect-when-signed>
+    data = "<contract>
+ 	   <name>#{signature.proposal.name}</name>
+ 	   <redirect-when-signed>#{signature.return_url}</redirect-when-signed>
  	   <template>249186096</template>
  	   <team>
  	     <member>
- 	       <email>signers@mifirma.com</email>
+ 	       <email>#{signature.email}</email>
  	       <sign>true</sign>
  	       <invited>false</invited>
-                <invitation_notify>false</invitation_notify>
+         <invitation_notify>false</invitation_notify>
  	     </member>
  	   </team>
- 	 </contract>'
+ 	 </contract>"
  	 response = sess.post("/contracts/gateway", data, {"Content-Type" => "application/xml", "Accept" => "application/xml"})
- 	 # response.headers["Location"]
+
+   #TODO: Catch errors
+ 	 {:location => response.headers["Location"]}
   end
   
   def self.contract(contract_code="604622863")
