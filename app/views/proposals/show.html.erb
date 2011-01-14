@@ -7,10 +7,22 @@
 
   <div class="page-sidebar">
 
-  <%= render :partial => 'shared/share' %>
-  <%= render :partial => 'shared/how_it_works' %>
-
-
+  <%#= render :partial => 'shared/share' %>
+  <%#= render :partial => 'shared/how_it_works' %>
+  
+  <div class="signature_box">
+    <h4><strong>12.300</strong> firmas</h4>
+    <div class="form">
+      <label for="email"><strong>Paso 1</strong> · Introduce tu email para firmar</label>
+      <input type="text" name="email" value="tu email" id="email">
+      <div class="tos">
+        <input type="checkbox" name="agree" value="yes" />
+        Acepto los <a href="#">términos y condiciones</a>
+      </div>
+      <a href="#" class="btn_sign">Firma electónica</a>
+      <p>Si no dispones de <strong>DNI electrónico</strong> puedes mostrar tu apoyo con una <a href="#">firma tradicional</a></p>
+    </div>
+  </div>
 
 </div>
 

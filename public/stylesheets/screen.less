@@ -189,10 +189,13 @@ div.page{
   .quote {
     font-weight:bold;
     color:@light_grey + #111;
-    
+    font-family:georgia;
+    font-size:16px;
+    font-style:italic;
     em {
       font-style:italic;
       display:block;
+      font-weight:normal;
     }
     
   }
@@ -228,6 +231,9 @@ div.page{
 
       p{
         margin-top: 5px;
+        width:450px;
+        font-size:12px;
+        line-height:180%;
 
       }
       img{
@@ -653,10 +659,8 @@ div.proposal-bottom{
 
 div.page-sidebar{
   width: 265px;
-
   float:left;
-  margin-left: 22px;
-  margin-top: 2px;
+  margin-top: 9px;
 
 
   dl.reasons{
@@ -735,6 +739,89 @@ div.page-sidebar{
       margin-top:17px;
       margin-right:25px;
     }
+    
+  }
+
+  .signature_box {
+    background:#ECF3F9;
+    padding:20px;
+    width:290px - 40px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+    h4 {
+      border-bottom:2px solid #CFE2F1;
+      padding-bottom:5px;
+      color:#333;
+      
+      strong {
+        font-weight:bold;
+      }
+      
+    }
+    
+    .form {
+      margin-bottom:10px;
+      
+      label {
+        display:block;
+        margin-bottom:4px;
+        color:#333;
+        
+        strong {
+          font-weight:bold;
+        }
+        
+      }
+      
+      input[type=text] {
+        background:fff;
+        border:1px solid #E8E8E8;
+        border-top:2px solid #E8E8E8;
+        padding:8px;
+        width:230px;
+        font-size:14px;
+        color:#666666;
+        margin-bottom:5px;
+      }
+      
+      .tos {
+        color:#666;
+        font-size:11px;
+        
+        a {
+          color:#35669F;
+        }
+        
+      }
+      
+      .btn_sign {
+        background:url(../images/btn_firmar.png) 0 0 no-repeat;
+        display:block;
+        width:171px;
+        height:33px;
+        text-indent:-9999px;
+        margin-top:5px;
+        margin-bottom:5px;
+      }
+
+      p {
+        line-height:140%;
+        color:#666;
+
+        a {
+          color:#35669F;
+        }
+
+      }
+      
+    }
+    
+
     
   }
 
