@@ -4,8 +4,8 @@
 
 Proposal:
   fields:
-    list: name, position
-    form: name, problem, howto_solve
+    list: name, tractis_contract_code, position
+    form: name, problem, howto_solve, tractis_contract_code
   order_by: position
   relationships: 
   filters: 
@@ -14,11 +14,13 @@ Proposal:
 
 Signature:
   fields:
-    list: proposal_id, created_at
+    list: proposal, email, state, created_at
     form: proposal_id
   order_by: 
   relationships: 
   filters: 
-  search: 
+  search:
+  options:
+    default_action: show
   application: mifirma
 
