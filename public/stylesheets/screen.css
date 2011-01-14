@@ -587,6 +587,7 @@ div.page-sidebar {
   width: 265px;
   float: left;
   margin-top: 9px;
+  position: relative;
 }
 div.page-sidebar dl.reasons {
   padding: 15px;
@@ -656,6 +657,9 @@ div.page-sidebar div.share .fb_like {
   margin-right: 25px;
 }
 div.page-sidebar .signature_box {
+  top: 278px;
+  margin-left: 2px;
+  position: fixed;
   background: #ecf3f9;
   padding: 20px;
   width: 250px;
@@ -708,6 +712,10 @@ div.page-sidebar .signature_box .form p {
   color: #666666;
 }
 div.page-sidebar .signature_box .form p a { color: #35669f; }
+div.page-sidebar .home {
+  position: static !important;
+  margin-top: 40px;
+}
 div.footer-wr {
   height: 110px;
   background-color: #f2f2f2;
