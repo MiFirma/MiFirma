@@ -390,15 +390,50 @@ div.proposal a.pdf-link:visited {
 }
 div.proposal a.pdf-link:visited img { vertical-align: middle; }
 div.proposal div.fb-like {
+  background: #f4f9f3;
   border-top: 1px dotted #bdbdbd;
-  margin-top: 15;
+  margin-top: 15px;
   padding-left: 5px;
   padding-top: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-div.proposal div.fb-like p {
-  margin-top: 10px;
-  font-family: Arial;
+div.proposal div.fb-like h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #333333;
+  font-weight: bold;
+}
+div.proposal div.fb-like h5 {
   font-size: 12px;
+  color: #444444;
+}
+div.proposal div.fb-like h6 {
+  font-size: 13px;
+  margin-bottom: 8px;
+  color: #444444;
+  font-weight: bold;
+}
+div.proposal div.fb-like .share {
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+div.proposal div.fb-like .share li { float: left; }
+div.proposal div.fb-like input[type=text] {
+  background: fff;
+  border: 1px solid #e8e8e8;
+  border-top: 2px solid #e8e8e8;
+  padding: 8px;
+  width: 330px;
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 5px;
 }
 div.proposal-issue {
   margin-top: 15px;
@@ -637,7 +672,7 @@ div.page-sidebar .signature_box h4 {
   color: #333333;
 }
 div.page-sidebar .signature_box h4 strong { font-weight: bold; }
-div.page-sidebar .signature_box .form { margin-bottom: 10px; }
+div.page-sidebar .signature_box .form { margin-bottom: 5px; }
 div.page-sidebar .signature_box .form label {
   display: block;
   margin-bottom: 4px;
@@ -665,8 +700,8 @@ div.page-sidebar .signature_box .form .btn_sign {
   width: 171px;
   height: 33px;
   text-indent: -9999px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 div.page-sidebar .signature_box .form p {
   line-height: 140%;
