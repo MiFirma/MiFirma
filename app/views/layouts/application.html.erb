@@ -40,7 +40,9 @@
     </div>
   </div>
   
-  
+  <% javascript_tag do %>
+    alert('<%= flash[:error]  %>');
+  <% end if flash[:error] %>
   <%= render :partial => "/shared/footer" %>
   
   <!--[if lt IE 7]> 
