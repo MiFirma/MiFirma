@@ -25,18 +25,24 @@ class TractisApi
   end
   
   def self.contract(contract_code="604622863")
-    sess = Patron::Session.new
-    sess.base_url = "https://sergio.espeja%40gmail.com:testmifirma@www.tractis.com"
-    sess.headers['Accept'] = 'application/xml'
-  	response = sess.get("/contracts/#{contract_code}")
-    # (Hpricot(response.body)/"signed").text
+    client = HTTPClient.new
+    target_url = "https://www.tractis.com/contracts/#{contract_code}"
+    client.set_auth(target_url, "sergio.espeja@gmail.com", "testmifirma")
+
+  	response = client.get target_url, nil, "Accept" => "application/xml"
+    response.content
+  end
+  
+  def self.contract_signed?(contract_code)
+    (Hpricot(TractisApi.contract)/"signed").text == "true"
   end
   
   def self.get_signatures(contract_code="604622863")
-    sess = Patron::Session.new
-    sess.base_url = "https://sergio.espeja%40gmail.com:testmifirma@www.tractis.com"
-#    sess.headers['Accept'] = 'application/xml'
-  	response = sess.get("/contracts/#{contract_code}/get_signatures")    
+    client = HTTPClient.new
+    target_url = "https://www.tractis.com/contracts/#{contract_code}/get_signatures"
+    client.set_auth(target_url, "sergio.espeja@gmail.com", "testmifirma")
+
+    response = client.get target_url
   end
   
 end
