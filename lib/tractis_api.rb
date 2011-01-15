@@ -1,8 +1,11 @@
+require 'httpclient'
+
 class TractisApi
   
   def self.signature_request(signature)
-    sess = Patron::Session.new
-    sess.base_url = "https://sergio.espeja%40gmail.com:testmifirma@www.tractis.com"
+    client = HTTPClient.new
+    target_url = "https://www.tractis.com/contracts/gateway"
+    client.set_auth(target_url, "sergio.espeja@gmail.com", "testmifirma")
     data = "<contract>
  	   <name>#{signature.proposal.name}</name>
  	   <redirect-when-signed>#{signature.return_url}</redirect-when-signed>
@@ -16,10 +19,9 @@ class TractisApi
  	     </member>
  	   </team>
  	 </contract>"
- 	 response = sess.post("/contracts/gateway", data, {"Content-Type" => "application/xml", "Accept" => "application/xml"})
+ 	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
 
-   #TODO: Catch errors
- 	 {:location => response.headers["Location"]}
+ 	 {:location => response.header["Location"].first}
   end
   
   def self.contract(contract_code="604622863")
