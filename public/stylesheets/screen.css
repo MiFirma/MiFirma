@@ -69,7 +69,6 @@ div.main-wr {
   *text-align: left;
   margin: 0 auto;
 }
-div.tractis { margin-top: 20px; }
 div.header-top a.logo {
   line-height: 50px;
   text-decoration: none;
@@ -709,6 +708,20 @@ div.page-sidebar .signature_box .form p {
   color: #666666;
 }
 div.page-sidebar .signature_box .form p a { color: #35669f; }
+div.page-sidebar .signature_box .form .sign_error {
+  background: none repeat scroll 0 0 #fff9d7;
+  border: 1px solid #e2c822;
+  color: #5c5c5c;
+  float: left;
+  line-height: 160%;
+  margin-bottom: 15px;
+  padding: 15px 20px;
+}
+div.page-sidebar .signature_box .form .sign_error strong {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
 div.page-sidebar .home {
   position: static !important;
   margin-top: 40px;
@@ -723,6 +736,7 @@ div.footer-wr {
 div.footer {
   width: 960px;
   margin: 0 auto;
+  overflow: hidden;
 }
 div.footer div.footer-nav {
   float: left;
@@ -770,4 +784,8 @@ div.footer div.footer-signatures span b {
   font-size: 20px;
   font-family: Arial;
   line-height: 30px;
+}
+div.footer .tractis {
+  float: right;
+  margin-right: 20px;
 }
