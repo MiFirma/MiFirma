@@ -1,9 +1,12 @@
 <h4><strong><%= proposal.signatures.size %></strong> firmas</h4>
 <div class="form">
+
+  <% if flash[:error] %>
   <div class="sign_error">
     <strong>Error al crear la firma.</strong>
     Email no válido. Por favor, comprueba que has introducido correctamente tu dirección de correo electrónico.
   </div>
+  <% end %>
   <% form_for proposal.signatures.new do |f| %>
   <label for="email">Introduce tu <strong>email</strong> para firmar</label>
   <% default_email_input_value = "tu email" %>
