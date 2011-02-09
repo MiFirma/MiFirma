@@ -9,7 +9,7 @@ class TractisApi
     data = "<contract>
  	   <name>#{signature.proposal.name}</name>
  	   <redirect-when-signed>#{signature.return_url}</redirect-when-signed>
- 	   <template>249186096</template>
+ 	   <template>#{signature.tractis_template_code}</template>
  	   <team>
  	     <member>
  	       <email>#{signature.email}</email>
