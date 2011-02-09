@@ -4,8 +4,8 @@
 
 Proposal:
   fields:
-    list: name, tractis_contract_code, position
-    form: name, problem, howto_solve, tractis_contract_code
+    list: name, tractis_template_code, position
+    form: name, problem, howto_solve, tractis_template_code
   order_by: position
   relationships: 
   filters: 
