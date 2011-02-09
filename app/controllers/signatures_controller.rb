@@ -19,6 +19,7 @@ class SignaturesController < ApplicationController
   def show
     @signature = Signature.find_by_token params[:id]
     @proposal = @signature.proposal
+    @signature.check_tractis_signature!
   end
   
 end

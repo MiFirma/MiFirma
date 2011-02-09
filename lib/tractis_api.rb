@@ -1,4 +1,5 @@
 require 'httpclient'
+require 'hpricot'
 
 class TractisApi
   
