@@ -5,7 +5,7 @@ class Signature < ActiveRecord::Base
   validates_presence_of :email
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
   
-  delegate :tractis_contract_code, :to => :proposal
+  delegate :tractis_template_code, :to => :proposal
   
   before_validation :generate_token, :set_default_state
 
