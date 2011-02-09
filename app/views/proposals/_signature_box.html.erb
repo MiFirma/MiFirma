@@ -1,4 +1,5 @@
-<h4><strong><%= proposal.signatures.size %></strong> firmas</h4>
+<% num_signatures = proposal.signatures.signed.size %>
+<h4><strong><%= num_signatures %></strong> firma<%= "s" if num_signatures != 1 %></h4>
 <div class="form">
 
   <% if flash[:error] %>

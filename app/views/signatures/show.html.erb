@@ -2,7 +2,13 @@
 
 
 <div class="page">
-  <h1>Gracias por firmar! Ya estamos cambiando las cosas!</h1>
+  <% if @signature.signed? %>
+    <h1>Gracias por firmar! Ya estamos cambiando las cosas!</h1>
+  <% else %>
+  <h1>
+    Firma incorrecta, vuelva a intentarlo pulsando aquí: <%= link_to "Firmar", @signature.tractis_contract_location %>    
+  </h1>
+  <% end %>
   
   <div class="page-content">
     <%= render @proposal %>
