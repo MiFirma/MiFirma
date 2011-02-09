@@ -1,0 +1,23 @@
+<% content_for :bodyclass do %>proposal<% end %> 
+
+
+<div class="page">
+  <h1>Gracias por firmar! Ya estamos cambiando las cosas!</h1>
+  
+  <div class="page-content">
+    <%= render @proposal %>
+  </div>
+
+  <div class="page-sidebar">
+
+  <%#= render :partial => 'shared/share' %>
+  <%#= render :partial => 'shared/how_it_works' %>
+  
+  <div class="signature_box">
+    <%= render :partial => 'proposals/signature_box', :locals => {:proposal => @proposal} %>
+  </div>
+
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>

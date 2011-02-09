@@ -4,11 +4,17 @@ class SignaturesController < ApplicationController
     @signature = Signature.create params[:signature]
     if @signature.valid?
       tractis_signature_request = TractisApi.signature_request @signature
-      redirect_to tractis_signature_request[:location]
+      @signature.update_attribute :tractis_contract_location, tractis_signature_request[:location]
+      redirect_to @signature.tractis_contract_location
     else
       flash[:error] = "Error al crear la firma, email no válido."
       redirect_to proposal_url(@signature.proposal)
     end
+  end
+  
+  def show
+    @signature = Signature.find_by_token params[:id]
+    @proposal = @signature.proposal
   end
   
 end
