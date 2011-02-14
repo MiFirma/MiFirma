@@ -6,8 +6,10 @@
   
       <title><%= @title || "MiFirma" %></title>
   
-      <%=  stylesheet_link_tag "screen" %>
-      <%= javascript_include_tag :defaults %>
+      <%=  stylesheet_link_tag "screen"%>
+      <link rel="stylesheet" href="/javascripts/facebox/facebox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+      
+      <%= javascript_include_tag :defaults, "facebox/facebox.js" %>
   
 </head>
 <body class="<%= yield(:bodyclass) || 'home' %>">
@@ -15,7 +17,7 @@
   <div class="main-wr">
     <div class="main">
     <div class="header-top">
-      <a class="logo" href="/"><img class="pngfix" src="/images/logo.png" alt="" /></a>
+      <a class="logo" href="/thanks.html" rel="facebox"><img class="pngfix" src="/images/logo.png" alt="" /></a>
       <%= render :partial => "/shared/menu" %>
  
     </div>
