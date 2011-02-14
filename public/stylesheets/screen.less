@@ -258,6 +258,20 @@ div.page{
 
   }
 
+  .small_quote {
+    color:@light_grey + #111;
+    font-family:georgia;
+    font-size:13px;
+    font-style:italic;
+    line-height:150%;
+    width:580px;
+    
+    a {
+      color:#407D92;
+    }
+    
+  }
+
 }
 
 .como-funciona div.page{
@@ -403,44 +417,50 @@ div.page-content{
 
 div.proposal-wr{
 /*  background:transparent url(/images/proposal-top-frame.png) 0 0 no-repeat;*/
-  padding-top: 9px;
+  /*padding-top: 9px;*/
 }
 
-div.proposal{
-  border:1px solid @border_light_grey;
-  width: 569px;
+div.proposal {
+/*  border:1px solid @border_light_grey;
   padding-left: 24px;
   padding-right: 24px;
-  .rounded_corners(7px);
+  .rounded_corners(7px);*/
+  width:590px;
   position:relative;
   margin-bottom:20px;
 
   hr{
     color: @line-grey-color;
-    border: 1px solid;
+    
     clear:both;
   }
 
   h1{
-    font-size: 25px;
+    font-size: 30px;
     line-height: 32px;
-    padding: 12px 0px;
-    font-family: Georgia, Georgia, serif;
-    font-style:italic;
-    width: 470px;
-    float:left;
-
-
+    padding: 12px 0px 8px;
+    border-bottom: 2px solid @line-grey-color;
+    margin-bottom:15px;
+    
     a, a:visited{
-      color: @proposal-link-color;
+      color:#36679F;
       text-decoration:none;
       
       :hover {
-        text-decoration:underline;
+        text-decoration:none;
       }
       
     }
-  }
+    
+    span {
+      font-size:12px;
+      display:block;
+      color:#666;
+      line-height:130%;
+      margin-top:8px;
+    }
+ 
+ }
 
   .shadow {
     width:220px;
@@ -524,6 +544,16 @@ div.proposal{
       font-size:14px;
       color:#666666;
       margin-bottom:5px;
+    }
+    
+  }
+  
+  .proposal_content {
+    
+    p {
+      line-height:150%;
+      color:#333;
+      font-size:13px;
     }
     
   }
@@ -886,6 +916,10 @@ div.page-sidebar{
     margin-top:40px;
   }
 
+}
+
+.sec_sidebar {
+  margin-left:20px;
 }
 
 div.footer-wr{

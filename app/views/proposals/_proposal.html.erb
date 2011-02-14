@@ -1,43 +1,13 @@
 <div class="proposal-wr">
   <div class="proposal">
-    <h1> <%= link_to proposal.name, proposal_path(proposal) %></h1>
-    <a href="/pdf" class="pdf-link"> <img src="/images/pdf-ico.png" alt=""> Descargar </a>
-    <hr />
-    <div class="proposal-issue">
-
-      <img class="cross-ico" src="/images/cross-ico.png" alt=""/>
-
-      <h4>¿Qué está ocurriendo?</h4>
-
-      <div class="proposal-issue-content">
-        <%= proposal.problem %>
-      </div>
-      <div class="clear"></div> 
-
+    <h1> 
+      <%= link_to proposal.name, proposal_path(proposal) %>
+      <span>Acción promovida por: <a href="#">Superestar energies</a></span>
+    </h1>
+    
+    <div class="proposal_content">
+      <p><%= proposal.howto_solve %></p>
     </div>
-    <div class="proposal-solving">
-
-      <img class="tick-ico" src="/images/tick-ico.png" alt=""/>
-
-      <h4>¿Qué queremos conseguir?</h4>
-
-      <div class="proposal-solving-content">
-        <%= proposal.howto_solve %>
-      </div>
-      <div class="clear"></div>  
-    </div>  
-
-    <!-- <div class="sign pngfix">
-
-      <% form_tag signatures_path do %>
-      <%= text_field_tag :email %>
-      <input type="image" src="/images/firmar-btn.png" alt="Firmar"
-             onmouseover="this.src='/images/firmar-btn_over.png'" 
-             onmouseout="this.src='/images/firmar-btn.png'" onClick="javascript:this.src='/images/firmar-btn_press.png'"/>
-
-      <span><b><%= proposal.signatures.size %></b> firmas recogidas</span>
-      <% end -%>
-    </div> -->
 
     <div class="fb-like">
       <h3>¿Estás a favor?</h3>

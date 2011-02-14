@@ -239,6 +239,15 @@ div.page h4 {
   clear: both;
   visibility: hidden;
 }
+.about-us div.page .small_quote {
+  color: #444444;
+  font-family: georgia;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 150%;
+  width: 580px;
+}
+.about-us div.page .small_quote a { color: #407d92; }
 .como-funciona div.page {
   padding: 27px 20px 20px 22px;
   margin-top: 4px;
@@ -320,42 +329,39 @@ div.page-content {
   float: left;
   padding-left: 5px;
 }
-div.proposal-wr { padding-top: 9px; }
 div.proposal {
-  border: 1px solid #d5d5d5;
-  width: 569px;
-  padding-left: 24px;
-  padding-right: 24px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
-  border-radius: 7px;
+  width: 590px;
   position: relative;
   margin-bottom: 20px;
 }
 div.proposal hr {
   color: #ececec;
-  border: 1px solid;
   clear: both;
 }
 div.proposal h1 {
-  font-size: 25px;
+  font-size: 30px;
   line-height: 32px;
-  padding: 12px 0px;
-  font-family: Georgia, Georgia, serif;
-  font-style: italic;
-  width: 470px;
-  float: left;
+  padding: 12px 0px 8px;
+  border-bottom: 2px solid #ececec;
+  margin-bottom: 15px;
 }
 div.proposal h1 a {
-  color: #507bab;
+  color: #36679f;
   text-decoration: none;
 }
-div.proposal h1 a:hover { text-decoration: underline; }
+div.proposal h1 a:hover { text-decoration: none; }
 div.proposal h1 a:visited {
-  color: #507bab;
+  color: #36679f;
   text-decoration: none;
 }
-div.proposal h1 a:visited:hover { text-decoration: underline; }
+div.proposal h1 a:visited:hover { text-decoration: none; }
+div.proposal h1 span {
+  font-size: 12px;
+  display: block;
+  color: #666666;
+  line-height: 130%;
+  margin-top: 8px;
+}
 div.proposal .shadow {
   width: 220px;
   height: 10px;
@@ -430,6 +436,11 @@ div.proposal div.fb-like input[type=text] {
   font-size: 14px;
   color: #666666;
   margin-bottom: 5px;
+}
+div.proposal .proposal_content p {
+  line-height: 150%;
+  color: #333333;
+  font-size: 13px;
 }
 div.proposal-issue {
   margin-top: 15px;
@@ -726,6 +737,7 @@ div.page-sidebar .home {
   position: static !important;
   margin-top: 40px;
 }
+.sec_sidebar { margin-left: 20px; }
 div.footer-wr {
   height: 110px;
   background-color: #f2f2f2;
