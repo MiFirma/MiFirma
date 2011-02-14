@@ -14,13 +14,13 @@ Proposal:
 
 Signature:
   fields:
-    list: proposal, email, state, created_at
-    form: proposal_id
+    list: proposal, email, name, dni, state, created_at
+    show: proposal, email, name, dni, state, created_at
   order_by: 
   relationships: 
-  filters: 
-  search:
   options:
     default_action: show
+  filters: 
+  search:
   application: mifirma
 
