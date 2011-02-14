@@ -1,6 +1,15 @@
 <% num_signatures = proposal.signatures.signed.size %>
-<h4><strong><%= num_signatures %></strong> firma<%= "s" if num_signatures != 1 %></h4>
-<div class="form">
+<div class="signatures_counter">
+  <h4><strong>123.00<%= num_signatures %></strong> firma<%= "s" if num_signatures != 1 %></h4>
+  
+  <div class="graph">
+    <div class="num" style="width:90px;"></div>
+    <div class="total">Faltan 3.600</div>
+  </div>
+  
+</div>
+
+<div class="form_container">
 
   <% if flash[:error] %>
   <div class="sign_error">
@@ -8,18 +17,46 @@
     Email no válido. Por favor, comprueba que has introducido correctamente tu dirección de correo electrónico.
   </div>
   <% end %>
+  
   <% form_for proposal.signatures.new do |f| %>
-  <label for="email">Introduce tu <strong>email</strong> para firmar</label>
-  <% default_email_input_value = "tu email" %>
-  <%= f.hidden_field :proposal_id %>
-  <%= f.text_field :email, :value => default_email_input_value,
-                             :onfocus => "if ($(this).val() == '#{default_email_input_value}') { $(this).val('') }",
-                             :onblur =>  "if ($(this).val() == '') { $(this).val('#{default_email_input_value}') }" %>
-  <!-- <div class="tos">
-    <input type="checkbox" name="agree" value="yes" />
-    Acepto los <a href="#">términos y condiciones</a>
-  </div> -->
-  <a href="#" class="btn_sign" onclick="$('#new_signature').submit(); return false;">Firma electónica</a>
+  <div class="form">
+    
+    <label for="name">Nombre y apellidos</label>
+    <div class="input">
+      <input type="text" name="name" value="" id="name">
+    </div>
+    
+    <label for="name">D.N.I</label>
+    <div class="input">
+      <input type="text" name="name" value="" id="name">
+    </div>
+    
+    <label for="email">Tu email</label>
+    <div class="input">
+      <% default_email_input_value = "tu email" %>
+      <%= f.hidden_field :proposal_id %>
+      <%= f.text_field :email, :value => default_email_input_value,
+                                 :onfocus => "if ($(this).val() == '#{default_email_input_value}') { $(this).val('') }",
+                                 :onblur =>  "if ($(this).val() == '') { $(this).val('#{default_email_input_value}') }" %>
+    </div>
+
+    <div class="tos">
+      <input type="checkbox" name="agree" value="yes" />
+      Acepto los <a href="#">términos y condiciones</a>
+    </div>
+    
+  </div>
+
+  <div class="btn_sign">
+    <a href="#" onclick="$('#new_signature').submit(); return false;">Firma electónica</a>
+  </div>
+  
+  
   <% end %>
-  <p>Si no dispones de <strong>DNI electrónico</strong> puedes mostrar tu apoyo con una <a href="#" onclick="alert('Próximamente en MiFirma'); return false;">firma tradicional</a></p>
+</div>
+
+<div class="tradicional">
+  <p>
+    Si no dispones de <strong>DNI electrónico</strong> puedes mostrar tu apoyo con una <a href="#" onclick="alert('Próximamente en MiFirma'); return false;">firma tradicional</a>
+  </p>
 </div>
