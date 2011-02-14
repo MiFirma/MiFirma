@@ -148,7 +148,7 @@ div.page {
   padding: 20px 20px 20px 22px;
   margin-top: 4px;
   margin-left: 5px;
-  width: 956px;
+  width: 920px;
 }
 div.page h4 {
   font-size: 26px;
@@ -321,7 +321,7 @@ div.page h4 {
 .about-us div.page { background: transparent url(/images/page-frame-s.png) 0 0 no-repeat; }
 .como-funciona div.page { background: transparent url(/images/page-frame-s.png) 0 0 no-repeat; }
 div.page-content {
-  width: 617px;
+  width: 590px;
   float: left;
 }
 .about-us div.page-content {
@@ -441,6 +441,26 @@ div.proposal .proposal_content p {
   line-height: 150%;
   color: #333333;
   font-size: 13px;
+}
+div.proposal .download {
+  background: #f3f3f3;
+  padding: 20px 10px;
+  position: relative;
+  margin-top: 15px;
+}
+div.proposal .download p {
+  color: #333333;
+  font-size: 16px;
+}
+div.proposal .download a {
+  background: url(../images/btn_download.png) 0 0 no-repeat;
+  display: block;
+  width: 106px;
+  height: 36px;
+  text-indent: -9999px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 div.proposal-issue {
   margin-top: 15px;
@@ -591,10 +611,13 @@ div.proposal-bottom {
   width: 617px;
 }
 div.page-sidebar {
-  width: 265px;
-  float: left;
+  margin-right: 10px;
+  width: 295px;
+  float: right;
   margin-top: 9px;
   position: relative;
+  min-height: 800px;
+  background: url(../images/line_gradient.png) no-repeat left;
 }
 div.page-sidebar dl.reasons {
   padding: 15px;
@@ -665,11 +688,8 @@ div.page-sidebar div.share .fb_like {
 }
 div.page-sidebar .signature_box {
   top: 278px;
-  margin-left: 2px;
   position: fixed;
-  background: #ecf3f9;
-  padding: 20px;
-  width: 250px;
+  width: 290px;
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
   -moz-border-radius-topright: 5px;
@@ -677,49 +697,114 @@ div.page-sidebar .signature_box {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-div.page-sidebar .signature_box h4 {
-  border-bottom: 2px solid #cfe2f1;
+div.page-sidebar .signature_box .signatures_counter {
+  background: url(../images/bg_firmas.png) no-repeat -6px -6px;
+  width: 290px;
+  height: 85px;
+  padding-top: 25px;
+  text-align: center;
+}
+div.page-sidebar .signature_box .signatures_counter h4 {
+  text-shadow: 1px 1px #ffffff;
   padding-bottom: 5px;
   color: #333333;
+  font-size: 29px;
 }
-div.page-sidebar .signature_box h4 strong { font-weight: bold; }
-div.page-sidebar .signature_box .form { margin-bottom: 5px; }
-div.page-sidebar .signature_box .form label {
+div.page-sidebar .signature_box .signatures_counter h4 strong { font-weight: bold; }
+div.page-sidebar .signature_box .signatures_counter .graph {
+  background: url(../images/bg_bar_firmas.png) no-repeat;
+  width: 252px;
+  height: 24px;
+  margin: 0 auto;
+  position: relative;
+}
+div.page-sidebar .signature_box .signatures_counter .graph .num {
+  background: url(../images/bg_num_firmas.png) repeat-x;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  width: 82px;
+  height: 23px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+div.page-sidebar .signature_box .signatures_counter .graph .total {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: #ffffff;
+  text-shadow: 1px 1px #a9b291;
+  z-index: 1;
+}
+div.page-sidebar .signature_box .form_container {
+  margin-bottom: 5px;
+  background: #fdfdfd;
+  border: 1px solid #c8d7dd;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+div.page-sidebar .signature_box .form_container .form { padding: 15px; }
+div.page-sidebar .signature_box .form_container label {
   display: block;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   color: #333333;
+  padding-left: 3px;
+  font-size: 14px;
 }
-div.page-sidebar .signature_box .form label strong { font-weight: bold; }
-div.page-sidebar .signature_box .form input[type=text] {
+div.page-sidebar .signature_box .form_container label strong { font-weight: bold; }
+div.page-sidebar .signature_box .form_container .input {
+  padding: 3px;
+  background: #eff2f2;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  width: 248px;
+}
+div.page-sidebar .signature_box .form_container .input input[type=text] {
   background: fff;
-  border: 1px solid #e8e8e8;
-  border-top: 2px solid #e8e8e8;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #d2d9dc;
   padding: 8px;
   width: 230px;
   font-size: 14px;
   color: #666666;
-  margin-bottom: 5px;
 }
-div.page-sidebar .signature_box .form .tos {
+div.page-sidebar .signature_box .form_container .tos {
   color: #666666;
   font-size: 11px;
 }
-div.page-sidebar .signature_box .form .tos a { color: #35669f; }
-div.page-sidebar .signature_box .form .btn_sign {
+div.page-sidebar .signature_box .form_container .tos a { color: #35669f; }
+div.page-sidebar .signature_box .form_container .btn_sign {
+  text-align: center;
+  background: #eef5e9;
+  padding: 15px;
+  border: 1px solid #ffffff;
+  border-top: 1px solid #c8d7dd;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+div.page-sidebar .signature_box .form_container .btn_sign a {
   background: url(../images/btn_firmar.png) 0 0 no-repeat;
   display: block;
-  width: 171px;
-  height: 33px;
+  width: 195px;
+  height: 45px;
   text-indent: -9999px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  margin: 0 auto;
 }
-div.page-sidebar .signature_box .form p {
-  line-height: 140%;
-  color: #666666;
-}
-div.page-sidebar .signature_box .form p a { color: #35669f; }
-div.page-sidebar .signature_box .form .sign_error {
+div.page-sidebar .signature_box .form_container .sign_error {
   background: none repeat scroll 0 0 #fff9d7;
   border: 1px solid #e2c822;
   color: #5c5c5c;
@@ -728,11 +813,24 @@ div.page-sidebar .signature_box .form .sign_error {
   margin-bottom: 15px;
   padding: 15px 20px;
 }
-div.page-sidebar .signature_box .form .sign_error strong {
+div.page-sidebar .signature_box .form_container .sign_error strong {
   display: block;
   font-size: 16px;
   margin-bottom: 5px;
 }
+div.page-sidebar .signature_box .tradicional {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #f6f6f6;
+  margin: 10px;
+  padding: 10px;
+}
+div.page-sidebar .signature_box .tradicional p {
+  line-height: 140%;
+  color: #666666;
+}
+div.page-sidebar .signature_box .tradicional p a { color: #35669f; }
 div.page-sidebar .home {
   position: static !important;
   margin-top: 40px;

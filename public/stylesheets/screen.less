@@ -141,7 +141,7 @@ div.page{
   padding:20px 20px 20px 22px;
   margin-top: 4px;
   margin-left: 5px;
-  width: 956px;
+  width: 920px;
     
   h4{
     font-size: 26px;
@@ -403,9 +403,8 @@ div.page{
 }
 
 div.page-content{
-  width: 617px;
+  width: 590px;
   float:left;
-
 }
 
 .about-us div.page-content{
@@ -459,8 +458,8 @@ div.proposal {
       line-height:130%;
       margin-top:8px;
     }
- 
- }
+  
+  }
 
   .shadow {
     width:220px;
@@ -554,6 +553,30 @@ div.proposal {
       line-height:150%;
       color:#333;
       font-size:13px;
+    }
+    
+  }
+  
+  .download {
+    background:#F3F3F3;
+    padding:20px 10px;
+    position:relative;
+    margin-top:15px;
+    
+    p {
+      color:#333;
+      font-size:16px;
+    }
+    
+    a {
+      background:url(../images/btn_download.png) 0 0 no-repeat;
+      display:block;
+      width:106px;
+      height:36px;
+      text-indent:-9999px;
+      position:absolute;
+      top:10px;
+      right:10px;
     }
     
   }
@@ -725,10 +748,13 @@ div.proposal-bottom{
 }
 
 div.page-sidebar{
-  width: 265px;
-  float:left;
+  margin-right:10px;
+  width: 295px;
+  float:right;
   margin-top: 9px;
   position:relative;
+  min-height:800px;
+  background:url(../images/line_gradient.png) no-repeat left;
 
   
   dl.reasons{
@@ -812,36 +838,88 @@ div.page-sidebar{
 
   .signature_box {
     top:278px;
-    margin-left:2px;
     position: fixed;
-    background:#ECF3F9;
-    padding:20px;
-    width:290px - 40px;
+    width:290px;
     -webkit-border-top-right-radius: 5px;
     -webkit-border-bottom-right-radius: 5px;
     -moz-border-radius-topright: 5px;
     -moz-border-radius-bottomright: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
-    
-    h4 {
-      border-bottom:2px solid #CFE2F1;
-      padding-bottom:5px;
-      color:#333;
+        
+    .signatures_counter {
+      background:url(../images/bg_firmas.png) no-repeat -6px -6px;
+      width:290px;
+      height:110px - 25px;
+      padding-top:25px;
+      text-align:center;
       
-      strong {
-        font-weight:bold;
+      h4 {
+        text-shadow: 1px 1px #FFFFFF;
+        padding-bottom:5px;
+        color:#333;
+        font-size:29px;
+
+        strong {
+          font-weight:bold;
+        }
+
       }
-      
+    
+      .graph {
+        background:url(../images/bg_bar_firmas.png) no-repeat;
+        width:252px;
+        height:24px;
+        margin:0 auto;
+        position:relative;
+        
+        .num {
+          background:url(../images/bg_num_firmas.png) repeat-x;
+          -webkit-border-radius: 15px;
+          -moz-border-radius: 15px;
+          border-radius: 15px;
+          width:82px;
+          height:23px;
+          position:absolute;
+          top:0px;
+          left:0px;
+          z-index:2;
+        }
+        
+        .total {
+          position:absolute;
+          top:5px;
+          right:10px;
+          color:#fff;
+          text-shadow: 1px 1px #A9B291;
+          z-index:1;
+        }
+        
+      }
+    
     }
     
-    .form {
+    .form_container {
       margin-bottom:5px;
+      background:#FDFDFD;
+      border:1px solid #C8D7DD;
+      -webkit-border-bottom-right-radius: 5px;
+      -webkit-border-bottom-left-radius: 5px;
+      -moz-border-radius-bottomright: 5px;
+      -moz-border-radius-bottomleft: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      
+      .form {
+        padding:15px;
+      }
       
       label {
         display:block;
-        margin-bottom:4px;
+        margin-bottom:6px;
         color:#333;
+        padding-left:3px;
+        font-size:14px;
         
         strong {
           font-weight:bold;
@@ -849,15 +927,27 @@ div.page-sidebar{
         
       }
       
-      input[type=text] {
-        background:fff;
-        border:1px solid #E8E8E8;
-        border-top:2px solid #E8E8E8;
-        padding:8px;
-        width:230px;
-        font-size:14px;
-        color:#666666;
-        margin-bottom:5px;
+      .input {
+        padding:3px;
+        background:#EFF2F2;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        margin-bottom:15px;
+        width:248px;
+        
+        input[type=text] {
+          background:fff;
+          -webkit-border-radius: 5px;
+          -moz-border-radius: 5px;
+          border-radius: 5px;
+          border:1px solid #D2D9DC;
+          padding:8px;
+          width:230px;
+          font-size:14px;
+          color:#666666;
+        }
+        
       }
       
       .tos {
@@ -871,23 +961,27 @@ div.page-sidebar{
       }
       
       .btn_sign {
-        background:url(../images/btn_firmar.png) 0 0 no-repeat;
-        display:block;
-        width:171px;
-        height:33px;
-        text-indent:-9999px;
-        margin-top:10px;
-        margin-bottom:15px;
-      }
-
-      p {
-        line-height:140%;
-        color:#666;
-
+        text-align:center;
+        background:#EEF5E9;
+        padding:15px;
+        border:1px solid #fff;
+        border-top:1px solid #C8D7DD;
+        -webkit-border-bottom-right-radius: 5px;
+        -webkit-border-bottom-left-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        -moz-border-radius-bottomleft: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+        
         a {
-          color:#35669F;
+          background:url(../images/btn_firmar.png) 0 0 no-repeat;
+          display:block;
+          width:195px;
+          height:45px;
+          text-indent:-9999px;
+          margin:0 auto;
         }
-
+        
       }
       
       .sign_error {
@@ -905,6 +999,26 @@ div.page-sidebar{
           margin-bottom: 5px;
         }
         
+      }
+      
+    }
+    
+    .tradicional {
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      background:#F6F6F6;
+      margin:10px;
+      padding:10px;
+      
+      p {
+        line-height:140%;
+        color:#666;
+
+        a {
+          color:#35669F;
+        }
+
       }
       
     }
