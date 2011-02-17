@@ -14,6 +14,7 @@ class TractisApi
  	   <team>
  	     <member>
          <nombre>#{signature.name}</nombre>
+         <apellidos>#{signature.surname}</apellidos>
          <dni>#{signature.dni}</dni>
  	       <email>#{signature.email}</email>
  	       <sign>true</sign>
