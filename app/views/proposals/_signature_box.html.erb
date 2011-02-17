@@ -21,9 +21,14 @@
   <% form_for proposal.signatures.new do |f| %>
   <div class="form">
     
-    <label for="name">Nombre y apellidos</label>
+    <label for="name">Nombre</label>
     <div class="input">
       <%= f.text_field :name %>
+    </div>
+
+    <label for="name">Apellidos</label>
+    <div class="input">
+      <%= f.text_field :surname %>
     </div>
     
     <label for="name">D.N.I</label>
