@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110217083124) do
+ActiveRecord::Schema.define(:version => 20110217083511) do
 
   create_table "proposals", :force => true do |t|
     t.string   "name"
@@ -19,6 +19,10 @@ ActiveRecord::Schema.define(:version => 20110217083124) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "tractis_template_code"
+    t.string   "pdf_file_name"
+    t.string   "pdf_content_type"
+    t.integer  "pdf_file_size"
+    t.datetime "pdf_updated_at"
   end
 
   create_table "signatures", :force => true do |t|
