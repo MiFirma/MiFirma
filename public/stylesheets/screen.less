@@ -182,21 +182,19 @@ div.page{
   }
 
   .quote {
-    font-weight:bold;
     color:@light_grey + #111;
     font-family:georgia;
-    font-size:16px;
+    font-size:15px;
     font-style:italic;
-    em {
-      font-style:italic;
-      display:block;
-      font-weight:normal;
-    }
+    display:block;
+    font-weight:normal;
+
     
   }
 
   ul{
     margin-top: 20px;
+    
     li{
       clear:both;
       margin-top: 20px;
@@ -211,7 +209,6 @@ div.page{
       a,
       a:visited{
         margin-right: 85px;
-        float:right;
         color: @proposal-link-color;
         text-decoration:none;
         line-height: 14px;
@@ -265,6 +262,7 @@ div.page{
     font-style:italic;
     line-height:150%;
     width:580px;
+    font-weight:bold;
     
     a {
       color:#407D92;
@@ -304,7 +302,13 @@ div.page{
 
 
   }
-
+  
+  h3 {
+    font-size:14px;
+    font-weight:bold;
+    color:#36679F;
+  }
+  
   div.grey-frame{
     width: 613px;
     height: 315px;
@@ -334,10 +338,9 @@ div.page{
       clear:both;
       margin-left:15px;
       
-      a{
-        color:#36679F;
-
-       }
+      a {
+        color:#333;
+      }
 
       b {
         font-size: 16px;
@@ -349,11 +352,11 @@ div.page{
 
       }
 
-
       p{
         margin-top: 5px;
 
       }
+      
       img{
         float:left;
         margin-right: 12px;
@@ -377,7 +380,18 @@ div.page{
         visibility:hidden;
 
       }
+  
+      ul {
+        list-style-type:decimal;
+        
+        a {
+          color:#36679F;
+        }
+        
+      }
+  
     }
+    
 
   }
   
@@ -761,6 +775,7 @@ div.page-sidebar{
     padding: 15px;
     .rounded_corners;
     background-color:#f2f2f2;
+    margin-left:1px;
 
     dt{
       font-size: 14px;
@@ -1033,7 +1048,8 @@ div.page-sidebar{
 }
 
 .sec_sidebar {
-  margin-left:20px;
+  width:265px!important;
+  margin-right:45px!important;
 }
 
 div.footer-wr{

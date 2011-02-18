@@ -180,13 +180,9 @@ div.page h4 {
   margin-bottom: 15px;
 }
 .about-us div.page .quote {
-  font-weight: bold;
   color: #444444;
   font-family: georgia;
-  font-size: 16px;
-  font-style: italic;
-}
-.about-us div.page .quote em {
+  font-size: 15px;
   font-style: italic;
   display: block;
   font-weight: normal;
@@ -203,7 +199,6 @@ div.page h4 {
 }
 .about-us div.page ul li a {
   margin-right: 85px;
-  float: right;
   color: #507bab;
   text-decoration: none;
   line-height: 14px;
@@ -212,7 +207,6 @@ div.page h4 {
 }
 .about-us div.page ul li a:visited {
   margin-right: 85px;
-  float: right;
   color: #507bab;
   text-decoration: none;
   line-height: 14px;
@@ -246,6 +240,7 @@ div.page h4 {
   font-style: italic;
   line-height: 150%;
   width: 580px;
+  font-weight: bold;
 }
 .about-us div.page .small_quote a { color: #407d92; }
 .como-funciona div.page {
@@ -272,6 +267,11 @@ div.page h4 {
   margin-bottom: 10px;
   margin-left: -3px;
 }
+.como-funciona div.page h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #36679f;
+}
 .como-funciona div.page div.grey-frame {
   width: 613px;
   height: 315px;
@@ -295,7 +295,7 @@ div.page h4 {
   clear: both;
   margin-left: 15px;
 }
-.como-funciona div.page ul li a { color: #36679f; }
+.como-funciona div.page ul li a { color: #333333; }
 .como-funciona div.page ul li b {
   font-size: 16px;
   font-weight: bold;
@@ -316,6 +316,8 @@ div.page h4 {
   clear: both;
   visibility: hidden;
 }
+.como-funciona div.page ul li ul { list-style-type: decimal; }
+.como-funciona div.page ul li ul a { color: #36679f; }
 .home div.page { background: transparent url(/images/page-frame-l.png) 0 0 no-repeat; }
 .proposal div.page { background: transparent url(/images/page-frame-m.png) 0 0 no-repeat; }
 .about-us div.page { background: transparent url(/images/page-frame-s.png) 0 0 no-repeat; }
@@ -625,6 +627,7 @@ div.page-sidebar dl.reasons {
   -webkit-border-radius: 5px;
   border-radius: 5px;
   background-color: #f2f2f2;
+  margin-left: 1px;
 }
 div.page-sidebar dl.reasons dt {
   font-size: 14px;
@@ -835,7 +838,10 @@ div.page-sidebar .home {
   position: static !important;
   margin-top: 40px;
 }
-.sec_sidebar { margin-left: 20px; }
+.sec_sidebar {
+  width: 265px !important;
+  margin-right: 45px !important;
+}
 div.footer-wr {
   height: 110px;
   background-color: #f2f2f2;
