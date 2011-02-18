@@ -1,7 +1,6 @@
 <div class="page">
 
   <div class="page-content">
-    <h4>Propuestas disponibles</h4>
 
     <%= render @proposals %>
 
@@ -9,7 +8,7 @@
 
   <div class="page-sidebar">
     <%#= render :partial => 'shared/reasons' %>
-    <div class="signature_box home">
+    <div class="signature_box">
       <%= render :partial => 'signature_box', :locals => {:proposal => @proposals.first} %>
     </div>
   </div>
