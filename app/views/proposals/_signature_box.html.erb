@@ -1,10 +1,9 @@
-<% num_signatures = proposal.signatures.signed.size %>
 <div class="signatures_counter">
-  <h4><strong>123.00<%= num_signatures %></strong> firma<%= "s" if num_signatures != 1 %></h4>
+  <h4><strong><%= proposal.num_signatures %></strong> firma<%= "s" if proposal.num_signatures != 1 %></h4>
   
   <div class="graph">
-    <div class="num" style="width:90px;"></div>
-    <div class="total">Faltan 3.600</div>
+    <div class="num" style="width:<%= (220 * proposal.precent_remaining_signatures).ceil + 30 %>px;"></div>
+    <div class="total">Faltan <%= proposal.num_remaining_signatures %></div>
   </div>
   
 </div>
@@ -23,7 +22,12 @@
     
     <label for="name">Nombre</label>
     <div class="input">
-      <input type="text" name="name" value="" id="name">
+      <%= f.text_field :name %>
+    </div>
+
+    <label for="name">Apellidos</label>
+    <div class="input">
+      <%= f.text_field :surname %>
     </div>
     
     <label for="name">Apellidos</label>
@@ -33,16 +37,13 @@
     
     <label for="name">D.N.I</label>
     <div class="input">
-      <input type="text" name="name" value="" id="name">
+      <%= f.text_field :dni %>
     </div>
     
     <label for="email">Tu email</label>
     <div class="input">
-      <% default_email_input_value = "tu email" %>
       <%= f.hidden_field :proposal_id %>
-      <%= f.text_field :email, :value => default_email_input_value,
-                                 :onfocus => "if ($(this).val() == '#{default_email_input_value}') { $(this).val('') }",
-                                 :onblur =>  "if ($(this).val() == '') { $(this).val('#{default_email_input_value}') }" %>
+      <%= f.text_field :email %>
     </div>
 
     <div class="tos">

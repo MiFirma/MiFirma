@@ -13,6 +13,9 @@ class TractisApi
  	   <template>#{signature.tractis_template_code}</template>
  	   <team>
  	     <member>
+         <nombre>#{signature.name}</nombre>
+         <apellidos>#{signature.surname}</apellidos>
+         <dni>#{signature.dni}</dni>
  	       <email>#{signature.email}</email>
  	       <sign>true</sign>
  	       <invited>false</invited>
