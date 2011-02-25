@@ -22,4 +22,8 @@ class SignaturesController < ApplicationController
     @signature.check_tractis_signature!
   end
   
+  def share
+    render :layout => false
+  end
+  
 end

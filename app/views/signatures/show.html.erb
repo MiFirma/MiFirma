@@ -1,5 +1,11 @@
 <% content_for :bodyclass do %>proposal<% end %> 
 
+<%= link_to "Compartir firma", share_signature_url(@signature), :rel => "facebox", :id => "social_share", :style => "display:none;" %>
+<% javascript_tag do %>
+  $(document).ready(function () {
+    $("#social_share").trigger('click');
+  });
+<% end %>
 
 <div class="page">
   <% if @signature.signed? %>
