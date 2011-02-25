@@ -443,6 +443,7 @@ div.proposal .proposal_content p {
   line-height: 150%;
   color: #333333;
   font-size: 13px;
+  margin-bottom: 8px;
 }
 div.proposal .download {
   background: #f3f3f3;
@@ -457,6 +458,7 @@ div.proposal .download p {
 div.proposal .download a {
   background: url(../images/btn_download.png) 0 0 no-repeat;
   display: block;
+  background-position: 0 0;
   width: 106px;
   height: 36px;
   text-indent: -9999px;
@@ -464,6 +466,7 @@ div.proposal .download a {
   top: 10px;
   right: 10px;
 }
+div.proposal .download a:hover { background-position: 0 -41px; }
 div.proposal-issue {
   margin-top: 15px;
   margin-bottom: 27px;
@@ -802,11 +805,13 @@ div.page-sidebar .signature_box .form_container .btn_sign {
 div.page-sidebar .signature_box .form_container .btn_sign a {
   background: url(../images/btn_firmar.png) 0 0 no-repeat;
   display: block;
+  background-position: 0 0;
   width: 195px;
   height: 45px;
   text-indent: -9999px;
   margin: 0 auto;
 }
+div.page-sidebar .signature_box .form_container .btn_sign a:hover { background-position: 0 -50px; }
 div.page-sidebar .signature_box .form_container .sign_error {
   background: none repeat scroll 0 0 #fff9d7;
   border: 1px solid #e2c822;

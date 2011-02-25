@@ -567,6 +567,7 @@ div.proposal {
       line-height:150%;
       color:#333;
       font-size:13px;
+      margin-bottom:8px;
     }
     
   }
@@ -585,12 +586,19 @@ div.proposal {
     a {
       background:url(../images/btn_download.png) 0 0 no-repeat;
       display:block;
-      width:106px;
-      height:36px;
+      background-position: 0 0; 
+      width: 106px; 
+      height: 36px;
       text-indent:-9999px;
       position:absolute;
       top:10px;
       right:10px;
+      
+      :hover {
+        background-position: 0 -41px;
+      }
+      
+      
     }
     
   }
@@ -991,10 +999,16 @@ div.page-sidebar{
         a {
           background:url(../images/btn_firmar.png) 0 0 no-repeat;
           display:block;
+          background-position: 0 0;
           width:195px;
           height:45px;
           text-indent:-9999px;
           margin:0 auto;
+          
+          :hover {
+            background-position: 0 -50px;
+          }
+          
         }
         
       }
