@@ -11,8 +11,8 @@ class SignaturesController < ApplicationController
         flash[:error] = "Error de comunicación con Tractis, por favor vuelva a intentarlo."        
       end
     else
-      flash[:error] = "Error al crear la firma, email no válido."
-      redirect_to proposal_url(@signature.proposal)
+      flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
+      redirect_to proposal_url(@signature.proposal, :signature => params[:signature])
     end
   end
   
