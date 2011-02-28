@@ -282,7 +282,6 @@ div.page{
     font-size: 26px;
     font-family: Arial;
     font-weight: normal;
-
     line-height: 20px;
     padding-left: 4px;
     margin-bottom: 20px;
@@ -294,19 +293,23 @@ div.page{
     font-size: 18px;
     font-family: Arial;
     font-weight: bold;
-
     line-height: 20px;
     padding-left: 4px;
     margin-bottom: 10px;
     margin-left: -3px;
-
-
+    
+    a {
+      color:#333!important;
+    }
+    
   }
   
   h3 {
     font-size:14px;
     font-weight:bold;
     color:#36679F;
+    margin-bottom:8px;
+    padding-left:10px;
   }
   
   div.grey-frame{
@@ -317,16 +320,14 @@ div.page{
 
   }
 
-  p{
-    line-height: 30px;
+  p {
+    line-height:140%!important;
     font-size:14px;
     color:#333;
     margin-bottom:15px;
-
+    padding-left:10px;
   }
   
- 
-
   ul {
     color:#333333;
     font-size:14px;
@@ -334,7 +335,7 @@ div.page{
     margin-bottom:15px;
     list-style-type:square;
     
-    li{
+    li {
       clear:both;
       margin-left:15px;
       
@@ -392,11 +393,18 @@ div.page{
   
     }
     
-
   }
   
-  
-  
+  a {
+    color:#36679F;
+    text-decoration:none;
+    
+    :hover {
+      text-decoration:underline;
+    }
+    
+  }
+   
 }
 
 .home div.page{
@@ -418,7 +426,7 @@ div.page{
 
 div.page-content{
   width: 590px;
-  float:left;
+  float:left;  
 }
 
 .about-us div.page-content{

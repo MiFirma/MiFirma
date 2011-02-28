@@ -267,10 +267,13 @@ div.page h4 {
   margin-bottom: 10px;
   margin-left: -3px;
 }
+.como-funciona div.page h2 a { color: #333333 !important; }
 .como-funciona div.page h3 {
   font-size: 14px;
   font-weight: bold;
   color: #36679f;
+  margin-bottom: 8px;
+  padding-left: 10px;
 }
 .como-funciona div.page div.grey-frame {
   width: 613px;
@@ -279,10 +282,11 @@ div.page h4 {
   background-color: #ebebeb;
 }
 .como-funciona div.page p {
-  line-height: 30px;
+  line-height: 140% !important;
   font-size: 14px;
   color: #333333;
   margin-bottom: 15px;
+  padding-left: 10px;
 }
 .como-funciona div.page ul {
   color: #333333;
@@ -318,6 +322,11 @@ div.page h4 {
 }
 .como-funciona div.page ul li ul { list-style-type: decimal; }
 .como-funciona div.page ul li ul a { color: #36679f; }
+.como-funciona div.page a {
+  color: #36679f;
+  text-decoration: none;
+}
+.como-funciona div.page a:hover { text-decoration: underline; }
 .home div.page { background: transparent url(/images/page-frame-l.png) 0 0 no-repeat; }
 .proposal div.page { background: transparent url(/images/page-frame-m.png) 0 0 no-repeat; }
 .about-us div.page { background: transparent url(/images/page-frame-s.png) 0 0 no-repeat; }
