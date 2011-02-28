@@ -2,8 +2,9 @@ class Signature < ActiveRecord::Base
   belongs_to :proposal
   
   validates_presence_of :proposal_id, :state, :token
-  validates_presence_of :email, :name, :surname, :dni
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
+  validates_presence_of :email, :name, :surname, :dni, :message => "Debes rellenar todos los campos."
+  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :message => "Email no válido. Por favor, comprueba que has introducido correctamente tu dirección de correo electrónico."
+  validates_acceptance_of :terms, :accept => true, :message => "Debes aceptar los términos de uso."
   
   delegate :tractis_template_code, :to => :proposal
   
