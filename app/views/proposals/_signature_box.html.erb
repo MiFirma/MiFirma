@@ -3,7 +3,7 @@
   
   <div class="graph">
     <div class="num" style="width:<%= (220 * proposal.precent_remaining_signatures).ceil + 30 %>px;"></div>
-    <div class="total">Faltan <%= proposal.num_remaining_signatures %></div>
+    <div class="total">Faltan <%= number_with_delimiter proposal.num_remaining_signatures, :delimiter => "." %></div>
   </div>
   
 </div>
