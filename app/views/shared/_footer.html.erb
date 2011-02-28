@@ -2,9 +2,13 @@
 
   <div class="footer">
     <div class="footer-nav">
-      <%= render :partial => 'shared/menu' %>
-      <li><span class="li-sep">|</span><%= link_to "Términos de Uso", '/terms' %></li>
-      <li><span class="li-sep">|</span><%= link_to "Privacidad", '/privacy' %></li>
+      <ul class="nav">
+         <li><%= link_to "Ayuda", '/como_funciona' %></li>
+         <li><span class="li-sep">|</span><%= link_to "Sobre nosotros", '/sobre_nosotros' %></li>
+         <li><span class="li-sep">|</span><%= link_to "Términos de Uso", '/terms' %></li>
+         <li><span class="li-sep">|</span><%= link_to "Privacidad", '/privacy' %></li>
+       </ul>
+      
       <p><strong>Mifirma.com ©2011</strong>. Todos los derechos reservados</p>
 
     </div>
