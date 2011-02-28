@@ -13,11 +13,11 @@
   <% if flash[:error] %>
   <div class="sign_error">
     <strong>Error al crear la firma.</strong>
-    Email no válido. Por favor, comprueba que has introducido correctamente tu dirección de correo electrónico.
+    <%= flash[:error] %>
   </div>
   <% end %>
   
-  <% form_for proposal.signatures.new do |f| %>
+  <% form_for proposal.signatures.new(params[:signature]) do |f| %>
   <div class="form">
     
     <label for="name">Nombre</label>
@@ -42,7 +42,7 @@
     </div>
 
     <div class="tos">
-      <input type="checkbox" name="agree" value="yes" />
+      <%= f.check_box :terms %>
       Acepto los <a href="#">términos y condiciones</a>
     </div>
     
