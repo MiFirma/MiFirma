@@ -20,6 +20,7 @@ class SignaturesController < ApplicationController
     @signature = Signature.find_by_token params[:id]
     @proposal = @signature.proposal
     @signature.check_tractis_signature!
+    share_texts(@proposal, @signature)    
   end
   
   def share

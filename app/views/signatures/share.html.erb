@@ -16,9 +16,9 @@
       <p>Comparte esta propuesta para poder llegar al número mínomo de personas que necesitamos</p>
     </div>
     <ul class="share">
-      <li><a href="#" class="fb">Facebook</a></li>
-      <li><a href="#" class="twitter">Twitter</a></li>
-      <li><a href="#" class="mail">E-Mail</a></li>
+      <li><a href="http://www.facebook.com/sharer.php?u=<%= CGI::escape @share_url %><%= "&t=#{CGI::escape @fb_text}"%>" class="fb">Facebook</a></li>
+      <li><a href="http://twitter.com/home?status=<%= CGI::escape @twitter_text %>" class="twitter">Twitter</a></li>
+      <li><a href="mailto:?subject=<%= @email_subject %>&body=<%= @email_body %>" class="mail">E-Mail</a></li>
     </ul>
   </div>
 </body>
