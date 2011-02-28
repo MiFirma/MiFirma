@@ -22,9 +22,9 @@
       <h6>Comparte esta propuesta</h6>
       
       <ul class="share">
-        <li><a href="#"><img src="/images/share/ico_fb.png" width="86" height="21" alt="Ico Fb"></a></li>
-        <li><a href="#"><img src="/images/share/ico_meneame.png" width="86" height="21" alt="Ico Fb"></a></li>
-        <li><a href="#"><img src="/images/share/ico_twitter.png" width="86" height="21" alt="Ico Fb"></a></li>
+        <li><a href="http://www.facebook.com/sharer.php?u=<%= CGI::escape @share_url %><%= "&t=#{CGI::escape @fb_text}"%>"><img src="/images/share/ico_fb.png" width="86" height="21" alt="Ico Fb"></a></li>
+        <li><a href="http://meneame.net/submit.php?url=<%= CGI::escape @share_url %>"><img src="/images/share/ico_meneame.png" width="86" height="21" alt="Ico Fb"></a></li>
+        <li><a href="http://twitter.com/home?status=<%= CGI::escape @twitter_text %>"><img src="/images/share/ico_twitter.png" width="86" height="21" alt="Ico Fb"></a></li>
       </ul>
       
       <h6>Url de la propuesta</h6>
