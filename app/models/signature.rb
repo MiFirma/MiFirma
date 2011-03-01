@@ -6,6 +6,8 @@ class Signature < ActiveRecord::Base
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :message => "Email no válido. Por favor, comprueba que has introducido correctamente tu dirección de correo electrónico."
   validates_acceptance_of :terms, :accept => true, :message => "Debes aceptar los términos de uso."
   
+  validates_uniqueness_of :dni, :scope => :proposal_id, :message => "Sólo puedes firmar una vez esta propuesta."
+  
   delegate :tractis_template_code, :to => :proposal
   
   before_validation :generate_token, :set_default_state
