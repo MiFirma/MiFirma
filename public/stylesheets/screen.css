@@ -918,3 +918,6 @@ div.footer .tractis {
   float: right;
   margin-right: 20px;
 }
+ul.members li p a {
+  margin-right: 0px !important;
+}
