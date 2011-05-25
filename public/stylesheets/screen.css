@@ -233,6 +233,7 @@ div.page h4 {
   clear: both;
   visibility: hidden;
 }
+.about-us div.page ul.members a { margin-right: 0px !important; }
 .about-us div.page .small_quote {
   color: #444444;
   font-family: georgia;
