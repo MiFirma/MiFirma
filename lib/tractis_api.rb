@@ -38,7 +38,7 @@ class TractisApi
   end
   
   def self.contract_signed?(contract_code)
-    (Hpricot(TractisApi.contract)/"signed").text == "true"
+    (Hpricot(TractisApi.contract(contract_code))/"signed").text == "true"
   end
   
   def self.get_signatures(contract_code="604622863")

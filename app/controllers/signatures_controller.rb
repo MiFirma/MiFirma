@@ -24,6 +24,9 @@ class SignaturesController < ApplicationController
   end
   
   def share
+    @signature = Signature.find_by_token params[:id]
+    @proposal = @signature.proposal
+    share_texts(@proposal, @signature)    
     render :layout => false
   end
   
