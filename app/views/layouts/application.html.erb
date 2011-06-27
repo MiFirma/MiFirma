@@ -3,55 +3,51 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
   <link rel="shortcut icon" href="/images/favicon.ico" >
-  
-      <title><%= @title || "MiFirma" %></title>
-  
-      <%=  stylesheet_link_tag "screen"%>
-      <link rel="stylesheet" href="/javascripts/facebox/facebox.css" type="text/css" media="screen" title="no title" charset="utf-8">
-      
-      <%= javascript_include_tag :defaults, "facebox/facebox.js" %>
 
-  
+  <title><%= @title || "MiFirma" %></title>
+
+  <%=  stylesheet_link_tag "screen"%>
+  <link rel="stylesheet" href="/javascripts/facebox/facebox.css" type="text/css" media="screen" title="no title" charset="utf-8">
+
+  <%= javascript_include_tag :defaults, "facebox/facebox.js" %>
+
+
 </head>
 <body class="<%= yield(:bodyclass) || 'home' %>">
 
   <div class="main-wr">
     <div class="main">
-    <div class="header-top">
-      <a class="logo" href="/"><img class="pngfix" src="/images/logo.png" alt="" /></a>
-      <%= render :partial => "/shared/menu" %>
- 
-    </div>
-    <div class="header-bottom">
-      <div class="lh">
-        <img class="pngfix" src="/images/libreta.png" alt="" />
+      <div class="header-top">
+        <a class="logo" href="/"><img class="pngfix" src="/images/logo.png" alt="" /></a>
+        <%= render :partial => "/shared/menu" %>
+
       </div>
-      <div class="rh">
-        <h2>Por primera vez puedes cambiar las <br /> cosas. Con tu firma</h2>
-        
-        <ul>
-        <li><img class="bullet pngfix" src="/images/bullet-1.png" alt="" /> <div><b>Creamos propuestas</b> <br />de interés social</div></li>
-        <li><img class="bullet pngfix" src="/images/bullet-2.png" alt="" /><div><b>Recogemos firmas</b> <br />aptas legalmente</div></li>
-        <li><img class="bullet pngfix" src="/images/bullet-3.png" alt="" /><div><b>Cambiamos las cosas</b> <br />con el voto de todos</div></li>
-        </ul>
+      <div class="header-bottom">
+        <div class="lh">
+          <img class="pngfix" src="/images/libreta.png" alt="" />
+        </div>
+        <div class="rh">
+          <h2>Por primera vez puedes cambiar las <br /> cosas. Con tu firma</h2>
+
+          <ul>
+            <li><img class="bullet pngfix" src="/images/bullet-1.png" alt="" /> <div><b>Creamos propuestas</b> <br />de interés social</div></li>
+            <li><img class="bullet pngfix" src="/images/bullet-2.png" alt="" /><div><b>Recogemos firmas</b> <br />aptas legalmente</div></li>
+            <li><img class="bullet pngfix" src="/images/bullet-3.png" alt="" /><div><b>Cambiamos las cosas</b> <br />con el voto de todos</div></li>
+          </ul>
+        </div>
       </div>
-    </div>
-    
-    
-        
-        
-        <%= yield %>
+      <%= yield %>
     </div>
   </div>
-  
+
   <%= render :partial => "shared/footer" %>
-    
+
   <!--[if lt IE 7]> 
-    <script type="text/javascript" src="/javascripts/DD_belatedPNG_min.js"></script>
-    <script type="text/javascript">DD_belatedPNG.fix('*.pngfix');
-    </script>
+  <script type="text/javascript" src="/javascripts/DD_belatedPNG_min.js"></script>
+  <script type="text/javascript">DD_belatedPNG.fix('*.pngfix');
+  </script>
   <![endif]-->
-  
+
   <%= render :partial => 'shared/google_analytics' %>
 
 </body>
