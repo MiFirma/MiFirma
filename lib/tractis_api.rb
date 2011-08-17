@@ -1,4 +1,4 @@
-require 'httpclient'
+﻿require 'httpclient'
 require 'hpricot'
 
 class TractisApi
@@ -37,8 +37,8 @@ class TractisApi
     response.content
   end
   
-  def self.contract_signed?(contract_code)
-    (Hpricot(TractisApi.contract(contract_code))/"signed").text == "true"
+  def self.contract_signed?(response)
+    (Hpricot(response)/"signed").text == "true"
   end
   
   def self.get_signatures(contract_code="604622863")
