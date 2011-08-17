@@ -1,4 +1,4 @@
-class MainController < ApplicationController
+﻿class MainController < ApplicationController
 
   def about_us; end
   

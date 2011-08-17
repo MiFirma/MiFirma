@@ -1,4 +1,4 @@
-<div class="proposal-wr">
+﻿<div class="proposal-wr">
   <div class="proposal">
     <h1> 
       <%= link_to proposal.name, proposal_path(proposal) %>
@@ -6,7 +6,7 @@
     </h1>
     
     <div class="proposal_content">
-      <%= proposal.howto_solve %>
+      <%= proposal.howto_solve.html_safe %>
     </div>
     
     <div class="download">

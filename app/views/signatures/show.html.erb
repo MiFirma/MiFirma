@@ -1,4 +1,4 @@
-<% content_for :bodyclass do %>proposal<% end %> 
+﻿<%= content_for :bodyclass do %>proposal<% end %> 
 
 <%= link_to "Compartir firma", share_signature_url(@signature.token), :rel => "facebox", :id => "social_share", :style => "display:none;" %>
 <% javascript_tag do %>
@@ -8,26 +8,23 @@
 <% end %>
 
 <div class="page">
-  <% if @signature.signed? %>
-    <h1>Gracias por firmar! Ya estamos cambiando las cosas!</h1>
-  <% else %>
-  <h1>
-    Firma incorrecta, vuelva a intentarlo pulsando aquí: <%= link_to "Firmar", @signature.tractis_contract_location %>    
-  </h1>
-  <% end %>
-  
-  <div class="page-content">
-    <%= render @proposal %>
-  </div>
 
-  <div class="page-sidebar">
-
-  <%#= render :partial => 'shared/share' %>
-  <%#= render :partial => 'shared/how_it_works' %>
+  <% if flash[:error] %>
+		<div class="sign_error">
+			<strong>Error al crear la firma.</strong>
+			<%= flash[:error].html_safe %>
+		</div>
   
-  <div class="signature_box">
-    <%= render :partial => 'proposals/signature_box', :locals => {:proposal => @proposal} %>
-  </div>
+	<% else %>
+	
+		<% if @signature.signed? %>
+			<h1>Gracias por firmar! Ya estamos cambiando las cosas!</h1>
+		<% else %>
+			<h1>
+				Firma incorrecta, vuelva a intentarlo pulsando aquí: <%= link_to "Firmar", @signature.tractis_contract_location %>    
+			</h1>
+		<% end %>
+	<% end %>
 
 </div>
 

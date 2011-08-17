@@ -1,11 +1,29 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  problem: MyText
-  howto_solve: MyText
+  name: MyString
+  problem: MyString
+  howto_solve: MyString
   position: 1
+  tractis_template_code: MyString
+  pdf_file_name: MyString
+  pdf_content_type: MyString
+  pdf_file_size: 1
+  pdf_updated_at: 
+  num_required_signatures: 1
+  promoter_name: MyString
+  promoter_url: MyString
 
 two:
-  problem: MyText
-  howto_solve: MyText
+  name: MyString
+  problem: MyString
+  howto_solve: MyString
   position: 1
+  tractis_template_code: MyString
+  pdf_file_name: MyString
+  pdf_content_type: MyString
+  pdf_file_size: 1
+  pdf_updated_at: 
+  num_required_signatures: 1
+  promoter_name: MyString
+  promoter_url: MyString
