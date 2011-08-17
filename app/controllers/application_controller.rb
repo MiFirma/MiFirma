@@ -2,15 +2,10 @@
 
 class ApplicationController < ActionController::Base
   protect_from_forgery
-	before_filter :init_bodyclass
 	
 	@provinces = Province.order("name")
 	
-	
-	def init_bodyclass
-		@bodyclass = "home"
-	end
-	
+
 	def share_texts(proposal, user=nil)
     @share_title = "Ya he firmado la propuesta #{proposal.name}, ¡únete!"
     @share_url = proposal_url(proposal)
