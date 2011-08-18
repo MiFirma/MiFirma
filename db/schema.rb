@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110809183625) do
+ActiveRecord::Schema.define(:version => 20110818155727) do
 
   create_table "municipalities", :force => true do |t|
     t.integer  "id_ine"
@@ -61,5 +61,8 @@ ActiveRecord::Schema.define(:version => 20110809183625) do
     t.integer  "province_id"
     t.integer  "municipality_id"
   end
+
+  add_index "signatures", ["dni"], :name => "index_signatures_on_dni"
+  add_index "signatures", ["proposal_id", "state"], :name => "index_signatures_on_proposal_id_and_state"
 
 end

@@ -66,7 +66,11 @@
 
     <label for="name">Municipio</label>
     <div class="input">
+		<% if not (@signature.province_id.nil? ) %>
 			<%= f.select :municipality_id, Municipality.find_all_by_province_id(@signature.province_id).collect {|p| [p.name,p.id]}, { :include_blank => true } %>
+		<% else %>
+			<%= f.select :municipality_id, [] , { :prompt => "Seleccione Provincia" } %>
+		<% end %>
     </div>
     
     <label for="email">Tu email</label>
