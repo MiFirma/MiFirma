@@ -1,0 +1,44 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Municipality:
+  fields:
+    default: id_ine, name, province_id, province
+    form: id_ine, name, province_id, province
+  order_by: 
+  relationships: province
+  filters: created_at
+  search: name
+  application: MiFirma
+
+Proposal:
+  fields:
+    default: name, problem, howto_solve, position, tractis_template_code, pdf, num_required_signatures, promoter_name, promoter_url
+    form: name, problem, howto_solve, tractis_template_code, pdf, num_required_signatures, promoter_name, promoter_url
+  order_by: position
+  relationships: signatures
+  filters: created_at
+  search: name
+  application: MiFirma
+
+Province:
+  fields:
+    default: id_ine, name
+    form: id_ine, name
+  order_by: 
+  relationships: municipalities
+  filters: created_at
+  search: name
+  application: MiFirma
+
+Signature:
+  fields:
+    default: proposal_id, email, state, token, tractis_contract_location, name, dni, surname, terms, province_id, municipality_id, proposal, municipality
+    form: proposal_id, email, state, token, tractis_contract_location, name, dni, surname, terms, province_id, municipality_id, proposal, municipality
+  order_by: 
+  relationships: municipality, proposal
+  filters: created_at
+  search: name
+  application: MiFirma
+
