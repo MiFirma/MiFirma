@@ -1,6 +1,6 @@
 class ProvinceController < ApplicationController
 
-	# Utilizado para obtener los Municipios de una provincia en los combos 
+	# Return the municipalities of province with id params[:id]
 	def municipalities_for_provinceid
       @municipalities = Municipality.find( :all, :conditions => [" province_id = ?", params[:id]]  ).sort_by{ |k| k['name'] }    
       respond_to do |format|
