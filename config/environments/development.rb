@@ -24,3 +24,4 @@ MiFirma2::Application.configure do
   config.action_dispatch.best_standards_support = :builtin
 end
 
+MIFIRMA_HOST = "localhost:3000"

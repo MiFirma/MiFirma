@@ -20,7 +20,7 @@ class Signature < ActiveRecord::Base
   STATES = [:pending, :verified, :canceled]
 
   def return_url
-    "http://localhost:3000/signatures/#{token}"
+    "http://#{MIFIRMA_HOST}/signatures/#{token}"
   end
   
   def contract_code
