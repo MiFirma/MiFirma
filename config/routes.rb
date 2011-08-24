@@ -1,11 +1,11 @@
 MiFirma2::Application.routes.draw do
-  resources :signatures do
+  resources :signatures, :only => [:create, :show] do
 		member do
 			get 'share'
 		end
 	end
 
-  resources :proposals
+  resources :proposals, :only => [:index, :show]
 	
 	match 'province/municipalities_for_provinceid/:id', :controller => "province", :action => "municipalities_for_provinceid"
 
