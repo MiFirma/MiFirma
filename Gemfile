@@ -10,6 +10,8 @@ gem 'paperclip'
 gem 'acts_as_list'
 gem 'httpclient'
 gem 'hpricot'
+gem 'typus', '3.0.10'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
