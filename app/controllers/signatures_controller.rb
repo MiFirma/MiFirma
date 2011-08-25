@@ -11,7 +11,7 @@ class SignaturesController < ApplicationController
         redirect_to @signature.tractis_contract_location
       else
         flash[:error] = "Error de comunicación con Tractis, por favor vuelva a intentarlo."
-				logger.info 'Error de comunicación con Tractis'
+				logger.debug 'Error de comunicación con Tractis'
 				@signature.destroy
 				redirect_to proposal_url(@signature.proposal, :signature => params[:signature])
       end
@@ -23,7 +23,7 @@ class SignaturesController < ApplicationController
   
   def show
 		@provinces = Province.order("name")
-		logger.info 'Estamos dentro del metodo show en Signatures'
+		logger.debug 'Estamos dentro del metodo show en Signatures'
     @signature = Signature.find_by_token params[:id]
     @proposal = @signature.proposal
     @signature.check_tractis_signature
