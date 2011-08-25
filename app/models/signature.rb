@@ -31,14 +31,13 @@ class Signature < ActiveRecord::Base
 		contract_response = TractisApi.contract contract_code
 		doc = Hpricot(contract_response)
     signed = TractisApi.contract_signed? contract_response
-		logger.info doc
 		if signed then
 			self.name = (doc/"signature"/"name").text
-			logger.info "Nombre recuperado"
-			logger.info self.name
+			logger.debug "Nombre recuperado"
+			logger.debug self.name
 			self.dni = (doc/"signature"/"serialnumber").text
-			logger.info "DNI recuperado"
-			logger.info self.dni
+			logger.debug "DNI recuperado"
+			logger.debug self.dni
 			self.state = 1
 			self.save
   	end

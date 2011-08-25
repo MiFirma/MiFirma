@@ -7,7 +7,7 @@
   
   def num_remaining_signatures
 		num_required_signatures - num_signatures
-	  if num_required_signatures == nil or num_required_signatures == 0
+	  if num_required_signatures == nil || num_required_signatures == 0
 			num_remaining_signatures=0
 		else
 			num_required_signatures - num_signatures
@@ -15,7 +15,7 @@
   end
   
   def precent_remaining_signatures
-	  if num_required_signatures == nil or num_required_signatures == 0
+	  if num_required_signatures == nil || num_required_signatures == 0
 			precent_remaining_signatures = 0
 		else
 			num_signatures.to_f / num_required_signatures.to_f
