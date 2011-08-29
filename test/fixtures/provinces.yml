@@ -1,7 +1,9 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
+madrid:
+  name: madrid
+  id_ine: 28
 
-two:
-  name: MyString
+alava:
+  name: alava
+  id_ine: 1

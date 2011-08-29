@@ -1,8 +1,16 @@
 require 'test_helper'
 
 class MunicipalityTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
-  end
+ 	# Provinces has not he same name
+  test "Municipality is not valid without a unique name in the same province" do
+    municipality = Municipality.new(:name => municipalities(:madrid).name,
+														:id_ine => municipalities(:madrid).id_ine,
+														:province_id => municipalities(:madrid).province_id)
+		assert !municipality.save
+		
+	
+		#In a different province works
+		municipality.province_id = provinces(:alava).id_ine
+		assert municipality.save
+	end
 end

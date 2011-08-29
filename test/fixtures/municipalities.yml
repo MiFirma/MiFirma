@@ -1,9 +1,11 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  province_id: 1
+alcobendas:
+  name: alcobendas
+  province_id: 28
+  id_ine: 4292
 
-two:
-  name: MyString
-  province_id: 1
+madrid:
+  name: madrid
+  province_id: 28
+  id_ine: 4365

@@ -9,8 +9,6 @@ one:
   name: MyString
   dni: MyString
   surname: MyString
-  boolean: 
-
 two:
   proposal_id: 1
   email: MyString
@@ -20,4 +18,3 @@ two:
   name: MyString
   dni: MyString
   surname: MyString
-  boolean: 
