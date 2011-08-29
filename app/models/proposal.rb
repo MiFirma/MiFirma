@@ -3,7 +3,10 @@
 	has_attached_file :pdf
 	acts_as_list
 	
-	validates_presence_of :name, :problem, :howto_solve
+	validates_presence_of :name, :problem, :howto_solve, :position, :tractis_template_code,
+    :pdf_file_name, :pdf_content_type, :pdf_file_size, :pdf_updated_at, :num_required_signatures,
+		:promoter_name, :promoter_url
+	validates_uniqueness_of :name
   
   def num_remaining_signatures
 		num_required_signatures - num_signatures
