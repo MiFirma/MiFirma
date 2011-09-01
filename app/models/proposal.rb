@@ -1,11 +1,13 @@
 ﻿class Proposal < ActiveRecord::Base
   has_many :signatures
 	has_attached_file :pdf
+	has_attached_file :banner
 	acts_as_list
 	
-	validates_presence_of :name, :problem, :howto_solve, :position, :tractis_template_code,
-    :pdf_file_name, :pdf_content_type, :pdf_file_size, :pdf_updated_at, :num_required_signatures,
-		:promoter_name, :promoter_url
+	validates_presence_of :name, :problem, :howto_solve, :position,
+		:tractis_template_code, :pdf_file_name, :pdf_content_type, 
+		:pdf_file_size, :pdf_updated_at, :num_required_signatures,
+		:promoter_name, :promoter_url, :handwritten_signatures
 	validates_uniqueness_of :name
   
   def num_remaining_signatures
@@ -26,6 +28,6 @@
   end
   
   def num_signatures
-    @num_signatures ||= signatures.signed.size
+    @num_signatures ||= signatures.signed.size + handwritten_signatures
   end
 end

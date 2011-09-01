@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110818155727) do
+ActiveRecord::Schema.define(:version => 20110901122233) do
 
   create_table "municipalities", :force => true do |t|
     t.integer  "id_ine"
@@ -37,6 +37,11 @@ ActiveRecord::Schema.define(:version => 20110818155727) do
     t.string   "promoter_url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "handwritten_signatures"
+    t.string   "banner_file_name"
+    t.string   "banner_content_type"
+    t.integer  "banner_file_size"
+    t.datetime "banner_updated_at"
   end
 
   create_table "provinces", :force => true do |t|

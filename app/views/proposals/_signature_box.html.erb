@@ -1,6 +1,6 @@
 <div class="signatures_counter">
   <h4><strong><%= @proposal.num_signatures %></strong> firma<%= "s" if @proposal.num_signatures != 1 %></h4>
-  
+  Manuscritas: <%= @proposal.handwritten_signatures %>
   <div class="graph">
     <div class="num" style="width:<%= (220 * @proposal.precent_remaining_signatures).ceil + 30 %>px;"></div>
     <div class="total">Faltan <%= @proposal.num_remaining_signatures %></div>

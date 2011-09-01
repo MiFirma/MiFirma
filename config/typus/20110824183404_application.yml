@@ -14,8 +14,8 @@ Municipality:
 
 Proposal:
   fields:
-    default: name, problem, howto_solve, position, tractis_template_code, pdf, num_required_signatures, promoter_name, promoter_url
-    form: name, problem, howto_solve, tractis_template_code, pdf, num_required_signatures, promoter_name, promoter_url
+    default: name, position, tractis_template_code, num_required_signatures, promoter_name, handwritten_signatures
+    form: name, problem, howto_solve, tractis_template_code, pdf, num_required_signatures, promoter_name, promoter_url, handwritten_signatures, banner
   order_by: position
   relationships: signatures
   filters: created_at
