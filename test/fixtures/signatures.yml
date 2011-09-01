@@ -1,20 +1,21 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+﻿# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  proposal_id: 1
-  email: MyString
+javier:
+  proposal: one
+  email: javier.pena@mifirma.com
   state: 1
-  token: MyString
-  tractis_contract_location: MyString
-  name: MyString
-  dni: MyString
-  surname: MyString
-two:
-  proposal_id: 1
-  email: MyString
+  token: 1234
+  tractis_contract_location: 1234
+  name: Javier
+  dni: 1234
+  surname: Peña
+  
+juan:
+  proposal: one
+  email: juan@email.com
   state: 1
-  token: MyString
-  tractis_contract_location: MyString
-  name: MyString
-  dni: MyString
-  surname: MyString
+  token: 2345
+  tractis_contract_location: 12341
+  name: Juan
+  dni: 4321
+  surname: Perez Perez
