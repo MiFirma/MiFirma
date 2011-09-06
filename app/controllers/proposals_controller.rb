@@ -1,4 +1,6 @@
 class ProposalsController < ApplicationController
+	caches_page :index
+	
   # GET /proposals
   # GET /proposals.xml
   def index

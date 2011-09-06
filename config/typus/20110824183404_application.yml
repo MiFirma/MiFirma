@@ -34,7 +34,7 @@ Province:
 
 Signature:
   fields:
-    default: proposal_id, email, state, token, tractis_contract_location, name, dni, surname, terms, province_id, municipality_id, proposal, municipality
+    default: proposal, email, state, name, dni, surname, province_id, municipality
     form: proposal_id, email, state, token, tractis_contract_location, name, dni, surname, terms, province_id, municipality_id, proposal, municipality
   order_by: 
   relationships: municipality, proposal

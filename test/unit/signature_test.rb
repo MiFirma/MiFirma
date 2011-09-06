@@ -8,7 +8,7 @@ class SignatureTest < ActiveSupport::TestCase
 															:token => 2345,
 															:tractis_contract_location => 6543,
 															:name => 'Juanito',
-															:dni => signatures,
+															:dni => signatures(:javier).email,
 															:surname => 'Gómez',
 															:proposal => proposals(:one))
 		assert !signature.save
