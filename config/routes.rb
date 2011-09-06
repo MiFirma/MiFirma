@@ -7,7 +7,8 @@ MiFirma2::Application.routes.draw do
 
   resources :proposals, :only => [:index, :show]
 	
-	match 'province/municipalities_for_provinceid/:id', :controller => "province", :action => "municipalities_for_provinceid"
+	match 'province/municipalities_for_provinceid/:id', :controller => "province", 
+		:action => "municipalities_for_provinceid"
 
 	match 'sobre_nosotros', :controller => "main", :action => "about_us"
   # The priority is based upon order of creation:

@@ -1,9 +1,8 @@
-﻿#require 'tractis_api'
-
-class SignaturesController < ApplicationController
-  
+﻿class SignaturesController < ApplicationController
+	cache_sweeper :signature_sweeper  
+	
   def create
-    @signature = Signature.create params[:signature]
+    @signature = Signature.new params[:signature]
     if @signature.valid?
       tractis_signature_request = ::TractisApi.signature_request @signature
       @signature.update_attribute :tractis_contract_location, tractis_signature_request[:location]
@@ -22,7 +21,6 @@ class SignaturesController < ApplicationController
   end
   
   def show
-		@provinces = Province.order("name")
 		logger.debug 'Estamos dentro del metodo show en Signatures'
     @signature = Signature.find_by_token params[:id]
     @proposal = @signature.proposal

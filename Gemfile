@@ -36,6 +36,6 @@ gem 'typus', '3.0.10'
 #   gem 'webrat'
 # end
 
-#group :development, :test do
+group :development, :test do
    gem 'ruby-debug19', :require => 'ruby-debug'
-#end
+end

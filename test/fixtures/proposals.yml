@@ -10,6 +10,11 @@ one:
   pdf_content_type: application/pdf
   pdf_file_size: 1000
   pdf_updated_at: DateTime.now
+  banner_file_name: "test/fixtures/nuestra_aso.jpg"
+  banner_content_type: image/jpeg
+  banner_file_size: 1000
+  banner_updated_at: DateTime.now
   num_required_signatures: 500
   promoter_name: Promotor
   promoter_url: www.promotor.org
+  handwritten_signatures: 10000

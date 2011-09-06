@@ -2,17 +2,11 @@ require 'test_helper'
 
 class SignaturesControllerTest < ActionController::TestCase
   setup do
-    @signature = signatures(:one)
+    @signature = signatures(:javier)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:signatures)
-  end
-
-  test "should get new" do
-    get :new
+  test "should get share" do
+    get :share
     assert_response :success
   end
 
@@ -29,21 +23,4 @@ class SignaturesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, :id => @signature.to_param
-    assert_response :success
-  end
-
-  test "should update signature" do
-    put :update, :id => @signature.to_param, :signature => @signature.attributes
-    assert_redirected_to signature_path(assigns(:signature))
-  end
-
-  test "should destroy signature" do
-    assert_difference('Signature.count', -1) do
-      delete :destroy, :id => @signature.to_param
-    end
-
-    assert_redirected_to signatures_path
-  end
 end
