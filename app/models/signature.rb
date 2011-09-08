@@ -3,6 +3,7 @@
 class Signature < ActiveRecord::Base
   belongs_to :proposal
 	belongs_to :municipality
+	belongs_to :province
 	
 	validates_presence_of :proposal_id, :state, :token
   validates_presence_of :email, :province_id, :municipality_id, :message => "Debes rellenar todos los campos."
@@ -28,7 +29,7 @@ class Signature < ActiveRecord::Base
   end
   
   def check_tractis_signature
-		contract_response = TractisApi.contract contract_code
+		contract_response = TractisApi.contract contract_code,self
 		doc = Hpricot(contract_response)
     signed = TractisApi.contract_signed? contract_response
 		if signed then

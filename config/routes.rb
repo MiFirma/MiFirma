@@ -11,6 +11,8 @@ MiFirma2::Application.routes.draw do
 		:action => "municipalities_for_provinceid"
 
 	match 'sobre_nosotros', :controller => "main", :action => "about_us"
+	match 'terms', :controller => "main", :action => "terms"
+  match 'privacy', :controller => "main", :action => "privacy"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

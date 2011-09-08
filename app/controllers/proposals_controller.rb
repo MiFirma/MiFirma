@@ -4,7 +4,11 @@ class ProposalsController < ApplicationController
   # GET /proposals
   # GET /proposals.xml
   def index
-    @proposals = Proposal.all
+    @proposals = Proposal.on_signature_time
+		if @proposals.empty? then	
+			raise 'No proposals'
+		end
+		
 		@proposal = Proposal.first
 		@provinces = Province.order("name")
 		@signature = @proposal.signatures.new(params[:signature])

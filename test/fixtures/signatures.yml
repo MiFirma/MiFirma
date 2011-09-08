@@ -9,13 +9,19 @@ javier:
   name: Javier
   dni: 1234
   surname: Peña
+  terms: true
+  municipality: alcobendas
+  province: madrid
   
 juan:
   proposal: one
   email: juan@email.com
-  state: 1
+  state: 0
   token: 2345
   tractis_contract_location: 12341
   name: Juan
   dni: 4321
   surname: Perez Perez
+  terms: true
+  municipality: madrid
+  province: madrid

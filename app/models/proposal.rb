@@ -7,8 +7,12 @@
 	validates_presence_of :name, :problem, :howto_solve, :position,
 		:tractis_template_code, :pdf_file_name, :pdf_content_type, 
 		:pdf_file_size, :pdf_updated_at, :num_required_signatures,
-		:promoter_name, :promoter_url, :handwritten_signatures
+		:promoter_name, :promoter_url, :handwritten_signatures,
+		:signatures_end_date, :promoter_short_name
 	validates_uniqueness_of :name
+	
+	#When the proposal still can collect signatures
+	scope :on_signature_time, lambda { where("signatures_end_date >= ?", Time.zone.now ) }
   
   def num_remaining_signatures
 		num_required_signatures - num_signatures

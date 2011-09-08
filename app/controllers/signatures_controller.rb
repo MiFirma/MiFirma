@@ -1,4 +1,6 @@
-﻿class SignaturesController < ApplicationController
+﻿require 'tractis_api'
+
+class SignaturesController < ApplicationController
 	cache_sweeper :signature_sweeper  
 	
   def create
