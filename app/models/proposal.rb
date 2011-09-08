@@ -12,8 +12,12 @@
 	validates_uniqueness_of :name
 	
 	#When the proposal still can collect signatures
-	scope :on_signature_time, lambda { where("signatures_end_date >= ?", Time.zone.now ) }
+	scope :on_signature_time, lambda { where("signatures_end_date >= ?", Time.now ) }
   
+	def on_signature_time?
+		return signatures_end_date >= Time.now.to_date
+	end
+	
   def num_remaining_signatures
 		num_required_signatures - num_signatures
 	  if num_required_signatures == nil || num_required_signatures == 0

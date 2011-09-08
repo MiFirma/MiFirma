@@ -17,42 +17,47 @@
   </div>
   <% end %>
   
-  <%= form_for @signature do |f| %>
-  <div class="form">
-    
-    <label for="name">Provincia</label>
-    <div class="input">
-			<%= f.select :province_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
-    </div>
+  <% if @proposal.on_signature_time? %>
+	  <%= form_for @signature do |f| %>
+	  <div class="form">
+		
+		<label for="name">Provincia</label>
+		<div class="input">
+				<%= f.select :province_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
+		</div>
 
-    <label for="name">Municipio</label>
-    <div class="input">
-		<% if not (@signature.province_id.nil? ) %>
-			<%= f.select :municipality_id, Municipality.find_all_by_province_id(@signature.province_id).collect {|p| [p.name,p.id]}, { :include_blank => true } %>
-		<% else %>
-			<%= f.select :municipality_id, [] , { :prompt => "Seleccione Provincia" } %>
-		<% end %>
-    </div>
-    
-    <label for="email">Tu email</label>
-    <div class="input">
-      <%= f.hidden_field :proposal_id %>
-      <%= f.text_field :email %>
-    </div>
+		<label for="name">Municipio</label>
+		<div class="input">
+			<% if not (@signature.province_id.nil? ) %>
+				<%= f.select :municipality_id, Municipality.find_all_by_province_id(@signature.province_id).collect {|p| [p.name,p.id]}, { :include_blank => true } %>
+			<% else %>
+				<%= f.select :municipality_id, [] , { :prompt => "Seleccione Provincia" } %>
+			<% end %>
+		</div>
+		
+		<label for="email">Tu email</label>
+		<div class="input">
+		  <%= f.hidden_field :proposal_id %>
+		  <%= f.text_field :email %>
+		</div>
 
-    <div class="tos">
-      <%= f.check_box :terms %>
-      Acepto los <a href="/terms">términos y condiciones</a>
-    </div>
-    
-  </div>
+		<div class="tos">
+		  <%= f.check_box :terms %>
+		  Acepto los <a href="/terms">términos y condiciones</a>
+		</div>
+		
+	  </div>
 
-  <div class="btn_sign">
-    <a href="#" onclick="$('#new_signature').submit(); return false;">Firma electónica</a>
-  </div>
-  
-  
+	  <div class="btn_sign">
+		<a href="#" onclick="$('#new_signature').submit(); return false;">Firma electónica</a>
+	  </div>
+	  
+	  
+	  <% end %>
+  <% else %>
+	<h4>No se admiten más firmas para esta Iniciativa. Se ha superado el plazo de recepción de firmas </h4>
   <% end %>
+  
 </div>
 
 <div class="tradicional">
