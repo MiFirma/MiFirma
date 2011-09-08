@@ -6,7 +6,7 @@ class TractisApi
   def self.signature_request(signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/gateway"
-    client.set_auth(target_url, "sergio.espeja@gmail.com", "testmifirma")
+    client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
     data = "<contract>
  	   <name>#{signature.proposal.name}</name>
  	   <redirect-when-signed>#{signature.return_url}</redirect-when-signed>
@@ -28,10 +28,11 @@ class TractisApi
  	 {:location => response.header["Location"].first}
   end
   
-  def self.contract(contract_code="604622863")
+  def self.contract(contract_code="604622863",signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/#{contract_code}"
-    client.set_auth(target_url, "sergio.espeja@gmail.com", "testmifirma")
+    client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
+
 
   	response = client.get target_url, nil, "Accept" => "application/xml"
     response.content
@@ -41,10 +42,11 @@ class TractisApi
     (Hpricot(response)/"signed").text == "true"
   end
   
-  def self.get_signatures(contract_code="604622863")
+  def self.get_signatures(contract_code="604622863",signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/#{contract_code}/get_signatures"
-    client.set_auth(target_url, "sergio.espeja@gmail.com", "testmifirma")
+    client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
+
 
     response = client.get target_url
   end
