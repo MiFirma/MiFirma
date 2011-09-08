@@ -1,7 +1,27 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+﻿# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  proposal_id: 1
-
-two:
-  proposal_id: 1
+javier:
+  proposal: one
+  email: javier.pena@mifirma.com
+  state: 1
+  token: 1234
+  tractis_contract_location: 1234
+  name: Javier
+  dni: 1234
+  surname: Peña
+  terms: true
+  municipality: alcobendas
+  province: madrid
+  
+juan:
+  proposal: one
+  email: juan@email.com
+  state: 0
+  token: 2345
+  tractis_contract_location: 12341
+  name: Juan
+  dni: 4321
+  surname: Perez Perez
+  terms: true
+  municipality: madrid
+  province: madrid

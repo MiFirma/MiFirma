@@ -1,0 +1,9 @@
+﻿# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+madrid:
+  name: madrid
+  id_ine: 28
+
+alava:
+  name: alava
+  id_ine: 1

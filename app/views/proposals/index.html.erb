@@ -1,18 +1,13 @@
+﻿<% content_for(:bodyclass) {"home"} -%> 
 <div class="page">
-
-  <div class="page-content">
-
-    <%= render @proposals %>
-
-  </div>
+  <div class="page-content"><%=render @proposals%></div>
 
   <div class="page-sidebar">
     <%#= render :partial => 'shared/reasons' %>
     <div class="signature_box">
-      <%= render :partial => 'signature_box', :locals => {:proposal => @proposals.first} %>
+      <%= render :partial => 'signature_box' %>
     </div>
   </div>
 
   <div class="clear">&nbsp;</div>
 </div>
-

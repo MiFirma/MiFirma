@@ -1,0 +1,11 @@
+﻿# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+alcobendas:
+  name: alcobendas
+  province_id: 28
+  id_ine: 4292
+
+madrid:
+  name: madrid
+  province_id: 28
+  id_ine: 4365

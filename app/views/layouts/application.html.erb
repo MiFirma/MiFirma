@@ -1,4 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html lang="es">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -13,14 +13,12 @@
 
 
 </head>
-<body class="<%= yield(:bodyclass) || 'home' %>">
-
+<body class="<%= yield(:bodyclass) %>">
   <div class="main-wr">
     <div class="main">
       <div class="header-top">
         <a class="logo" href="/"><img class="pngfix" src="/images/logo.png" alt="" /></a>
         <%= render :partial => "/shared/menu" %>
-
       </div>
       <div class="header-bottom">
         <div class="lh">
@@ -52,7 +50,4 @@
 
 </body>
 </html>
-
-
-
 

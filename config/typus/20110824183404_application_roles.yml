@@ -1,0 +1,9 @@
+# Typus Roles Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+admin:
+  Municipality: create, read, update, delete
+  Proposal: create, read, update, delete
+  Province: create, read, update, delete
+  Signature: create, read, update, delete

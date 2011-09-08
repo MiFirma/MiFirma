@@ -2,7 +2,7 @@
 
 Web app to allow people to sign proposals.
 
-Developed in Ruby on Rails 2.3.5
+Developed in Ruby on Rails 3.0.9
 
 == Models
  * Proposal:

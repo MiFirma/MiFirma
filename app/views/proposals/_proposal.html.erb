@@ -1,12 +1,13 @@
-<div class="proposal-wr">
+﻿<div class="proposal-wr">
   <div class="proposal">
     <h1> 
       <%= link_to proposal.name, proposal_path(proposal) %>
       <span>Acción promovida por: <%= link_to proposal.promoter_name, proposal.promoter_url %></span>
     </h1>
-    
+		<%= image_tag proposal.banner.url %>    
     <div class="proposal_content">
-      <%= proposal.howto_solve %>
+			
+      <%= proposal.howto_solve.html_safe %>
     </div>
     
     <div class="download">
