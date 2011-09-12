@@ -11,6 +11,7 @@ gem 'acts_as_list'
 gem 'httpclient'
 gem 'hpricot'
 gem 'typus', '3.0.10'
+gem 'validates_timeliness', '~> 3.0.2'
 
 
 # Use unicorn as the web server

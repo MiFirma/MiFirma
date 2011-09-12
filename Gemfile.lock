@@ -92,6 +92,7 @@ GEM
     sqlite3 (1.3.3)
     sqlite3 (1.3.3-x86-mingw32)
     thor (0.14.6)
+    timeliness (0.3.4)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     typus (3.0.10)
@@ -100,6 +101,8 @@ GEM
       render_inheritable
       will_paginate (~> 3.0.pre2)
     tzinfo (0.3.28)
+    validates_timeliness (3.0.6)
+      timeliness (~> 0.3.3)
     will_paginate (3.0.pre2)
 
 PLATFORMS
@@ -115,3 +118,4 @@ DEPENDENCIES
   ruby-debug19
   sqlite3
   typus (= 3.0.10)
+  validates_timeliness (~> 3.0.2)
