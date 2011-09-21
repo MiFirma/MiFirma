@@ -4,14 +4,14 @@ class ProposalsController < ApplicationController
   # GET /proposals
   # GET /proposals.xml
   def index
-    @proposals = Proposal.on_signature_time
+    @proposals = IlpProposal.on_signature_time
 		if @proposals.empty? then	
 			raise 'No proposals'
 		end
 		
-		@proposal = Proposal.first
+		@proposal = @proposals.first
 		@provinces = Province.order("name")
-		@signature = @proposal.signatures.new(params[:signature])
+		@signature = @proposal.ilp_signatures.new(params[:signature])
 
     share_texts(@proposals.first)
 
@@ -24,9 +24,9 @@ class ProposalsController < ApplicationController
   # GET /proposals/1
   # GET /proposals/1.xml
   def show
-    @proposal = Proposal.find(params[:id])
+    @proposal = IlpProposal.find(params[:id])
 		@provinces = Province.order("name")
-		@signature = @proposal.signatures.new(params[:signature])
+		@signature = @proposal.ilp_signatures.new(params[:signature])
 		
     share_texts(@proposal)
 		

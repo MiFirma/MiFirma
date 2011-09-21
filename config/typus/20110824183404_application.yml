@@ -12,12 +12,11 @@ Municipality:
   search: name
   application: MiFirma
 
-Proposal:
+IlpProposal:
   fields:
     default: name, position, tractis_template_code, num_required_signatures, promoter_name, handwritten_signatures, signatures_end_date
     form: name, problem, howto_solve, tractis_template_code, pdf, num_required_signatures, promoter_name, promoter_url, handwritten_signatures, banner, promoter_short_name, signatures_end_date
   order_by: position
-  relationships: signatures
   filters: created_at
   search: name
   application: MiFirma
@@ -32,12 +31,12 @@ Province:
   search: name
   application: MiFirma
 
-Signature:
+IlpSignature:
   fields:
-    default: proposal, email, state, name, dni, surname, province, municipality
-    form: proposal_id, email, state, token, tractis_contract_location, name, dni, surname, terms, province_id, municipality_id, zipcode, proposal, date_of_birth,  province_of_birth_id, municipality_of_birth_id, address, province, municipality, province_of_birth, municipality_of_birth
+    default: ilp_proposal, email, state, name, dni, surname, province, municipality
+    form: proposal_id, email, state, token, tractis_contract_location, name, dni, surname, terms, province_id, municipality_id, zipcode, ilp_proposal, date_of_birth,  province_of_birth_id, municipality_of_birth_id, address, province, municipality, province_of_birth, municipality_of_birth
   order_by: 
-  relationships: municipality, proposal
+  relationships: municipality, ilp_proposal
   filters: created_at
   search: name
   application: MiFirma

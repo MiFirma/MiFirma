@@ -4,6 +4,6 @@
 
 admin:
   Municipality: create, read, update, delete
-  Proposal: create, read, update, delete
+  IlpProposal: create, read, update, delete  
   Province: create, read, update, delete
-  Signature: create, read, update, delete
+  IlpSignature: create, read, update, delete

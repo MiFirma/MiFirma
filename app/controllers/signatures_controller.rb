@@ -4,7 +4,7 @@ class SignaturesController < ApplicationController
 	cache_sweeper :signature_sweeper  
 	
   def create
-    @signature = Signature.new params[:signature]
+    @signature = IlpSignature.new params[:signature]
     if @signature.valid?
       tractis_signature_request = ::TractisApi.signature_request @signature
       @signature.update_attribute :tractis_contract_location, tractis_signature_request[:location]
@@ -18,7 +18,7 @@ class SignaturesController < ApplicationController
       end
     else
       flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
-      redirect_to proposal_url(@signature.proposal, :signature => params[:signature])
+      redirect_to proposal_url(@signature.ilp_proposal, :signature => params[:signature])
     end
   end
   
