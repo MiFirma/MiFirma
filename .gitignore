@@ -3,6 +3,7 @@ db/*.sqlite3
 log/*.log
 tmp/
 public/system/*
+public/index.html
 Capfile
 .DS_Store
 **/.DS_Store

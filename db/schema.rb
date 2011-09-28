@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110912100615) do
+ActiveRecord::Schema.define(:version => 20110927201512) do
+
+  create_table "endorsment_proposals", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "endorsment_signatures", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "municipalities", :force => true do |t|
     t.integer  "id_ine"
@@ -44,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20110912100615) do
     t.datetime "banner_updated_at"
     t.string   "promoter_short_name"
     t.date     "signatures_end_date"
+    t.string   "type"
   end
 
   create_table "provinces", :force => true do |t|
@@ -72,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20110912100615) do
     t.date     "date_of_birth"
     t.integer  "province_of_birth_id"
     t.integer  "municipality_of_birth_id"
+    t.string   "type"
   end
 
   add_index "signatures", ["dni"], :name => "index_signatures_on_dni"
