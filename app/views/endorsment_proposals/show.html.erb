@@ -1,0 +1,59 @@
+﻿<div class="signatures_counter">
+  <h4><strong><%= @endorsment_proposal.num_signatures %></strong> firma<%= "s" if @endorsment_proposal.num_signatures != 1 %></h4>
+</div>
+
+<div class="form_container">
+
+  <% if flash[:error] %>
+  <div class="sign_error">
+    <strong>Error al crear la firma.</strong>
+    <%= flash[:error].html_safe %>
+  </div>
+  <% end %>
+  
+  <% if @endorsment_proposal.on_signature_time? %>
+	  <%= form_for @endorsment_signature do |f| %>
+	  <div class="form">
+		Datos de censo
+		<label for="province">Provincia</label>
+		<div class="input">
+				<%= f.select :province_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
+		</div>
+
+		Datos de nacimiento
+
+		<label for="date_of_birth">Fecha de Nacimiento</label>
+		<div class="input">
+		  <%= f.text_field :date_of_birth %>
+		</div>
+		
+		<label for="email">Tu email</label>
+		<div class="input">
+		  <%= f.hidden_field :proposal_id %>
+		  <%= f.text_field :email %>
+		</div>
+
+		<div class="tos">
+		  <%= f.check_box :terms %>
+		  Acepto los <a href="/terms">términos y condiciones</a>
+		</div>
+		
+	  </div>
+
+	  <div class="btn_sign">
+		<a href="#" onclick="$('#new_endorsment_signature').submit(); return false;">Firma electónica</a>
+	  </div>
+	  
+	  
+	  <% end %>
+  <% else %>
+	<h4>No se admiten más firmas para esta Iniciativa. Se ha superado el plazo de recepción de firmas </h4>
+  <% end %>
+  
+</div>
+
+<div class="tradicional">
+  <p>
+    Si no dispones de <strong>DNI electrónico</strong> puedes mostrar tu apoyo con una <a href="#" onclick="alert('Próximamente en MiFirma'); return false;">firma tradicional</a>
+  </p>
+</div>

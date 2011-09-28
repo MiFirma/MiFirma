@@ -18,7 +18,7 @@
   <% end %>
   
   <% if @proposal.on_signature_time? %>
-	  <%= form_for @signature do |f| %>
+	  <%= form_for @signature, :url => signatures_path(@signature) do |f| %>
 	  <div class="form">
 		Datos de censo
 		<label for="province">Provincia</label>
@@ -81,7 +81,7 @@
 	  </div>
 
 	  <div class="btn_sign">
-		<a href="#" onclick="$('#new_signature').submit(); return false;">Firma electónica</a>
+		<a href="#" onclick="$('#new_ilp_signature').submit(); return false;">Firma electónica</a>
 	  </div>
 	  
 	  

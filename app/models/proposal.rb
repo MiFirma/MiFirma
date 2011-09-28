@@ -15,12 +15,4 @@
 		return signatures_end_date >= Time.now.to_date
 	end
 	
-	def self.inherited(child)
-		child.instance_eval do
-			def model_name
-				Proposal.model_name
-			end
-		end
-		super
-	end
 end

@@ -4,13 +4,13 @@
     closeImage   : '/images/closelabel.png'
   }); 
 
-  $("select#signature_province_id").change(function(){
+  $("select#ilp_signature_province_id").change(function(){
     var id_value_string = $(this).val();
     if (id_value_string == "") {
       // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
-      $("select#signature_municipality_id option").remove();
+      $("select#ilp_signature_municipality_id option").remove();
       var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-      $(row).appendTo("select#signature_municipality_id");
+      $(row).appendTo("select#ilp_signature_municipality_id");
     }
     else {
       // Send the request and update sub category dropdown
@@ -24,27 +24,27 @@
           },
           success: function(data){                    
               // Clear all options from sub category select
-              $("select#signature_municipality_id option").remove();
+              $("select#ilp_signature_municipality_id option").remove();
               //put in a empty default line
               var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-              $(row).appendTo("select#signature_municipality_id");                        
+              $(row).appendTo("select#ilp_signature_municipality_id");                        
               // Fill sub category select
               $.each(data, function(i, j){
                   row = "<option value=\"" + j.municipality.id + "\">" + j.municipality.name + "</option>";  
-                  $(row).appendTo("select#signature_municipality_id");                    
+                  $(row).appendTo("select#ilp_signature_municipality_id");                    
               });            
            }
       });
     };
   });
 
-  $("select#signature_province_of_birth_id").change(function(){
+  $("select#ilp_signature_province_of_birth_id").change(function(){
     var id_value_string = $(this).val();
     if (id_value_string == "") {
       // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
-      $("select#signature_municipality_of_birth_id option").remove();
+      $("select#ilp_signature_municipality_of_birth_id option").remove();
       var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-      $(row).appendTo("select#signature_municipality_of_birth_id");
+      $(row).appendTo("select#ilp_signature_municipality_of_birth_id");
     }
     else {
       // Send the request and update sub category dropdown
@@ -58,14 +58,14 @@
           },
           success: function(data){                    
               // Clear all options from sub category select
-              $("select#signature_municipality_of_birth_id option").remove();
+              $("select#ilp_signature_municipality_of_birth_id option").remove();
               //put in a empty default line
               var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-              $(row).appendTo("select#signature_municipality_of_birth_id");                        
+              $(row).appendTo("select#ilp_signature_municipality_of_birth_id");                        
               // Fill sub category select
               $.each(data, function(i, j){
                   row = "<option value=\"" + j.municipality.id + "\">" + j.municipality.name + "</option>";  
-                  $(row).appendTo("select#signature_municipality_of_birth_id");
+                  $(row).appendTo("select#ilp_signature_municipality_of_birth_id");
               });            
            }
       });

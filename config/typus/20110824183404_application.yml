@@ -41,3 +41,21 @@ IlpSignature:
   search: name
   application: MiFirma
 
+EndorsmentSignature:
+  fields:
+    default: endorsment_proposal, email, state, name, dni, surname, province
+    form: proposal_id, email, state, token, tractis_contract_location, name, dni, surname, terms, province_id, endorsment_proposal, date_of_birth,   province
+  order_by: 
+  relationships: province, endorsment_proposal
+  filters: created_at
+  search: name
+  application: MiFirma
+
+EndorsmentProposal:
+  fields:
+    default: name, position, tractis_template_code, promoter_name,  signatures_end_date
+    form: name, problem, howto_solve, tractis_template_code, promoter_name, promoter_url, banner, promoter_short_name, signatures_end_date
+  order_by: position
+  filters: created_at
+  search: name
+  application: MiFirma

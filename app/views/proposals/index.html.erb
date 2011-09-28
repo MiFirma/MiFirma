@@ -1,6 +1,6 @@
 ﻿<% content_for(:bodyclass) {"home"} -%> 
 <div class="page">
-  <div class="page-content"><%=render @proposals%></div>
+  <div class="page-content"><%=render :partial => 'proposal', :collection => @proposals%></div>
 
   <div class="page-sidebar">
     <%#= render :partial => 'shared/reasons' %>

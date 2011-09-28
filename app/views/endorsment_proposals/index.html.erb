@@ -1,0 +1,21 @@
+﻿<h2>Listado de partidos que necesitán tu aval:</h2>
+
+<table>
+  <tr>
+		<th>Nombre</th>
+		<th></th>
+    <th></th>
+  </tr>
+
+<% @endorsment_proposals.each do |endorsment_proposal| %>
+  <tr>
+		<td><%= endorsment_proposal.promoter_name %>
+		<td><%= image_tag endorsment_proposal.banner.url %> 
+    <td><%= link_to 'Show', endorsment_proposal %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Endorsment proposal', new_endorsment_proposal_path %>

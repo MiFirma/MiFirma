@@ -1,4 +1,8 @@
 MiFirma2::Application.routes.draw do
+  resources :endorsment_signatures
+
+  resources :endorsment_proposals
+
   resources :signatures, :only => [:create, :show] do
 		member do
 			get 'share'

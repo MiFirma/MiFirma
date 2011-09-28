@@ -1,0 +1,2 @@
+class EndorsmentSignature < Signature
+end

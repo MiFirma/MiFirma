@@ -60,13 +60,4 @@ class Signature < ActiveRecord::Base
     self.state = 0 if self.state.nil?
   end
  
- 
- 	def self.inherited(child)
-		child.instance_eval do
-			def model_name
-				Signature.model_name
-			end
-		end
-		super
-	end
 end
