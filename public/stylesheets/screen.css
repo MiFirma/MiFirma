@@ -346,6 +346,11 @@ div.proposal {
   width: 590px;
   position: relative;
   margin-bottom: 20px;
+  overflow:hidden;
+}
+div.proposal img {
+  float:left;
+  margin:0 10px 10px 0;
 }
 div.proposal hr {
   color: #ececec;
@@ -716,15 +721,24 @@ div.page-sidebar .signature_box .signatures_counter {
   background: url(../images/bg_firmas.png) no-repeat -6px -6px;
   width: 290px;
   height: 85px;
-  padding-top: 25px;
+  padding-top: 20px;
   text-align: center;
 }
 div.page-sidebar .signature_box .signatures_counter h4 {
   text-shadow: 1px 1px #ffffff;
-  padding-bottom: 5px;
   color: #333333;
   font-size: 29px;
+  margin-bottom:0px;
 }
+div.page-sidebar .signature_box .signatures_counter h4 span{
+  text-shadow: 1px 1px #ffffff;
+  padding-bottom: 5px;
+  margin-top:3px;
+  color: #333333;
+  font-size: 13px;
+  display:block;
+}
+
 div.page-sidebar .signature_box .signatures_counter h4 strong { font-weight: bold; }
 div.page-sidebar .signature_box .signatures_counter .graph {
   background: url(../images/bg_bar_firmas.png) no-repeat;
