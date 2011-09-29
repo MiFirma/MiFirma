@@ -1,4 +1,8 @@
-MiFirma2::Application.routes.draw do
+﻿MiFirma2::Application.routes.draw do
+  resources :endorsment_signatures
+
+  resources :endorsment_proposals
+
   resources :signatures, :only => [:create, :show] do
 		member do
 			get 'share'
@@ -13,6 +17,7 @@ MiFirma2::Application.routes.draw do
 	match 'sobre_nosotros', :controller => "main", :action => "about_us"
 	match 'terms', :controller => "main", :action => "terms"
   match 'privacy', :controller => "main", :action => "privacy"
+	
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -62,7 +67,7 @@ MiFirma2::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => "proposals#index"
+  root :to => "main#index"
 
   # See how all your routes lay out with "rake routes"
 

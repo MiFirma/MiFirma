@@ -12,7 +12,7 @@ gem 'httpclient'
 gem 'hpricot'
 gem 'typus', '3.0.10'
 gem 'validates_timeliness', '~> 3.0.2'
-
+gem 'aws-s3'
 
 # Use unicorn as the web server
 # gem 'unicorn'

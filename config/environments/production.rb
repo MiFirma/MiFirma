@@ -1,4 +1,4 @@
-MiFirma2::Application.configure do
+﻿MiFirma2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # The production environment is meant for finished, "live" apps.
@@ -29,7 +29,7 @@ MiFirma2::Application.configure do
 
   # Disable Rails's static asset server
   # In production, Apache or nginx will already do this
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
@@ -50,3 +50,9 @@ end
 
 MIFIRMA_HOST = "www.mifirma.com"
 
+PAPERCLIP_CONFIG = {
+  :storage => :s3,
+  :bucket => 'mifirma-pro',
+	:s3_credentials => { :access_key_id     => ENV['S3_KEY'], 
+                       :secret_access_key => ENV['S3_SECRET']}
+}

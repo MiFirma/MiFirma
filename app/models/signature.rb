@@ -1,24 +1,16 @@
 ﻿require 'hpricot'
 
 class Signature < ActiveRecord::Base
-  belongs_to :proposal
-	belongs_to :municipality
 	belongs_to :province
-	belongs_to :municipality_of_birth, :class_name => 'Municipality', :foreign_key => "municipality_of_birth_id"
-	belongs_to :province_of_birth, :class_name => 'Province', :foreign_key => "province_of_birth_id"
 	
 	
 	validates_presence_of :proposal_id, :state, :token
-  validates_presence_of :email, :date_of_birth, :municipality_of_birth_id, :province_of_birth_id, :address, :zipcode, :province_id, :municipality_id, :message => "Debes rellenar todos los campos."
+  validates_presence_of :email, :date_of_birth, :message => "Debes rellenar todos los campos."
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :message => "Email no válido. Por favor, comprueba que has introducido correctamente tu dirección de correo electrónico."
   validates_acceptance_of :terms, :accept => true, :message => "Debes aceptar los términos de uso."
   
 	validates_date :date_of_birth, :before => lambda { 18.years.ago },
                               :before_message => "debe tener al menos 18 años", :after => lambda { 150.years.ago }, :after_message => "demasiados años"
-	
-	validates_format_of :zipcode,
-                    :with => /^[0-9]{5}$/i,
-                    :message => "Código Postal incorrecto"
 	
   validates_uniqueness_of :dni, :scope => :proposal_id, :if => Proc.new { |sig| sig.state > 0 }, :message => "Sólo puedes firmar una vez esta propuesta."
   
@@ -67,5 +59,5 @@ class Signature < ActiveRecord::Base
   def set_default_state
     self.state = 0 if self.state.nil?
   end
-  
+ 
 end

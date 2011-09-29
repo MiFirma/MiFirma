@@ -2,8 +2,32 @@
 require 'hpricot'
 
 class TractisApi
-  
-  def self.signature_request(signature)
+	def signature_request_endorsment(signature)
+    client = HTTPClient.new
+    target_url = "https://www.tractis.com/contracts/gateway"
+    client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
+    data = "<oce>
+			<avalcandidatura>
+				<avalista>
+					<nomb>#{signature.name}</nomb>
+					<ape1>#{signature.surname}</ape1>
+					<ape2>#{signature.surname2}</ape2>
+					<fnac>#{signature.date_of_birth}</fnac>
+					<tipoid>1</tipoid>
+					<id>#{signature.dni}</id>
+				</avalista>
+				<candidatura>
+					<elecciones />
+					<circunscripción />
+					<nombre />
+				</candidatura>
+			</avalcandidatura>
+		</oce>"
+	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
+ 	 {:location => response.header["Location"].first}	
+	end
+
+  def self.signature_request_ilp(signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/gateway"
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
@@ -11,6 +35,18 @@ class TractisApi
  	   <name>#{signature.proposal.name}</name>
  	   <redirect-when-signed>#{signature.return_url}</redirect-when-signed>
  	   <template>#{signature.tractis_template_code}</template>
+		 <auto-complete>
+		  <nacimiento>
+				<fecha>#{signature.date_of_birth}</fecha>
+				<municipio>#{signature.municipality_of_birth.name}</municipio>
+				<provincia>#{signature.province_of_birth.name}</provincia>
+			</nacimiento>
+			<censo>
+				<direccion>#{signature.address}</direccion>
+				<provincia>#{signature.province.name}</provincia>
+				<municipio>#{signature.municipality.name}</municipio>
+			</censo>
+		 </auto-complete>
  	   <team>
  	     <member>
          <nombre>#{signature.name}</nombre>
@@ -23,8 +59,7 @@ class TractisApi
  	     </member>
  	   </team>
  	 </contract>"
- 	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
-
+	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
  	 {:location => response.header["Location"].first}
   end
   

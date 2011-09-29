@@ -1,0 +1,2 @@
+module EndorsmentProposalsHelper
+end

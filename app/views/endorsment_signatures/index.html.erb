@@ -1,0 +1,21 @@
+<h1>Listing endorsment_signatures</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @endorsment_signatures.each do |endorsment_signature| %>
+  <tr>
+    <td><%= link_to 'Show', endorsment_signature %></td>
+    <td><%= link_to 'Edit', edit_endorsment_signature_path(endorsment_signature) %></td>
+    <td><%= link_to 'Destroy', endorsment_signature, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Endorsment signature', new_endorsment_signature_path %>
