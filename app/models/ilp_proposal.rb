@@ -1,6 +1,7 @@
 class IlpProposal < Proposal
 	has_many :ilp_signatures, :class_name => 'IlpSignature', :foreign_key => "proposal_id"
-	has_attached_file :pdf
+	
+	has_attached_file :pdf, PAPERCLIP_CONFIG
 	
 	validates_presence_of :pdf_file_name, :pdf_content_type, 
 		:pdf_file_size, :pdf_updated_at, :num_required_signatures,

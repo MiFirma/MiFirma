@@ -31,6 +31,10 @@ GEM
     acts_as_list (0.1.4)
     archive-tar-minitar (0.5.2)
     arel (2.0.10)
+    aws-s3 (0.6.2)
+      builder
+      mime-types
+      xml-simple
     bcrypt-ruby (2.1.4)
     bcrypt-ruby (2.1.4-x86-mingw32)
     builder (2.1.2)
@@ -104,6 +108,7 @@ GEM
     validates_timeliness (3.0.6)
       timeliness (~> 0.3.3)
     will_paginate (3.0.pre2)
+    xml-simple (1.1.0)
 
 PLATFORMS
   ruby
@@ -111,6 +116,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_list
+  aws-s3
   hpricot
   httpclient
   paperclip

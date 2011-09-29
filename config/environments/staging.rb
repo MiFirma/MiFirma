@@ -19,7 +19,7 @@
   # just comment this out and Rails will serve the files
 
   # See everything in the log (default is :info)
-  # config.log_level = :debug
+  config.log_level = :debug
 
   # Use a different logger for distributed setups
   # config.logger = SyslogLogger.new
@@ -52,7 +52,7 @@ MIFIRMA_HOST = "www.mifirma.com"
 
 PAPERCLIP_CONFIG = {
   :storage => :s3,
-  :bucket => 'mifirma-pro',
+  :bucket => 'mifirma-stage',
 	:s3_credentials => { :access_key_id     => ENV['S3_KEY'], 
-                       :secret_access_key => ENV['S3_SECRET']}
+                       :secret_access_key => ENV['S3_SECRET']}	
 }

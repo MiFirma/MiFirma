@@ -2,7 +2,31 @@
 require 'hpricot'
 
 class TractisApi
-  
+	def signature_request_endorsment(signature)
+    client = HTTPClient.new
+    target_url = "https://www.tractis.com/contracts/gateway"
+    client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
+    data = "<oce>
+			<avalcandidatura>
+				<avalista>
+					<nomb>#{signature.name}</nomb>
+					<ape1>#{signature.surname}</ape1>
+					<ape2>#{signature.surname2}</ape2>
+					<fnac>#{signature.date_of_birth}</fnac>
+					<tipoid>1</tipoid>
+					<id>#{signature.dni}</id>
+				</avalista>
+				<candidatura>
+					<elecciones />
+					<circunscripción />
+					<nombre />
+				</candidatura>
+			</avalcandidatura>
+		</oce>"
+	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
+ 	 {:location => response.header["Location"].first}	
+	end
+
   def self.signature_request_ilp(signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/gateway"

@@ -1,6 +1,6 @@
 ﻿class Proposal < ActiveRecord::Base
   
-	has_attached_file :banner
+	has_attached_file :banner, PAPERCLIP_CONFIG
 	acts_as_list
 	
 	validates_presence_of :name, :problem, :howto_solve,

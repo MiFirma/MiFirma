@@ -1,4 +1,4 @@
-MiFirma2::Application.configure do
+﻿MiFirma2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -25,3 +25,4 @@ MiFirma2::Application.configure do
 end
 
 MIFIRMA_HOST = "localhost:3000"
+PAPERCLIP_CONFIG = {}
