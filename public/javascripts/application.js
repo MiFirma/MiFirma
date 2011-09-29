@@ -25,7 +25,9 @@
           error: function(XMLHttpRequest, errorTextStatus, error){
             alert("Failed to submit : "+ errorTextStatus+" ;"+error);
           },
-          success: function(data){                    
+          success: function(data){
+            // Disable selectbox functionality in order to be able to enable it again with new values
+            $("#signature_municipality_id").selectbox("detach");
             // Clear all options from sub category select
             $("select#signature_municipality_id option").remove();
             //put in a empty default line
@@ -35,7 +37,8 @@
             $.each(data, function(i, j){
               row = "<option value=\"" + j.municipality.id + "\">" + j.municipality.name + "</option>";  
               $(row).appendTo("select#signature_municipality_id");                    
-            });            
+            });
+            $("#signature_municipality_id").selectbox();       
           }
         });
       };
@@ -61,7 +64,9 @@
           error: function(XMLHttpRequest, errorTextStatus, error){
             alert("Failed to submit : "+ errorTextStatus+" ;"+error);
           },
-          success: function(data){                    
+          success: function(data){
+            // Disable selectbox functionality in order to be able to enable it again with new values
+            $("#signature_municipality_of_birth_id").selectbox("detach");
             // Clear all options from sub category select
             $("select#signature_municipality_of_birth_id option").remove();
             //put in a empty default line
@@ -71,12 +76,17 @@
             $.each(data, function(i, j){
               row = "<option value=\"" + j.municipality.id + "\">" + j.municipality.name + "</option>";  
               $(row).appendTo("select#signature_municipality_of_birth_id");
-            });            
+            });
+            $("#signature_municipality_of_birth_id").selectbox();
           }
         });
       };
     }
   });
+
+  $("#signature_municipality_id").selectbox();
+
+  $("#signature_municipality_of_birth_id").selectbox();
 
 
 });
