@@ -24,7 +24,7 @@ Proposal.create(
 	:tractis_template_code => '137997890')
 	
 Province.create ([
-	{:id_ine=>1, :name=>'Álava'},
+	{:id_ine=>1, :name=>'Araba/Álava'},
 	{:id_ine=>2, :name=>'Albacete'},
 	{:id_ine=>3, :name=>'Alicante'},
 	{:id_ine=>4, :name=>'Almería'},
@@ -69,9 +69,9 @@ Province.create ([
 	{:id_ine=>43, :name=>'Tarragona'},
 	{:id_ine=>44, :name=>'Teruel'},
 	{:id_ine=>45, :name=>'Toledo'},
-	{:id_ine=>46, :name=>'Valencia'},
+	{:id_ine=>46, :name=>'Valencia/València'},
 	{:id_ine=>47, :name=>'Valladolid'},
-	{:id_ine=>48, :name=>'Vizcaya'},
+	{:id_ine=>48, :name=>'Bizkaia'},
 	{:id_ine=>49, :name=>'Zamora'},
 	{:id_ine=>50, :name=>'Zaragoza'},
 	{:id_ine=>51, :name=>'Ceuta'},
