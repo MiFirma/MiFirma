@@ -3,6 +3,8 @@
     loadingImage : '/images/loading.gif',
     closeImage   : '/images/closelabel.png'
   }); 
+  
+  $("select").selectbox();
 
   $("select#signature_province_id").change(function(){
     var id_value_string = $(this).val();

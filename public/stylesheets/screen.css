@@ -346,11 +346,6 @@ div.proposal {
   width: 590px;
   position: relative;
   margin-bottom: 20px;
-  overflow:hidden;
-}
-div.proposal img {
-  float:left;
-  margin:0 10px 10px 0;
 }
 div.proposal hr {
   color: #ececec;
@@ -455,6 +450,12 @@ div.proposal div.fb-like input[type=text] {
   color: #666666;
   margin-bottom: 5px;
 }
+div.proposal .proposal_content {
+  line-height: 150%;
+  color: #333333;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
 div.proposal .proposal_content p {
   line-height: 150%;
   color: #333333;
@@ -483,6 +484,10 @@ div.proposal .download a {
   right: 10px;
 }
 div.proposal .download a:hover { background-position: 0 -41px; }
+div.proposal img {
+  float: left;
+  margin: 0 10px 10px 0;
+}
 div.proposal-issue {
   margin-top: 15px;
   margin-bottom: 27px;
@@ -721,25 +726,25 @@ div.page-sidebar .signature_box .signatures_counter {
   background: url(../images/bg_firmas.png) no-repeat -6px -6px;
   width: 290px;
   height: 85px;
-  padding-top: 20px;
+  padding-top: 25px;
   text-align: center;
 }
 div.page-sidebar .signature_box .signatures_counter h4 {
   text-shadow: 1px 1px #ffffff;
+  padding-bottom: 0px;
   color: #333333;
   font-size: 29px;
-  margin-bottom:0px;
+  margin-bottom: 0px;
 }
-div.page-sidebar .signature_box .signatures_counter h4 span{
+div.page-sidebar .signature_box .signatures_counter h4 strong { font-weight: bold; }
+div.page-sidebar .signature_box .signatures_counter h4 span {
   text-shadow: 1px 1px #ffffff;
   padding-bottom: 5px;
-  margin-top:3px;
+  margin-top: 3px;
   color: #333333;
   font-size: 13px;
-  display:block;
+  display: block;
 }
-
-div.page-sidebar .signature_box .signatures_counter h4 strong { font-weight: bold; }
 div.page-sidebar .signature_box .signatures_counter .graph {
   background: url(../images/bg_bar_firmas.png) no-repeat;
   width: 252px;
@@ -778,6 +783,7 @@ div.page-sidebar .signature_box .form_container {
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
 }
+div.page-sidebar .signature_box .form_container .separator { margin-bottom: 20px !important; }
 div.page-sidebar .signature_box .form_container .form { padding: 15px; }
 div.page-sidebar .signature_box .form_container label {
   display: block;
@@ -786,15 +792,22 @@ div.page-sidebar .signature_box .form_container label {
   padding-left: 3px;
   font-size: 14px;
 }
-div.page-sidebar .signature_box .form_container label strong { font-weight: bold; }
+div.page-sidebar .signature_box .form_container label strong {
+  font-weight: bold;
+  border-bottom: 1px dotted #cccccc;
+  display: block;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
+}
 div.page-sidebar .signature_box .form_container .input {
   padding: 3px;
   background: #eff2f2;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   width: 248px;
+  height: 35px;
 }
 div.page-sidebar .signature_box .form_container .input input[type=text] {
   background: fff;

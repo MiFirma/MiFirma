@@ -23,7 +23,7 @@
   <% if @proposal.on_signature_time? %>
 	  <%= form_for @signature do |f| %>
 	  <div class="form">
-		Datos de censo
+		<label><strong>Datos de censo</strong></label>
 		<label for="province">Provincia</label>
 		<div class="input">
 				<%= f.select :province_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
@@ -44,11 +44,11 @@
 		</div>
 
 		<label for="zipcode">Código Postal</label>
-		<div class="input">
+		<div class="input separator">
 		  <%= f.text_field :zipcode %>
 		</div>
 
-		Datos de nacimiento
+		<label><strong>Datos de nacimiento</strong></label>
 
 		<label for="date_of_birth">Fecha de Nacimiento</label>
 		<div class="input">
@@ -84,9 +84,12 @@
 	  </div>
 
 	  <div class="btn_sign">
-		<a href="#" onclick="$('#new_signature').submit(); return false;">Firma electónica</a>
+		  <a href="#signature" rel="facebox">Firma electónica</a>
 	  </div>
 	  
+	  <div id="signature">
+
+	  </div>
 	  
 	  <% end %>
   <% else %>
