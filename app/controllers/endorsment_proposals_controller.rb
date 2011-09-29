@@ -15,8 +15,11 @@ class EndorsmentProposalsController < ApplicationController
   def show
     @endorsment_proposal = EndorsmentProposal.find(params[:id])
 		@signature = @endorsment_proposal.endorsment_signatures.new(params[:endorsment_signature])
-
-    respond_to do |format|
+		@provinces = Province.order("name")
+		
+		share_texts(@endorsment_proposal)
+    
+		respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @endorsment_proposal }
     end

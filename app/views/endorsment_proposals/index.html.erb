@@ -1,21 +1,23 @@
-﻿<h2>Listado de partidos que necesitán tu aval:</h2>
+﻿<%= content_for :bodyclass do %>proposal<% end %> 
+<div class="page">
+<h2>Listado de partidos que necesitan avales:</h2>
 
 <table>
   <tr>
-		<th>Nombre</th>
 		<th></th>
-    <th></th>
+		<th>Nombre</th>
+		<th>Web del Partido</th>
+		<th></th>
   </tr>
 
 <% @endorsment_proposals.each do |endorsment_proposal| %>
   <tr>
-		<td><%= endorsment_proposal.promoter_name %>
 		<td><%= image_tag endorsment_proposal.banner.url %> 
-    <td><%= link_to 'Show', endorsment_proposal %></td>
+		<td><%= endorsment_proposal.promoter_name %>
+		<td><%= endorsment_proposal.promoter_url %>
+		<td><%= link_to 'Avalar', endorsment_proposal %></td>
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Endorsment proposal', new_endorsment_proposal_path %>
+</div>
