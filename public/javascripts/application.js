@@ -3,75 +3,80 @@
     loadingImage : '/images/loading.gif',
     closeImage   : '/images/closelabel.png'
   }); 
-  
-  $("select").selectbox();
 
-  $("select#signature_province_id").change(function(){
-    var id_value_string = $(this).val();
-    if (id_value_string == "") {
-      // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
-      $("select#signature_municipality_id option").remove();
-      var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-      $(row).appendTo("select#signature_municipality_id");
-    }
-    else {
-      // Send the request and update sub category dropdown
-      $.ajax({
+  //$("#signature_municipality_id, #signature_municipality_of_birth_id").selectbox();
+
+  $("#signature_province_id").selectbox({
+    onChange: function () {
+      var id_value_string = $(this).val();
+      if (id_value_string == "") {
+        // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
+        $("select#signature_municipality_id option").remove();
+        var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+        $(row).appendTo("select#signature_municipality_id");
+      }
+      else {
+        // Send the request and update sub category dropdown
+        $.ajax({
           dataType: "json",
           cache: false,
           url: '/province/municipalities_for_provinceid/' + id_value_string,
           timeout: 2000,
           error: function(XMLHttpRequest, errorTextStatus, error){
-              alert("Failed to submit : "+ errorTextStatus+" ;"+error);
+            alert("Failed to submit : "+ errorTextStatus+" ;"+error);
           },
           success: function(data){                    
-              // Clear all options from sub category select
-              $("select#signature_municipality_id option").remove();
-              //put in a empty default line
-              var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-              $(row).appendTo("select#signature_municipality_id");                        
-              // Fill sub category select
-              $.each(data, function(i, j){
-                  row = "<option value=\"" + j.municipality.id + "\">" + j.municipality.name + "</option>";  
-                  $(row).appendTo("select#signature_municipality_id");                    
-              });            
-           }
-      });
-    };
+            // Clear all options from sub category select
+            $("select#signature_municipality_id option").remove();
+            //put in a empty default line
+            var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+            $(row).appendTo("select#signature_municipality_id");                        
+            // Fill sub category select
+            $.each(data, function(i, j){
+              row = "<option value=\"" + j.municipality.id + "\">" + j.municipality.name + "</option>";  
+              $(row).appendTo("select#signature_municipality_id");                    
+            });            
+          }
+        });
+      };
+    }
+  });
+  
+  $("#signature_province_of_birth_id").selectbox({
+    onChange: function () {
+      var id_value_string = $(this).val();
+      if (id_value_string == "") {
+        // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
+        $("select#signature_municipality_of_birth_id option").remove();
+        var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+        $(row).appendTo("select#signature_municipality_of_birth_id");
+      }
+      else {
+        // Send the request and update sub category dropdown
+        $.ajax({
+          dataType: "json",
+          cache: false,
+          url: '/province/municipalities_for_provinceid/' + id_value_string,
+          timeout: 2000,
+          error: function(XMLHttpRequest, errorTextStatus, error){
+            alert("Failed to submit : "+ errorTextStatus+" ;"+error);
+          },
+          success: function(data){                    
+            // Clear all options from sub category select
+            $("select#signature_municipality_of_birth_id option").remove();
+            //put in a empty default line
+            var row = "<option value=\"" + "" + "\">" + "" + "</option>";
+            $(row).appendTo("select#signature_municipality_of_birth_id");                        
+            // Fill sub category select
+            $.each(data, function(i, j){
+              row = "<option value=\"" + j.municipality.id + "\">" + j.municipality.name + "</option>";  
+              $(row).appendTo("select#signature_municipality_of_birth_id");
+            });            
+          }
+        });
+      };
+    }
   });
 
-  $("select#signature_province_of_birth_id").change(function(){
-    var id_value_string = $(this).val();
-    if (id_value_string == "") {
-      // if the id is empty remove all the sub_selection options from being selectable and do not do any ajax
-      $("select#signature_municipality_of_birth_id option").remove();
-      var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-      $(row).appendTo("select#signature_municipality_of_birth_id");
-    }
-    else {
-      // Send the request and update sub category dropdown
-      $.ajax({
-          dataType: "json",
-          cache: false,
-          url: '/province/municipalities_for_provinceid/' + id_value_string,
-          timeout: 2000,
-          error: function(XMLHttpRequest, errorTextStatus, error){
-              alert("Failed to submit : "+ errorTextStatus+" ;"+error);
-          },
-          success: function(data){                    
-              // Clear all options from sub category select
-              $("select#signature_municipality_of_birth_id option").remove();
-              //put in a empty default line
-              var row = "<option value=\"" + "" + "\">" + "" + "</option>";
-              $(row).appendTo("select#signature_municipality_of_birth_id");                        
-              // Fill sub category select
-              $.each(data, function(i, j){
-                  row = "<option value=\"" + j.municipality.id + "\">" + j.municipality.name + "</option>";  
-                  $(row).appendTo("select#signature_municipality_of_birth_id");
-              });            
-           }
-      });
-    };
-  });	
-	
+
 });
