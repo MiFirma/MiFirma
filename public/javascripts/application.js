@@ -87,4 +87,7 @@
   $("#ilp_signature_municipality_id").selectbox();
 
   $("#ilp_signature_municipality_of_birth_id").selectbox();
+
+  $("#endorsment_signature_province_id").selectbox();
+
 });
