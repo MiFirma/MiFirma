@@ -2,30 +2,36 @@
 require 'hpricot'
 
 class TractisApi
-	def signature_request_endorsment(signature)
+  def self.signature_request_endorsment(signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/gateway"
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
-    data = "<oce>
-			<avalcandidatura>
-				<avalista>
-					<nomb>#{signature.name}</nomb>
-					<ape1>#{signature.surname}</ape1>
-					<ape2>#{signature.surname2}</ape2>
-					<fnac>#{signature.date_of_birth}</fnac>
-					<tipoid>1</tipoid>
-					<id>#{signature.dni}</id>
-				</avalista>
-				<candidatura>
-					<elecciones />
-					<circunscripción />
-					<nombre />
-				</candidatura>
-			</avalcandidatura>
-		</oce>"
-	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
- 	 {:location => response.header["Location"].first}	
-	end
+    data = <<-XML
+      <oce>
+          <avalcandidatura>
+              <avalista>
+                  <nomb>#{signature.name}</nomb>
+                  <ape1>#{signature.surname}</ape1>
+                  <ape2></ape2>
+                  <fnac>#{signature.date_of_birth}</fnac>
+                  <tipoid>1</tipoid>
+                  <id>#{signature.dni}</id>
+              </avalista>
+              <candidatura>
+                  <elecciones />
+                  <circunscripción />
+                  <nombre />
+              </candidatura>
+          </avalcandidatura>
+      </oce>
+    XML
+
+    errors = self.validates_against_xsd(data)
+    return unless errors.empty?
+
+    response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
+    {:location => response.header["Location"].first}    
+  end
 
   def self.signature_request_ilp(signature)
     client = HTTPClient.new
@@ -86,4 +92,28 @@ class TractisApi
     response = client.get target_url
   end
   
+
+  private
+
+  #
+  # Validates input xml against the xsd schema.
+  #
+  def self.validates_against_xsd(input_xml)
+    errors = []
+
+    begin
+      xsd_file = File.join(Rails.root, 'public', 'schema.xsd')
+      xsd = Nokogiri::XML::Schema(File.read(xsd_file))
+      doc = Nokogiri::XML(input_xml)
+
+      xsd.validate(doc).each do |error|
+        errors << error
+      end
+    rescue Exception => ex
+      errors << ex.message
+    end
+
+    errors
+  end
+
 end
