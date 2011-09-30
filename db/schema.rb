@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110927201512) do
+ActiveRecord::Schema.define(:version => 20110930065618) do
 
   create_table "endorsment_proposals", :force => true do |t|
     t.datetime "created_at"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20110927201512) do
   create_table "proposals", :force => true do |t|
     t.string   "name"
     t.string   "problem"
-    t.string   "howto_solve"
     t.integer  "position"
     t.string   "tractis_template_code"
     t.string   "pdf_file_name"
@@ -55,6 +54,7 @@ ActiveRecord::Schema.define(:version => 20110927201512) do
     t.string   "promoter_short_name"
     t.date     "signatures_end_date"
     t.string   "type"
+    t.text     "howto_solve"
   end
 
   create_table "provinces", :force => true do |t|
