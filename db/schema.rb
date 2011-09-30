@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930065618) do
+ActiveRecord::Schema.define(:version => 20110930093436) do
 
   create_table "endorsment_proposals", :force => true do |t|
     t.datetime "created_at"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20110930065618) do
     t.date     "signatures_end_date"
     t.string   "type"
     t.text     "howto_solve"
+    t.string   "election_type"
   end
 
   create_table "provinces", :force => true do |t|
@@ -62,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20110930065618) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "only_circunscription"
   end
 
   create_table "signatures", :force => true do |t|

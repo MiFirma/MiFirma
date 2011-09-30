@@ -25,7 +25,7 @@ class ProposalsController < ApplicationController
   # GET /proposals/1.xml
   def show
     @proposal = IlpProposal.find(params[:id])
-		@provinces = Province.order("name")
+		@provinces = Province.order("name").where("only_circunscription = ?", false)
 		@signature = @proposal.ilp_signatures.new(params[:signature])
 		
     share_texts(@proposal)
