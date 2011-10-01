@@ -54,6 +54,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    nokogiri (1.5.0)
     paperclip (2.3.15)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -119,6 +120,7 @@ DEPENDENCIES
   aws-s3
   hpricot
   httpclient
+  nokogiri
   paperclip
   rails (= 3.0.9)
   ruby-debug19
