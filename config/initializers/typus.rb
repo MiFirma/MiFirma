@@ -17,8 +17,8 @@ Typus.setup do |config|
   # config.authentication = :none
 
   # Define username and password for +:http_basic+ authentication
-  # config.username = "admin"
-  # config.password = "columbia"
+  config.username = "mifirmadev"
+  config.password = "mifirm@mifirm@"
 
   # Pagination options:
   # These options are passed to `will_paginate`. You can see the available

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930093436) do
+ActiveRecord::Schema.define(:version => 20110930155258) do
 
   create_table "endorsment_proposals", :force => true do |t|
     t.datetime "created_at"
@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20110930093436) do
     t.integer  "province_of_birth_id"
     t.integer  "municipality_of_birth_id"
     t.string   "type"
+    t.string   "surname2"
   end
 
   add_index "signatures", ["dni"], :name => "index_signatures_on_dni"
