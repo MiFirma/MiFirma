@@ -14,7 +14,7 @@ class TractisApi
 		
 		if !errors.empty? then
 			RAILS_DEFAULT_LOGGER.debug(errors)
-			raise ('XML del Aval no es correcto') unless errors.empty
+			raise StandardError, "XML del Aval no es correcto. Contacte con mifirma."
 		end
 
 		dataTRACTIS = "<contract>
@@ -42,7 +42,13 @@ class TractisApi
 		
     response = client.post(target_url, dataTRACTIS, "Content-Type" => "application/xml", "Accept" => "application/xml")
 		
-    {:location => response.header["Location"].first}    
+    location = response.header["Location"].first
+		if :location
+			signature.update_attribute :tractis_contract_location, location
+			return true
+		else
+			raise StandardError, "Error de comunicación con Tractis, por favor vuelva a intentarlo."
+		end
   end
 
   def self.signature_request_ilp(signature)
