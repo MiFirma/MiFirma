@@ -14,7 +14,7 @@ Typus.setup do |config|
 
   # Authentication: +:none+, +:http_basic+
   # Run `rails g typus:migration` if you need an advanced authentication system.
-  # config.authentication = :none
+  config.authentication = :http_basic
 
   # Define username and password for +:http_basic+ authentication
   config.username = "mifirmadev"
