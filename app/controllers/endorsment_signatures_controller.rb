@@ -18,7 +18,7 @@ class EndorsmentSignaturesController < ApplicationController
       end
     else
       flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
-      redirect_to endorsment_proposal_url(@signature.endorsment_proposal, :signature => params[:endorsment_signature])
+      redirect_to endorsment_proposal_url(@signature.endorsment_proposal, :endorsment_signature => params[:endorsment_signature])
     end
   end
 end

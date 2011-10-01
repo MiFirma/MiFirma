@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:element name="oce">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="avalcandidatura" type="avalcandidaturaType"/>
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:complexType name="avalcandidaturaType">
+<xs:sequence>
+<xs:element name="avalista" type="avalistaType"/>
+<xs:element name="candidatura" type="candidaturaType"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="avalistaType">
+<xs:sequence>
+<xs:element name="nomb" type="nombavalista"/>
+<xs:element name="ape1" type="apellidoavalista"/>
+<xs:element name="ape2" type="apellidoavalista"/>
+<xs:element name="fnac" type="fechan"/>
+<xs:element name="tipoid" type="tipoidentificador"/>
+<xs:element name="id" type="identificador"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="candidaturaType">
+<xs:sequence>
+<xs:element name="elecciones" type="tipoelecciones"/>
+<xs:element name="circunscripcion" type="circunscripcionINE"/>
+<xs:element name="nombre" type="nombcandidatura"/>
+</xs:sequence>
+</xs:complexType>
+<xs:simpleType name="tipoelecciones">
+<xs:annotation>
+<xs:documentation>Código de elecciones</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="CONGRESO"/>
+<xs:enumeration value="SENADO"/>
+<xs:enumeration value="CONGRESO Y SENADO"/>
+<xs:enumeration value="PARLAMENTO EUROPEO"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="tipoidentificador">
+<xs:annotation>
+<xs:documentation>Tipo de documento identificador, 1.-NIF, 2.-NIE</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="1"/>
+<xs:enumeration value="2"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="nombavalista">
+<xs:restriction base="xs:string">
+<xs:maxLength value="20"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="apellidoavalista">
+<xs:restriction base="xs:string">
+<xs:maxLength value="25"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="identificador">
+<xs:restriction base="xs:string">
+<xs:maxLength value="9"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="nombcandidatura">
+<xs:restriction base="xs:string">
+<xs:maxLength value="100"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="fechan">
+<xs:annotation>
+<xs:documentation>formato de la fecha de nacimiento "AAAAMMDD", "20110908"</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:maxLength value="8"/>
+</xs:restriction>
+</xs:simpleType>
+<xs:simpleType name="circunscripcionINE">
+<xs:annotation>
+<xs:documentation>Denominaciones oficiales de las circunscripciones</xs:documentation>
+</xs:annotation>
+<xs:restriction base="xs:string">
+<xs:enumeration value="Araba/Álava"/>
+<xs:enumeration value="Albacete"/>
+<xs:enumeration value="Alicante/Alacant"/>
+<xs:enumeration value="Almería"/>
+<xs:enumeration value="Ávila"/>
+<xs:enumeration value="Badajoz"/>
+<xs:enumeration value="Balears, Illes"/>
+<xs:enumeration value="Mallorca"/>
+<xs:enumeration value="Menorca"/>
+<xs:enumeration value="Ibiza-Formentera"/>
+<xs:enumeration value="Barcelona"/>
+<xs:enumeration value="Burgos"/>
+<xs:enumeration value="Cáceres"/>
+<xs:enumeration value="Cádiz"/>
+<xs:enumeration value="Castellón/Castelló"/>
+<xs:enumeration value="Ciudad Real"/>
+<xs:enumeration value="Córdoba"/>
+<xs:enumeration value="Coruña, A"/>
+<xs:enumeration value="Cuenca"/>
+<xs:enumeration value="Girona"/>
+<xs:enumeration value="Granada"/>
+<xs:enumeration value="Guadalajara"/>
+<xs:enumeration value="Gipuzkoa"/>
+<xs:enumeration value="Huelva"/>
+<xs:enumeration value="Huesca"/>
+<xs:enumeration value="Jaén"/>
+<xs:enumeration value="León"/>
+<xs:enumeration value="Lleida"/>
+<xs:enumeration value="Rioja, La"/>
+<xs:enumeration value="Lugo"/>
+<xs:enumeration value="Madrid"/>
+<xs:enumeration value="Málaga"/>
+<xs:enumeration value="Murcia"/>
+<xs:enumeration value="Navarra"/>
+<xs:enumeration value="Ourense"/>
+<xs:enumeration value="Asturias"/>
+<xs:enumeration value="Palencia"/>
+<xs:enumeration value="Palmas, Las"/>
+<xs:enumeration value="Gran Canaria"/>
+<xs:enumeration value="Fuerteventura"/>
+<xs:enumeration value="Lanzarote"/>
+<xs:enumeration value="Pontevedra"/>
+<xs:enumeration value="Salamanca"/>
+<xs:enumeration value="Santa Cruz de Tenerife"/>
+<xs:enumeration value="Tenerife"/>
+<xs:enumeration value="La Palma"/>
+<xs:enumeration value="El Hierro"/>
+<xs:enumeration value="La Gomera"/>
+<xs:enumeration value="Cantabria"/>
+<xs:enumeration value="Segovia"/>
+<xs:enumeration value="Sevilla"/>
+<xs:enumeration value="Soria"/>
+<xs:enumeration value="Tarragona"/>
+<xs:enumeration value="Teruel"/>
+<xs:enumeration value="Toledo"/>
+<xs:enumeration value="Valencia/València"/>
+<xs:enumeration value="Valladolid"/>
+<xs:enumeration value="Bizkaia"/>
+<xs:enumeration value="Zamora"/>
+<xs:enumeration value="Zaragoza"/>
+<xs:enumeration value="Ceuta"/>
+<xs:enumeration value="Melilla"/>
+<xs:enumeration value="Circunscripción Nacional"/>
+</xs:restriction>
+</xs:simpleType>
+</xs:schema>

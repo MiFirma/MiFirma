@@ -6,30 +6,42 @@ class TractisApi
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/gateway"
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
-    data = <<-XML
-      <oce>
-          <avalcandidatura>
-              <avalista>
-                  <nomb>#{signature.name}</nomb>
-                  <ape1>#{signature.surname}</ape1>
-                  <ape2></ape2>
-                  <fnac>#{signature.date_of_birth}</fnac>
-                  <tipoid>1</tipoid>
-                  <id>#{signature.dni}</id>
-              </avalista>
-              <candidatura>
-                  <elecciones />
-                  <circunscripción />
-                  <nombre />
-              </candidatura>
-          </avalcandidatura>
-      </oce>
-    XML
 
-    errors = self.validates_against_xsd(data)
-    return unless errors.empty?
+		dataOCE = createXMLOCE(signature)
+		RAILS_DEFAULT_LOGGER.debug(dataOCE)
+		
+    errors = self.validates_against_xsd(dataOCE)
+		
+		if !errors.empty? then
+			RAILS_DEFAULT_LOGGER.debug(errors)
+			raise ('XML del Aval no es correcto') unless errors.empty
+		end
 
-    response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
+		dataTRACTIS = "<contract>
+			<name>#{signature.endorsment_proposal.name}</name>
+			<redirect-when-signed>#{signature.return_url}</redirect-when-signed>
+			<notes>Este documento a firmar tiene la estructura (XML) exigida por la Junta Electoral Central</notes>
+			<sticky-notes>true</sticky-notes>
+			<raw-xml-content>
+				#{dataOCE}
+			</raw-xml-content>
+			<team>
+	     <member>
+         <nombre>#{signature.name}</nombre>
+         <apellidos>#{signature.surname}</apellidos>
+         <dni>#{signature.dni}</dni>
+ 	       <email>#{signature.email}</email>
+ 	       <sign>true</sign>
+ 	       <invited>false</invited>
+         <invitation_notify>false</invitation_notify>
+ 	     </member>
+			</team>
+		</contract>"
+		
+		RAILS_DEFAULT_LOGGER.debug dataTRACTIS
+		
+    response = client.post(target_url, dataTRACTIS, "Content-Type" => "application/xml", "Accept" => "application/xml")
+		
     {:location => response.header["Location"].first}    
   end
 
@@ -95,6 +107,28 @@ class TractisApi
 
   private
 
+	def self.createXMLOCE(signature)
+	    dataOCE = <<-XML
+      <oce>
+          <avalcandidatura>
+              <avalista>
+                  <nomb>#{signature.name}</nomb>
+                  <ape1>#{signature.surname}</ape1>
+                  <ape2>#{signature.surname2}</ape2>
+                  <fnac>#{signature.date_of_birth.strftime("%Y%m%d")}</fnac>
+                  <tipoid>1</tipoid>
+                  <id>#{signature.dni}</id>
+              </avalista>
+              <candidatura>
+                  <elecciones>#{signature.endorsment_proposal.election_type}</elecciones>
+                  <circunscripcion>#{signature.province.name}</circunscripcion>
+                  <nombre>#{signature.endorsment_proposal.promoter_name}</nombre>
+              </candidatura>
+          </avalcandidatura>
+      </oce>
+    XML
+		return dataOCE
+	end
   #
   # Validates input xml against the xsd schema.
   #
@@ -102,7 +136,7 @@ class TractisApi
     errors = []
 
     begin
-      xsd_file = File.join(Rails.root, 'public', 'schema.xsd')
+      xsd_file = File.join(Rails.root, 'lib', 'endorsment.xsd')
       xsd = Nokogiri::XML::Schema(File.read(xsd_file))
       doc = Nokogiri::XML(input_xml)
 

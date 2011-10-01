@@ -3,7 +3,7 @@ class IlpProposal < Proposal
 	
 	has_attached_file :pdf, PAPERCLIP_CONFIG
 	
-	validates_presence_of :pdf_file_name, :pdf_content_type, 
+	validates_presence_of :pdf_file_name, :pdf_content_type, :tractis_template_code,
 		:pdf_file_size, :pdf_updated_at, :num_required_signatures,
 		:handwritten_signatures
 	validates_uniqueness_of :name

@@ -1,7 +1,7 @@
 ﻿MiFirma2::Application.routes.draw do
-  resources :endorsment_signatures
+  resources :endorsment_signatures, :only => [:create, :show]
 
-  resources :endorsment_proposals
+  resources :endorsment_proposals, :only => [:index, :show]
 
   resources :signatures, :only => [:create, :show] do
 		member do

@@ -4,7 +4,7 @@
 	acts_as_list
 	
 	validates_presence_of :name, :problem, :howto_solve,
-		:tractis_template_code, :promoter_name, :promoter_url,
+		:promoter_name, :promoter_url,
 		:signatures_end_date, :promoter_short_name
 
 	
