@@ -10,7 +10,7 @@ class ProposalsController < ApplicationController
 		end
 		
 		@proposal = @proposals.first
-		@provinces = Province.order("name")
+		@provinces = Province.order("name").where("only_circunscription = ?", false)
 		@signature = @proposal.ilp_signatures.new(params[:signature])
 
     share_texts(@proposals.first)
