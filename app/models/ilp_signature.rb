@@ -4,7 +4,7 @@
 	belongs_to :municipality_of_birth, :class_name => 'Municipality', :foreign_key => "municipality_of_birth_id"
 	belongs_to :province_of_birth, :class_name => 'Province', :foreign_key => "province_of_birth_id"
 	
-	
+  validates_uniqueness_of :dni, :scope => :proposal_id, :if => Proc.new { |sig| sig.state > 0 }, :message => "Sólo puedes firmar una vez esta propuesta."
   validates_presence_of :municipality_of_birth_id, :province_of_birth_id, :address, :zipcode, :municipality_id, :message => "Debes rellenar todos los campos."
 	
 	validates_format_of :zipcode,

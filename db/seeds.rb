@@ -26,7 +26,7 @@ Proposal.create(
 Province.create ([
 	{:id_ine=>1, :name=>'Araba/Álava', :only_circunscription=>false},
 	{:id_ine=>2, :name=>'Albacete', :only_circunscription=>false},
-	{:id_ine=>3, :name=>'Alicante', :only_circunscription=>false},
+	{:id_ine=>3, :name=>'Alicante/Alacant', :only_circunscription=>false},
 	{:id_ine=>4, :name=>'Almería', :only_circunscription=>false},
 	{:id_ine=>5, :name=>'Ávila', :only_circunscription=>false},
 	{:id_ine=>6, :name=>'Badajoz', :only_circunscription=>false},

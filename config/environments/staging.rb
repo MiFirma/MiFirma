@@ -48,7 +48,7 @@
   config.active_support.deprecation = :notify
 end
 
-MIFIRMA_HOST = "www.mifirma.com"
+MIFIRMA_HOST = "mifirma-stage.heroku.com"
 
 PAPERCLIP_CONFIG = {
   :storage => :s3,

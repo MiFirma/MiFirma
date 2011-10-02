@@ -3,6 +3,7 @@
 	
 	validates_presence_of :name, :surname, :surname2, :dni
 	validate :dni_format
+  validates_uniqueness_of :dni, :if => Proc.new { |sig| sig.state > 0 } , :message => "Sólo puedes firmar un aval una sola vez."
 	
   def proposal
     return endorsment_proposal

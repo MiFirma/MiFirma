@@ -12,7 +12,6 @@ class Signature < ActiveRecord::Base
 	validates_date :date_of_birth, :before => lambda { 18.years.ago },
                               :before_message => "debe tener al menos 18 años", :after => lambda { 150.years.ago }, :after_message => "demasiados años"
 	
-  validates_uniqueness_of :dni, :scope => :proposal_id, :if => Proc.new { |sig| sig.state > 0 }, :message => "Sólo puedes firmar una vez esta propuesta."
   
   delegate :tractis_template_code, :to => :proposal
   
