@@ -107,7 +107,6 @@ GEM
       render_inheritable
       will_paginate (~> 3.0.pre2)
     tzinfo (0.3.28)
-    validate_spanish_vat (0.0.1)
     validates_timeliness (3.0.6)
       timeliness (~> 0.3.3)
     will_paginate (3.0.pre2)
@@ -128,5 +127,4 @@ DEPENDENCIES
   ruby-debug19
   sqlite3
   typus (= 3.0.10)
-  validate_spanish_vat
   validates_timeliness (~> 3.0.2)
