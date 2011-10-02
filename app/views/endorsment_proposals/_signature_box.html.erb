@@ -1,6 +1,7 @@
 <div class="signatures_counter">
   <h4><strong><%= @endorsment_proposal.num_signatures %></strong> firma<%= "s" if @endorsment_proposal.num_signatures != 1 %></h4>
   
+  <%= link_to 'Firmas por Provincia', :action => "show_signatures_by_province" %>
 </div>
 
 <div class="form_container">

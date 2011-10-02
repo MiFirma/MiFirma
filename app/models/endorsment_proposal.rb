@@ -8,5 +8,9 @@
   def num_signatures
     @num_signatures ||= endorsment_signatures.signed.size
   end	
+	
+	def num_signatures_by_province
+		@num_signatures_by_province ||= endorsment_signatures.joins(:province).signed.select("province_id, count(*) as total_signatures").group("province_id")
+	end
 
 end

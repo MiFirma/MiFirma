@@ -13,7 +13,7 @@ class TractisApi
     errors = self.validates_against_xsd(dataOCE)
 		
 		if !errors.empty? then
-			RAILS_DEFAULT_LOGGER.debug(errors)
+			::Rails.logger.debug(errors)
 			raise StandardError, "XML del Aval no es correcto. Contacte con mifirma."
 		end
 
@@ -38,7 +38,7 @@ class TractisApi
 			</team>
 		</contract>"
 		
-		RAILS_DEFAULT_LOGGER.debug dataTRACTIS
+		::Rails.logger.debug dataTRACTIS
 		
     response = client.post(target_url, dataTRACTIS, "Content-Type" => "application/xml", "Accept" => "application/xml")
 		

@@ -1,0 +1,19 @@
+﻿<%= content_for :bodyclass do %>proposal<% end %> 
+<div class="page">
+<h2>Listado de firmas por provincia:</h2>
+
+<table>
+  <tr>
+		<th>Provincia</th>
+		<th>Número de Firmas</th>
+  </tr>
+
+<% @endorsment_proposal.num_signatures_by_province.each do |endorsment_proposal| %>
+  <tr>
+		<td><%= endorsment_proposal.province.name %>
+		<td><%= endorsment_proposal.total_signatures%>
+  </tr>
+<% end %>
+</table>
+
+</div>
