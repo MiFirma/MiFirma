@@ -38,7 +38,7 @@
               row = "<option value=\"" + j.municipality.id + "\">" + j.municipality.name + "</option>";  
               $(row).appendTo("select#ilp_signature_municipality_id");                    
             });
-            $("#signature_municipality_id").selectbox();       
+            $("#ilp_signature_municipality_id").selectbox();       
           }
         });
       };
