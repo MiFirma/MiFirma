@@ -1,23 +1,16 @@
 ﻿<%= content_for :bodyclass do %>proposal<% end %> 
 <div class="page">
-<h2>Listado de partidos que necesitan avales:</h2>
-
-<table>
-  <tr>
-		<th></th>
-		<th>Nombre</th>
-		<th>Web del Partido</th>
-		<th></th>
-  </tr>
-
-<% @endorsment_proposals.each do |endorsment_proposal| %>
-  <tr>
-		<td><%= image_tag endorsment_proposal.banner.url %> 
-		<td><%= endorsment_proposal.promoter_name %>
-		<td><%= endorsment_proposal.promoter_url %>
-		<td><%= link_to 'Avalar', endorsment_proposal %></td>
-  </tr>
-<% end %>
-</table>
-
+<h6>Partidos disponibles:</h6>
+<ul class="partidos">
+  <% @endorsment_proposals.each do |endorsment_proposal| %>
+    <li>
+      <%= image_tag endorsment_proposal.banner.url, :width => 180, :height => 135, :class => "thumb" %> 
+      <div class="info">
+        <h3><%= endorsment_proposal.promoter_name %></h3>
+        <%= link_to endorsment_proposal.promoter_url, endorsment_proposal.promoter_url, :class => "url" %>
+        <%= link_to 'Avalar', endorsment_proposal, :class => "avalar"  %>
+      </div>
+    </li>
+  <% end %>
+</ul>
 </div>

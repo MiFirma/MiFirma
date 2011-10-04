@@ -899,6 +899,7 @@ h6 {
   border-bottom: 1px solid #c4d4dc;
   padding-bottom: 5px;
   margin-bottom: 15px;
+  margin-right: 10px;
 }
 .home-content { width: 615px !important; }
 .home_proposals li {
@@ -943,6 +944,40 @@ h6 {
   font-size: 12px;
   line-height: 150%;
   margin-bottom: 8px;
+}
+.partidos { padding-right: 10px; }
+.partidos li {
+  border-bottom: 1px dotted #dddddd;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.partidos li .thumb {
+  float: left;
+  margin-right: 15px;
+}
+.partidos li .info {
+  float: left;
+  width: 700px;
+}
+.partidos li .info h3 {
+  font-size: 20px;
+  color: #444444;
+}
+.partidos li .info .url {
+  color: #3366cc;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 8px;
+}
+.partidos li .info .avalar {
+  background: url(../images/avalar_btn.png) 0 0 no-repeat;
+  width: 93px;
+  height: 43px;
+  text-indent: -9999px;
+  margin-left: -7px;
+  display: block;
 }
 div.footer-wr {
   height: 110px;
