@@ -884,6 +884,58 @@ div.page-sidebar .home {
   width: 265px !important;
   margin-right: 45px !important;
 }
+.home_sidebar { width: 265px !important; }
+h6 {
+  font-size: 18px;
+  color: #333333;
+  border-bottom: 1px solid #c4d4dc;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.home-content { width: 615px !important; }
+.home_proposals li {
+  border-bottom: 1px solid #c4d4dc;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+}
+.home_proposals li h5 {
+  font-size: 20px;
+  color: #3366cc;
+  position: relative;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #dddddd;
+  padding-bottom: 10px;
+}
+.home_proposals li h5 span {
+  display: block;
+  font-size: 11px;
+  color: #666666;
+  margin-top: 7px;
+}
+.home_proposals li h5 span a {
+  color: #3366cc;
+  text-decoration: none;
+}
+.home_proposals li h5 span a:hover { text-decoration: underline; }
+.home_proposals li h5 .read_more {
+  font-size: 11px;
+  color: #3366cc;
+  position: absolute;
+  right: 0px;
+  bottom: 8px;
+  text-decoration: none;
+}
+.home_proposals li h5 .read_more:hover { text-decoration: underline; }
+.home_proposals li .small_proposal { overflow: hidden; }
+.home_proposals li .small_proposal .thumb { float: left; }
+.home_proposals li .small_proposal p {
+  width: 418px;
+  float: right;
+  color: #333333;
+  font-size: 12px;
+  line-height: 150%;
+  margin-bottom: 8px;
+}
 div.footer-wr {
   height: 110px;
   background-color: #f2f2f2;
