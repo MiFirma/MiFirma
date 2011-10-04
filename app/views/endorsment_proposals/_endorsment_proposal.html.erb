@@ -4,7 +4,7 @@
       <%= link_to endorsment_proposal.name, endorsment_proposal_path(endorsment_proposal) %>
       <span>Acción promovida por: <%= link_to endorsment_proposal.promoter_name, endorsment_proposal.promoter_url %></span>
     </h1>
-		<%= image_tag endorsment_proposal.banner.url %>    
+		<%= image_tag endorsment_proposal.banner.url, :width => 150 %>    
     <div class="proposal_content">
 			
       <%= endorsment_proposal.howto_solve.html_safe %>

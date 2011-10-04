@@ -745,6 +745,14 @@ div.page-sidebar .signature_box .signatures_counter h4 span {
   font-size: 13px;
   display: block;
 }
+div.page-sidebar .signature_box .signatures_counter .by_provincias {
+  display: block;
+  margin-top: 15px;
+  text-shadow: 1px 1px #ffffff;
+  color: #333333;
+  font-size: 14px;
+  text-decoration: none;
+}
 div.page-sidebar .signature_box .signatures_counter .graph {
   background: url(../images/bg_bar_firmas.png) no-repeat;
   width: 252px;
