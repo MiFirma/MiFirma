@@ -979,6 +979,22 @@ h6 {
   margin-left: -7px;
   display: block;
 }
+.provincias li {
+  border-bottom: 1px dotted #dddddd;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+.provincias li span {
+  font-weight: bold;
+  float: left;
+}
+.provincias li span:first-child { width: 300px; }
+.provincias li .city {
+  width: 300px;
+  font-weight: normal;
+}
+.provincias li .sign { font-weight: normal; }
 div.footer-wr {
   height: 110px;
   background-color: #f2f2f2;

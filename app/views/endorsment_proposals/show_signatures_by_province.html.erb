@@ -1,21 +1,27 @@
 ﻿<%= content_for :bodyclass do %>proposal<% end %> 
 <div class="page">
-<h2>Listado de firmas por provincia:</h2>
+<h6>Listado de firmas por provincia:</h6>
 
-<div class="page-content">
-  <table>
-    <tr>
-      <th>Provincia</th>
-      <th>Número de Firmas</th>
-    </tr>
+<ul class="partidos">
+    <li>
+      <img src="/images/thumb.png" alt="" class="thumb">
+      <div class="info">
+        <h3>Proposal name</h3>
+        <a href="#" class="url">www.url.com</a>
+      </div>
+    </li>
+</ul>
 
+<ul class="provincias">
+  <li>
+    <span>Ciudad</span>
+    <span>Firmas</span>
+  </li>
   <% @endorsment_proposal.num_signatures_by_province.each do |endorsment_proposal| %>
-    <tr>
-      <td><%= endorsment_proposal.province.name %>
-      <td><%= endorsment_proposal.total_signatures%>
-    </tr>
+  <li>
+    <span class="city"><%= endorsment_proposal.province.name %></span>
+    <span class="sign"><%= endorsment_proposal.total_signatures%></span>
+  </li>
   <% end %>
-  </table>
-</div>
-
+</ul>
 </div>
