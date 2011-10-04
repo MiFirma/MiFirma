@@ -4,10 +4,10 @@
 
 <ul class="partidos">
     <li>
-      <img src="/images/thumb.png" alt="" class="thumb">
+      <%= image_tag @endorsment_proposal.banner.url, :width => 180, :height => 135, :class => "thumb" %> 
       <div class="info">
-        <h3>Proposal name</h3>
-        <a href="#" class="url">www.url.com</a>
+        <h3><%= @endorsment_proposal.promoter_name %></h3>
+        <%= link_to @endorsment_proposal.promoter_url, @endorsment_proposal.promoter_url, :class => "url" %>
       </div>
     </li>
 </ul>

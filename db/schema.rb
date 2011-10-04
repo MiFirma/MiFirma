@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110930155258) do
+ActiveRecord::Schema.define(:version => 20111003200618) do
 
   create_table "municipalities", :force => true do |t|
     t.integer  "id_ine"
@@ -77,6 +77,10 @@ ActiveRecord::Schema.define(:version => 20110930155258) do
     t.integer  "municipality_of_birth_id"
     t.string   "type"
     t.string   "surname2"
+    t.string   "tractis_signature_file_name"
+    t.string   "tractis_signature_content_type"
+    t.integer  "tractis_signature_file_size"
+    t.datetime "tractis_signature_updated_at"
   end
 
   add_index "signatures", ["dni"], :name => "index_signatures_on_dni"

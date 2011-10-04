@@ -8,7 +8,7 @@ class TractisApi
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
 
 		dataOCE = createXMLOCE(signature)
-		RAILS_DEFAULT_LOGGER.debug(dataOCE)
+		::Rails.logger.debug(dataOCE)
 		
     errors = self.validates_against_xsd(dataOCE)
 		
@@ -97,6 +97,7 @@ class TractisApi
     response.content
   end
   
+	
   def self.contract_signed?(response)
     (Hpricot(response)/"signed").text == "true"
   end
@@ -104,9 +105,10 @@ class TractisApi
   def self.get_signatures(contract_code="604622863",signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/#{contract_code}/get_signatures"
+		
+		::Rails.logger.debug "Usuario: #{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}"
+		::Rails.logger.debug "Contraseña: #{TRACTIS_PASS}"
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
-
-
     response = client.get target_url
   end
   

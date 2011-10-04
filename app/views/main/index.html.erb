@@ -5,30 +5,24 @@
     <h6>Iniciativas en curso:</h6>
 
     <ul class="home_proposals">
-      <li>
-        <h5>
-          Iniciativa de ejemplo
-          <span>Acción promovida por: <a href="#">Promotor de ILP de ejemplo</a></span>
-          <a href="#" class="read_more">Leer más</a>
-        </h5>
-        <div class="small_proposal">
-          <img src="/images/thumb.png"  class="thumb" alt="">
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante sit amet est et sapien ullamcorper pharetra.</p>
-          <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum.</p>
-        </div>
-      </li>
-      <li>
-        <h5>
-          Iniciativa de ejemplo
-          <span>Acción promovida por: <a href="#">Promotor de ILP de ejemplo</a></span>
-          <a href="#" class="read_more">Leer más</a>
-        </h5>
-        <div class="small_proposal">
-          <img src="/images/thumb.png"  class="thumb" alt="">
-          <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</p>
-          <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum.</p>
-        </div>
-      </li>
+		<li>
+			<h5>
+				<%= link_to 'Avales para partidos políticos', endorsment_proposals_path %>
+			</h5>
+		</li>
+		<% @ilp_proposals.each do |ilp_proposal| %>
+		<li>
+			<h5>
+			  <%= link_to ilp_proposal.name, proposal_path(ilp_proposal) %>
+			  <span>Acción promovida por: <%= link_to ilp_proposal.promoter_name, ilp_proposal.promoter_url %></span>
+			  <%= link_to 'Leer más', proposal_path(ilp_proposal), {:class => "read_more"} %>
+			</h5>
+			<div class="small_proposal">
+			  <%= image_tag ilp_proposal.banner.url, :width => 150 %>
+			  <%= ilp_proposal.problem.html_safe %>
+			</div>
+		</li>
+		<% end %>  
     </ul>
   </div>
 

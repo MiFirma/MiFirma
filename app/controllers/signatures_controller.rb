@@ -27,13 +27,12 @@ class SignaturesController < ApplicationController
 		logger.debug 'Estamos dentro del metodo show en Signatures'
     @signature = Signature.find_by_token params[:id]
     @proposal = @signature.proposal
-    @signature.check_tractis_signature
+    @signature.check_and_get_tractis_signature
     share_texts(@proposal, @signature)    
 		
 		if not @signature.valid?
       flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
 		end
-
   end
   
   def share

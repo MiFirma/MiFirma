@@ -3,6 +3,8 @@
 class Signature < ActiveRecord::Base
 	belongs_to :province
 	
+	has_attached_file :tractis_signature, 
+		{:path => ":rails_root/public/system/firmas/:promoter_name/:province_id/:filename"}.merge(PAPERCLIP_CONFIG)
 	
 	validates_presence_of :proposal_id, :state, :token
   validates_presence_of :email, :date_of_birth, :message => "Debes rellenar todos los campos."
@@ -29,7 +31,8 @@ class Signature < ActiveRecord::Base
     tractis_contract_location.split("/")[4]
   end
   
-  def check_tractis_signature
+  def check_and_get_tractis_signature
+	
 		contract_response = TractisApi.contract contract_code,self
 		doc = Hpricot(contract_response)
     signed = TractisApi.contract_signed? contract_response
@@ -40,11 +43,16 @@ class Signature < ActiveRecord::Base
 			self.dni = (doc/"signature"/"serialnumber").text
 			logger.debug "DNI recuperado"
 			logger.debug self.dni
+			
+			#copy_tractis_signature
+		
 			self.state = 1
 			self.save
-  	end
+		end
 
-  end
+	end
+	
+
   
   def signed?
     state > 0
@@ -59,4 +67,26 @@ class Signature < ActiveRecord::Base
     self.state = 0 if self.state.nil?
   end
  
+  private
+	def copy_tractis_signature
+	 
+		contract_response = TractisApi.get_signatures contract_code,self
+		::Rails.logger.debug contract_response.body
+		file = StringIO.new("hola") #mimic a real upload file
+		file.class.class_eval { attr_accessor :original_filename, :content_type } #add attr's that paperclip needs
+		file.original_filename = "FD#{dni}.zip"
+		file.content_type = "application/zip"
+
+		self.tractis_signature = file
+		
+  end	
+	
+	# interpolate in paperclip
+	Paperclip.interpolates :promoter_name  do |attachment, style|
+		attachment.instance.proposal.promoter_short_name
+	end
+	
+	Paperclip.interpolates :province_id  do |attachment, style|
+		attachment.instance.province_id
+	end
 end
