@@ -103,8 +103,6 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/#{contract_code}"
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
-
-
   	response = client.get target_url, nil, "Accept" => "application/xml"
     response.content
   end
@@ -115,13 +113,12 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
   end
   
   def self.get_signatures(contract_code="604622863",signature)
-    client = HTTPClient.new
+    client2 = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/#{contract_code}/get_signatures"
-		
 		::Rails.logger.debug "Usuario: #{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}"
 		::Rails.logger.debug "Contraseña: #{TRACTIS_PASS}"
-    client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
-    response = client.get target_url
+    client2.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
+    response = client2.get target_url
   end
   
 

@@ -1,4 +1,5 @@
 ﻿require 'hpricot'
+require 'tractis_api'
 
 class Signature < ActiveRecord::Base
 	belongs_to :province
@@ -71,8 +72,9 @@ class Signature < ActiveRecord::Base
 	def copy_tractis_signature
 	 
 		contract_response = TractisApi.get_signatures contract_code,self
-		::Rails.logger.debug contract_response.body
-		file = StringIO.new("hola") #mimic a real upload file
+		::Rails.logger.debug "Tamaño del archivo de firmas:"
+		::Rails.logger.debug contract_response.body.size
+		file = StringIO.new(contract_response.body) #mimic a real upload file
 		file.class.class_eval { attr_accessor :original_filename, :content_type } #add attr's that paperclip needs
 		file.original_filename = "FD#{dni}.zip"
 		file.content_type = "application/zip"
