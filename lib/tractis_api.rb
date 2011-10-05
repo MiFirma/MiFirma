@@ -4,7 +4,7 @@ require 'hpricot'
 class TractisApi
   def self.signature_request_endorsment(signature)
     client = HTTPClient.new
-    target_url = "https://www.tractis.com/contracts/gateway"
+    target_url = "https://www.tractis.com/contracts/gateway_raw"
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
 
 		dataOCE = createXMLOCE(signature)
@@ -79,6 +79,7 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
 				<direccion>#{signature.address}</direccion>
 				<provincia>#{signature.province.name}</provincia>
 				<municipio>#{signature.municipality.name}</municipio>
+				<codpostal>#{signature.zipcode}</codpostal>
 			</censo>
 		 </auto-complete>
  	   <team>
@@ -93,6 +94,7 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
  	     </member>
  	   </team>
  	 </contract>"
+	 ::Rails.logger.debug data
 	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
  	 {:location => response.header["Location"].first}
   end
