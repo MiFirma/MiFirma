@@ -5,24 +5,38 @@
     <h6>Iniciativas en curso:</h6>
 
     <ul class="home_proposals">
-		<li>
-			<h5>
-				<%= link_to 'Avales para partidos políticos', endorsment_proposals_path %>
-			</h5>
-		</li>
-		<% @ilp_proposals.each do |ilp_proposal| %>
-		<li>
-			<h5>
-			  <%= link_to ilp_proposal.name, proposal_path(ilp_proposal) %>
-			  <span>Acción promovida por: <%= link_to ilp_proposal.promoter_name, ilp_proposal.promoter_url %></span>
-			  <%= link_to 'Leer más', proposal_path(ilp_proposal), {:class => "read_more"} %>
-			</h5>
-			<div class="small_proposal">
-			  <%= image_tag ilp_proposal.banner.url, :width => 150, :class => "thumb" %>
-			  <%= ilp_proposal.problem.html_safe %>
-			</div>
-		</li>
-		<% end %>  
+		<% if @endorsment_proposals then %>
+		<ul class="partidos">
+			  <% @endorsment_proposals.each do |endorsment_proposal| %>
+			  	<li>
+					<h5>
+					  <%= link_to endorsment_proposal.name, endorsment_proposal_path(endorsment_proposal) %>
+					  <span>Acción promovida por: <%= link_to endorsment_proposal.promoter_name, endorsment_proposal.promoter_url %></span>
+					  <%= link_to 'Leer más', endorsment_proposal_path(endorsment_proposal), {:class => "read_more"} %>
+					</h5>
+					<div class="small_proposal">
+					  <%= image_tag endorsment_proposal.banner.url, :width => 150, :class => "thumb" %>
+					  <%= endorsment_proposal.problem.html_safe %>
+					</div>
+				</li>
+			  <% end %>
+		</ul>
+		<% end %>
+		<% if @ilp_proposals %>
+			<% @ilp_proposals.each do |ilp_proposal| %>
+			<li>
+				<h5>
+				  <%= link_to ilp_proposal.name, proposal_path(ilp_proposal) %>
+				  <span>Acción promovida por: <%= link_to ilp_proposal.promoter_name, ilp_proposal.promoter_url %></span>
+				  <%= link_to 'Leer más', proposal_path(ilp_proposal), {:class => "read_more"} %>
+				</h5>
+				<div class="small_proposal">
+				  <%= image_tag ilp_proposal.banner.url, :width => 150, :class => "thumb" %>
+				  <%= ilp_proposal.problem.html_safe %>
+				</div>
+			</li>
+			<% end %>  
+		<% end %>
     </ul>
   </div>
 

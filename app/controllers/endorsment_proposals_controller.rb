@@ -14,7 +14,7 @@ class EndorsmentProposalsController < ApplicationController
   # GET /endorsment_proposals/1.xml
   def show
     @endorsment_proposal = EndorsmentProposal.find(params[:id])
-		@signature = @endorsment_proposal.endorsment_signatures.new(params[:endorsment_signature])
+		@signature = @endorsment_proposal.endorsment_signatures.new(params[:signature])
 		@provinces = Province.order("name")
 		
 		share_texts(@endorsment_proposal)

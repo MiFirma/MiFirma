@@ -7,11 +7,11 @@
 	
 	# GET /main
   def index
-    @ilp_proposals = IlpProposal.all
+    @ilp_proposals = IlpProposal.on_signature_time
+		@endorsment_proposals = EndorsmentProposal.on_signature_time
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @ilp_proposals }
     end
   end
 end

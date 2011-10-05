@@ -20,7 +20,17 @@ class TractisApi
 		dataTRACTIS = "<contract>
 			<name>#{signature.endorsment_proposal.name}</name>
 			<redirect-when-signed>#{signature.return_url}</redirect-when-signed>
-			<notes>Este documento a firmar tiene la estructura (XML) exigida por la Junta Electoral Central</notes>
+			<template>#{signature.tractis_template_code}</template>
+			<notes>A continuación te mostramos el texto que vas a firmar, tal cual se enviará a la Junta Electoral Central. Como verás, incluye los siguientes datos separados por espacios:
+* Nombre completo del avalista
+* Fecha de nacimiento del avalista
+* Tipo de documento del avalista ('1' para NIF, '2' para NIE)
+* Número de DNI del avalista
+* Órgano al que se presenta el partido avalado ('Congreso', 'Senado' o 'Congreso y Senado').
+* Circunscripción a la que pertenece el avalista
+* Nombre del partido avalado
+Si los datos están correctos, por favor, pulsa el botón de 'Firmar'
+Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral Central</notes>
 			<sticky-notes>true</sticky-notes>
 			<raw-xml-content>
 				#{dataOCE}
