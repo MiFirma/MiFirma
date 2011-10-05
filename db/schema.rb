@@ -10,7 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111003200618) do
+ActiveRecord::Schema.define(:version => 20111005180319) do
+
+  create_table "endorsment_proposals", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "endorsment_signatures", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "municipalities", :force => true do |t|
     t.integer  "id_ine"
@@ -24,7 +34,6 @@ ActiveRecord::Schema.define(:version => 20111003200618) do
 
   create_table "proposals", :force => true do |t|
     t.string   "name"
-    t.string   "problem"
     t.integer  "position"
     t.string   "tractis_template_code"
     t.string   "pdf_file_name"
@@ -46,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20111003200618) do
     t.string   "type"
     t.text     "howto_solve"
     t.string   "election_type"
+    t.text     "problem"
   end
 
   create_table "provinces", :force => true do |t|
