@@ -54,7 +54,7 @@ EndorsmentSignature:
 EndorsmentProposal:
   fields:
     default: name, position, promoter_name,  signatures_end_date
-    form: name, problem, howto_solve, promoter_name, promoter_url, banner, promoter_short_name, signatures_end_date, election_type
+    form: name, problem, howto_solve,tractis_template_code, promoter_name, promoter_url, banner, promoter_short_name, signatures_end_date, election_type
   order_by: position
   filters: created_at
   search: name

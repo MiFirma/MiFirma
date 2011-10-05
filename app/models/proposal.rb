@@ -3,8 +3,8 @@
 	has_attached_file :banner, PAPERCLIP_CONFIG
 	acts_as_list
 	
-	validates_presence_of :name, :problem, :howto_solve,
-		:promoter_name, :promoter_url,
+	validates_presence_of :name, :problem, :howto_solve, 
+		:promoter_name, :promoter_url, :tractis_template_code,
 		:signatures_end_date, :promoter_short_name
 
 	
