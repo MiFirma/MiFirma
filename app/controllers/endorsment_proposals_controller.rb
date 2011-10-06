@@ -16,6 +16,7 @@ class EndorsmentProposalsController < ApplicationController
     @endorsment_proposal = EndorsmentProposal.find(params[:id])
 		@signature = @endorsment_proposal.endorsment_signatures.new(params[:signature])
 		@provinces = Province.order("name")
+		@title = @endorsment_proposal.name
 		
 		share_texts(@endorsment_proposal)
     

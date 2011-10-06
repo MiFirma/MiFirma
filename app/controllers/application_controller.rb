@@ -8,7 +8,12 @@ class ApplicationController < ActionController::Base
 
 	def share_texts(proposal, user=nil)
     @share_title = "Ya he firmado la propuesta #{proposal.name}, ¡únete!"
-    @share_url = proposal_url(proposal)
+		
+		if proposal.class.name=="EndorsmentProposal"
+		  @share_url = endorsment_proposal_url(proposal) 
+		else
+			@share_url = proposal_url(proposal)
+		end
     
     @twitter_text = "Ya he firmado la propuesta #{proposal.name} #{@share_url}"
     @fb_text = @share_title
