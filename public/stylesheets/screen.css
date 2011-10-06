@@ -146,6 +146,7 @@ div.header-bottom .rh li div {
   padding-top: 2px;
 }
 div.page {
+  min-height: 930px;
   padding: 20px 20px 20px 22px;
   margin-top: 4px;
   margin-left: 5px;
