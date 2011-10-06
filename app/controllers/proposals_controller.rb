@@ -27,6 +27,7 @@ class ProposalsController < ApplicationController
     @proposal = IlpProposal.find(params[:id])
 		@provinces = Province.order("name").where("only_circunscription = ?", false)
 		@signature = @proposal.ilp_signatures.new(params[:signature])
+		@title = @proposal.problem
 		
     share_texts(@proposal)
 		
