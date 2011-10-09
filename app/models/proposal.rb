@@ -15,4 +15,5 @@
 		return signatures_end_date >= Time.now.to_date
 	end
 	
+	
 end

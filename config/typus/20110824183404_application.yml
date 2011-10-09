@@ -14,12 +14,14 @@ Municipality:
 
 IlpProposal:
   fields:
-    default: name, position, tractis_template_code, num_required_signatures, promoter_name, handwritten_signatures, signatures_end_date
+    default: name, handwritten_signatures, signatures_end_date, ilp_signatures.size, num_signatures_signed
     form: name, problem, howto_solve, tractis_template_code, pdf, num_required_signatures, promoter_name, promoter_url, handwritten_signatures, banner, promoter_short_name, signatures_end_date
   order_by: position
   filters: created_at
+  relationships: ilp_signatures
   search: name
   application: MiFirma
+  export: csv, xml
 
 Province:
   fields:
@@ -53,9 +55,11 @@ EndorsmentSignature:
 
 EndorsmentProposal:
   fields:
-    default: name, position, promoter_name,  signatures_end_date
+    default: name, endorsment_signatures.size, num_signatures_signed
     form: name, problem, howto_solve,tractis_template_code, promoter_name, promoter_url, banner, promoter_short_name, signatures_end_date, election_type
   order_by: position
+  relationships: endorsment_signatures
   filters: created_at
   search: name
   application: MiFirma
+  export: csv, xml

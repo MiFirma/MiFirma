@@ -28,4 +28,8 @@ class IlpProposal < Proposal
   def num_signatures
     @num_signatures ||= ilp_signatures.signed.size + handwritten_signatures
   end	
+	
+	def num_signatures_signed
+		return ilp_signatures.signed.size
+	end
 end

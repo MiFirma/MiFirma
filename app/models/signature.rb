@@ -58,6 +58,8 @@ class Signature < ActiveRecord::Base
   def signed?
     state > 0
   end
+	
+
 
   protected
   def generate_token
