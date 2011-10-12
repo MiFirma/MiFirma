@@ -3,12 +3,18 @@
 	
 	validates_presence_of :name, :surname, :surname2, :dni
 	validate :dni_format
-  validates_uniqueness_of :dni, :if => Proc.new { |sig| sig.state > 0 } , :message => "Sólo puedes firmar un aval una sola vez."
+  validate :uniqueness_of_dni
 	
   def proposal
     return endorsment_proposal
   end
-	
+
+	def uniqueness_of_dni
+		if self.signed? and EndorsmentSignature.signed.find_by_dni(dni)
+			errors.add :dni, "Sólo puedes firmar un aval una sola vez."
+		end
+	end
+
 	# Validates NIF
 	def dni_format
 		letters = "TRWAGMYFPDXBNJZSQVHLCKE"

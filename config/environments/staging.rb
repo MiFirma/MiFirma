@@ -1,4 +1,13 @@
-﻿MiFirma2::Application.configure do
+﻿MIFIRMA_HOST = "mifirma-stage.heroku.com"
+
+PAPERCLIP_CONFIG = {
+  :storage => :s3,
+  :bucket => 'mifirma-stage',
+	:s3_credentials => { :access_key_id     => ENV['S3_KEY'], 
+                       :secret_access_key => ENV['S3_SECRET']}	
+}
+
+MiFirma2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
   # The production environment is meant for finished, "live" apps.
@@ -46,13 +55,9 @@
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+	
+	# Global mailer configuration
+	config.action_mailer.default_url_options = { :host => MIFIRMA_HOST }
 end
 
-MIFIRMA_HOST = "mifirma-stage.heroku.com"
 
-PAPERCLIP_CONFIG = {
-  :storage => :s3,
-  :bucket => 'mifirma-stage',
-	:s3_credentials => { :access_key_id     => ENV['S3_KEY'], 
-                       :secret_access_key => ENV['S3_SECRET']}	
-}

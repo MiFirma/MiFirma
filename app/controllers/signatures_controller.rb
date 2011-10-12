@@ -1,7 +1,6 @@
 ﻿require 'tractis_api'
 
 class SignaturesController < ApplicationController
-	cache_sweeper :signature_sweeper  
 	
   def create
     @signature = IlpSignature.new params[:ilp_signature]
@@ -32,6 +31,14 @@ class SignaturesController < ApplicationController
 		
 		if not @signature.valid?
       flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
+		else
+			if @signature.class.name == 'IlpSignature'
+				Notifier.ilp_signed(@signature)
+			else 
+				if @signature.class.name == 'EndorsmentSignature'
+					Notifier.endorsment_signed(@signature)
+				end
+			end
 		end
   end
   
