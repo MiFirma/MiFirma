@@ -10,7 +10,7 @@
   end
 
 	def uniqueness_of_dni
-		if self.signed? and EndorsmentSignature.signed.find_by_dni(dni)
+		if self.signed? and EndorsmentSignature.where("state > 0 and dni = ? and id <> ?",dni,id).count>0
 			errors.add :dni, "Sólo puedes firmar un aval una sola vez."
 		end
 	end
