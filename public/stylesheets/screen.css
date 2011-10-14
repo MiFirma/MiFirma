@@ -883,6 +883,7 @@ div.page-sidebar .signature_box .tradicional {
 div.page-sidebar .signature_box .tradicional p {
   line-height: 140%;
   color: #666666;
+  margin-bottom: 10px;
 }
 div.page-sidebar .signature_box .tradicional p a { color: #35669f; }
 div.page-sidebar .home {
