@@ -31,9 +31,18 @@ class Signature < ActiveRecord::Base
   def contract_code
     tractis_contract_location.split("/")[4]
   end
+	
+	def Signature.get_all_signatures
+		signatures = Signature.signed
+		signatures.each do |s|
+			s.check_and_get_tractis_signature
+			sleep 0.5
+		end
+  end
   
   def check_and_get_tractis_signature
 	
+	  ::Rails.logger.debug "--- Comprobando firma de tractis ---"
 		contract_response = TractisApi.contract contract_code,self
 		doc = Hpricot(contract_response)
     signed = TractisApi.contract_signed? contract_response
@@ -45,7 +54,7 @@ class Signature < ActiveRecord::Base
 			logger.debug "DNI recuperado"
 			logger.debug self.dni
 			
-			#copy_tractis_signature
+			copy_tractis_signature
 		
 			self.state = 1
 			self.save
@@ -72,7 +81,7 @@ class Signature < ActiveRecord::Base
  
   private
 	def copy_tractis_signature
-	 
+		::Rails.logger.debug "--- Copiando firmas desde tractis ---"
 		contract_response = TractisApi.get_signatures contract_code,self
 		::Rails.logger.debug "Tamaño del archivo de firmas:"
 		::Rails.logger.debug contract_response.body.size

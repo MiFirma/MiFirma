@@ -117,7 +117,8 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
     target_url = "https://www.tractis.com/contracts/#{contract_code}/get_signatures"
 		::Rails.logger.debug "Usuario: #{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}"
 		::Rails.logger.debug "Contraseña: #{TRACTIS_PASS}"
-    client2.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
+    client2.set_auth(nil, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
+		client2.www_auth.basic_auth.challenge(target_url)
     response = client2.get target_url
   end
   
