@@ -5,7 +5,7 @@ class Signature < ActiveRecord::Base
 	belongs_to :province
 	
 	has_attached_file :tractis_signature, 
-		{:path => ":rails_root/public/system/firmas/:promoter_name/:province_id/:filename"}.merge(PAPERCLIP_CONFIG)
+		{:path => ":rails_root/public/system/firmas/:promoter_name/:province_id/:filename", :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
 	validates_presence_of :proposal_id, :state, :token
   validates_presence_of :email, :date_of_birth, :message => "Debes rellenar todos los campos."
