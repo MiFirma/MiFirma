@@ -11,6 +11,7 @@ Municipality:
   filters: created_at
   search: name
   application: MiFirma
+  export: csv, xml
 
 IlpProposal:
   fields:
@@ -25,13 +26,14 @@ IlpProposal:
 
 Province:
   fields:
-    default: id_ine, name
+    default: id, name, id_ine
     form: id_ine, name
   order_by: 
   relationships: municipalities
   filters: created_at
   search: name
   application: MiFirma
+  export: csv, xml
 
 IlpSignature:
   fields:
