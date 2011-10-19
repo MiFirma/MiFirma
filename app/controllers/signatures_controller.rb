@@ -33,10 +33,10 @@ class SignaturesController < ApplicationController
       flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
 		else
 			if @signature.class.name == 'IlpSignature'
-				Notifier.ilp_signed(@signature)
+				Notifier.ilp_signed(@signature).deliver
 			else 
 				if @signature.class.name == 'EndorsmentSignature'
-					Notifier.endorsment_signed(@signature)
+					Notifier.endorsment_signed(@signature).deliver
 				end
 			end
 		end
