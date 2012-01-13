@@ -58,9 +58,20 @@ EndorsmentSignature:
 EndorsmentProposal:
   fields:
     default: name, endorsment_signatures.size, num_signatures_signed
-    form: name, problem, howto_solve,tractis_template_code, promoter_name, promoter_url, banner, promoter_short_name, signatures_end_date, election_type
+    form: name, problem, howto_solve,tractis_template_code, promoter_name, promoter_url, banner, promoter_short_name, election_type, election
   order_by: position
   relationships: endorsment_signatures
+  filters: created_at
+  search: name
+  application: MiFirma
+  export: csv, xml
+
+Election:
+  fields:
+    default: name, signatures_end_date
+    form: name, signatures_end_date
+  order_by: 
+  relationships: endorsment_proposals
   filters: created_at
   search: name
   application: MiFirma

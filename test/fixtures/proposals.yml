@@ -1,22 +1,22 @@
 ﻿# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: "Propuesta de Prueba"
-  problem: "Problema de la Propuesta de Prueba"
-  howto_solve: "Como se resuelve esta propuesta"
-  position: 1
-  tractis_template_code: 1234
-  pdf_file_name: "test/fixtures/14.pdf"
-  pdf_content_type: application/pdf
-  pdf_file_size: 1000
-  pdf_updated_at: DateTime.now
-  banner_file_name: "test/fixtures/nuestra_aso.jpg"
-  banner_content_type: image/jpeg
-  banner_file_size: 1000
-  banner_updated_at: DateTime.now
-  num_required_signatures: 500
-  promoter_name: "Promotor"
-  promoter_url: "www.promotor.org"
-  promoter_short_name: "demo"
-  signatures_end_date: DateTime.today >> 2
-  handwritten_signatures: 10000	
+# one:
+#   name: "Propuesta de Prueba"
+#   problem: "Problema de la Propuesta de Prueba"
+#   howto_solve: "Como se resuelve esta propuesta"
+#   position: 1
+#   tractis_template_code: 1234
+#   pdf_file_name: "test/fixtures/14.pdf"
+#   pdf_content_type: application/pdf
+#   pdf_file_size: 1000
+#   pdf_updated_at: DateTime.now
+#   banner_file_name: "test/fixtures/nuestra_aso.jpg"
+#   banner_content_type: image/jpeg
+#   banner_file_size: 1000
+#   banner_updated_at: DateTime.now
+#   num_required_signatures: 500
+#   promoter_name: "Promotor"
+#   promoter_url: "www.promotor.org"
+#   promoter_short_name: "demo"
+#   signatures_end_date: DateTime.today >> 2
+#   handwritten_signatures: 10000	

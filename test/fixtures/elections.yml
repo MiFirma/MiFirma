@@ -1,0 +1,5 @@
+﻿# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+e20N:
+  name: 'Elecciones del 20 de Noviembre'
+  signatures_end_date: 2011-11-18

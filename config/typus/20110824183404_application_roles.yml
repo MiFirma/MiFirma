@@ -9,3 +9,4 @@ admin:
   IlpSignature: create, read, update, delete
   EndorsmentProposal: create, read, update, delete
   EndorsmentSignature: create, read, update, delete
+  Election: create, read, update, delete
