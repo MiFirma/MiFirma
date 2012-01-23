@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: provinces
+#
+#  id                   :integer         not null, primary key
+#  id_ine               :integer
+#  name                 :string(255)
+#  created_at           :datetime
+#  updated_at           :datetime
+#  only_circunscription :boolean
+#
+
 require 'test_helper'
 
 class ProvinceTest < ActiveSupport::TestCase

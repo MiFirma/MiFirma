@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: elections
+#
+#  id                  :integer         not null, primary key
+#  name                :string(255)
+#  signatures_end_date :date
+#  created_at          :datetime
+#  updated_at          :datetime
+#
+
 ﻿# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 e20N:
