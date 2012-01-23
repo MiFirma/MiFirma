@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: elections
+#
+#  id                  :integer         not null, primary key
+#  name                :string(255)
+#  signatures_end_date :date
+#  created_at          :datetime
+#  updated_at          :datetime
+#
+
 require 'test_helper'
 
 class ElectionTest < ActiveSupport::TestCase

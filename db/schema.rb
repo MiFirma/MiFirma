@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111118180658) do
+ActiveRecord::Schema.define(:version => 20120119075033) do
 
   create_table "elections", :force => true do |t|
     t.string   "name"
@@ -103,5 +103,16 @@ ActiveRecord::Schema.define(:version => 20111118180658) do
 
   add_index "signatures", ["dni"], :name => "index_signatures_on_dni"
   add_index "signatures", ["proposal_id", "state"], :name => "index_signatures_on_proposal_id_and_state"
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "encrypted_password"
+    t.string   "salt"
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
 
 end

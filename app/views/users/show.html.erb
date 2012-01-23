@@ -1,0 +1,30 @@
+﻿<% content_for(:bodyclass) {"home"} -%> 
+<% content_for :title, "Información Login Promotor"%>
+
+<div class="page">
+
+
+	<ul>
+		<% if signed_in? %>
+		<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
+		<% else %>
+		<li><%= link_to "Sign in", signin_path %></li>
+		<% end %>
+		<li><%= link_to "Ajustes", edit_user_path(current_user) %></li>
+	</ul>
+	
+	<h1>Datos de usuario</h1>
+		<% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+        <%= yield %>
+	Sus datos son:
+		<div class="field">
+			<%= label :name, "Nombre" %><br />
+			<%= @user.name %>
+		</div>
+		<div class="field">
+			<%= label :email, "Email" %><br />
+			<%= @user.email %>
+		</div>
+</div>

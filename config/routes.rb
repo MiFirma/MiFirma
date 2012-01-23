@@ -1,4 +1,5 @@
 ﻿MiFirma2::Application.routes.draw do
+
   resources :endorsment_signatures, :only => [:create, :show]
 
   resources :endorsment_proposals, :only => [:index, :show, :show_signatures_by_province] do
@@ -21,6 +22,14 @@
 	match 'sobre_nosotros', :controller => "main", :action => "about_us"
 	match 'terms', :controller => "main", :action => "terms"
   match 'privacy', :controller => "main", :action => "privacy"
+
+
+	resources :users
+	resources :sessions, :only => [:new, :create, :destroy]
+	
+	match '/signup', :to => 'users#new'
+	match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 	
   # The priority is based upon order of creation:
   # first created -> highest priority.

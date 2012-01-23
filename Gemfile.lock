@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.0.9)
     activesupport (3.0.9)
     acts_as_list (0.1.4)
+    annotate (2.4.0)
     archive-tar-minitar (0.5.2)
     arel (2.0.10)
     aws-s3 (0.6.2)
@@ -118,6 +119,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_list
+  annotate
   aws-s3
   hpricot
   httpclient
