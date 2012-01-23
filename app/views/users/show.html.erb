@@ -1,1 +1,19 @@
-<%= @user.name %>, <%= @user.email %>
+﻿<% content_for(:bodyclass) {"home"} -%> 
+<% content_for :title, "Información Login Promotor"%>
+
+<div class="page">
+	<h1>Datos de usuario</h1>
+				<% flash.each do |key, value| %>
+          <div class="flash <%= key %>"><%= value %></div>
+        <% end %>
+        <%= yield %>
+	Sus datos son:
+		<div class="field">
+			<%= label :name, "Nombre" %><br />
+			<%= @user.name %>
+		</div>
+		<div class="field">
+			<%= label :email, "Email" %><br />
+			<%= @user.email %>
+		</div>
+</div>

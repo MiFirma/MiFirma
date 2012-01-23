@@ -1,2 +1,32 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+﻿<% content_for(:bodyclass) {"home"} -%> 
+<% content_for :title, "Registro Login Promotores"%>
+
+<div class="page">
+	<h1>Entrada Promotores</h1>
+
+	<%= render 'error_messages' %>
+	
+	<div class="form_container">
+	<%= form_for(@user) do |f| %>
+		<div class="field">
+			<%= f.label :name, "Nombre" %><br />
+			<%= f.text_field :name %>
+		</div>
+		<div class="field">
+			<%= f.label :email %><br />
+			<%= f.text_field :email %>
+		</div>
+		<div class="field">
+			<%= f.label :password, "Contraseña" %><br />
+			<%= f.password_field :password %>
+		</div>
+		<div class="field">
+			<%= f.label :password_confirmation, "Confirmación de Contraseña" %><br />
+			<%= f.password_field :password_confirmation %>
+		</div>
+		<div class="actions">
+			<%= f.submit "REGISTRARSE" %>
+		</div>
+	<% end %>
+	</div>
+</div>
