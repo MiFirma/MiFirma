@@ -29,7 +29,7 @@
 #  tractis_signature_updated_at   :datetime
 #
 
-﻿class IlpSignature < Signature
+class IlpSignature < Signature
   belongs_to :ilp_proposal, :class_name => 'IlpProposal', :foreign_key => "proposal_id"
 	belongs_to :municipality
 	belongs_to :municipality_of_birth, :class_name => 'Municipality', :foreign_key => "municipality_of_birth_id"

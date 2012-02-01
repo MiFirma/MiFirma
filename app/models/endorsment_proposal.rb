@@ -1,4 +1,4 @@
-# == Schema Information
+﻿# == Schema Information
 #
 # Table name: proposals
 #
@@ -29,7 +29,7 @@
 #  election_id             :integer
 #
 
-﻿class EndorsmentProposal < Proposal
+class EndorsmentProposal < Proposal
 	has_many :endorsment_signatures, :class_name => 'EndorsmentSignature', :foreign_key => "proposal_id"
 	belongs_to :election
 	

@@ -1,4 +1,4 @@
-# == Schema Information
+﻿# == Schema Information
 #
 # Table name: proposals
 #
@@ -29,8 +29,7 @@
 #  election_id             :integer
 #
 
-﻿class Proposal < ActiveRecord::Base
-  
+class Proposal < ActiveRecord::Base
 	has_attached_file :banner, PAPERCLIP_CONFIG
 	acts_as_list
 	
@@ -38,9 +37,7 @@
 		:promoter_name, :promoter_url, :tractis_template_code,
 		:promoter_short_name
 
-	
 
-  
 	def on_signature_time?
 		return signatures_end_date >= Time.now.to_date
 	end

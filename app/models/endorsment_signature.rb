@@ -29,7 +29,7 @@
 #  tractis_signature_updated_at   :datetime
 #
 
-﻿class EndorsmentSignature < Signature
+class EndorsmentSignature < Signature
   belongs_to :endorsment_proposal, :class_name => 'EndorsmentProposal', :foreign_key => "proposal_id"
 	
 	validates_presence_of :name, :surname, :surname2, :dni
