@@ -1,2 +1,2 @@
-class Admin::MunicipalitiesController < Admin::ResourcesController
+﻿class Admin::MunicipalitiesController < Admin::ResourcesController
 end

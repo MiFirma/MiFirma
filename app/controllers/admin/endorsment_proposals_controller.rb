@@ -1,2 +1,2 @@
-class Admin::EndorsmentProposalsController < Admin::ResourcesController
+﻿class Admin::EndorsmentProposalsController < Admin::ResourcesController
 end

@@ -27,9 +27,13 @@
 #  election_type           :string(255)
 #  problem                 :text
 #  election_id             :integer
+#  attestor_template_code  :string(255)
+#  user_id                 :integer
 #
 
 class Proposal < ActiveRecord::Base
+	belongs_to 	:user
+	has_many 		:signatures
 	has_attached_file :banner, PAPERCLIP_CONFIG
 	acts_as_list
 	
@@ -42,5 +46,8 @@ class Proposal < ActiveRecord::Base
 		return signatures_end_date >= Time.now.to_date
 	end
 	
+	def num_signatures_signed
+		return signatures.signed.size
+	end
 	
 end

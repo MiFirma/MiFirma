@@ -1,4 +1,4 @@
-class ProposalsController < ApplicationController
+﻿class ProposalsController < ApplicationController
 	#caches_page :index
 	
   # GET /proposals

@@ -1,4 +1,4 @@
-class SignatureSweeper < ActionController::Caching::Sweeper
+﻿class SignatureSweeper < ActionController::Caching::Sweeper
   observe Signature # This sweeper is going to keep an eye on the Signature model
  
   # If our sweeper detects that a Signature was created call this

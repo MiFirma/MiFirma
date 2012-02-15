@@ -2,6 +2,56 @@
 require 'hpricot'
 
 class TractisApi
+
+  def self.signature_request_attestor(signature)
+    client = HTTPClient.new
+    target_url = "https://www.tractis.com/contracts/gateway"
+    client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
+    data = "<contract>
+ 	   <name>#{signature.proposal.name}</name>
+ 	   <redirect-when-signed>#{signature.return_url}</redirect-when-signed>
+ 	   <template>#{signature.attestor_template_code}</template>
+		 <auto-complete>
+		  <nacimiento>
+				<fecha>#{signature.date_of_birth}</fecha>
+				<municipio>#{signature.municipality_of_birth.name}</municipio>
+				<provincia>#{signature.province_of_birth.name}</provincia>
+			</nacimiento>
+			<censo>
+				<direccion>#{signature.address}</direccion>
+				<provincia>#{signature.province.name}</provincia>
+				<municipio>#{signature.municipality.name}</municipio>
+			</censo>
+			<fedatario>
+				<email>#{signature.email}</email>
+			</fedatario>
+		 </auto-complete>
+ 	   <team>
+ 	     <member>
+         <nombre>#{signature.name}</nombre>
+         <apellidos>#{signature.surname}</apellidos>
+         <dni>#{signature.dni}</dni>
+ 	       <email>#{signature.email}</email>
+ 	       <sign>true</sign>
+ 	       <invited>false</invited>
+         <invitation_notify>false</invitation_notify>
+ 	     </member>
+ 	   </team>
+ 	 </contract>"
+	 ::Rails.logger.debug data
+	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
+	 ::Rails.logger.debug "Respuesta - body"
+	 ::Rails.logger.debug response.content
+	 ::Rails.logger.debug "Respuesta - status"
+	 ::Rails.logger.debug response.status
+	 ::Rails.logger.debug "Respuesta - reason"
+	 ::Rails.logger.debug response.reason
+	 ::Rails.logger.debug "Respuesta - Headers - Location"
+	 ::Rails.logger.debug response.header["Location"]
+	 
+ 	 {:location => response.header["Location"].first}
+  end
+
   def self.signature_request_endorsment(signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/gateway_raw"
@@ -18,7 +68,7 @@ class TractisApi
 		end
 
 		dataTRACTIS = "<contract>
-			<name>#{signature.endorsment_proposal.name}</name>
+			<name>#{signature.endorsment_proposal.name}</name>dd
 			<redirect-when-signed>#{signature.return_url}</redirect-when-signed>
 			<template>#{signature.tractis_template_code}</template>
 			<notes>A continuación te mostramos el texto que vas a firmar, tal cual se enviará a la Junta Electoral Central. Como verás, incluye los siguientes datos separados por espacios:

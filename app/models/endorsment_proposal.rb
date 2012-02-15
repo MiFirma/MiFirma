@@ -27,6 +27,8 @@
 #  election_type           :string(255)
 #  problem                 :text
 #  election_id             :integer
+#  attestor_template_code  :string(255)
+#  user_id                 :integer
 #
 
 class EndorsmentProposal < Proposal
@@ -52,7 +54,4 @@ class EndorsmentProposal < Proposal
 		@num_signatures_by_province ||= endorsment_signatures.joins(:province).signed.select("province_id, count(*) as total_signatures").group("province_id")
 	end
 	
-	def num_signatures_signed
-		return endorsment_signatures.signed.size
-	end
 end

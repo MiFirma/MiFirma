@@ -1,4 +1,4 @@
-# == Schema Information
+﻿# == Schema Information
 #
 # Table name: elections
 #

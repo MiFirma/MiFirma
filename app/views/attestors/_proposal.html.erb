@@ -7,19 +7,18 @@
 		   
     <div class="proposal_content">
 			<%= image_tag proposal.banner.url, :width => 150 %> 
-      <%= proposal.howto_solve.html_safe %>
+<p>Haciéndote fedatario ayudas a la organización en la recogida de firmas en papel.
+Una vez que hayas hecho fedatario, la organización se pondrá en contacto contigo para darte los pliegos de firma e información adicional donde poder devolverlos.</p>
+<p>El fedatario asume las siguientes obligaciones que intentará cumplir con diligencia y responsabilidad.
+a)	Hacerse cargo de un número de pliegos para la recogida de firmas que devolverá a la organización (Oficina de Coordinación) de la Iniciativa Legislativa Popular (ILP) una vez cumplimentados o cuando ya no pueda recoger más firmas. Hasta su devolución, el fedatario debe velar para que los pliegos no se pierdan y no se estropeen.
+b)	Buscar personas dispuestas a apoyar la Iniciativa Legislativa Popular y recoger sus firmas en el pliego oficial, junto con todos los datos que figuran en el mismo.
+c)	Comprobar y dar fe de la identidad de la persona que firma.
+d)	Firmar la diligencia que consta al final del pliego, una vez que concluya la recogida de firmas, haciendo constar el número de firmas recogidas y la fecha de finalización del pliego.
+e)	A medida que los pliegos se vayan concluyendo firmados, devolverlos a la organización.          
+</p>
     </div>
     
-    <div class="download">
-      <p>Descarga la propuesta en PDF</p>
-      <%= link_to "Download", proposal.pdf.url %>
-    </div>
-		<% if proposal.attestor_template_code %>
-			<div class="attestor">
-				<p>¡Hazte FEDATARIO!</p>
-				<%= link_to "Fedatario", attestor_path(proposal.id) %>
-			</div>
-		<% end %>
+
     <div class="fb-like">
       <h3>¿Estás a favor?</h3>
       <h5>Muestra tu apoyo clicando en "Me gusta"</h5>  

@@ -1,4 +1,4 @@
-# == Schema Information
+﻿# == Schema Information
 #
 # Table name: signatures
 #
@@ -29,7 +29,8 @@
 #  tractis_signature_updated_at   :datetime
 #
 
-﻿require 'hpricot'
+
+require 'hpricot'
 require 'tractis_api'
 
 class Signature < ActiveRecord::Base
@@ -47,7 +48,7 @@ class Signature < ActiveRecord::Base
                               :before_message => "debe tener al menos 18 años", :after => lambda { 150.years.ago }, :after_message => "demasiados años"
 	
   
-  delegate :tractis_template_code, :to => :proposal
+  delegate :tractis_template_code, :attestor_template_code, :to => :proposal
   
   before_validation :generate_token, :set_default_state
   

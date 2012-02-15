@@ -1,4 +1,4 @@
-# == Schema Information
+﻿# == Schema Information
 #
 # Table name: users
 #
@@ -12,8 +12,10 @@
 #
 
 class User < ActiveRecord::Base
+	has_many	:proposals
 	attr_accessor		:password
 	attr_accessible	:name, :email, :password, :password_confirmation
+	
 	
 	email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i
 	

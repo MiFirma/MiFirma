@@ -1,4 +1,4 @@
-# == Schema Information
+﻿# == Schema Information
 #
 # Table name: proposals
 #
@@ -27,10 +27,13 @@
 #  election_type           :string(255)
 #  problem                 :text
 #  election_id             :integer
+#  attestor_template_code  :string(255)
+#  user_id                 :integer
 #
 
 class IlpProposal < Proposal
 	has_many :ilp_signatures, :class_name => 'IlpSignature', :foreign_key => "proposal_id"
+	has_many :attestors_signatures, :class_name => 'AttestorSignature', :foreign_key => 'proposal_id'
 	
 	has_attached_file :pdf, PAPERCLIP_CONFIG
 	
@@ -62,8 +65,9 @@ class IlpProposal < Proposal
   def num_signatures
     @num_signatures ||= ilp_signatures.signed.size + handwritten_signatures
   end	
+
+  def num_attestors
+    @num_attestors ||= attestors_signatures.signed.size
+  end	
 	
-	def num_signatures_signed
-		return ilp_signatures.signed.size
-	end
 end

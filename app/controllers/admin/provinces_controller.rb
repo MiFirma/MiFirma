@@ -1,2 +1,2 @@
-class Admin::ProvincesController < Admin::ResourcesController
+﻿class Admin::ProvincesController < Admin::ResourcesController
 end

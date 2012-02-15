@@ -27,4 +27,12 @@
 			<%= label :email, "Email" %><br />
 			<%= @user.email %>
 		</div>
+		
+	<% if @user.proposals.count > 0 %>
+	<h1>Iniciativas</h1>
+	
+		<%= render 'proposals' %>
+	
+	
+	<% end %>
 </div>

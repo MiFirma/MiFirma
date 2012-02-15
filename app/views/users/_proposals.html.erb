@@ -1,0 +1,12 @@
+﻿<ul class="provincias">
+  <li>
+    <span>Iniciativa</span>
+    <span>Firmas</span>
+  </li>
+  <% @user.proposals.each do |proposal| %>
+  <li>
+    <span class="city"><%= proposal.name %></span>
+    <span class="sign"><%= proposal.num_signatures_signed %></span>
+  </li>
+  <% end %>
+</ul>

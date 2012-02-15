@@ -1,2 +1,2 @@
-class Admin::SignaturesController < Admin::ResourcesController
+﻿class Admin::SignaturesController < Admin::ResourcesController
 end

@@ -1,4 +1,4 @@
-class ProvinceController < ApplicationController
+﻿class ProvinceController < ApplicationController
 
 	# Return the municipalities of province with id params[:id]
 	def municipalities_for_provinceid

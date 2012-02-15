@@ -1,14 +1,9 @@
 ﻿<div class="signatures_counter">
   <h4>
-    <strong><%= @proposal.num_signatures %></strong> firma<%= "s" if @proposal.num_signatures != 1 %>
-    <span>Manuscritas: <%= @proposal.handwritten_signatures %></span>
+    <strong><%= @proposal.num_attestors %></strong> fedatarios electrónicos.
   </h4>
   
-  <div class="graph">
-    <div class="num" style="width:<%= (220 * @proposal.precent_remaining_signatures).ceil + 30 %>px;"></div>
-    <div class="total">Faltan <%= @proposal.num_remaining_signatures %></div>
-  </div>
-  
+ 
 </div>
 
 <div class="form_container">
@@ -21,9 +16,10 @@
   <% end %>
   
   <% if @proposal.on_signature_time? %>
-	  <%= form_for @signature, :url => signatures_path(@signature) do |f| %>
+	  <%= form_for @signature, :url => attestor_signatures_path(@signature) do |f| %>
+	  <div class="input"><label>El nombre y apellido se recogeran del certificado electrónico</label></div>
 	  <div class="form">
-		<label><strong>Datos de censo</strong></label>
+		<label><strong>Domicilio</strong></label>
 		<label for="province">Provincia</label>
 		<div class="input">
 				<%= f.select :province_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
@@ -41,11 +37,6 @@
 		<label for="address">Dirección</label>
 		<div class="input">
 		  <%= f.text_field :address %>
-		</div>
-
-		<label for="zipcode">Código Postal</label>
-		<div class="input separator">
-		  <%= f.text_field :zipcode %>
 		</div>
 
 		<label><strong>Datos de nacimiento</strong></label>
@@ -69,7 +60,6 @@
 			<% end %>
 		</div>
 		
-		
 		<label for="email">Tu email</label>
 		<div class="input">
 		  <%= f.hidden_field :proposal_id %>
@@ -84,7 +74,7 @@
 	  </div>
 
 	  <div class="btn_sign">
-		  <a href="#" onclick="$('#new_ilp_signature').submit(); return false;">Firma electrónica</a>
+		  <a href="#" onclick="$('#new_attestor_signature').submit(); return false;">Firma electrónica</a>
 	  </div>
 	  
 	  <div id="signature">
@@ -93,7 +83,7 @@
 	  
 	  <% end %>
   <% else %>
-	<h4>No se admiten más firmas para esta Iniciativa. Se ha superado el plazo de recepción de firmas </h4>
+	<h4>No se admiten fedatarios para esta Iniciativa. Se ha superado el plazo de recepción de firmas de la ILP</h4>
   <% end %>
   
 </div>

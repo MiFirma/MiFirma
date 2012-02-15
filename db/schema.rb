@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120119075033) do
+ActiveRecord::Schema.define(:version => 20120206151444) do
 
   create_table "elections", :force => true do |t|
     t.string   "name"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(:version => 20120119075033) do
     t.string   "election_type"
     t.text     "problem"
     t.integer  "election_id"
+    t.string   "attestor_template_code"
+    t.integer  "user_id"
   end
 
   create_table "provinces", :force => true do |t|
