@@ -4,7 +4,7 @@
 #  - Tsutomu Kuroda - http://github.com/kuroda (t-kuroda@oiax.jp)
 # Corrected by Eloy Serra Labán: http://goo.gl/i9Kts, /nQ928, /XfKaX
 
-"es":
+es:
   date:
     formats:
       default: "%d/%m/%Y"
@@ -209,6 +209,11 @@
 
   activerecord:
     errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: "ya en uso"
       template:
         header:
           one:   "No se pudo guardar este/a %{model} porque se encontró 1 error"

@@ -1,12 +1,14 @@
-﻿<ul class="provincias">
-  <li>
-    <span>Iniciativa</span>
-    <span>Firmas</span>
-  </li>
+﻿<table>
+	<tr>
+		<th>Iniciativa</th>
+		<th>Firmas</th>
+		<th>Fedatarios</th>
+	</tr>
   <% @user.proposals.each do |proposal| %>
-  <li>
-    <span class="city"><%= proposal.name %></span>
-    <span class="sign"><%= proposal.num_signatures_signed %></span>
-  </li>
+  <tr>
+		<td><%= link_to proposal.name, edit_proposal_path(proposal.id) %></td>
+		<td><%= proposal.num_signatures_signed %></td>
+		<td><%= proposal.num_attestors %></td>
+  </tr>
   <% end %>
-</ul>
+</table>

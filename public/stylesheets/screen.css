@@ -829,6 +829,18 @@ div.page-sidebar .signature_box .form_container .input input[type=text] {
   font-size: 14px;
   color: #666666;
 }
+
+div.page-sidebar .signature_box .form_container .input input[type=password] {
+  background: fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #d2d9dc;
+  padding: 8px;
+  width: 230px;
+  font-size: 14px;
+  color: #666666;
+}
 div.page-sidebar .signature_box .form_container .tos {
   color: #666666;
   font-size: 11px;

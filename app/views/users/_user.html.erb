@@ -1,29 +1,72 @@
-﻿<div class="page">
-	<h1>Entrada Promotores</h1>
-
-	<%= render 'error_messages' %>
+﻿<style type="text/css">
+div.page-sidebar {
+	float: left;
+	min-height: 400px;
 	
-	<div class="form_container">
+}
+div.page {
+  min-height: 620px;
+  width: 520px;
+}
+div.page-sidebar .signature_box {
+	width: 395px;	
+}
+div.page-sidebar .signature_box .form_container .input input[type=password] {
+	width: 345px;	
+}
+div.page-sidebar .signature_box .form_container .input input[type=text] {
+	width: 345px;	
+}
+div.page-sidebar .signature_box .form_container .input {
+	width: 363px;	
+}
+</style>
+
+<div class="page">
+<div class="page-sidebar">
+<div class="signature_box">
+<div class="form_container">
+	<% if @user.errors.any? %>
+	<div class="sign_error">
+		<%= render "error_messages" %>
+	</div>
+	<% end %>
+	
+<div class="form">
+	<label><strong>Registro Promotores</strong></label>	
+
 	<%= form_for(@user) do |f| %>
-		<div class="field">
 			<%= f.label :name, "Nombre" %><br />
+		<div class="input">
 			<%= f.text_field :name %>
 		</div>
-		<div class="field">
-			<%= f.label :email %><br />
+
+		<%= f.label :email %><br />
+		<div class="input">
 			<%= f.text_field :email %>
 		</div>
-		<div class="field">
-			<%= f.label :password, "Contraseña" %><br />
+
+		<%= f.label :password, "Contraseña" %><br />
+		<div class="input">
 			<%= f.password_field :password %>
 		</div>
-		<div class="field">
-			<%= f.label :password_confirmation, "Confirmación de Contraseña" %><br />
+
+		<%= f.label :password_confirmation, "Confirmación de Contraseña" %><br />
+		<div class="input">
 			<%= f.password_field :password_confirmation %>
 		</div>
-		<div class="actions">
+		
+		<div class="tos">
+		  <%= f.check_box :terms %>
+		  Acepto los <a href="/terms">términos y condiciones</a>
+		</div>
+		
+		<div class="btn_sign">
 			<%= f.submit "REGISTRARSE" %>
 		</div>
 	<% end %>
 	</div>
+</div>
+</div>
+</div>
 </div>

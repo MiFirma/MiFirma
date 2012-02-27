@@ -1,4 +1,30 @@
-﻿<div class="proposal-wr">
+﻿<style type="text/css">
+	div.proposal .attestor {
+	  background: #f3f3f3;
+	  padding: 20px 10px;
+	  position: relative;
+	  margin-top: 15px;
+	}
+	div.proposal .attestor p {
+	  color: #333333;
+	  font-size: 16px;
+	}
+	div.proposal .attestor a {
+	  background: url(../images/btn_attestor.png) 0 0 no-repeat;
+	  display: block;
+	  background-position: 0 0;
+	  width: 106px;
+	  height: 36px;
+	  text-indent: -9999px;
+	  position: absolute;
+	  top: 10px;
+	  right: 10px;
+	}
+	div.proposal .attestor a:hover { background-position: 0 -41px; }
+
+</style>
+
+<div class="proposal-wr">
   <div class="proposal">
     <h1> 
       <%= link_to proposal.name, proposal_path(proposal) %>

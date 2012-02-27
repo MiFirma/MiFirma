@@ -1,5 +1,7 @@
 ﻿class ProposalsController < ApplicationController
 	#caches_page :index
+  before_filter :authenticate, :only => [:edit]
+	before_filter :correct_user, :only => [:edit]
 	
   # GET /proposals
   # GET /proposals.xml
@@ -37,4 +39,16 @@
     end
   end
 
+	private
+
+    def authenticate
+      deny_access unless signed_in?
+    end
+		
+		def correct_user
+			@proposal = IlpProposal.find(params[:id])
+			@user = @proposal.user
+			redirect_to(root_path) unless current_user?(@user)
+		end	
+	
 end

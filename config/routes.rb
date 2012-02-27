@@ -15,7 +15,7 @@
 		end
 	end
 
-  resources :proposals, :only => [:index, :show]
+  resources :proposals, :only => [:index, :show, :edit]
 	resources :attestors, :only => [:show]
 	
 	match 'province/municipalities_for_provinceid/:id', :controller => "province", 

@@ -6,7 +6,7 @@
 
   <title><%= page_title %></title>
 
-  <%= stylesheet_link_tag "screen", "selectbox" %>
+  <%=  stylesheet_link_tag "screen", "selectbox" %>
   <link rel="stylesheet" href="/javascripts/facebox/facebox.css" type="text/css" media="screen" title="no title" charset="utf-8">
 
   <%= javascript_include_tag :defaults, "facebox/facebox.js", "jquery.selectbox-0.1.2.min.js" %>
@@ -33,19 +33,20 @@
             <li><img class="bullet pngfix" src="/images/bullet-3.png" alt="" /><div><b>Cambiamos las cosas</b> <br />con el voto de todos</div></li>
           </ul>
         </div>
-      </div><%= yield %>
+      </div>
+      <%= yield %>
     </div>
 
-<%= debug (params) if Rails.env.development? %>
+		<%= debug (params) if Rails.env.development? %>
   </div>
 
   <%= render :partial => "shared/footer" %>
 
-  <!--[if lt IE 7]>
-<script type="text/javascript" src="/javascripts/DD_belatedPNG_min.js"></script>
-<script type="text/javascript">DD_belatedPNG.fix('*.pngfix');
-</script>
-<![endif]-->
+  <!--[if lt IE 7]> 
+  <script type="text/javascript" src="/javascripts/DD_belatedPNG_min.js"></script>
+  <script type="text/javascript">DD_belatedPNG.fix('*.pngfix');
+  </script>
+  <![endif]-->
 
   <%= render :partial => 'shared/google_analytics' %>
 
