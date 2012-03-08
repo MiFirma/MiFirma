@@ -146,7 +146,7 @@ div.header-bottom .rh li div {
   padding-top: 2px;
 }
 div.page {
-  min-height: 930px;
+  min-height: 430px;
   padding: 20px 20px 20px 22px;
   margin-top: 4px;
   margin-left: 5px;
@@ -408,7 +408,7 @@ div.proposal a.pdf-link:visited img { vertical-align: middle; }
 div.proposal div.fb-like {
   background: #f4f9f3;
   border-top: 1px dotted #bdbdbd;
-  margin-top: 15px;
+  margin-top: 200px;
   padding-left: 5px;
   padding-top: 10px;
   padding: 20px;
@@ -642,7 +642,7 @@ div.page-sidebar {
   width: 295px;
   float: right;
   margin-top: 9px;
-  min-height: 800px;
+  min-height: 400px;
   background: url(../images/line_gradient.png) no-repeat left;
 }
 div.page-sidebar dl.reasons {
@@ -914,6 +914,25 @@ h6 {
   padding-bottom: 5px;
   margin-bottom: 15px;
   margin-right: 10px;
+}
+
+h2 {
+  font-size: 28px;
+  font-style: italic;
+  line-height: 40px;
+  display: inline;
+  color: #333333;
+  font-family: Georgia, Georgia, serif;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 40px;
+	text-align: center;
+  color: #333333;
+  font-family: Georgia, Georgia, serif;
+  font-style: italic;
 }
 .home-content { width: 615px !important; }
 .home_proposals li {
