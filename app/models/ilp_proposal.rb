@@ -29,7 +29,7 @@
 #  election_id             :integer
 #  attestor_template_code  :string(255)
 #  user_id                 :integer
-#
+#	 ilp_code								 :string
 
 class IlpProposal < Proposal
 	has_many :ilp_signatures, :class_name => 'IlpSignature', :foreign_key => "proposal_id"

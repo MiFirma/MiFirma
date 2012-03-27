@@ -1,4 +1,4 @@
-# == Schema Information
+﻿# == Schema Information
 #
 # Table name: signatures
 #
@@ -29,25 +29,19 @@
 #  tractis_signature_updated_at   :datetime
 #
 
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+require 'test_helper'
 
-firma_javier:
-  type: IlpSignature
-  email: javier.pena@mifirma.com
-  state: 1
-  token: 1234
-  name: Javier
-  dni: 07504500Z
-  surname: Peña
-  terms: true
-  ilp_proposal: ilp  
-firma_juan:
-  type: IlpSignature
-  email: juan@email.com
-  state: 0
-  token: 2345
-  name: Juan
-  dni: 4321
-  surname: Perez Perez
-  terms: true
-  ilp_proposal: ilp
+class SignatureTest < ActiveSupport::TestCase
+  # Replace this with your real tests.
+  test "signatures of the same proposal must not have same dni" do
+    signature = IlpSignature.new(:email => signatures(:firma_javier).email,
+															:state => 1,
+															:token => 2345,
+															:tractis_contract_location => 6543,
+															:name => 'Juanito',
+															:dni => signatures(:firma_javier).email,
+															:surname => 'Gómez',
+															:ilp_proposal => proposals(:ilp))
+		assert !signature.save
+  end
+end

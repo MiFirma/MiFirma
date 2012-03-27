@@ -1,30 +1,7 @@
-﻿<style type="text/css">
-div.page-sidebar {
-	float: left;
-	min-height: 400px;
-	
-}
-div.page {
-  min-height: 620px;
-  width: 520px;
-}
-div.page-sidebar .signature_box {
-	width: 395px;	
-}
-div.page-sidebar .signature_box .form_container .input input[type=password] {
-	width: 345px;	
-}
-div.page-sidebar .signature_box .form_container .input input[type=text] {
-	width: 345px;	
-}
-div.page-sidebar .signature_box .form_container .input {
-	width: 363px;	
-}
-</style>
-
+﻿
 <div class="page">
 <div class="page-sidebar">
-<div class="signature_box">
+<div class="signature_box ancho402">
 <div class="form_container">
 	<% if @user.errors.any? %>
 	<div class="sign_error">
@@ -37,22 +14,22 @@ div.page-sidebar .signature_box .form_container .input {
 
 	<%= form_for(@user) do |f| %>
 			<%= f.label :name, "Nombre" %><br />
-		<div class="input">
+		<div class="input ancho346">
 			<%= f.text_field :name %>
 		</div>
 
 		<%= f.label :email %><br />
-		<div class="input">
+		<div class="input ancho346">
 			<%= f.text_field :email %>
 		</div>
 
 		<%= f.label :password, "Contraseña" %><br />
-		<div class="input">
+		<div class="input ancho346">
 			<%= f.password_field :password %>
 		</div>
 
 		<%= f.label :password_confirmation, "Confirmación de Contraseña" %><br />
-		<div class="input">
+		<div class="input ancho346">
 			<%= f.password_field :password_confirmation %>
 		</div>
 		

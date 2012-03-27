@@ -34,19 +34,16 @@ require 'hpricot'
 require 'tractis_api'
 
 class Signature < ActiveRecord::Base
-	belongs_to :province
-	
-	has_attached_file :tractis_signature, 
-		{:path => ":rails_root/public/system/firmas/:promoter_name/:province_id/:filename", :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
 	validates_presence_of :proposal_id, :state, :token
   validates_presence_of :email, :date_of_birth, :message => "Debes rellenar todos los campos."
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :message => "Email no válido. Por favor, comprueba que has introducido correctamente tu dirección de correo electrónico."
   validates_acceptance_of :terms, :accept => true, :message => "Debes aceptar los términos de uso."
-  
+  validates_presence_of :name, :surname, :surname2, :dni
 	validates_date :date_of_birth, :before => lambda { 18.years.ago },
                               :before_message => "debe tener al menos 18 años", :after => lambda { 150.years.ago }, :after_message => "demasiados años"
 	
+	validate :dni_format
   
   delegate :tractis_template_code, :attestor_template_code, :to => :proposal
   
@@ -56,6 +53,22 @@ class Signature < ActiveRecord::Base
 
   STATES = [:pending, :verified, :canceled]
 
+
+	# Validates NIF
+	def dni_format
+		letters = "TRWAGMYFPDXBNJZSQVHLCKE"
+		value = dni.clone
+		if value.length > 1
+			check = value.slice!(value.length - 1..value.length - 1).upcase
+			calculated_letter = letters[value.to_i % 23].chr
+			if !(check === calculated_letter)
+				errors.add(:dni, "Formato DNI no válido.")
+			end
+		else
+			errors.add(:dni, "Formato DNI no válido.")
+		end
+	end
+	
   def return_url
     "http://#{MIFIRMA_HOST}/signatures/#{token}"
   end
@@ -125,13 +138,5 @@ class Signature < ActiveRecord::Base
 		self.tractis_signature = file
 		
   end	
-	
-	# interpolate in paperclip
-	Paperclip.interpolates :promoter_name  do |attachment, style|
-		attachment.instance.proposal.promoter_short_name
-	end
-	
-	Paperclip.interpolates :province_id  do |attachment, style|
-		attachment.instance.province_id
-	end
+
 end

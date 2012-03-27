@@ -13,10 +13,10 @@
 
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  name: MyString
-  email: MyString
+Javier:
+  name: Javier
+  email: jpenamar@gmail.com
 
-two:
-  name: MyString
-  email: MyString
+Maria:
+  name: Maria
+  email: mmancebom@gmail.com

@@ -1,4 +1,4 @@
-﻿# == Schema Information
+# == Schema Information
 #
 # Table name: proposals
 #
@@ -29,25 +29,37 @@
 #  election_id             :integer
 #  attestor_template_code  :string(255)
 #  user_id                 :integer
-#	 ilp_code								 :string
+#
 
-class Proposal < ActiveRecord::Base
-	belongs_to 	:user
-	has_many 		:signatures
-	has_attached_file :banner, PAPERCLIP_CONFIG
-	acts_as_list
+require 'test_helper'
+
+class ProposalTest < ActiveSupport::TestCase
+  # Replace this with your real tests.
+  test "Proposals attributes must not be empty" do
+		proposal = IlpProposal.new
+    assert proposal.invalid?
+		assert proposal.errors[:name].any?
+		assert proposal.errors[:problem].any?
+		assert proposal.errors[:howto_solve].any?
+		assert proposal.errors[:pdf_file_name].any?
+		assert proposal.errors[:pdf_content_type].any?
+		assert proposal.errors[:pdf_file_size].any?
+		assert proposal.errors[:pdf_updated_at].any?
+		assert proposal.errors[:num_required_signatures].any?
+		assert proposal.errors[:promoter_name].any?
+		assert proposal.errors[:promoter_url].any?
+		assert proposal.errors[:promoter_short_name].any?
+		assert proposal.errors[:handwritten_signatures].any?
+		assert proposal.errors[:signatures_end_date].any?
+  end
 	
-	validates_presence_of :name, :problem, :howto_solve, 
-		:promoter_name, :promoter_url, 
-		:promoter_short_name
-
-
-	def on_signature_time?
-		return signatures_end_date >= Time.now.to_date
+	test "Proposal is not valid without a unique name" do
+		assert true
 	end
-	
-	def num_signatures_signed
-		return signatures.signed.size
+
+	test "IlpProposal ilp is valid" do
+		proposal = IlpProposal.find_by_name(proposals(:ilp).name)
+		assert proposal.valid?
 	end
 	
 end

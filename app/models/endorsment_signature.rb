@@ -30,34 +30,30 @@
 #
 
 class EndorsmentSignature < Signature
-  belongs_to :endorsment_proposal, :class_name => 'EndorsmentProposal', :foreign_key => "proposal_id"
+	belongs_to :province
+  belongs_to :proposal, :class_name => 'EndorsmentProposal'
 	
-	validates_presence_of :name, :surname, :surname2, :dni
-	validate :dni_format
-  validate :uniqueness_of_dni
+	has_attached_file :tractis_signature, 
+		{:path => ":rails_root/public/system/firmas/:promoter_name/:province_id/:filename", :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
-  def proposal
-    return endorsment_proposal
-  end
-
+	validates_presence_of :province
+	validate :uniqueness_of_dni
+	
+	
 	def uniqueness_of_dni
 		if self.signed? and EndorsmentSignature.where("state > 0 and dni = ? and id <> ?",dni,id).count>0
 			errors.add :dni, "Sólo puedes firmar un aval una sola vez."
 		end
 	end
 
-	# Validates NIF
-	def dni_format
-		letters = "TRWAGMYFPDXBNJZSQVHLCKE"
-		value = dni.clone
-		if value.length > 1
-			check = value.slice!(value.length - 1..value.length - 1).upcase
-			calculated_letter = letters[value.to_i % 23].chr
-			if !(check === calculated_letter)
-				errors.add(:dni, "Formato DNI no válido.")
-			end
-		else
-			errors.add(:dni, "Formato DNI no válido.")
-		end
+ 
+	private
+		# interpolate in paperclip
+	Paperclip.interpolates :promoter_name  do |attachment, style|
+		attachment.instance.proposal.promoter_short_name
+	end
+	
+	Paperclip.interpolates :province_id  do |attachment, style|
+		attachment.instance.province_id
 	end
 end

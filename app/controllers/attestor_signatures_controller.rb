@@ -12,7 +12,7 @@ class AttestorSignaturesController < ApplicationController
 			rescue StandardError => e 
 				::Rails.logger.debug "AttestorSignaturesController - Rescue"
 				flash[:error] = "Error accediendo al proveedor de firma electrónica"
-				redirect_to attestor_url(@signature.ilp_proposal, :signature => params[:attestor_signature])
+				redirect_to attestor_url(@signature.proposal, :signature => params[:attestor_signature])
 			  return
 			end
 			::Rails.logger.debug "Redireccionando a tractis"
@@ -20,7 +20,7 @@ class AttestorSignaturesController < ApplicationController
     else
 		  ::Rails.logger.debug @signature.errors
       flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
-      redirect_to attestor_url(@signature.ilp_proposal, :signature => params[:attestor_signature])
+      redirect_to attestor_url(@signature.proposal, :signature => params[:attestor_signature])
     end
   end
 end

@@ -56,13 +56,14 @@ blockquote, q { quotes: "" ""; }
 }
 .debug { background-color: #ffe59f; }
 body {
-	background: url("../images/header-bkg.png") repeat-x scroll 0 0 #ffffff;	
-    font-family: arial;
-    font-size: 12px;
-    *text-align: center;
-    *width: 100%;
+  background: white url(/images/header-bkg.png) 0 0 repeat-x;
+  background-color: white;
+  font-family: arial;
+  font-size: 12px;
+  *text-align: center;
+  *width: 100%;
 }
-body.about-us, body.como-funciona { background: white url(../images/header-bkg-long.png) 0 0 repeat-x; }
+body.about-us, body.como-funciona { background: white url(/images/header-bkg-long.png) 0 0 repeat-x; }
 div.main-wr {
   width: 960px;
   *text-align: left;
@@ -145,11 +146,11 @@ div.header-bottom .rh li div {
   padding-top: 2px;
 }
 div.page {
-  /* min-height: 430px; */
-  padding: 20px 0 10px;
-  /*margin-top: 4px;
-  margin-left: 5px;*/
-  width: 950px;
+  min-height: 430px;
+  padding: 20px 20px 20px 22px;
+  margin-top: 4px;
+  margin-left: 5px;
+  width: 920px;
 }
 div.page h4 {
   font-size: 26px;
@@ -329,20 +330,15 @@ div.page h4 {
   text-decoration: none;
 }
 .como-funciona div.page a:hover { text-decoration: underline; }
-.home div.page { background: url("../images/page-frame-l.png") no-repeat scroll 0 0 transparent; }
-.proposal div.page { background: url("../images/page-frame-m.png") no-repeat scroll 0 0 transparent; }
-.about-us div.page { background: url("../images/page-frame-s.png") no-repeat scroll 0 0 transparent; }
-.como-funciona div.page { background: url("../images/page-frame-s.png") no-repeat scroll 0 0 transparent; }
+.home div.page { background: transparent url(/images/page-frame-l.png) 0 0 no-repeat; }
+.proposal div.page { background: transparent url(/images/page-frame-m.png) 0 0 no-repeat; }
+.about-us div.page { background: transparent url(/images/page-frame-s.png) 0 0 no-repeat; }
+.como-funciona div.page { background: transparent url(/images/page-frame-s.png) 0 0 no-repeat; }
 div.page-content {
   width: 590px;
   float: left;
 }
-div.page-content2 {
-  width: 590px;
-  float: left;
-	padding:0 0 0 22px;
-}
-.about-us div.page-content, .about-us div.page-content2 {
+.about-us div.page-content {
   width: 612px;
   float: left;
   padding-left: 5px;
@@ -619,7 +615,7 @@ div.sign {
   _padding-top: 16px;
   height: 60px;
   display: block;
-  background: transparent url(../images/firmar-btn-bgk.png) 0 0 no-repeat;
+  background: transparent url(/images/firmar-btn-bgk.png) 0 0 no-repeat;
   padding-left: 8px;
   line-height: 60px;
   margin-bottom: 20px;
@@ -636,29 +632,20 @@ div.sign span {
 }
 div.sign span b { font-size: 24px; }
 div.proposal-bottom {
-  background: transparent url(../images/proposal-bottom-frame.png) 0 0 no-repeat;
+  background: transparent url(/images/proposal-bottom-frame.png) 0 0 no-repeat;
   height: 12px;
   margin-bottom: 25px;
   width: 617px;
 }
 div.page-sidebar {
-  /* margin-right: 10px;
-  width: 295px; */
-  float: none !important;
-  margin-top: 9px;
-  /* min-height: 400px; */
-  background: url(../images/line_gradient.png) no-repeat left;
-}
-div.page-sidebar2 {
-  /* margin-right: 10px;
-  width: 295px; */
+  margin-right: 10px;
+  width: 295px;
   float: right;
   margin-top: 9px;
-	padding: 0 22px 0 0;
-  /* min-height: 400px; */
-  /*background: url(../images/line_gradient.png) no-repeat left;*/
+  min-height: 400px;
+  background: url(../images/line_gradient.png) no-repeat left;
 }
-div.page-sidebar dl.reasons, div.page-sidebar2 dl.reasons {
+div.page-sidebar dl.reasons {
   padding: 15px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -666,36 +653,36 @@ div.page-sidebar dl.reasons, div.page-sidebar2 dl.reasons {
   background-color: #f2f2f2;
   margin-left: 1px;
 }
-div.page-sidebar dl.reasons dt,div.page-sidebar2 dl.reasons dt {
+div.page-sidebar dl.reasons dt {
   font-size: 14px;
   font-weight: bold;
   padding-bottom: 10px;
   border-bottom: 1px solid #d6d6d6;
   margin-bottom: 6px;
 }
-div.page-sidebar dl.reasons dd, div.page-sidebar2 dl.reasons dd {
+div.page-sidebar dl.reasons dd {
   display: block;
   clear: both;
   margin-bottom: 10px;
 }
-div.page-sidebar dl.reasons dd img, div.page-sidebar2 dl.reasons dd img {
+div.page-sidebar dl.reasons dd img {
   float: left;
   margin-left: -5px;
   margin-top: 6px;
 }
-div.page-sidebar dl.reasons dd span, div.page-sidebar2 dl.reasons dd span {
+div.page-sidebar dl.reasons dd span {
   float: left;
   width: 170px;
   display: block;
   margin-left: 15px;
   line-height: 20px;
 }
-div.page-sidebar dl.reasons dd hr, div.page-sidebar2 dl.reasons dd hr  {
+div.page-sidebar dl.reasons dd hr {
   color: transparent;
   visibility: hidden;
   clear: both;
 }
-div.page-sidebar div.share, div.page-sidebar2 div.share  {
+div.page-sidebar div.share {
   background-color: #ddeef6;
   padding: 12px;
   padding-bottom: 5px;
@@ -706,29 +693,28 @@ div.page-sidebar div.share, div.page-sidebar2 div.share  {
   border-radius: 5px;
   overflow: hidden;
 }
-div.page-sidebar div.share p,div.page-sidebar2 div.share p {
+div.page-sidebar div.share p {
   text-align: center;
   font-size: 14px;
   line-height: 20px;
 }
-div.page-sidebar div.share div.share-buttons-left,div.page-sidebar2 div.share div.share-buttons-left {
+div.page-sidebar div.share div.share-buttons-left {
   margin-top: 15px;
   margin-left: 5px;
   width: 118px;
   float: left;
 }
-div.page-sidebar div.share div.share-buttons-left img, div.page-sidebar2 div.share div.share-buttons-left img {
+div.page-sidebar div.share div.share-buttons-left img {
   display: block;
   margin-bottom: 10px;
 }
-div.page-sidebar div.share .fb_like, div.page-sidebar2 div.share .fb_like {
+div.page-sidebar div.share .fb_like {
   float: right;
   margin-top: 17px;
   margin-right: 25px;
 }
-div.page-sidebar .signature_box{
-  float:none;
-  margin:0 auto;
+div.page-sidebar .signature_box {
+  position: absolute;
   width: 290px;
   -webkit-border-top-right-radius: 5px;
   -webkit-border-bottom-right-radius: 5px;
@@ -737,33 +723,22 @@ div.page-sidebar .signature_box{
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-div.page-sidebar2 .signature_box {
-  float:none;
-  margin:0 auto;
-  width: 290px;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomright: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-div.page-sidebar .signature_box .signatures_counter, div.page-sidebar2 .signature_box .signatures_counter {
+div.page-sidebar .signature_box .signatures_counter {
   background: url(../images/bg_firmas.png) no-repeat -6px -6px;
   width: 290px;
   height: 85px;
   padding-top: 25px;
   text-align: center;
 }
-div.page-sidebar .signature_box .signatures_counter h4, div.page-sidebar2 .signature_box .signatures_counter h4 {
+div.page-sidebar .signature_box .signatures_counter h4 {
   text-shadow: 1px 1px #ffffff;
   padding-bottom: 0px;
   color: #333333;
   font-size: 29px;
   margin-bottom: 0px;
 }
-div.page-sidebar .signature_box .signatures_counter h4 strong, div.page-sidebar2 .signature_box .signatures_counter h4 strong { font-weight: bold; }
-div.page-sidebar .signature_box .signatures_counter h4 span, div.page-sidebar2 .signature_box .signatures_counter h4 span {
+div.page-sidebar .signature_box .signatures_counter h4 strong { font-weight: bold; }
+div.page-sidebar .signature_box .signatures_counter h4 span {
   text-shadow: 1px 1px #ffffff;
   padding-bottom: 5px;
   margin-top: 3px;
@@ -771,7 +746,7 @@ div.page-sidebar .signature_box .signatures_counter h4 span, div.page-sidebar2 .
   font-size: 13px;
   display: block;
 }
-div.page-sidebar .signature_box .signatures_counter .by_provincias, div.page-sidebar2 .signature_box .signatures_counter .by_provincias {
+div.page-sidebar .signature_box .signatures_counter .by_provincias {
   display: block;
   margin-top: 15px;
   text-shadow: 1px 1px #ffffff;
@@ -779,14 +754,14 @@ div.page-sidebar .signature_box .signatures_counter .by_provincias, div.page-sid
   font-size: 14px;
   text-decoration: none;
 }
-div.page-sidebar .signature_box .signatures_counter .graph, div.page-sidebar2 .signature_box .signatures_counter .graph {
+div.page-sidebar .signature_box .signatures_counter .graph {
   background: url(../images/bg_bar_firmas.png) no-repeat;
   width: 252px;
   height: 24px;
   margin: 0 auto;
   position: relative;
 }
-div.page-sidebar .signature_box .signatures_counter .graph .num, div.page-sidebar2 .signature_box .signatures_counter .graph .num  {
+div.page-sidebar .signature_box .signatures_counter .graph .num {
   background: url(../images/bg_num_firmas.png) repeat-x;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
@@ -798,7 +773,7 @@ div.page-sidebar .signature_box .signatures_counter .graph .num, div.page-sideba
   left: 0px;
   z-index: 2;
 }
-div.page-sidebar .signature_box .signatures_counter .graph .total, div.page-sidebar2 .signature_box .signatures_counter .graph .total  {
+div.page-sidebar .signature_box .signatures_counter .graph .total {
   position: absolute;
   top: 5px;
   right: 10px;
@@ -806,140 +781,85 @@ div.page-sidebar .signature_box .signatures_counter .graph .total, div.page-side
   text-shadow: 1px 1px #a9b291;
   z-index: 1;
 }
-div.page-sidebar .signature_box .form_container, div.page-sidebar2 .signature_box .form_container {
+div.page-sidebar .signature_box .form_container {
   margin-bottom: 5px;
   background: #fdfdfd;
+  border: 1px solid #c8d7dd;
   -webkit-border-bottom-right-radius: 5px;
   -webkit-border-bottom-left-radius: 5px;
   -moz-border-radius-bottomright: 5px;
   -moz-border-radius-bottomleft: 5px;
   border-bottom-right-radius: 5px;
   border-bottom-left-radius: 5px;
-  padding: 20px 0 0 0;
 }
-div.page-sidebar .signature_box .form_container .separator, div.page-sidebar2 .signature_box .form_container .separator { margin-bottom: 20px !important; }
-div.page-sidebar .signature_box .form_container .form, div.page-sidebar2 .signature_box .form_container .form { 
-	padding: 15px; 
-	background: #CFDFE7;
-	-webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-	border: 1px solid #89aec1;
-	background-color: #CFDFE7;
-    background-image: -moz-linear-gradient(center top , #cfdfe7, #a7c0cc);
-    background-repeat: repeat-x;
-	
-	
-	background-color:#CFDFE7;
-	background-image:-moz-linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-image:-ms-linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#cfdfe7), to(#a7c0cc));
-	background-image:-webkit-linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-repeat:repeat-x;
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
-
-}
-div.page-sidebar .signature_box .form_container label, div.page-sidebar2 .signature_box .form_container label  {
+div.page-sidebar .signature_box .form_container .separator { margin-bottom: 20px !important; }
+div.page-sidebar .signature_box .form_container .form { padding: 15px; }
+div.page-sidebar .signature_box .form_container label {
   display: block;
   margin-bottom: 6px;
-  color: #032638;
-  margin:0;
-  padding: 10px 0 4px 3px;
+  color: #333333;
+  padding-left: 3px;
   font-size: 14px;
 }
-
-div.page-sidebar .signature_box .form_container label strong, div.page-sidebar2 .signature_box .form_container label strong  {
-  border-bottom: 1px solid #89AEC1;
-    color: #032638;
-    display: block;
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding-bottom: 9px;
+div.page-sidebar .signature_box .form_container label strong {
+  font-weight: bold;
+  border-bottom: 1px dotted #cccccc;
+  display: block;
+  padding-bottom: 3px;
+  margin-bottom: 10px;
 }
-div.page-sidebar .signature_box .form_container .input, div.page-sidebar2 .signature_box .form_container .input  {
+div.page-sidebar .signature_box .form_container .input {
   padding: 3px;
-  background: none;
+  background: #eff2f2;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  margin:0;
+  margin-bottom: 8px;
   width: 248px;
   height: 35px;
 }
-div.page-sidebar .signature_box .form_container .ancho346 input, div.page-sidebar2 .signature_box .form_container .ancho346 input {
-  width:346px !important;
-}
-div.page-sidebar .signature_box .form_container .input input[type=text], div.page-sidebar2 .signature_box .form_container .input input[type=text]  {
+div.page-sidebar .signature_box .form_container .input input[type=text] {
   background: fff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #89aec1;
+  border: 1px solid #d2d9dc;
   padding: 8px;
   width: 230px;
   font-size: 14px;
-  color: #032638;
+  color: #666666;
 }
 
-div.page-sidebar .signature_box .form_container .input input[type=password], div.page-sidebar2 .signature_box .form_container .input input[type=password] {
+div.page-sidebar .signature_box .form_container .input input[type=password] {
   background: fff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
-  border: 1px solid #89aec1;
+  border: 1px solid #d2d9dc;
   padding: 8px;
   width: 230px;
   font-size: 14px;
-  color: #032638;
+  color: #666666;
 }
-div.page-sidebar .signature_box .form_container .tos, div.page-sidebar2 .signature_box .form_container .tos  {
-	color: #666666;
-    font-size: 11px;
-    margin: 0;
-    padding: 10px 0 10px 0;
-	border-bottom:1px dashed #89AEC1;
+div.page-sidebar .signature_box .form_container .tos {
+  color: #666666;
+  font-size: 11px;
 }
-div.page-sidebar .signature_box .form_container .tos a, div.page-sidebar2 .signature_box .form_container .tos a  { color: #35669f; }
-div.page-sidebar .signature_box .form_container .tos input, div.page-sidebar2 .signature_box .form_container .tos input {
-	position: relative;
-    top: 2px;
-}
-div.page-sidebar .signature_box .form_container .btn_sign, div.page-sidebar2 .signature_box .form_container .btn_sign {
-  padding: 24px 0 10px;
+div.page-sidebar .signature_box .form_container .tos a { color: #35669f; }
+div.page-sidebar .signature_box .form_container .btn_sign {
   text-align: center;
-  border:none;
+  background: #eef5e9;
+  padding: 15px;
+  border: 1px solid #ffffff;
+  border-top: 1px solid #c8d7dd;
+  -webkit-border-bottom-right-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
-div.page-sidebar .signature_box .form_container .tos a, div.page-sidebar2 .signature_box .form_container .tos a  { color: #35669f; }
-div.page-sidebar .signature_box .form_container .btn_sign input, div.page-sidebar2 .signature_box .form_container .btn_sign input {
-
-	padding:10px;
-	-webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-	color:#ffffff;
-	text-shadow: 1px 1px 1px #000000;
-	cursor: pointer;
-	font-size: 1.5em;
-	width:8em;
-	
-	
-	background-color:#da4f49;
-	background-image:-moz-linear-gradient(top, #ee5f5b, #bd362f);
-	background-image:-ms-linear-gradient(top, #ee5f5b, #bd362f);
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
-	background-image:-webkit-linear-gradient(top, #ee5f5b, #bd362f);
-	background-image:-o-linear-gradient(top, #ee5f5b, #bd362f);
-	background-image:linear-gradient(top, #ee5f5b, #bd362f);
-	background-repeat:repeat-x;
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
-	border-color:#bd362f #bd362f #802420;
-	border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-filter:progid:DXImageTransform.Microsoft.gradient(enabled = false)
-}	
-div.page-sidebar .signature_box .form_container .btn_sign a, div.page-sidebar2 .signature_box .form_container .btn_sign a {
+div.page-sidebar .signature_box .form_container .btn_sign a {
   background: url(../images/btn_firmar.png) 0 0 no-repeat;
   display: block;
   background-position: 0 0;
@@ -948,49 +868,37 @@ div.page-sidebar .signature_box .form_container .btn_sign a, div.page-sidebar2 .
   text-indent: -9999px;
   margin: 0 auto;
 }
-div.page-sidebar .signature_box .form_container .btn_sign a:hover, div.page-sidebar2 .signature_box .form_container .btn_sign a:hover  { background-position: 0 -50px; }
-div.page-sidebar .signature_box .form_container .sign_error, div.page-sidebar2 .signature_box .form_container .sign_error {
-  /*background: none repeat scroll 0 0 #fff9d7;
+div.page-sidebar .signature_box .form_container .btn_sign a:hover { background-position: 0 -50px; }
+div.page-sidebar .signature_box .form_container .sign_error {
+  background: none repeat scroll 0 0 #fff9d7;
   border: 1px solid #e2c822;
   color: #5c5c5c;
   float: left;
   line-height: 160%;
   margin-bottom: 15px;
   padding: 15px 20px;
-  width: 246px; */
-  float: left;
-  padding: 18px 0 14px;
-  width: 288px; 
+  width: 246px;
 }
-.error {
-	background: none repeat scroll 0 0 #FFF9D7;
-    border: 1px solid #E2C822;
-    color: #5C5C5C;
-    font-size: 1.2em;
-    line-height: 160%;
-    margin: 0 auto;
-    padding: 15px 20px;
-    text-align: center;
-    width: 208px;
-}
-div.page-sidebar .signature_box .form_container .sign_error strong, div.page-sidebar2 .signature_box .form_container .sign_error strong {
+div.page-sidebar .signature_box .form_container .sign_error strong {
   display: block;
   font-size: 16px;
   margin-bottom: 5px;
 }
-div.page-sidebar .signature_box .tradicional, div.page-sidebar2 .signature_box .tradicional {
-	border-top: 1px dashed #89AEC1;
-    margin: 10px;
-    padding: 10px;
+div.page-sidebar .signature_box .tradicional {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background: #f6f6f6;
+  margin: 10px;
+  padding: 10px;
 }
-div.page-sidebar .signature_box .tradicional p, div.page-sidebar2 .signature_box .tradicional p  {
+div.page-sidebar .signature_box .tradicional p {
   line-height: 140%;
   color: #666666;
   margin-bottom: 10px;
-  text-align:center;
 }
-div.page-sidebar .signature_box .tradicional p a, div.page-sidebar2 .signature_box .tradicional p a { color: #35669f; }
-div.page-sidebar .home, div.page-sidebar2 .home  {
+div.page-sidebar .signature_box .tradicional p a { color: #35669f; }
+div.page-sidebar .home {
   position: static !important;
   margin-top: 40px;
 }
@@ -1126,19 +1034,16 @@ h3 {
 }
 .provincias li .sign { font-weight: normal; }
 div.footer-wr {
-	height: 110px;
-	background-color: #f2f2f2;
-	border-top: 1px solid #d8d8d8;
-	padding-top: 30px;
-	padding-left: 20px;
-	width:100%;
-	float:left;
+  height: 110px;
+  background-color: #f2f2f2;
+  border-top: 1px solid #d8d8d8;
+  padding-top: 30px;
+  padding-left: 20px;
 }
 div.footer {
-	float: none;
-    margin: 0 auto;
-    overflow: hidden;
-    width: 960px;
+  width: 960px;
+  margin: 0 auto;
+  overflow: hidden;
 }
 div.footer div.footer-nav {
   float: left;
@@ -1190,229 +1095,4 @@ div.footer div.footer-signatures span b {
 div.footer .tractis {
   float: right;
   margin-right: 20px;
-}
-
-
-/*--- Botones singout y ajustes ---*/
-
-#contenedor_login { 
-    margin: 20px auto 0 auto;
-    width: 530px;
-	padding: 15px; 
-	background: #CFDFE7;
-	-webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-	border: 1px solid #999a9a;
-	background-color: #CFDFE7;
-    background-image: -moz-linear-gradient(center top , #cfdfe7, #a7c0cc);
-    background-repeat: repeat-x;
-	
-	
-	background-color:#CFDFE7;
-	background-image:-moz-linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-image:-ms-linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#cfdfe7), to(#a7c0cc));
-	background-image:-webkit-linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
-	background-repeat:repeat-x;
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
-}
-
-#contenedor_login h3 { 
-	background: #FFFFFF;
-    padding: 0 0 0 10px;
-	margin: 0 0 10px;
-	float:left;
-	width:520px;
-    text-align: left;
-	-webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-}
-
-#contenedor_login p, #contenedor_login field, #contenedor_login label { 
-	background: none repeat scroll 0 0 #FFFFFF;
-    border-bottom: 1px dashed #89AEC1;
-    color: #032638;
-    float: left;
-    font-size: 14px;
-    padding: 10px 0 10px 10px;
-    width: 520px;
-}
-
-#login_datos { 
-	border: 1px solid red;
-    margin: 0 auto;
-    width: 530px;
-}
-
-#contenedor_dosbotones {
-    margin: 0 auto;
-    width: 440px;
-}
-
-.btn_signout {
-	float: right;
-    padding: 44px 0 40px;
-}
-
-.btn_signout a.signout {
-
-	padding:10px 40px 10px 10px;
-	-webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-	color:#6f7070;
-	cursor: pointer;
-	font-size: 1.5em;
-	width:8em;
-	border: 1px solid #999a9a;
-	text-decoration:none;
-	background:url("../images/logout_bg.jpg") no-repeat scroll right top #FFFFFF;
-	/*
-	background-color:#da4f49;
-	background-image:-moz-linear-gradient(top, #ee5f5b, #bd362f);
-	background-image:-ms-linear-gradient(top, #ee5f5b, #bd362f);
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#ee5f5b), to(#bd362f));
-	background-image:-webkit-linear-gradient(top, #ee5f5b, #bd362f);
-	background-image:-o-linear-gradient(top, #ee5f5b, #bd362f);
-	background-image:linear-gradient(top, #ee5f5b, #bd362f);
-	background-repeat:repeat-x;
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
-	border-color:#bd362f #bd362f #802420;
-	border-color:rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-filter:progid:DXImageTransform.Microsoft.gradient(enabled = false)
-*/
-}
-
-.btn_signout a.signout:hover {
-	text-decoration:underline;	
-}
-
-.btn_ajustes {
-	float: left;
-    padding: 44px 0 40px;
-}
-
-.btn_ajustes a.ajustes {
-
-	padding:10px 40px 10px 10px;
-	-webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-	color:#6f7070;
-	cursor: pointer;
-	font-size: 1.5em;
-	width:8em;
-	border: 1px solid #858686;
-	text-decoration:none;
-	background:url("../images/ajustes_bg.jpg") no-repeat scroll right top #FFFFFF;
-	/*
-	background-color:#C8CBCD;
-	background-image:-moz-linear-gradient(top, #F8F9FA, #C8CBCD);
-	background-image:-ms-linear-gradient(top, #F8F9FA, #C8CBCD);
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#F8F9FA), to(#C8CBCD));
-	background-image:-webkit-linear-gradient(top, #F8F9FA, #C8CBCD);
-	background-image:-o-linear-gradient(top, #eF8F9FA, #C8CBCD);
-	background-image:linear-gradient(top, #eF8F9FA, #C8CBCD);
-	background-repeat:repeat-x;
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eF8F9FA', endColorstr='#C8CBCD', GradientType=0);*/
-}
-.btn_ajustes a.ajustes:hover {
-	text-decoration:underline;	
-}
-
-
-
-#contenedor_login table {
-	border-left: 1px solid #89AEC1;
-    margin: 10px 0 0;
-}
-#contenedor_login table a {
-	color:#032638;
-}
-#contenedor_login table a:link, #contenedor_login table a:visited {
-	color:#032638;
-}
-#contenedor_login tr {
-	background:#ffffff;
-}
-#contenedor_login th {
-	background: none repeat scroll 0 0 #DDE1E2;
-    border-bottom: 1px solid #89AEC1;
-    border-right: 1px solid #89AEC1;
-    border-top: 1px solid #89AEC1;
-    color: #032638;
-    font-size: 15px;
-    padding: 10px;
-    width: 159px;
-}
-#contenedor_login td {
-	background: none repeat scroll 0 0 #FFFFFF;
-    border-bottom: 1px solid #89AEC1;
-    border-right: 1px solid #89AEC1;
-	color:#032638;
-    padding: 10px;
-    width: 159px;
-}
-
-
-/*--- Anchos ---*/
-
-.espacio_superior {
- 	margin: 20px 0 0 !important;
-}
-
-.datos {
-	background: none repeat scroll 0 0 #DDE1E2 !important;
-    font-weight: bold;
-}
-
-.ancho286 {
- 	float: none;
-	margin:0 auto;
-    width: 286px;
-}
-
-.ancho345 {
-	float:none;
-	margin:0 auto;
-    width: 345px !important;
-}
-
-.ancho346 {
-	float:none;
-	margin:0 auto;
-    width: 346px !important;
-}
-
-.ancho372 {
-	float:none;
-	margin:0 auto;
-    width: 372px;
-}
-
-.ancho402 {
-	float:none;
-	margin:0 auto;
-    width: 402px !important;
-}
-.ancho402 {
-	float:none;
-	margin:0 auto;
-    width: 402px !important;
-}
-
-.tipo_2 strong {
-  font-size: 14px !important;
-}
-
-.tipo_2 strong a {
-  color:#032638;
-}
-
-.tipo_2 strong a:link, .tipo_2 strong a:visited {
-  color:#032638;
 }
