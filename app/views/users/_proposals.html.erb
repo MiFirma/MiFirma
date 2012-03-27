@@ -1,14 +1,38 @@
-﻿<table>
-	<tr>
+<h3 class="espacio_superior">Iniciativas</h3>
+
+<table>
+
+	<tbody><tr>
+
 		<th>Iniciativa</th>
+
 		<th>Firmas</th>
+
 		<th>Fedatarios</th>
+
 	</tr>
   <% @user.proposals.each do |proposal| %>
+	
   <tr>
+
 		<td><%= link_to proposal.name, edit_proposal_path(proposal.id) %></td>
-		<td><%= proposal.num_signatures_signed %></td>
-		<td><%= proposal.num_attestors %></td>
+
+		<td><div class="numeracion"><%= proposal.num_signatures_signed %></div>
+			<div class="iconos_tabla">	
+				<img src="../images/zip_icon.gif">
+			</div>	
+		</td>
+
+		<td><% if proposal.class.name == "IlpProposal" %>
+				<div class="numeracion"><%= proposal.num_attestors %></div>
+					<div class="iconos_tabla">
+						<img src="../images/zip_icon.gif">	
+						<img src="../images/excel_icon.gif">
+					</div>
+				<% end %> </td>
+
   </tr>
-  <% end %>
+	<% end %>
+</tbody>
+
 </table>

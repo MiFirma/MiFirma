@@ -1232,7 +1232,7 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endCo
     border-radius: 5px;
 }
 
-#contenedor_login p, #contenedor_login field, #contenedor_login label { 
+#contenedor_login .datos { 
 	background: none repeat scroll 0 0 #FFFFFF;
     border-bottom: 1px dashed #89AEC1;
     color: #032638;
@@ -1240,6 +1240,24 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endCo
     font-size: 14px;
     padding: 10px 0 10px 10px;
     width: 520px;
+}
+#contenedor_login .field { 
+		background: none repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px dashed #89AEC1;
+    color: #032638;
+    float: left;
+    font-size: 14px;
+    padding: 10px 0 10px 10px;
+    width: 520px;
+}
+#contenedor_login .field label{ 
+	float: left;
+  font-weight: bold;
+  padding: 0 4px 0 0;
+}
+
+#contenedor_login .field p{ 
+	float:left;
 }
 
 #login_datos { 
@@ -1334,7 +1352,8 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eF8F9FA', endC
 	color:#032638;
 }
 #contenedor_login table a:link, #contenedor_login table a:visited {
-	color:#032638;
+	float: left;
+  padding: 0 0 5px;
 }
 #contenedor_login tr {
 	background:#ffffff;
@@ -1358,6 +1377,25 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eF8F9FA', endC
     width: 159px;
 }
 
+#contenedor_login td img {
+	float:right;
+	margin:0;
+	padding:0 3px 0 3px;
+}
+
+.numeracion{
+ 	float: left;
+  font-size: 1.1em;
+  margin: 0;
+  padding: 7px 4px 0;
+  text-align: right;
+  width: 58px;
+}
+
+.iconos_tabla{
+	width:86px;
+	float:right;
+}
 
 /*--- Anchos ---*/
 

@@ -40,7 +40,7 @@ firma_javier:
   dni: 07504500Z
   surname: Peña
   terms: true
-  ilp_proposal: ilp  
+  proposal: ilp  
 firma_juan:
   type: IlpSignature
   email: juan@email.com
@@ -50,4 +50,4 @@ firma_juan:
   dni: 4321
   surname: Perez Perez
   terms: true
-  ilp_proposal: ilp
+  proposal: ilp
