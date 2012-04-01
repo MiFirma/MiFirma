@@ -1,38 +1,12 @@
-﻿<style type="text/css">
-	div.proposal .attestor {
-	  background: #f3f3f3;
-	  padding: 20px 10px;
-	  position: relative;
-	  margin-top: 15px;
-	}
-	div.proposal .attestor p {
-	  color: #333333;
-	  font-size: 16px;
-	}
-	div.proposal .attestor a {
-	  background: url(../images/btn_attestor.png) 0 0 no-repeat;
-	  display: block;
-	  background-position: 0 0;
-	  width: 106px;
-	  height: 36px;
-	  text-indent: -9999px;
-	  position: absolute;
-	  top: 10px;
-	  right: 10px;
-	}
-	div.proposal .attestor a:hover { background-position: 0 -41px; }
-
-</style>
-
 <div class="proposal-wr">
   <div class="proposal">
-    <h1> 
+    <h3> 
       <%= link_to proposal.name, proposal_path(proposal) %>
       <span>Acción promovida por: <%= link_to proposal.promoter_name, proposal.promoter_url %></span>
-    </h1>
+    </h3>
 		   
     <div class="proposal_content">
-			<%= image_tag proposal.banner.url, :width => 150 %> 
+			<%= link_to image_tag(proposal.banner.url), proposal.promoter_url %>
       <%= proposal.howto_solve.html_safe %>
     </div>
     
@@ -49,7 +23,7 @@
     <div class="fb-like">
       <h3>¿Estás a favor?</h3>
       <h5>Muestra tu apoyo clicando en "Me gusta"</h5>  
-      <iframe src="http://www.facebook.com/plugins/like.php?href=<%= proposal_url(proposal) %>&amp;layout=standard&amp;locale=es_ES&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px; margin-top:15px;" allowTransparency="true"></iframe>
+      <iframe src="http://www.facebook.com/plugins/like.php?href=<%= proposal_url(proposal) %>&amp;layout=standard&amp;locale=es_ES&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:40px; margin-top:15px;" allowTransparency="true"></iframe>
       
       <h6>Comparte esta propuesta</h6>
       
@@ -64,8 +38,6 @@
       <input type="text" name="email" value="<%= proposal_url(proposal) %>" id="email">
       
     </div>
-    
-    <span class="shadow"></span>
     
   </div>
 

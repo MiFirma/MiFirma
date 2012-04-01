@@ -13,7 +13,7 @@
 		
 		@proposal = @proposals.first
 		@provinces = Province.order("name").where("only_circunscription = ?", false)
-		@signature = @proposal.ilp_signatures.new(params[:signature])
+		@signature = @proposal.signatures.new(params[:signature])
 
     share_texts(@proposals.first)
 
@@ -28,7 +28,7 @@
   def show
     @proposal = IlpProposal.find(params[:id])
 		@provinces = Province.order("name").where("only_circunscription = ?", false)
-		@signature = @proposal.ilp_signatures.new(params[:signature])
+		@signature = @proposal.signatures.new(params[:signature])
 		@title = @proposal.problem
 		
     share_texts(@proposal)
@@ -39,6 +39,13 @@
     end
   end
 
+	
+  # GET /proposals/1/signatures
+	def signatures
+	  proposal = IlpProposal.find(params[:id])
+		get_zip_signatures(proposal.signatures)
+	end	
+	
 	private
 
     def authenticate

@@ -14,7 +14,7 @@
   # GET /endorsment_proposals/1.xml
   def show
     @endorsment_proposal = EndorsmentProposal.find(params[:id])
-		@signature = @endorsment_proposal.endorsment_signatures.new(params[:signature])
+		@signature = @endorsment_proposal.signatures.new(params[:signature])
 		@provinces = Province.order("name")
 		@title = @endorsment_proposal.name
 		

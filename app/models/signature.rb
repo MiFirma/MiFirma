@@ -38,12 +38,13 @@ class Signature < ActiveRecord::Base
 	validates_presence_of :proposal_id, :state, :token
   validates_presence_of :email, :date_of_birth, :message => "Debes rellenar todos los campos."
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :message => "Email no válido. Por favor, comprueba que has introducido correctamente tu dirección de correo electrónico."
-  validates_acceptance_of :terms, :accept => true, :message => "Debes aceptar los términos de uso."
-  validates_presence_of :name, :surname, :surname2, :dni
+  
+	validates_acceptance_of :terms, :accept => true, :message => "Debes aceptar los términos de uso."
+  
 	validates_date :date_of_birth, :before => lambda { 18.years.ago },
                               :before_message => "debe tener al menos 18 años", :after => lambda { 150.years.ago }, :after_message => "demasiados años"
 	
-	validate :dni_format
+
   
   delegate :tractis_template_code, :attestor_template_code, :to => :proposal
   
@@ -54,20 +55,7 @@ class Signature < ActiveRecord::Base
   STATES = [:pending, :verified, :canceled]
 
 
-	# Validates NIF
-	def dni_format
-		letters = "TRWAGMYFPDXBNJZSQVHLCKE"
-		value = dni.clone
-		if value.length > 1
-			check = value.slice!(value.length - 1..value.length - 1).upcase
-			calculated_letter = letters[value.to_i % 23].chr
-			if !(check === calculated_letter)
-				errors.add(:dni, "Formato DNI no válido.")
-			end
-		else
-			errors.add(:dni, "Formato DNI no válido.")
-		end
-	end
+
 	
   def return_url
     "http://#{MIFIRMA_HOST}/signatures/#{token}"
@@ -77,6 +65,7 @@ class Signature < ActiveRecord::Base
     tractis_contract_location.split("/")[4]
   end
 	
+	# Método para recuperar TODAS las firmas desde un rake (de manera manual)
 	def Signature.get_all_signatures
 		signatures = Signature.signed
 		signatures.each do |s|
@@ -92,12 +81,18 @@ class Signature < ActiveRecord::Base
 		doc = Hpricot(contract_response)
     signed = TractisApi.contract_signed? contract_response
 		if signed then
-			self.name = (doc/"signature"/"name").text
-			logger.debug "Nombre recuperado"
-			logger.debug self.name
+			
+			#Si es una firma de fedatario recogemos el nombre
+		  if self.class.name == 'AttestorSignature'
+				self.name = (doc/"signature"/"name").text
+				logger.debug "Nombre recuperado"
+				logger.debug self.name
+			end
+			
 			self.dni = (doc/"signature"/"serialnumber").text
 			logger.debug "DNI recuperado"
 			logger.debug self.dni
+
 			
 			copy_tractis_signature
 		

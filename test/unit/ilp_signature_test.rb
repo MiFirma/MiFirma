@@ -41,7 +41,7 @@ class SignatureTest < ActiveSupport::TestCase
 															:name => 'Juanito',
 															:dni => signatures(:firma_javier).email,
 															:surname => 'Gómez',
-															:ilp_proposal => proposals(:ilp))
+															:proposal => proposals(:ilp))
 		assert !signature.save
   end
 end

@@ -10,9 +10,10 @@
   width: 245px;
   float:left;
   margin-right:10px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  border:1px solid #89AEC1;
 }
 .sbSelector{
   display: block;
@@ -25,12 +26,13 @@
   text-indent: 10px;
   top: 0;
   width: 220px;
-  border-top:2px solid #F0F0F0;
+  /*border-top:2px solid #F0F0F0;*/
 }
 .sbSelector:link, .sbSelector:visited, .sbSelector:hover{
-  color: #666666;
-  outline: none;
-  text-decoration: none;
+	color: #666666;
+    outline: none;
+    padding: 0.2em 0 0;
+    text-decoration: none;
 }
 .sbToggle{
   background: url(../images/select-icons.png) 0 -119px no-repeat;
@@ -39,9 +41,9 @@
   outline: none;
   position: absolute;
   right: 0;
-  top: 0;
+  top: 0.4em;
   width: 25px;
-  border-top:2px solid #F0F0F0;
+  /*border-top:2px solid #F0F0F0;*/
 }
 .sbToggle:hover{
   background: url(../images/select-icons.png) 0 -170px no-repeat;

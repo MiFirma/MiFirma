@@ -36,13 +36,24 @@ class AttestorSignature < Signature
 	belongs_to :province_of_birth, :class_name => 'Province', :foreign_key => "province_of_birth_id"
 	belongs_to :province
 	
+	has_attached_file :tractis_signature, 
+		{:path => ":rails_root/public/system/firmas/:promoter_name/fedatarios/:filename",
+		 :url => "/public/system/firmas/:promoter_name/fedatarios/:filename",
+		 :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
+	
   validate :uniqueness_of_dni
   validates_presence_of :municipality_of_birth_id, :province_of_birth_id, 
 		:address, :municipality_id, :message => "Debes rellenar todos los campos."
 		
 	def uniqueness_of_dni
 		if self.signed? and AttestorSignature.where("state > 0 and dni = ? and proposal_id = ? and id <> ?",dni,proposal_id,id).count>0
-			errors.add :dni, "Sólo puedes firmar esta ILP una sola vez."
+			errors.add :dni, "Sólo puedes firmar como fedatario una sola vez."
 		end
+	end
+	
+	private
+	# interpolate in paperclip
+	Paperclip.interpolates :promoter_name  do |attachment, style|
+		attachment.instance.proposal.promoter_short_name
 	end
 end

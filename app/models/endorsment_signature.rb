@@ -37,8 +37,27 @@ class EndorsmentSignature < Signature
 		{:path => ":rails_root/public/system/firmas/:promoter_name/:province_id/:filename", :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
 	validates_presence_of :province
+	validates_presence_of :name, :surname, :surname2
 	validate :uniqueness_of_dni
 	
+	validate :dni_format
+	
+ 
+	
+	# Validates NIF
+	def dni_format
+		letters = "TRWAGMYFPDXBNJZSQVHLCKE"
+		value = dni.clone
+		if value.length > 1
+			check = value.slice!(value.length - 1..value.length - 1).upcase
+			calculated_letter = letters[value.to_i % 23].chr
+			if !(check === calculated_letter)
+				errors.add(:dni, "Formato DNI no válido.")
+			end
+		else
+			errors.add(:dni, "Formato DNI no válido.")
+		end
+	end
 	
 	def uniqueness_of_dni
 		if self.signed? and EndorsmentSignature.where("state > 0 and dni = ? and id <> ?",dni,id).count>0

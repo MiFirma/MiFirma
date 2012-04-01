@@ -33,14 +33,33 @@ class IlpSignature < Signature
   belongs_to :proposal, :class_name => 'IlpProposal'
 
 	has_attached_file :tractis_signature, 
-		{:path => ":rails_root/public/system/firmas/:promoter_name/:filename", :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
+		{:path => ":rails_root/public/system/firmas/:promoter_name/ilp/:filename", :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
   validate :uniqueness_of_dni
-										
+	validates_presence_of :dni	
+	validates_presence_of :name, :surname, :surname2	
 
 	def uniqueness_of_dni
 		if self.signed? and IlpSignature.where("state > 0 and dni = ? and proposal_id = ? and id <> ?",dni,proposal_id,id).count>0
 			errors.add :dni, "Sólo puedes firmar esta ILP una sola vez."
+		end
+	end
+		validate :dni_format
+	
+	
+	
+	# Validates NIF
+	def dni_format
+		letters = "TRWAGMYFPDXBNJZSQVHLCKE"
+		value = dni.clone
+		if value.length > 1
+			check = value.slice!(value.length - 1..value.length - 1).upcase
+			calculated_letter = letters[value.to_i % 23].chr
+			if !(check === calculated_letter)
+				errors.add(:dni, "Formato DNI no válido.")
+			end
+		else
+			errors.add(:dni, "Formato DNI no válido.")
 		end
 	end
 	

@@ -1,4 +1,4 @@
-﻿<div class="signatures_counter">
+<div class="signatures_counter">
   <h4>
     <strong><%= @proposal.num_signatures %></strong> firma<%= "s" if @proposal.num_signatures != 1 %>
     <span>Manuscritas: <%= @proposal.handwritten_signatures %></span>
@@ -23,7 +23,7 @@
   <% if @proposal.on_signature_time? %>
 	  <%= form_for @signature, :url => signatures_path(@signature) do |f| %>
 	  <div class="form">
-		<label class="tipo_2"><strong>Datos requeridos por la <a href="http://www.juntaelectoralcentral.es">JEC</a></strong></label>
+		<label><strong>Datos requeridos por la <a href="http://www.juntaelectoralcentral.es">JEC</a></strong></label>
 		
     <label for="name">Tu nombre</label>
     <div class="input">

@@ -1,9 +1,9 @@
 ﻿<div class="proposal-wr">
   <div class="proposal">
-    <h1> 
+    <h3> 
       <%= link_to proposal.name, proposal_path(proposal) %>
       <span>Acción promovida por: <%= link_to proposal.promoter_name, proposal.promoter_url %></span>
-    </h1>
+    </h3>
 		   
     <div class="proposal_content">
 			<%= image_tag proposal.banner.url, :width => 150 %> 
@@ -22,7 +22,7 @@ e)	A medida que los pliegos se vayan concluyendo firmados, devolverlos a la orga
     <div class="fb-like">
       <h3>¿Estás a favor?</h3>
       <h5>Muestra tu apoyo clicando en "Me gusta"</h5>  
-      <iframe src="http://www.facebook.com/plugins/like.php?href=<%= proposal_url(proposal) %>&amp;layout=standard&amp;locale=es_ES&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px; margin-top:15px;" allowTransparency="true"></iframe>
+      <iframe src="http://www.facebook.com/plugins/like.php?href=<%= proposal_url(proposal) %>&amp;layout=standard&amp;locale=es_ES&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:40px; margin-top:15px;" allowTransparency="true"></iframe>
       
       <h6>Comparte esta propuesta</h6>
       
@@ -37,8 +37,6 @@ e)	A medida que los pliegos se vayan concluyendo firmados, devolverlos a la orga
       <input type="text" name="email" value="<%= proposal_url(proposal) %>" id="email">
       
     </div>
-    
-    <span class="shadow"></span>
     
   </div>
 

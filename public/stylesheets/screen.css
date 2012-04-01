@@ -9,6 +9,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font-family: inherit;
   vertical-align: baseline;
 }
+h1 {  }
+h2 {  }
+h3 { font-size:1.1em; }
+h4 {  }
+h5 {  }
 :focus { outline: 0; }
 body {
   line-height: 1;
@@ -349,6 +354,7 @@ div.page-content2 {
 }
 div.proposal {
   width: 590px;
+  float:left;
   position: relative;
   margin-bottom: 20px;
 }
@@ -356,29 +362,49 @@ div.proposal hr {
   color: #ececec;
   clear: both;
 }
-div.proposal h1 {
-  font-size: 30px;
+div.proposal h3 {
+  /* border-bottom: 2px solid #ECECEC; */
+  font-family: Arial,Helvetica,sans-serif;
+  font-size: 3em;
+  font-style: normal;
   line-height: 32px;
-  padding: 12px 0px 8px;
-  border-bottom: 2px solid #ececec;
-  margin-bottom: 15px;
+  padding: 12px 0 16px;
+  text-align: left;
+  float:left;
+  width: 588px;
 }
-div.proposal h1 a {
+div.proposal h3 a {
+  border-bottom: 1px dashed #89AEC1;
+  color: #36679F;
+  float: left;
+  padding: 0 0 0.2em;
+  text-decoration: none;
+  width: 588px;
+  font-weight:bold;
+}
+div.proposal h3 span a {
+  border: medium none;
+  color: #36679F;
+  float: none;
+  text-decoration: none;
+  font-weight:normal;
+}
+div.proposal h3 a:hover { text-decoration: none; }
+div.proposal h3 a:visited {
   color: #36679f;
   text-decoration: none;
 }
-div.proposal h1 a:hover { text-decoration: none; }
-div.proposal h1 a:visited {
-  color: #36679f;
-  text-decoration: none;
-}
-div.proposal h1 a:visited:hover { text-decoration: none; }
-div.proposal h1 span {
-  font-size: 12px;
-  display: block;
-  color: #666666;
-  line-height: 130%;
-  margin-top: 8px;
+div.proposal h3 a:visited:hover { text-decoration: none; }
+div.proposal h3 span {
+    background: url("../images/caja_azul_6x6.gif") no-repeat scroll 0 5px transparent;
+    color: #333333;
+    display: block;
+    float: left;
+    font-size: 12px;
+    line-height: 130%;
+    margin-top: 8px;
+    padding: 0 0 0 11px;
+    width: 590px;
 }
 div.proposal .shadow {
   width: 220px;
@@ -409,20 +435,34 @@ div.proposal a.pdf-link:visited {
   font-weight: bold;
 }
 div.proposal a.pdf-link:visited img { vertical-align: middle; }
+
 div.proposal div.fb-like {
-  background: #f4f9f3;
-  border-top: 1px dotted #bdbdbd;
-  margin-top: 200px;
-  padding-left: 5px;
-  padding-top: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  -webkit-border-bottom-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+	padding: 15px; 
+	background: #CFDFE7;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+	border: 1px solid #89aec1;
+	background-color: #CFDFE7;
+  background-image: -moz-linear-gradient(center top , #cfdfe7, #a7c0cc);
+  background-repeat: repeat-x;
+	
+	
+	background-color:#CFDFE7;
+	background-image:-moz-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:-ms-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#cfdfe7), to(#a7c0cc));
+	background-image:-webkit-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-repeat:repeat-x;
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);  
+
+	position: relative;
+    top: 1.8em;
+	float:left;
+	width: 556px;
+    
 }
 div.proposal div.fb-like h3 {
   font-size: 16px;
@@ -431,14 +471,29 @@ div.proposal div.fb-like h3 {
   font-weight: bold;
 }
 div.proposal div.fb-like h5 {
-  font-size: 12px;
-  color: #444444;
+	border-bottom: 1px solid #89AEC1;
+    color: #032638;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0 0 8px;
+    text-shadow: 1px 1px #FFFFFF;
 }
 div.proposal div.fb-like h6 {
-  font-size: 13px;
-  margin-bottom: 8px;
-  color: #444444;
-  font-weight: bold;
+	border-bottom: 1px solid #89AEC1;
+    color: #032638;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 0 0 8px;
+    text-shadow: 1px 1px #FFFFFF;
+	width:100%;
+}
+div.proposal div.fb-like a img {
+	border: 1px solid #89AEC1;
+    margin: 0 0 0 1em;
+    width: auto;
+	-moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 div.proposal div.fb-like .share {
   overflow: hidden;
@@ -452,47 +507,85 @@ div.proposal div.fb-like input[type=text] {
   padding: 8px;
   width: 330px;
   font-size: 14px;
-  color: #666666;
+  color: #032638;
   margin-bottom: 5px;
+  width: 540px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
 }
 div.proposal .proposal_content {
   line-height: 150%;
+  float:left;
   color: #333333;
   font-size: 13px;
   margin-bottom: 8px;
+  border-bottom:1px dashed #89AEC1;
 }
 div.proposal .proposal_content p {
-  line-height: 150%;
-  color: #333333;
-  font-size: 13px;
-  margin-bottom: 8px;
+	color: #333333;
+    font-size: 14px;
+    line-height: 150%;
+    margin-bottom: 8px;
+    padding: 0 0 14px;
 }
-div.proposal .download {
-  background: #f3f3f3;
-  padding: 20px 10px;
-  position: relative;
-  margin-top: 15px;
+div.proposal .proposal_content p strong {
+	color: #36679F;
+    font-weight: bold;
 }
-div.proposal .download p {
-  color: #333333;
-  font-size: 16px;
+
+div.proposal .proposal_content p img {
+  width:200px;
+  height:130px;
 }
-div.proposal .download a {
-  background: url(../images/btn_download.png) 0 0 no-repeat;
-  display: block;
-  background-position: 0 0;
-  width: 106px;
-  height: 36px;
-  text-indent: -9999px;
-  position: absolute;
-  top: 10px;
-  right: 10px;
+div.proposal .proposal_content p a {
+	
 }
-div.proposal .download a:hover { background-position: 0 -41px; }
-div.proposal img {
-  float: left;
-  margin: 0 10px 10px 0;
+div.proposal .proposal_content p a span {
+	visibility: hidden;
 }
+div.proposal .download, div.proposal .attestor {
+	background: none repeat scroll 0 0 #F3F3F3;
+    border-bottom: 1px dashed #89AEC1;
+    padding: 20px 10px;
+    position: relative;
+	float:left;
+	width:568px;
+}
+div.proposal .download p,  div.proposal .attestor p {
+	color: #495B29;
+    font-size: 16px;
+    font-weight: bold;
+	float:left;
+}
+div.proposal .download a,  div.proposal .attestor a {
+	background: url("../images/btn_download.png") no-repeat scroll 0 0 transparent;
+    color: #495B29;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 25px;
+    padding: 0.8em 0 0;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px #FFFFFF;
+    top: 10px;
+    width: 106px;
+}
+
+div.proposal .download a:hover,  div.proposal .attestor a:hover { background-position: 0 -41px; text-decoration:underline; }
+div.proposal a {
+
+}
+div.proposal a img {
+	border: 3px solid #89AEC1;
+    float: right;
+    margin: 1.2em 0 0 1em;
+    width: 200px;
+}
+
 div.proposal-issue {
   margin-top: 15px;
   margin-bottom: 27px;
@@ -799,12 +892,12 @@ div.page-sidebar .signature_box .signatures_counter .graph .num, div.page-sideba
   z-index: 2;
 }
 div.page-sidebar .signature_box .signatures_counter .graph .total, div.page-sidebar2 .signature_box .signatures_counter .graph .total  {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  color: #ffffff;
-  text-shadow: 1px 1px #a9b291;
-  z-index: 1;
+	color: #032638;
+    position: absolute;
+    right: 10px;
+    text-shadow: 1px 1px #FFFFFF;
+    top: 5px;
+    z-index: 1;
 }
 div.page-sidebar .signature_box .form_container, div.page-sidebar2 .signature_box .form_container {
   margin-bottom: 5px;
@@ -851,13 +944,18 @@ div.page-sidebar .signature_box .form_container label, div.page-sidebar2 .signat
 }
 
 div.page-sidebar .signature_box .form_container label strong, div.page-sidebar2 .signature_box .form_container label strong  {
-  border-bottom: 1px solid #89AEC1;
+    border-bottom: 1px solid #89AEC1;
     color: #032638;
     display: block;
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: bold;
     margin-bottom: 10px;
     padding-bottom: 9px;
+		text-shadow:1px 1px #FFFFFF;
+}
+div.page-sidebar .signature_box .form_container label strong a, div.page-sidebar2 .signature_box .form_container label strong a  {
+	color: #032638;
+   text-shadow: 1px 1px #FFFFFF;
 }
 div.page-sidebar .signature_box .form_container .input, div.page-sidebar2 .signature_box .form_container .input  {
   padding: 3px;
@@ -873,7 +971,7 @@ div.page-sidebar .signature_box .form_container .ancho346 input, div.page-sideba
   width:346px !important;
 }
 div.page-sidebar .signature_box .form_container .input input[type=text], div.page-sidebar2 .signature_box .form_container .input input[type=text]  {
-  background: fff;
+  background: #fff;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;
@@ -896,7 +994,7 @@ div.page-sidebar .signature_box .form_container .input input[type=password], div
   color: #032638;
 }
 div.page-sidebar .signature_box .form_container .tos, div.page-sidebar2 .signature_box .form_container .tos  {
-	color: #666666;
+	color: #333333;
     font-size: 11px;
     margin: 0;
     padding: 10px 0 10px 0;
@@ -940,27 +1038,29 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endCo
 filter:progid:DXImageTransform.Microsoft.gradient(enabled = false)
 }	
 div.page-sidebar .signature_box .form_container .btn_sign a, div.page-sidebar2 .signature_box .form_container .btn_sign a {
-  background: url(../images/btn_firmar.png) 0 0 no-repeat;
+  background: url("../images/btn_firmar.png") no-repeat scroll 0 0 transparent;
+  color: #495B29;
+  text-decoration:none;
+  font-size: 1.4em;
+  font-weight: bold;
   display: block;
-  background-position: 0 0;
+  padding:0.9em 0 0;
   width: 195px;
-  height: 45px;
-  text-indent: -9999px;
+  height: 32px;
+  text-shadow:1px 1px #FFFFFF;
+  /*text-indent: -9999px;*/
   margin: 0 auto;
 }
-div.page-sidebar .signature_box .form_container .btn_sign a:hover, div.page-sidebar2 .signature_box .form_container .btn_sign a:hover  { background-position: 0 -50px; }
+div.page-sidebar .signature_box .form_container .btn_sign a:hover, div.page-sidebar2 .signature_box .form_container .btn_sign a:hover  { background-position: 0 -50px; text-decoration:underline; }
 div.page-sidebar .signature_box .form_container .sign_error, div.page-sidebar2 .signature_box .form_container .sign_error {
-  /*background: none repeat scroll 0 0 #fff9d7;
-  border: 1px solid #e2c822;
-  color: #5c5c5c;
-  float: left;
-  line-height: 160%;
-  margin-bottom: 15px;
-  padding: 15px 20px;
-  width: 246px; */
-  float: left;
-  padding: 18px 0 14px;
-  width: 288px; 
+    background: none repeat scroll 0 0 #FFF9D7;
+    border: 1px solid #E2C822;
+    color: #333333;
+    float: left;
+    line-height: 160%;
+    margin: 15px;
+    padding: 18px 10px 14px;
+    width: 238px;
 }
 .error {
 	background: none repeat scroll 0 0 #FFF9D7;
@@ -974,9 +1074,11 @@ div.page-sidebar .signature_box .form_container .sign_error, div.page-sidebar2 .
     width: 208px;
 }
 div.page-sidebar .signature_box .form_container .sign_error strong, div.page-sidebar2 .signature_box .form_container .sign_error strong {
-  display: block;
-  font-size: 16px;
-  margin-bottom: 5px;
+		color: #BD362F;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px
 }
 div.page-sidebar .signature_box .tradicional, div.page-sidebar2 .signature_box .tradicional {
 	border-top: 1px dashed #89AEC1;
@@ -985,9 +1087,9 @@ div.page-sidebar .signature_box .tradicional, div.page-sidebar2 .signature_box .
 }
 div.page-sidebar .signature_box .tradicional p, div.page-sidebar2 .signature_box .tradicional p  {
   line-height: 140%;
-  color: #666666;
+  color: #333333;
   margin-bottom: 10px;
-  text-align:center;
+  text-align:left;
 }
 div.page-sidebar .signature_box .tradicional p a, div.page-sidebar2 .signature_box .tradicional p a { color: #35669f; }
 div.page-sidebar .home, div.page-sidebar2 .home  {
@@ -1130,7 +1232,7 @@ div.footer-wr {
 	background-color: #f2f2f2;
 	border-top: 1px solid #d8d8d8;
 	padding-top: 30px;
-	padding-left: 20px;
+	/*padding-left: 20px;*/
 	width:100%;
 	float:left;
 }
@@ -1138,7 +1240,8 @@ div.footer {
 	float: none;
     margin: 0 auto;
     overflow: hidden;
-    width: 960px;
+    padding: 0 20px;
+    width: 920px;
 }
 div.footer div.footer-nav {
   float: left;

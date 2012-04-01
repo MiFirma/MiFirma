@@ -19,15 +19,17 @@
 
 		<td><div class="numeracion"><%= proposal.num_signatures_signed %></div>
 			<div class="iconos_tabla">	
-				<img src="../images/zip_icon.gif">
+				<%= link_to image_tag("../images/zip_icon.gif"), signatures_proposal_path(proposal) %>
 			</div>	
 		</td>
 
 		<td><% if proposal.class.name == "IlpProposal" %>
 				<div class="numeracion"><%= proposal.num_attestors %></div>
 					<div class="iconos_tabla">
-						<img src="../images/zip_icon.gif">	
-						<img src="../images/excel_icon.gif">
+					<% if proposal.num_attestors > 0 %>
+						<%= link_to image_tag("../images/zip_icon.gif"), signatures_attestor_path(proposal) %>						
+						<%= link_to image_tag("../images/excel_icon.gif"), list_attestor_path(proposal, :csv) %>
+					<% end %>
 					</div>
 				<% end %> </td>
 
