@@ -23,54 +23,34 @@
   <% if @proposal.on_signature_time? %>
 	  <%= form_for @signature, :url => signatures_path(@signature) do |f| %>
 	  <div class="form">
-		<label><strong>Datos de censo</strong></label>
-		<label for="province">Provincia</label>
-		<div class="input">
-				<%= f.select :province_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
-		</div>
-
-		<label for="municipality">Municipio</label>
-		<div class="input">
-			<% if not (@signature.province_id.nil? ) %>
-				<%= f.select :municipality_id, Municipality.find_all_by_province_id(@signature.province_id).collect {|p| [p.name,p.id]}, { :include_blank => true } %>
-			<% else %>
-				<%= f.select :municipality_id, [] , { :prompt => "Seleccione Provincia" } %>
-			<% end %>
-		</div>
-
-		<label for="address">Dirección</label>
-		<div class="input">
-		  <%= f.text_field :address %>
-		</div>
-
-		<label for="zipcode">Código Postal</label>
-		<div class="input separator">
-		  <%= f.text_field :zipcode %>
-		</div>
-
-		<label><strong>Datos de nacimiento</strong></label>
-
-		<label for="date_of_birth">Fecha de Nacimiento</label>
-		<div class="input">
-		  <%= f.text_field :date_of_birth %>
-		</div>
+		<label><strong>Datos requeridos por la <a href="http://www.juntaelectoralcentral.es">JEC</a></strong></label>
 		
-		<label for="province_of_birth">Provincia</label>
-		<div class="input">
-				<%= f.select :province_of_birth_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
-		</div>
+    <label for="name">Tu nombre</label>
+    <div class="input">
+      <%= f.text_field :name %>
+    </div>
+    
+    <label for="surname">Tu primer apellido</label>
+    <div class="input">
+      <%= f.text_field :surname %>
+    </div>
+    
+    <label for="surname2">Tu segundo apellido</label>
+    <div class="input">
+      <%= f.text_field :surname2 %>
+    </div>
+
+    <label for="dni">Tu DNI</label>
+    <div class="input">
+      <%= f.text_field :dni %>
+    </div>
+
+    <label for="date_of_birth">Fecha de Nacimiento (dd/mm/aaaa)</label>
+    <div class="input">
+      <%= f.text_field :date_of_birth %>
+    </div>
 		
-		<label for="municipality_of_birth">Municipio</label>
-		<div class="input">
-			<% if not (@signature.province_of_birth_id.nil? ) %>
-				<%= f.select :municipality_of_birth_id, Municipality.find_all_by_province_id(@signature.province_of_birth_id).collect {|p| [p.name,p.id]}, { :include_blank => true } %>
-			<% else %>
-				<%= f.select :municipality_of_birth_id, [] , { :prompt => "Seleccione Provincia" } %>
-			<% end %>
-		</div>
-		
-		
-		<label for="email">Tu email</label>
+  	<label for="email">Tu email</label>
 		<div class="input">
 		  <%= f.hidden_field :proposal_id %>
 		  <%= f.text_field :email %>

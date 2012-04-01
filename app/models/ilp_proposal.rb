@@ -1,4 +1,4 @@
-# == Schema Information
+﻿# == Schema Information
 #
 # Table name: proposals
 #
@@ -27,10 +27,13 @@
 #  election_type           :string(255)
 #  problem                 :text
 #  election_id             :integer
-#
+#  attestor_template_code  :string(255)
+#  user_id                 :integer
+#	 ilp_code								 :string
 
 class IlpProposal < Proposal
-	has_many :ilp_signatures, :class_name => 'IlpSignature', :foreign_key => "proposal_id"
+	has_many :signatures, :class_name => 'IlpSignature', :foreign_key => "proposal_id"
+	has_many :attestors_signatures, :class_name => 'AttestorSignature', :foreign_key => 'proposal_id'
 	
 	has_attached_file :pdf, PAPERCLIP_CONFIG
 	
@@ -41,6 +44,7 @@ class IlpProposal < Proposal
 
   #When the proposal still can collect signatures
 	scope :on_signature_time, lambda { where("signatures_end_date >= ?", Time.now ) }
+
 	
   def num_remaining_signatures
 		num_required_signatures - num_signatures
@@ -60,10 +64,11 @@ class IlpProposal < Proposal
   end
   
   def num_signatures
-    @num_signatures ||= ilp_signatures.signed.size + handwritten_signatures
+    @num_signatures ||= signatures.signed.size + handwritten_signatures
+  end	
+
+  def num_attestors
+    @num_attestors ||= attestors_signatures.signed.size
   end	
 	
-	def num_signatures_signed
-		return ilp_signatures.signed.size
-	end
 end

@@ -2,15 +2,65 @@
 require 'hpricot'
 
 class TractisApi
+
+  def self.signature_request_attestor(signature)
+    client = HTTPClient.new
+    target_url = "https://www.tractis.com/contracts/gateway"
+    client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
+    data = "<contract>
+ 	   <name>#{signature.proposal.name}</name>
+ 	   <redirect-when-signed>#{signature.return_url}</redirect-when-signed>
+ 	   <template>#{signature.attestor_template_code}</template>
+		 <auto-complete>
+		  <nacimiento>
+				<fecha>#{signature.date_of_birth}</fecha>
+				<municipio>#{signature.municipality_of_birth.name}</municipio>
+				<provincia>#{signature.province_of_birth.name}</provincia>
+			</nacimiento>
+			<censo>
+				<direccion>#{signature.address}</direccion>
+				<provincia>#{signature.province.name}</provincia>
+				<municipio>#{signature.municipality.name}</municipio>
+			</censo>
+			<fedatario>
+				<email>#{signature.email}</email>
+			</fedatario>
+		 </auto-complete>
+ 	   <team>
+ 	     <member>
+         <nombre>#{signature.name}</nombre>
+         <apellidos>#{signature.surname}</apellidos>
+         <dni>#{signature.dni}</dni>
+ 	       <email>#{signature.email}</email>
+ 	       <sign>true</sign>
+ 	       <invited>false</invited>
+         <invitation_notify>false</invitation_notify>
+ 	     </member>
+ 	   </team>
+ 	 </contract>"
+	 ::Rails.logger.debug data
+	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
+	 ::Rails.logger.debug "Respuesta - body"
+	 ::Rails.logger.debug response.content
+	 ::Rails.logger.debug "Respuesta - status"
+	 ::Rails.logger.debug response.status
+	 ::Rails.logger.debug "Respuesta - reason"
+	 ::Rails.logger.debug response.reason
+	 ::Rails.logger.debug "Respuesta - Headers - Location"
+	 ::Rails.logger.debug response.header["Location"]
+	 
+ 	 {:location => response.header["Location"].first}
+  end
+
   def self.signature_request_endorsment(signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/gateway_raw"
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
 
-		dataOCE = createXMLOCE(signature)
+		dataOCE = createXMLEndorsmentOCE(signature)
 		::Rails.logger.debug(dataOCE)
 		
-    errors = self.validates_against_xsd(dataOCE)
+    errors = self.validates_against_xsd(dataOCE,'endorsment.xsd')
 		
 		if !errors.empty? then
 			::Rails.logger.debug(errors)
@@ -18,9 +68,8 @@ class TractisApi
 		end
 
 		dataTRACTIS = "<contract>
-			<name>#{signature.endorsment_proposal.name}</name>
+			<name>#{signature.endorsment_proposal.name}</name>dd
 			<redirect-when-signed>#{signature.return_url}</redirect-when-signed>
-			<template>#{signature.tractis_template_code}</template>
 			<notes>A continuación te mostramos el texto que vas a firmar, tal cual se enviará a la Junta Electoral Central. Como verás, incluye los siguientes datos separados por espacios:
 * Nombre completo del avalista
 * Fecha de nacimiento del avalista
@@ -51,7 +100,14 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
 		::Rails.logger.debug dataTRACTIS
 		
     response = client.post(target_url, dataTRACTIS, "Content-Type" => "application/xml", "Accept" => "application/xml")
-		
+		::Rails.logger.debug "Respuesta - body"
+		::Rails.logger.debug response.content
+		::Rails.logger.debug "Respuesta - status"
+		::Rails.logger.debug response.status
+		::Rails.logger.debug "Respuesta - reason"
+		::Rails.logger.debug response.reason
+		::Rails.logger.debug "Respuesta - Headers - Location"
+		::Rails.logger.debug response.header["Location"]
     location = response.header["Location"].first
 		if :location
 			signature.update_attribute :tractis_contract_location, location
@@ -60,30 +116,40 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
 			raise StandardError, "Error de comunicación con Tractis, por favor vuelva a intentarlo."
 		end
   end
-
+	
   def self.signature_request_ilp(signature)
     client = HTTPClient.new
-    target_url = "https://www.tractis.com/contracts/gateway"
+    target_url = "https://www.tractis.com/contracts/gateway_raw"
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
-    data = "<contract>
- 	   <name>#{signature.proposal.name}</name>
- 	   <redirect-when-signed>#{signature.return_url}</redirect-when-signed>
- 	   <template>#{signature.tractis_template_code}</template>
-		 <auto-complete>
-		  <nacimiento>
-				<fecha>#{signature.date_of_birth}</fecha>
-				<municipio>#{signature.municipality_of_birth.name}</municipio>
-				<provincia>#{signature.province_of_birth.name}</provincia>
-			</nacimiento>
-			<censo>
-				<direccion>#{signature.address}</direccion>
-				<provincia>#{signature.province.name}</provincia>
-				<municipio>#{signature.municipality.name}</municipio>
-				<codpostal>#{signature.zipcode}</codpostal>
-			</censo>
-		 </auto-complete>
- 	   <team>
- 	     <member>
+
+		dataOCE = createXMLIlpOCE(signature)
+		::Rails.logger.debug(dataOCE)
+		
+    errors = self.validates_against_xsd(dataOCE,'ilp.xsd')
+		
+		if !errors.empty? then
+			::Rails.logger.debug(errors)
+			raise StandardError, "XML de la ILP no es correcto. Contacte con mifirma."
+		end
+
+		dataTRACTIS = "<contract>
+			<name>#{signature.proposal.name}</name>dd
+			<redirect-when-signed>#{signature.return_url}</redirect-when-signed>
+			<notes>A continuación te mostramos el texto que vas a firmar, tal cual se enviará a la Junta Electoral Central. Como verás, incluye los siguientes datos separados por espacios:
+* Nombre completo del firmante
+* Fecha de nacimiento del firmante
+* Tipo de documento del firmante ('1' para NIF, '2' para NIE)
+* Número de DNI del firmante
+* ILP
+* Código de la ILP
+Si los datos están correctos, por favor, pulsa el botón de 'Firmar'
+Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral Central</notes>
+			<sticky-notes>true</sticky-notes>
+			<raw-xml-content>
+				#{dataOCE}
+			</raw-xml-content>
+			<team>
+	     <member>
          <nombre>#{signature.name}</nombre>
          <apellidos>#{signature.surname}</apellidos>
          <dni>#{signature.dni}</dni>
@@ -92,13 +158,24 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
  	       <invited>false</invited>
          <invitation_notify>false</invitation_notify>
  	     </member>
- 	   </team>
- 	 </contract>"
-	 ::Rails.logger.debug data
-	 response = client.post(target_url, data, "Content-Type" => "application/xml", "Accept" => "application/xml")
- 	 {:location => response.header["Location"].first}
+			</team>
+		</contract>"
+		
+		::Rails.logger.debug dataTRACTIS
+		
+    response = client.post(target_url, dataTRACTIS, "Content-Type" => "application/xml", "Accept" => "application/xml")
+		::Rails.logger.debug "Respuesta - body"
+		::Rails.logger.debug response.content
+		::Rails.logger.debug "Respuesta - status"
+		::Rails.logger.debug response.status
+		::Rails.logger.debug "Respuesta - reason"
+		::Rails.logger.debug response.reason
+		::Rails.logger.debug "Respuesta - Headers - Location"
+		::Rails.logger.debug response.header["Location"]
+		
+		{:location => response.header["Location"].first}
   end
-  
+
   def self.contract(contract_code="604622863",signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/#{contract_code}"
@@ -125,7 +202,10 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
 
   private
 
-	def self.createXMLOCE(signature)
+	#
+	# Generates XML for endorsments for the OCE
+	#
+	def self.createXMLEndorsmentOCE(signature)
 	    dataOCE = <<-XML
       <oce>
           <avalcandidatura>
@@ -147,14 +227,42 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
     XML
 		return dataOCE
 	end
+
+	#
+	# Generates XML for ILPs for the OCE
+	#
+	def self.createXMLIlpOCE(signature)
+	    dataOCE = <<-XML
+      <oce>
+          <ilp>
+              <firmante>
+                  <nomb>#{signature.name}</nomb>
+                  <ape1>#{signature.surname}</ape1>
+                  <ape2>#{signature.surname2}</ape2>
+                  <fnac>#{signature.date_of_birth.strftime("%Y%m%d")}</fnac>
+                  <tipoid>1</tipoid>
+                  <id>#{signature.dni}</id>
+              </firmante>
+              <datosilp>
+                  <tituloilp>#{signature.proposal.name.first(100)}</tituloilp>
+                  <codigoilp>#{signature.proposal.ilp_code}</codigoilp>
+              </datosilp>
+          </ilp>
+      </oce>
+    XML
+		return dataOCE
+	end	
+	
+	
   #
   # Validates input xml against the xsd schema.
+	# Schemas must be in lib directory
   #
-  def self.validates_against_xsd(input_xml)
+  def self.validates_against_xsd(input_xml, schema)
     errors = []
 
     begin
-      xsd_file = File.join(Rails.root, 'lib', 'endorsment.xsd')
+      xsd_file = File.join(Rails.root, 'lib', schema)
       xsd = Nokogiri::XML::Schema(File.read(xsd_file))
       doc = Nokogiri::XML(input_xml)
 

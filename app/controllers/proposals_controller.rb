@@ -1,5 +1,7 @@
-class ProposalsController < ApplicationController
+﻿class ProposalsController < ApplicationController
 	#caches_page :index
+  before_filter :authenticate, :only => [:edit]
+	before_filter :correct_user, :only => [:edit]
 	
   # GET /proposals
   # GET /proposals.xml
@@ -11,7 +13,7 @@ class ProposalsController < ApplicationController
 		
 		@proposal = @proposals.first
 		@provinces = Province.order("name").where("only_circunscription = ?", false)
-		@signature = @proposal.ilp_signatures.new(params[:signature])
+		@signature = @proposal.signatures.new(params[:signature])
 
     share_texts(@proposals.first)
 
@@ -26,7 +28,7 @@ class ProposalsController < ApplicationController
   def show
     @proposal = IlpProposal.find(params[:id])
 		@provinces = Province.order("name").where("only_circunscription = ?", false)
-		@signature = @proposal.ilp_signatures.new(params[:signature])
+		@signature = @proposal.signatures.new(params[:signature])
 		@title = @proposal.problem
 		
     share_texts(@proposal)
@@ -37,4 +39,23 @@ class ProposalsController < ApplicationController
     end
   end
 
+	
+  # GET /proposals/1/signatures
+	def signatures
+	  proposal = IlpProposal.find(params[:id])
+		get_zip_signatures(proposal.signatures)
+	end	
+	
+	private
+
+    def authenticate
+      deny_access unless signed_in?
+    end
+		
+		def correct_user
+			@proposal = IlpProposal.find(params[:id])
+			@user = @proposal.user
+			redirect_to(root_path) unless current_user?(@user)
+		end	
+	
 end

@@ -10,3 +10,5 @@ admin:
   EndorsmentProposal: create, read, update, delete
   EndorsmentSignature: create, read, update, delete
   Election: create, read, update, delete
+  AttestorSignature: create, read, update, delete
+  User: read

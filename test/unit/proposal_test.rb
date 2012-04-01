@@ -27,6 +27,8 @@
 #  election_type           :string(255)
 #  problem                 :text
 #  election_id             :integer
+#  attestor_template_code  :string(255)
+#  user_id                 :integer
 #
 
 require 'test_helper'

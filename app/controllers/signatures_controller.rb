@@ -18,7 +18,7 @@ class SignaturesController < ApplicationController
       end
     else
       flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
-      redirect_to proposal_url(@signature.ilp_proposal, :signature => params[:ilp_signature])
+      redirect_to proposal_url(@signature.proposal, :signature => params[:ilp_signature])
     end
   end
   

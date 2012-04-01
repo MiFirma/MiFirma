@@ -1,2 +1,2 @@
-class Admin::IlpProposalsController < Admin::ResourcesController
+﻿class Admin::IlpProposalsController < Admin::ResourcesController
 end

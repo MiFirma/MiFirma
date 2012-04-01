@@ -1,0 +1,96 @@
+<div class="signatures_counter">
+  <h4>
+    <strong><%= @proposal.num_attestors %></strong> fedatarios electrónicos.
+  </h4>
+  
+ 
+</div>
+
+<div class="form_container">
+
+  <% if flash[:error] %>
+  <div class="sign_error">
+    <strong>Error al crear la firma.</strong>
+    <%= flash[:error].html_safe %>
+  </div>
+  <% end %>
+  
+  <% if @proposal.on_signature_time? %>
+	  <%= form_for @signature, :url => attestor_signatures_path(@signature) do |f| %>
+	  <div class="input"><label>El nombre y apellido se recogerán del certificado electrónico</label></div>
+	  <div class="form">
+		<label><strong>Domicilio</strong></label>
+		<label for="province">Provincia</label>
+		<div class="input">
+				<%= f.select :province_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
+		</div>
+
+		<label for="municipality">Municipio</label>
+		<div class="input">
+			<% if not (@signature.province_id.nil? ) %>
+				<%= f.select :municipality_id, Municipality.find_all_by_province_id(@signature.province.id_ine).collect {|p| [p.name,p.id]}, { :include_blank => true } %>
+			<% else %>
+				<%= f.select :municipality_id, [] , { :prompt => "Seleccione Provincia" } %>
+			<% end %>
+		</div>
+
+		<label for="address">Dirección</label>
+		<div class="input">
+		  <%= f.text_field :address %>
+		</div>
+
+		<label><strong>Datos de nacimiento</strong></label>
+
+		<label for="date_of_birth">Fecha de Nacimiento (dd/mm/aaaa)</label>
+		<div class="input">
+		  <%= f.text_field :date_of_birth %>
+		</div>
+		
+		<label for="province_of_birth">Provincia</label>
+		<div class="input">
+				<%= f.select :province_of_birth_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
+		</div>
+		
+		<label for="municipality_of_birth">Municipio</label>
+		<div class="input">
+			<% if not (@signature.province_of_birth_id.nil? ) %>
+				<%= f.select :municipality_of_birth_id, Municipality.find_all_by_province_id(@signature.province_of_birth.id_ine).collect {|p| [p.name,p.id]}, { :include_blank => true } %>
+			<% else %>
+				<%= f.select :municipality_of_birth_id, [] , { :prompt => "Seleccione Provincia" } %>
+			<% end %>
+		</div>
+		
+		<label for="email">Tu email</label>
+		<div class="input">
+		  <%= f.hidden_field :proposal_id %>
+		  <%= f.text_field :email %>
+		</div>
+
+		<div class="tos">
+		  <%= f.check_box :terms %>
+		  Acepto los <a href="/terms">términos y condiciones</a>
+		</div>
+		
+	  </div>
+
+	  <div class="btn_sign">
+		  <a href="#" onclick="$('#new_attestor_signature').submit(); return false;">Firma electrónica</a>
+	  </div>
+	  
+	  <div id="signature">
+
+	  </div>
+	  
+	  <% end %>
+  <% else %>
+	<h4>No se admiten fedatarios para esta Iniciativa. Se ha superado el plazo de recepción de firmas de la ILP</h4>
+  <% end %>
+  
+</div>
+
+<div class="tradicional">
+  <p><a href="https://www.tractis.com/home/certificates#spain">Ver lista completa de certificados soportados</a></p>
+  <p>
+    Si no dispones de un <strong>certificado electrónico</strong> puedes mostrar tu apoyo con una <a href="#" onclick="alert('Próximamente en MiFirma'); return false;">firma tradicional</a>
+  </p>
+</div>

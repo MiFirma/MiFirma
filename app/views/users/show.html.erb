@@ -3,28 +3,53 @@
 
 <div class="page">
 
+<div id="contenedor_login">
 
-	<ul>
-		<% if signed_in? %>
-		<li><%= link_to "Sign out", signout_path, :method => :delete %></li>
-		<% else %>
-		<li><%= link_to "Sign in", signin_path %></li>
-		<% end %>
-		<li><%= link_to "Ajustes", edit_user_path(current_user) %></li>
-	</ul>
-	
-	<h1>Datos de usuario</h1>
-		<% flash.each do |key, value| %>
+	<h3>Datos de usuario</h3>
+	<% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
-        <% end %>
-        <%= yield %>
-	Sus datos son:
+  <% end %>
+
+	<p class="datos">Sus datos son:</p>
+
 		<div class="field">
-			<%= label :name, "Nombre" %><br />
-			<%= @user.name %>
+			<%= label :name, "Nombre:" %>
+
+			<p><%= @user.name %></p>
 		</div>
+
 		<div class="field">
-			<%= label :email, "Email" %><br />
-			<%= @user.email %>
+
+			<%= label :email, "Email:" %>
+
+			<p><%= @user.email %></p>
+
 		</div>
+
+		<%= render :partial => "proposals" %>
+
+	
+<div id="contenedor_dosbotones">
+
+
+<div class="btn_ajustes">
+
+			<%= link_to "Ajustes", edit_user_path(@user), :class => "ajustes" %></a>
+
+</div>
+
+
+
+<div class="btn_signout">
+
+			<a class="signout" href="http://mifirma-stage.heroku.com/signout" data-method="delete" rel="nofollow">Sign out</a>
+
+</div>
+
+
+</div>
+
+
+</div>
+
 </div>

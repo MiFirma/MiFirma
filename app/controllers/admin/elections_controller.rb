@@ -1,2 +1,2 @@
-class Admin::ElectionsController < Admin::ResourcesController
+﻿class Admin::ElectionsController < Admin::ResourcesController
 end

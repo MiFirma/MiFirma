@@ -1,6 +1,7 @@
 ﻿MiFirma2::Application.routes.draw do
 
   resources :endorsment_signatures, :only => [:create, :show]
+  resources :attestor_signatures, :only => [:create, :show]
 
   resources :endorsment_proposals, :only => [:index, :show, :show_signatures_by_province] do
 		member do
@@ -14,7 +15,18 @@
 		end
 	end
 
-  resources :proposals, :only => [:index, :show]
+  resources :proposals, :only => [:index, :show, :edit] do
+	  member do
+ 			get 'signatures'
+		end
+	end
+	
+	resources :attestors, :only => [:show] 	do
+		member do
+			get 'list'
+			get 'signatures'
+		end
+	end
 	
 	match 'province/municipalities_for_provinceid/:id', :controller => "province", 
 		:action => "municipalities_for_provinceid"

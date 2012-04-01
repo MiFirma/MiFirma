@@ -1,4 +1,4 @@
-# == Schema Information
+﻿# == Schema Information
 #
 # Table name: signatures
 #
@@ -30,26 +30,43 @@
 #
 
 class IlpSignature < Signature
-  belongs_to :ilp_proposal, :class_name => 'IlpProposal', :foreign_key => "proposal_id"
-	belongs_to :municipality
-	belongs_to :municipality_of_birth, :class_name => 'Municipality', :foreign_key => "municipality_of_birth_id"
-	belongs_to :province_of_birth, :class_name => 'Province', :foreign_key => "province_of_birth_id"
+  belongs_to :proposal, :class_name => 'IlpProposal'
+
+	has_attached_file :tractis_signature, 
+		{:path => ":rails_root/public/system/firmas/:promoter_name/ilp/:filename", :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
   validate :uniqueness_of_dni
-  validates_presence_of :municipality_of_birth_id, :province_of_birth_id, :address, :zipcode, :municipality_id, :message => "Debes rellenar todos los campos."
-	
-	validates_format_of :zipcode,
-                    :with => /^[0-9]{5}$/i,
-                    :message => "Código Postal incorrecto"
-										
-	def proposal
-		return ilp_proposal
-	end
-	
-	
+	validates_presence_of :dni	
+	validates_presence_of :name, :surname, :surname2	
+
 	def uniqueness_of_dni
 		if self.signed? and IlpSignature.where("state > 0 and dni = ? and proposal_id = ? and id <> ?",dni,proposal_id,id).count>0
 			errors.add :dni, "Sólo puedes firmar esta ILP una sola vez."
 		end
 	end
+		validate :dni_format
+	
+	
+	
+	# Validates NIF
+	def dni_format
+		letters = "TRWAGMYFPDXBNJZSQVHLCKE"
+		value = dni.clone
+		if value.length > 1
+			check = value.slice!(value.length - 1..value.length - 1).upcase
+			calculated_letter = letters[value.to_i % 23].chr
+			if !(check === calculated_letter)
+				errors.add(:dni, "Formato DNI no válido.")
+			end
+		else
+			errors.add(:dni, "Formato DNI no válido.")
+		end
+	end
+	
+	private
+	# interpolate in paperclip
+	Paperclip.interpolates :promoter_name  do |attachment, style|
+		attachment.instance.proposal.promoter_short_name
+	end
+
 end

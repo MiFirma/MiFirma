@@ -1,0 +1,21 @@
+﻿<% content_for :bodyclass do %>proposal<% end %> 
+<% content_for :title, 'Fedatarios - ' + @proposal.name%>
+
+<div class="page">
+  <div class="page-content2">
+    <%=render :partial => 'proposal', :object => @proposal%>
+  </div>
+
+  <div class="page-sidebar2">
+
+  <%#= render :partial => 'shared/share' %>
+  <%#= render :partial => 'shared/how_it_works' %>
+  
+  <div class="signature_box">
+    <%= render :partial => 'signature_box' %>
+  </div>
+
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>

@@ -1,31 +1,49 @@
 ﻿<% content_for(:bodyclass) {"home"} -%> 
 <% content_for :title, "Login Promotores"%>
 
+
 <div class="page">
+<div class="page-sidebar">
+<div class="signature_box">
+<div class="form_container">
 
-<h1>Login</h1>
+	<% if flash[:error] %>
+	<div class="sign_error"
+		<!-- Por si hay algún error en la validación del usuario -->				
+		<% flash.each do |key, value| %>
+			<div class="flash <%= key %>"><%= value %></div>
+		<% end %>
+		<%= yield %>
+	</div>
+	<% end %>
 
-<!-- Por si hay algún error en la validación del usuario -->				
-<% flash.each do |key, value| %>
-	<div class="flash <%= key %>"><%= value %></div>
-<% end %>
-<%= yield %>
+<div class="form">
+
+<label><strong>Login</strong></label>
+
 
 
 <%= form_for(:session, :url => sessions_path) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
+  <%= f.label :email %>
+  <div class="input">
     <%= f.text_field :email %>
   </div>
-  <div class="field">
-    <%= f.label :password, "Contraseña" %><br />
+  <%= f.label :password, "Contraseña" %>
+  <div class="input">
     <%= f.password_field :password %>
   </div>
-  <div class="actions">
+</div>
+
+  <div class="btn_sign">
     <%= f.submit "Sign in" %>
   </div>
 <% end %>
 
-<p>¿Nuevo usuario? <%= link_to "Registrate aquí", signup_path %></p>
 
+</div>
+<div class="tradicional">
+	<p>¿Nuevo usuario? <%= link_to "Registrate aquí", signup_path %></p>
+</div>
+</div>
+</div>
 </div>

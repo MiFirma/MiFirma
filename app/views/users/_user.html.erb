@@ -1,29 +1,49 @@
-﻿<div class="page">
-	<h1>Entrada Promotores</h1>
-
-	<%= render 'error_messages' %>
+﻿
+<div class="page">
+<div class="page-sidebar">
+<div class="signature_box ancho402">
+<div class="form_container">
+	<% if @user.errors.any? %>
+	<div class="sign_error">
+		<%= render "error_messages" %>
+	</div>
+	<% end %>
 	
-	<div class="form_container">
+<div class="form">
+	<label><strong>Registro Promotores</strong></label>	
+
 	<%= form_for(@user) do |f| %>
-		<div class="field">
 			<%= f.label :name, "Nombre" %><br />
+		<div class="input ancho346">
 			<%= f.text_field :name %>
 		</div>
-		<div class="field">
-			<%= f.label :email %><br />
+
+		<%= f.label :email %><br />
+		<div class="input ancho346">
 			<%= f.text_field :email %>
 		</div>
-		<div class="field">
-			<%= f.label :password, "Contraseña" %><br />
+
+		<%= f.label :password, "Contraseña" %><br />
+		<div class="input ancho346">
 			<%= f.password_field :password %>
 		</div>
-		<div class="field">
-			<%= f.label :password_confirmation, "Confirmación de Contraseña" %><br />
+
+		<%= f.label :password_confirmation, "Confirmación de Contraseña" %><br />
+		<div class="input ancho346">
 			<%= f.password_field :password_confirmation %>
 		</div>
-		<div class="actions">
-			<%= f.submit "REGISTRARSE" %>
+		
+		<div class="tos">
+		  <%= f.check_box :terms %>
+		  Acepto los <a href="/terms">términos y condiciones</a>
+		</div>
+		</div>
+		<div class="btn_sign">
+			<%= f.submit "Registrarse" %>
 		</div>
 	<% end %>
-	</div>
+	
+</div>
+</div>
+</div>
 </div>
