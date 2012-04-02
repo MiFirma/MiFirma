@@ -15,11 +15,11 @@ Municipality:
 
 IlpProposal:
   fields:
-    default: name, handwritten_signatures, signatures_end_date, ilp_signatures.size, num_signatures_signed
+    default: name, handwritten_signatures, signatures_end_date, signatures.size, num_signatures_signed
     form: name, problem, howto_solve, tractis_template_code, attestor_template_code, pdf, num_required_signatures, promoter_name, promoter_url, handwritten_signatures, banner, promoter_short_name, signatures_end_date, ilp_code, user
   order_by: position
   filters: created_at
-  relationships: ilp_signatures, attestors_signatures
+  relationships: signatures, attestors_signatures
   search: name
   application: MiFirma
   export: csv, xml
@@ -50,7 +50,7 @@ IlpSignature:
     default: proposal, email, state, name, dni, surname
     form: proposal_id, email, state, token, tractis_contract_location, name, dni, surname, terms, proposal, date_of_birth
   order_by: 
-  relationships: ilp_proposal
+  relationships: proposal
   filters: created_at
   search: name
   application: MiFirma
@@ -70,17 +70,17 @@ EndorsmentSignature:
     default: proposal, email, state, name, dni, surname, province
     form: proposal_id, email, state, token, tractis_contract_location, name, dni, surname, terms, province_id, proposal, date_of_birth,   province
   order_by: 
-  relationships: province, endorsment_proposal
+  relationships: province, proposal
   filters: created_at
   search: name
   application: MiFirma
 
 EndorsmentProposal:
   fields:
-    default: name, endorsment_signatures.size, num_signatures_signed
+    default: name, signatures.size, num_signatures_signed
     form: name, problem, howto_solve,tractis_template_code, promoter_name, promoter_url, banner, promoter_short_name, election_type, election
   order_by: position
-  relationships: endorsment_signatures
+  relationships: signatures
   filters: created_at
   search: name
   application: MiFirma
