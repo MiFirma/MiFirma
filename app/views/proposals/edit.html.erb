@@ -1,15 +1,54 @@
-<% content_for :bodyclass do %>proposal<% end %> 
+﻿<% content_for :bodyclass do %>proposal<% end %> 
 <% content_for :title, @proposal.name%>
 
 <div class="page">
-  <div class="page-content">
-	<p>Prueba</p>
- 
-  </div>
+<div class="page-sidebar">
 
- 
+	<% if @proposal.errors.any? %>
+	<div class="sign_error">
+		<%= render "error_messages" %>
+	</div>
+	<% end %>
+	
+<div class="form">
+	<label><strong>Edición Propuesta: </strong><%= @proposal.name %></label>	
 
+	<%= form_for(@proposal, :url => proposal_path) do |f| %>
+			<%= f.label :name, "Nombre" %><br />
+		<div class="input ancho346">
+			<%= f.text_field :name %>
+		</div>
+
+		<%= f.label :problem, "Breve Descripción" %><br />
+		<div class="input ancho402">
+			<%= f.text_area :problem %>
+		</div>
+
+		<%= f.label :howto_solve, "Detalle Propuesta" %><br />
+		<div class="input ancho402">
+			<%= f.text_area :howto_solve %>
+		</div>
+
+		<%= f.label :signatures_end_date, "Fecha fin de recogida" %><br />
+		<div class="input ancho346">
+			<%= f.date_select :signatures_end_date %>
+		</div>
+
+		<%= f.label :banner, "Banner de la Iniciativa o Comisión Promotora" %><br />
+		<div class="input ancho346">
+			<%= f.file_field  :banner %>
+		</div>
+
+		<%= f.label :pdf, "PDF de la Iniciativa o Propuesta de Ley" %><br />
+		<div class="input ancho346">
+			<%= f.file_field  :pdf %>
+		</div>
+		
+		</div>
+		<div class="btn_sign">
+			<%= f.submit "Actualizar" %>
+		</div>
+	<% end %>
+	
 </div>
-
-<div class="clear">&nbsp;</div>
 </div>

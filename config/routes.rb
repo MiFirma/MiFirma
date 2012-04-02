@@ -15,7 +15,7 @@
 		end
 	end
 
-  resources :proposals, :only => [:index, :show, :edit] do
+  resources :proposals do
 	  member do
  			get 'signatures'
 		end

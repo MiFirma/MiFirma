@@ -1,7 +1,7 @@
 ﻿class ProposalsController < ApplicationController
 	#caches_page :index
-  before_filter :authenticate, :only => [:edit]
-	before_filter :correct_user, :only => [:edit]
+  before_filter :authenticate, :only => [:edit, :update]
+	before_filter :correct_user, :only => [:edit, :update]
 	
   # GET /proposals
   # GET /proposals.xml
@@ -45,6 +45,17 @@
 	  proposal = IlpProposal.find(params[:id])
 		get_zip_signatures(proposal.signatures)
 	end	
+	
+	
+	def update
+    # Los filtros ya nos crean el objeto @proposal
+    if @proposal.update_attributes(params[:ilp_proposal])
+      flash[:success] = "Cambios en la propuesta realizados con éxito."
+      redirect_to @user
+    else
+      render 'edit'
+    end
+  end	
 	
 	private
 

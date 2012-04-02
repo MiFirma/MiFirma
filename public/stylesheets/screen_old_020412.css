@@ -469,13 +469,11 @@ div.proposal div.fb-like h3 {
   margin-bottom: 8px;
   color: #333333;
   font-weight: bold;
-  padding: 0 0 6px;
-  width:558px;
 }
 div.proposal div.fb-like h5 {
 	border-bottom: 1px solid #89AEC1;
     color: #032638;
-    font-size: 18px;
+    font-size: 1.5em;
     font-weight: bold;
     padding: 0 0 8px;
     text-shadow: 1px 1px #FFFFFF;
@@ -483,7 +481,7 @@ div.proposal div.fb-like h5 {
 div.proposal div.fb-like h6 {
 	border-bottom: 1px solid #89AEC1;
     color: #032638;
-    font-size: 16px;
+    font-size: 1.3em;
     font-weight: bold;
     padding: 0 0 8px;
     text-shadow: 1px 1px #FFFFFF;
@@ -524,17 +522,6 @@ div.proposal .proposal_content {
   margin-bottom: 8px;
   border-bottom:1px dashed #89AEC1;
 }
-div.proposal .proposal_content ul {
-}
-div.proposal .proposal_content ul li {
-	padding: 4px 0 4px 0;
-}
-div.proposal .proposal_content ul li .letra_li{
-	float: left;
-    font-size: 1.2em;
-    font-weight: bold;
-    padding: 0 6px 0 0;
-}
 div.proposal .proposal_content p {
 	color: #333333;
     font-size: 14px;
@@ -542,7 +529,7 @@ div.proposal .proposal_content p {
     margin-bottom: 8px;
     padding: 0 0 14px;
 }
-div.proposal .proposal_content p strong, div.proposal .proposal_content ul li strong {
+div.proposal .proposal_content p strong {
 	color: #36679F;
     font-weight: bold;
 }
@@ -592,10 +579,10 @@ div.proposal .download a:hover,  div.proposal .attestor a:hover { background-pos
 div.proposal a {
 
 }
-div.proposal img, div.proposal a img {
+div.proposal a img {
 	border: 3px solid #89AEC1;
     float: right;
-    margin: 0.2em 0 0 1em;
+    margin: 1.2em 0 0 1em;
     width: 200px;
 }
 
@@ -855,37 +842,11 @@ div.page-sidebar2 .signature_box {
   border-bottom-right-radius: 5px;
 }
 div.page-sidebar .signature_box .signatures_counter, div.page-sidebar2 .signature_box .signatures_counter {
-  /*background: url(../images/bg_firmas.png) no-repeat -6px -6px;*/
-  width: 258px;
-  height: auto;
+  background: url(../images/bg_firmas.png) no-repeat -6px -6px;
+  width: 290px;
+  height: 85px;
   padding-top: 25px;
   text-align: center;
-  
-  
-  
-  	padding: 15px; 
-	background: #CFDFE7;
-	-webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-	border: 1px solid #86a949;
-	background-color: #cbe288;
-    background-image: -moz-linear-gradient(center top , #cbe288, #9dca55);
-    background-repeat: repeat-x;
-	
-	
-	background-color:#cbe288;
-	background-image:-moz-linear-gradient(top, #cbe288, #9dca55);
-	background-image:-ms-linear-gradient(top, #cbe288, #9dca55);
-	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#cfdfe7), to(#9dca55));
-	background-image:-webkit-linear-gradient(top, #cbe288, #9dca55);
-	background-image:-o-linear-gradient(top, #cbe288, #9dca55);
-	background-image:linear-gradient(top, #cbe288, #9dca55);
-	background-repeat:repeat-x;
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cbe288', endColorstr='#9dca55', GradientType=0);
-  
-  
-  
 }
 div.page-sidebar .signature_box .signatures_counter h4, div.page-sidebar2 .signature_box .signatures_counter h4 {
   text-shadow: 1px 1px #ffffff;
@@ -893,7 +854,6 @@ div.page-sidebar .signature_box .signatures_counter h4, div.page-sidebar2 .signa
   color: #333333;
   font-size: 29px;
   margin-bottom: 0px;
-  line-height:1em;
 }
 div.page-sidebar .signature_box .signatures_counter h4 strong, div.page-sidebar2 .signature_box .signatures_counter h4 strong { font-weight: bold; }
 div.page-sidebar .signature_box .signatures_counter h4 span, div.page-sidebar2 .signature_box .signatures_counter h4 span {
@@ -950,16 +910,6 @@ div.page-sidebar .signature_box .form_container, div.page-sidebar2 .signature_bo
   border-bottom-left-radius: 5px;
   padding: 20px 0 0 0;
 }
-div.page-sidebar .signature_box .form_container .txt_advertencia, div.page-sidebar2 .signature_box .form_container .txt_advertencia {
-	background: none repeat scroll 0 0 #FFF9D7;
-    border: 1px solid #E2C822;
-    color: #333333;
-    float: left;
-    line-height: 160%;
-    margin: 15px;
-    padding: 10px;
-    width: 238px;
-}
 div.page-sidebar .signature_box .form_container .separator, div.page-sidebar2 .signature_box .form_container .separator { margin-bottom: 20px !important; }
 div.page-sidebar .signature_box .form_container .form, div.page-sidebar2 .signature_box .form_container .form { 
 	padding: 15px; 
@@ -981,7 +931,7 @@ div.page-sidebar .signature_box .form_container .form, div.page-sidebar2 .signat
 	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-repeat:repeat-x;
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
 
 }
 div.page-sidebar .signature_box .form_container label, div.page-sidebar2 .signature_box .form_container label  {
@@ -992,6 +942,7 @@ div.page-sidebar .signature_box .form_container label, div.page-sidebar2 .signat
   padding: 10px 0 4px 3px;
   font-size: 14px;
 }
+
 div.page-sidebar .signature_box .form_container label strong, div.page-sidebar2 .signature_box .form_container label strong  {
     border-bottom: 1px solid #89AEC1;
     color: #032638;
@@ -1000,11 +951,11 @@ div.page-sidebar .signature_box .form_container label strong, div.page-sidebar2 
     font-weight: bold;
     margin-bottom: 10px;
     padding-bottom: 9px;
-	text-shadow:1px 1px #FFFFFF;
+		text-shadow:1px 1px #FFFFFF;
 }
 div.page-sidebar .signature_box .form_container label strong a, div.page-sidebar2 .signature_box .form_container label strong a  {
 	color: #032638;
-    text-shadow: 1px 1px #FFFFFF;
+   text-shadow: 1px 1px #FFFFFF;
 }
 div.page-sidebar .signature_box .form_container .input, div.page-sidebar2 .signature_box .form_container .input  {
   padding: 3px;
@@ -1122,13 +1073,6 @@ div.page-sidebar .signature_box .form_container .sign_error, div.page-sidebar2 .
     text-align: center;
     width: 208px;
 }
-
-.flash {
-    background: none;
-    border: none;
-    padding: 0;
-}
-
 div.page-sidebar .signature_box .form_container .sign_error strong, div.page-sidebar2 .signature_box .form_container .sign_error strong {
 		color: #BD362F;
     display: block;

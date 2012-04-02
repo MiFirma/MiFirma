@@ -17,7 +17,7 @@
   
   <% if @proposal.on_signature_time? %>
 	  <%= form_for @signature, :url => attestor_signatures_path(@signature) do |f| %>
-	  <div class="input"><label>El nombre y apellido se recogerán del certificado electrónico</label></div>
+	  <div class="txt_advertencia"><label>El nombre y apellido se recogerán del certificado electrónico</label></div>
 	  <div class="form">
 		<label><strong>Domicilio</strong></label>
 		<label for="province">Provincia</label>

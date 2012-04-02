@@ -1,0 +1,6 @@
+﻿<p>Hubo problemas con los siguientes datos:</p>
+<ul>
+<% @proposal.errors.full_messages.each do |msg| %>
+	<li><%= msg %></li>
+<% end %>
+</ul>
