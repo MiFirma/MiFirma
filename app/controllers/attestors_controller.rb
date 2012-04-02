@@ -31,7 +31,7 @@
 	# GET /attestors/1/signatures
 	def signatures
 	  proposal = IlpProposal.find(params[:id])
-		@attestors = proposal.attestors_signatures
+		@attestors = proposal.attestors_signatures.order("id")
 		
 		get_zip_signatures(@attestors)
 	end	
