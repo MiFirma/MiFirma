@@ -88,6 +88,7 @@ div.header-top a.logo:visited {
   margin-left: 16px;
 }
 div.header-top a.logo:visited img { vertical-align: middle; }
+
 div.header-top ul {
   height: 50px;
   padding-left: 50px;
@@ -111,6 +112,81 @@ div.header-top ul li a:visited {
   color: white;
 }
 div.header-top ul li a:visited:hover { text-decoration: underline; }
+
+div.header-top ul li.comisiones_promotoras {
+ 	border: 1px solid red;
+    display: block !important;
+    float: right;
+    height: auto !important;
+    padding: 0;
+    text-align: center;
+    width: 230px;
+	position:relative;
+	top:6px;
+	padding: 3px;
+	
+	
+	
+	
+	
+	background: #CFDFE7;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+	border: 1px solid #89aec1;
+	background-color: #CFDFE7;
+    background-image: -moz-linear-gradient(center top , #cfdfe7, #a7c0cc);
+    background-repeat: repeat-x;
+	
+	
+	background-color:#CFDFE7;
+	background-image:-moz-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:-ms-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#cfdfe7), to(#a7c0cc));
+	background-image:-webkit-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-repeat:repeat-x;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
+}
+
+div.header-top ul li.comisiones_promotoras a {
+	float: left;
+    line-height: 20px;
+    width: 230px;
+}
+
+div.header-top ul li.comisiones_promotoras ul {
+	display: block;
+    float: left;
+    height: auto;
+    padding: 1px 0 0 18px;
+    width: 200px;
+}
+div.header-top ul li.comisiones_promotoras ul li {
+	float: left;
+    width: auto;
+	height:auto;
+}
+
+div.header-top ul li.comisiones_promotoras ul li a{
+	color: #032638;
+    text-decoration: underline;
+    width: auto;
+}
+div.header-top ul li ul li span.li-sep {
+	float: none;
+    margin: 0 14px;
+    position: relative;
+    top: 3px;
+}
+div.header-top ul li.comisiones_promotoras span {
+	float: left;
+    text-align: center;
+    width: 230px;
+	color:#032638;
+}
+
 div.header-bottom { height: 195px; }
 div.header-bottom .lh {
   padding-top: 33px;
@@ -961,6 +1037,121 @@ div.page-sidebar .signature_box .form_container .txt_advertencia, div.page-sideb
     width: 238px;
 }
 div.page-sidebar .signature_box .form_container .separator, div.page-sidebar2 .signature_box .form_container .separator { margin-bottom: 20px !important; }
+div.page-sidebar .form { 
+	padding: 15px; 
+	background: #CFDFE7;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+	border: 1px solid #89aec1;
+	background-color: #CFDFE7;
+    background-image: -moz-linear-gradient(center top , #cfdfe7, #a7c0cc);
+    background-repeat: repeat-x;
+	
+	
+	background-color:#CFDFE7;
+	background-image:-moz-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:-ms-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#cfdfe7), to(#a7c0cc));
+	background-image:-webkit-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
+	background-repeat:repeat-x;
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
+
+}
+div.page-sidebar .form h5 {
+    border-bottom: 1px solid #89AEC1;
+    color: #032638;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0 0 8px;
+    text-shadow: 1px 1px #FFFFFF;
+}
+div.page-sidebar .form form label {
+    color: #032638;
+    display: block;
+    font-size: 14px;
+    margin: 0;
+    padding: 20px 0 0 3px;
+}
+div.page-sidebar .form form .btn_sign {
+	background: url("../images/btn_download.png") no-repeat scroll 0 0 transparent;
+    color: #495B29;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 32px;
+    padding: 0 0 0.4em;
+    right: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px #FFFFFF;
+    top: 0;
+    width: 106px;
+	margin:1em 0 0 0;
+}
+div.page-sidebar .form form .btn_sign input {
+	background: none repeat scroll 0 0 transparent;
+    color: #495B29;
+    cursor: pointer;
+    height: 36px;
+    width: 104px;
+	border:none;
+}
+
+div.proposal .download a,  div.proposal .attestor a {
+	background: url("../images/btn_download.png") no-repeat scroll 0 0 transparent;
+    color: #495B29;
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    height: 25px;
+    padding: 0.8em 0 0;
+    position: absolute;
+    right: 10px;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 1px 1px #FFFFFF;
+    top: 10px;
+    width: 106px;
+}
+div.page-sidebar .form form .btn_sign input a:hover {
+	background: none;
+    border: none;
+    cursor: pointer;
+	font-weight:bold;
+	text-decoration:underline;
+}
+div.page-sidebar .form form select {
+	color: #032638;
+    font-size: 14px;
+    margin: 0 8px 0 0;
+    padding: 2px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+	border: 1px solid #89aec1;
+}
+div.page-sidebar .form .input textarea { 
+	padding: 6px;
+    width: 578px;
+	height:236px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+	border: 1px solid #89aec1;
+}
+div.page-sidebar .form .input input { 
+	padding: 6px;
+    width: 578px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+	border: 1px solid #89aec1;
+	background:#ffffff;
+	margin: 10px 0 0;
+}
 div.page-sidebar .signature_box .form_container .form, div.page-sidebar2 .signature_box .form_container .form { 
 	padding: 15px; 
 	background: #CFDFE7;
@@ -1122,13 +1313,6 @@ div.page-sidebar .signature_box .form_container .sign_error, div.page-sidebar2 .
     text-align: center;
     width: 208px;
 }
-
-.flash {
-    background: none;
-    border: none;
-    padding: 0;
-}
-
 div.page-sidebar .signature_box .form_container .sign_error strong, div.page-sidebar2 .signature_box .form_container .sign_error strong {
 		color: #BD362F;
     display: block;
@@ -1596,6 +1780,16 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eF8F9FA', endC
 	margin:0 auto;
     width: 402px !important;
 }
+.ancho592 {
+	float:none;
+	margin:0 auto;
+    width: 592px;
+}
+.ancho596 {
+	float:none;
+	margin:0 auto;
+    width: 596px;
+}
 
 .tipo_2 strong {
   font-size: 14px !important;
@@ -1608,3 +1802,21 @@ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eF8F9FA', endC
 .tipo_2 strong a:link, .tipo_2 strong a:visited {
   color:#032638;
 }
+
+.componentes_input {
+	background: fuchsia;
+    border: 1px solid orange;
+    width: 204px;
+	height:24px;
+}
+
+.comisiones_promotoras {
+	float:right;
+	border:1px solid red;
+	width:180px;
+	text-align:center;
+	padding:0 0 0 0;
+}
+
+
+
