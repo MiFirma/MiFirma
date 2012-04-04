@@ -147,7 +147,7 @@ div.header-top ul li.comisiones_promotoras {
 	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-repeat:repeat-x;
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfdfe7', endColorstr='#a7c0cc', GradientType=0);
 }
 
 div.header-top ul li.comisiones_promotoras a {
@@ -439,24 +439,25 @@ div.proposal hr {
   clear: both;
 }
 div.proposal h3 {
-  /* border-bottom: 2px solid #ECECEC; */
-  font-family: Arial,Helvetica,sans-serif;
-  font-size: 3em;
-  font-style: normal;
-  line-height: 32px;
-  padding: 12px 0 16px;
-  text-align: left;
-  float:left;
-  width: 588px;
+		float: left;
+    font-family: Georgia,Georgia,serif;
+    font-size: 3em;
+    font-style: italic;
+    line-height: 32px;
+    padding: 12px 0 16px;
+    text-align: left;
+    width: 588px;
 }
 div.proposal h3 a {
-  border-bottom: 1px dashed #89AEC1;
-  color: #36679F;
-  float: left;
-  padding: 0 0 0.2em;
-  text-decoration: none;
-  width: 588px;
-  font-weight:bold;
+		border-bottom: 1px dashed #89AEC1;
+    color: #36679F;
+    float: left;
+    font-family: arial,helvetica,sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    padding: 0.3em 0 0.2em;
+    text-decoration: none;
+    width: 588px;
 }
 div.proposal h3 span a {
   border: medium none;
@@ -532,7 +533,7 @@ div.proposal div.fb-like {
 	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-repeat:repeat-x;
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);  
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfdfe7', endColorstr='#a7c0cc', GradientType=0);  
 
 	position: relative;
     top: 1.8em;
@@ -1057,7 +1058,7 @@ div.page-sidebar .form {
 	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-repeat:repeat-x;
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfdfe7', endColorstr='#a7c0cc', GradientType=0);
 
 }
 div.page-sidebar .form h5 {
@@ -1172,7 +1173,7 @@ div.page-sidebar .signature_box .form_container .form, div.page-sidebar2 .signat
 	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-repeat:repeat-x;
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfdfe7', endColorstr='#a7c0cc', GradientType=0);
 
 }
 div.page-sidebar .signature_box .form_container label, div.page-sidebar2 .signature_box .form_container label  {
@@ -1560,7 +1561,7 @@ div.footer .tractis {
 	background-image:-o-linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-image:linear-gradient(top, #cfdfe7, #a7c0cc);
 	background-repeat:repeat-x;
-filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ee5f5b', endColorstr='#bd362f', GradientType=0);
+filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cfdfe7', endColorstr='#a7c0cc', GradientType=0);
 }
 
 #contenedor_login h3 { 
