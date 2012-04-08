@@ -9,33 +9,38 @@
 			<%= image_tag proposal.banner.url, :width => 150 %> 
 <p>Haciéndote fedatario <strong>ayudas a la organización</strong> en la recogida de  firmas en papel.
 Una vez que hayas hecho fedatario, la organización se pondrá en contacto contigo para darte los <strong>pliegos de firma</strong> e información adicional donde poder devolverlos.</p>
-<p>El fedatario asume las siguientes obligaciones que <strong>intentará cumplir con diligencia y responsabilidad</strong>.
+
+<p>El fedatario asume las siguientes obligaciones que <strong>intentará cumplir con diligencia y responsabilidad:</strong>.
+
 <ul>
 	<li><div class="letra_li">a)</div>	<strong>Hacerse cargo de un número de pliegos para la recogida de firmas</strong> que devolverá a la organización (Oficina de Coordinación) de la Iniciativa Legislativa Popular (ILP) <strong>una vez cumplimentados</strong> o cuando ya no pueda recoger más firmas. Hasta su devolución, el fedatario debe velar para que los pliegos no se pierdan y no se estropeen.</li>
 	<li><div class="letra_li">b)</div>	Buscar personas dispuestas a <strong>apoyar la Iniciativa Legislativa Popular</strong> y recoger sus firmas en el pliego oficial, junto con todos los datos que figuran en el mismo.</li>
+<%= image_tag "manos_firmando.jpg" %>
 	<li><div class="letra_li">c)</div>	<strong>Comprobar y dar fe de la identidad de la persona que firma</strong>.
 	<li><div class="letra_li">d)</div>	Firmar la diligencia que consta al final del pliego, una vez que concluya la recogida de firmas, <strong>haciendo constar el número de firmas recogidas</strong> y la fecha de finalización del pliego.</li>
 	<li><div class="letra_li">e)</div>	A medida que los pliegos se vayan concluyendo firmados, <strong>devolverlos a la organización</strong>.</li>         
 </p>
+
+<p><strong>Rellena</strong> el formulario de la derecha para hacerte fedatario.</p>
    </div>
     
 
     <div class="fb-like">
-      <h3>¿Estás a favor?</h3>
+      <h3>¿Te gustaría ampliar la red de fedatarios?</h3>
       <h5>Muestra tu apoyo clicando en "Me gusta"</h5>  
-      <iframe src="http://www.facebook.com/plugins/like.php?href=<%= proposal_url(proposal) %>&amp;layout=standard&amp;locale=es_ES&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px; margin-top:15px;" allowTransparency="true"></iframe>
+      <iframe src="http://www.facebook.com/plugins/like.php?href=<%= attestor_url(proposal) %>&amp;layout=standard&amp;locale=es_ES&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px; margin-top:15px;" allowTransparency="true"></iframe>
       
-      <h6>Comparte esta propuesta</h6>
+      <h6>Y comparte esta idea</h6>
       
       <ul class="share">
-        <li><a href="http://www.facebook.com/sharer.php?u=<%= CGI::escape @share_url %><%= "&t=#{CGI::escape @fb_text}"%>"><img src="/images/share/ico_fb.png" width="86" height="21" alt="Ico Fb"></a></li>
-        <li><a href="http://meneame.net/submit.php?url=<%= CGI::escape @share_url %>"><img src="/images/share/ico_meneame.png" width="86" height="21" alt="Ico Fb"></a></li>
+        <li><a href="http://www.facebook.com/sharer.php?u=<%= CGI::escape attestor_url(proposal) %><%= "&t=#{CGI::escape @fb_text}"%>"><img src="/images/share/ico_fb.png" width="86" height="21" alt="Ico Fb"></a></li>
+        <li><a href="http://meneame.net/submit.php?url=<%= CGI::escape attestor_url(proposal) %>"><img src="/images/share/ico_meneame.png" width="86" height="21" alt="Ico Fb"></a></li>
         <li><a href="http://twitter.com/home?status=<%= CGI::escape @twitter_text %>"><img src="/images/share/ico_twitter.png" width="86" height="21" alt="Ico Fb"></a></li>
       </ul>
       
-      <h6>Url de la propuesta</h6>
+      <h6>Url de la firma de fedatarios para esta propuesta</h6>
       
-      <input type="text" name="email" value="<%= proposal_url(proposal) %>" id="email">
+      <input type="text" name="email" value="<%= attestor_url(proposal) %>" id="email">
       
     </div>
     
