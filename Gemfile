@@ -16,8 +16,8 @@ gem 'aws-s3'
 gem 'nokogiri'
 gem 'rubyzip'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+# Use thin as the web server
+gem 'thin'
 
 # Deploy with Capistrano
 # gem 'capistrano'
