@@ -16,7 +16,7 @@
 	<label><h5>Edición Propuesta: <%= @proposal.name %></h5></label>	
 
 	<%= form_for(@proposal, :url => proposal_path, :html => { :multipart => true }) do |f| %>
-			<%= f.label :name, "Nombre" %><br />
+		<%= f.label :name, "Nombre" %><br />
 		<div class="input ancho592">
 			<%= f.text_field :name %>
 		</div>
@@ -34,6 +34,11 @@
 		<%= f.label :signatures_end_date, "Fecha fin de recogida" %><br />
 		<div class="input ancho592">
 			<%= f.date_select :signatures_end_date %>
+		</div>
+
+		<%= f.label :handwritten_signatures, "Número de firmas manuscritas" %><br />
+		<div class="input ancho592">
+			<%= f.text_field :handwritten_signatures %>
 		</div>
 
 		<%= f.label :banner, "Banner de la Iniciativa o Comisión Promotora" %><br />

@@ -41,6 +41,7 @@ class IlpProposal < Proposal
 		:pdf_file_size, :pdf_updated_at, :num_required_signatures,
 		:handwritten_signatures, :signatures_end_date
 	validates_uniqueness_of :name
+	validates :handwritten_signatures, :numericality => { :only_integer => true }
 
   #When the proposal still can collect signatures
 	scope :on_signature_time, lambda { where("signatures_end_date >= ?", Time.now ) }
