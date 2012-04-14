@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120412143044) do
+ActiveRecord::Schema.define(:version => 20120414143136) do
 
   create_table "elections", :force => true do |t|
     t.string   "name"
@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(:version => 20120412143044) do
     t.integer  "tractis_signature_file_size"
     t.datetime "tractis_signature_updated_at"
     t.string   "telephone"
+    t.integer  "number_of_sheets"
   end
 
   add_index "signatures", ["dni"], :name => "index_signatures_on_dni"

@@ -1,4 +1,4 @@
-<% headers = ["ID", "Nombre", "Apellidos", "DNI", "Email", "Telefono", "Fecha_creacion"] %>
+<% headers = ["ID", "Nombre", "Apellidos", "DNI", "Email", "Telefono", "Pliegos", "Fecha_creacion"] %>
 <%= CSV.generate_line headers %>
 <% @attestors.each do |attestor|%>
 <% row = [ attestor.id,
@@ -7,6 +7,7 @@
 				attestor.dni, 
 				attestor.email,
 				attestor.telephone,
+				attestor.number_of_sheets,
 				attestor.created_at] %>
 <%= CSV.generate_line row, {:row_sep => nil} %>
 <% end %>
