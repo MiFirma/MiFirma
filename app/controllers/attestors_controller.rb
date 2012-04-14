@@ -21,7 +21,7 @@
   # GET /attestors/1/list.csv
   def list
     proposal = IlpProposal.find(params[:id])
-		@attestors = proposal.attestors_signatures
+		@attestors = proposal.attestors_signatures.signed
 		
     respond_to do |format|
       format.csv  { render :layout => false }
