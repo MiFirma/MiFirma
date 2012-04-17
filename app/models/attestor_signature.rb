@@ -43,7 +43,10 @@ class AttestorSignature < Signature
 	
   validate :uniqueness_of_dni
   validates_presence_of :municipality_of_birth_id, :province_of_birth_id, 
-		:address, :municipality_id, :message => "Debes rellenar todos los campos."
+		:address, :municipality_id, :number_of_sheets, :message => "Todos los campos son obligatorios excepto el teléfono."
+		
+	validates :telephone, :numericality => { :only_integer => true }, :allow_blank => true
+	validates :number_of_sheets, :numericality => { :only_integer => true, :greater_than => 0, :less_than => 11, :message => "El número de pliegos debe ser entre 1 y 10" }
 		
 	def uniqueness_of_dni
 		if self.signed? and AttestorSignature.where("state > 0 and dni = ? and proposal_id = ? and id <> ?",dni,proposal_id,id).count>0

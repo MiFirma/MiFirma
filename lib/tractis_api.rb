@@ -24,6 +24,8 @@ class TractisApi
 			</censo>
 			<fedatario>
 				<email>#{signature.email}</email>
+				<telefono>#{signature.telephone}</telefono>
+				<pliegos>#{signature.number_of_sheets}</pliegos>
 			</fedatario>
 		 </auto-complete>
  	   <team>
