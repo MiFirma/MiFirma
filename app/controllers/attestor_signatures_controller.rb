@@ -11,7 +11,7 @@ class AttestorSignaturesController < ApplicationController
 				@signature.update_attribute :tractis_contract_location, tractis_signature_request[:location]
 			rescue StandardError => e 
 				::Rails.logger.debug "AttestorSignaturesController - Rescue"
-				flash[:error] = "Error accediendo al proveedor de firma electrónica"
+				flash[:error] = "Error accediendo a la plataforma de firma electrónica"
 				redirect_to attestor_url(@signature.proposal, :signature => params[:attestor_signature])
 			  return
 			end

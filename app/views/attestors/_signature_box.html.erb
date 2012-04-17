@@ -1,6 +1,6 @@
 <div class="signatures_counter">
   <h4>
-    <strong><%= pluralize(@proposal.num_attestors, "fedatario electrónico.")%></strong>
+    <strong><%= pluralize(@proposal.num_attestors, "fedatario")%> electrónico<%= "s" if @proposal.num_attestors != 1 %></strong>
   </h4>
   
  
@@ -60,7 +60,7 @@
 			<% end %>
 		</div>
 		
-		<label><strong>Datos para la organización</strong></label>
+		<label><strong>Datos de contacto</strong></label>
 		<label for="email">Tu email</label>
 		<div class="input">
 		  <%= f.hidden_field :proposal_id %>
@@ -70,11 +70,6 @@
 		<label for="telephone">Tu teléfono</label>
 		<div class="input">
 		  <%= f.text_field :telephone %>
-		</div>
-		
-		<label for="number_of_sheets">Número de pliegos</label>
-		<div class="input">
-		  <%= f.text_field :number_of_sheets %>
 		</div>
 		
 		<div class="tos">
