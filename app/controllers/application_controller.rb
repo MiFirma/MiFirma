@@ -37,7 +37,7 @@ class ApplicationController < ActionController::Base
         signatures.each do |signature|
           title = signature.tractis_signature_file_name
           z.put_next_entry(title)
-					file = signature.tractis_signature.to_file(:original)
+					file = signature.tractis_signature.to_file
           z.print file.read
 					file.close
         end
