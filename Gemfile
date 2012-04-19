@@ -43,3 +43,8 @@ group :development, :test do
    gem 'ruby-debug19', :require => 'ruby-debug'
    gem 'annotate'
 end
+
+# Bundle gems for heroku
+group :staging, :production do
+	 gem 'newrelic_rpm'
+end

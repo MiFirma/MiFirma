@@ -34,7 +34,9 @@ class EndorsmentSignature < Signature
   belongs_to :proposal, :class_name => 'EndorsmentProposal'
 	
 	has_attached_file :tractis_signature, 
-		{:path => ":rails_root/public/system/firmas/:promoter_name/:province_id/:filename", :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
+		{:path => ":rails_root/public/system/firmas/:promoter_name/:province_id/:filename", 
+		 :url => "/system/firmas/:promoter_name/:province_id/:filename", 
+		 :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
 	validates_presence_of :province
 	validates_presence_of :name, :surname, :surname2

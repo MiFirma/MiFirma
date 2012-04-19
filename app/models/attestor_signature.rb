@@ -38,7 +38,7 @@ class AttestorSignature < Signature
 	
 	has_attached_file :tractis_signature, 
 		{:path => ":rails_root/public/system/firmas/:promoter_name/fedatarios/:filename",
-		 :url => "/public/system/firmas/:promoter_name/fedatarios/:filename",
+		 :url => "/system/firmas/:promoter_name/fedatarios/:filename",
 		 :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
   validate :uniqueness_of_dni

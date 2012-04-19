@@ -33,7 +33,9 @@ class IlpSignature < Signature
   belongs_to :proposal, :class_name => 'IlpProposal'
 
 	has_attached_file :tractis_signature, 
-		{:path => ":rails_root/public/system/firmas/:promoter_name/ilp/:filename", :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
+		{:path => ":rails_root/public/system/firmas/:promoter_name/ilp/:filename", 
+		 :url => "/system/firmas/:promoter_name/ilp/:filename",
+     :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
   validate :uniqueness_of_dni
 	validates_presence_of :dni	
@@ -44,10 +46,9 @@ class IlpSignature < Signature
 			errors.add :dni, "Sólo puedes firmar esta ILP una sola vez."
 		end
 	end
-		validate :dni_format
 	
-	
-	
+	validate :dni_format
+
 	# Validates NIF
 	def dni_format
 		letters = "TRWAGMYFPDXBNJZSQVHLCKE"

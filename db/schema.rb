@@ -19,16 +19,6 @@ ActiveRecord::Schema.define(:version => 20120414143136) do
     t.datetime "updated_at"
   end
 
-  create_table "endorsment_proposals", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "endorsment_signatures", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "municipalities", :force => true do |t|
     t.integer  "id_ine"
     t.string   "name"
