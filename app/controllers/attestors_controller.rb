@@ -21,7 +21,7 @@
   # GET /attestors/1/list.csv
   def list
     proposal = IlpProposal.find(params[:id])
-		@attestors = proposal.attestors_signatures.signed
+		@attestors = proposal.attestors_signatures.signed.order("id")
 		
     respond_to do |format|
       format.csv  { render :layout => false }
@@ -31,7 +31,7 @@
 	# GET /attestors/1/signatures
 	def signatures
 	  proposal = IlpProposal.find(params[:id])
-		@attestors = proposal.attestors_signatures.order("id")
+		@attestors = proposal.attestors_signatures.signed
 		
 		get_zip_signatures(@attestors)
 	end	
