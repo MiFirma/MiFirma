@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     end    
   end
 	
-	s
+	
   protected
 	def get_zip_signatures (signatures)
 	
