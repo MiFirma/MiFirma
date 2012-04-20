@@ -241,6 +241,16 @@ div.page h4 {
   margin-bottom: 20px;
   margin-left: -3px;
 }
+
+div.page h5 {
+  font-size: 18px;
+  font-family: Arial;
+  font-weight: normal;
+  line-height: 20px;
+  padding-left: 40px;
+	margin-bottom: 10px;
+}
+
 .about-us div.page {
   padding: 27px 20px 20px 22px;
   margin-top: 4px;
