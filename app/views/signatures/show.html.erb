@@ -18,8 +18,8 @@
 	<% else %>
 	
 		<% if @signature.signed? %>
-			<h5>Gracias por dar apoyo a la <%= @signature.proposal.name %>.</h5>
-			<h5>Tu firma és muy importante para empezar a cambiar las cosas. Ayudanos a difundir el mensaje!</h5>
+			<p><h7>Gracias por dar apoyo a la <%= @signature.proposal.name %>.</h7></p>
+			<p><h7>Tu firma és muy importante para empezar a cambiar las cosas. Ayudanos a difundir el mensaje!</h7></p>
 		<% else %>
 			<h1>
 				Firma incorrecta, vuelva a intentarlo pulsando aquí: <%= link_to "Firmar", @signature.tractis_contract_location %>    
