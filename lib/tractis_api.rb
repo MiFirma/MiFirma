@@ -246,7 +246,7 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
                   <id>#{signature.dni}</id>
               </firmante>
               <datosilp>
-                  <tituloilp>#{signature.proposal.name.first(100)}</tituloilp>
+                  <tituloilp>#{signature.proposal.name.first(300)}</tituloilp>
                   <codigoilp>#{signature.proposal.ilp_code}</codigoilp>
               </datosilp>
           </ilp>
