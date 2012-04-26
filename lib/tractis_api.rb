@@ -236,12 +236,11 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
 	#
 	def self.createXMLIlpOCE(signature)
 	    dataOCE = <<-XML
-      <oce>
           <ilp>
               <firmante>
-                  <nomb>#{signature.name}</nomb>
-                  <ape1>#{signature.surname}</ape1>
-                  <ape2>#{signature.surname2}</ape2>
+                  <nomb>#{signature.name.first(20)}</nomb>
+                  <ape1>#{signature.surname.first(25)}</ape1>
+                  <ape2>#{signature.surname2.first(25)}</ape2>
                   <fnac>#{signature.date_of_birth.strftime("%Y%m%d")}</fnac>
                   <tipoid>1</tipoid>
                   <id>#{signature.dni}</id>
@@ -251,7 +250,6 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
                   <codigoilp>#{signature.proposal.ilp_code}</codigoilp>
               </datosilp>
           </ilp>
-      </oce>
     XML
 		return dataOCE
 	end	

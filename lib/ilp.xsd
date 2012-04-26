@@ -1,82 +1,80 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:element name="oce">
+	<xs:element name="ilp">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="ilp" type="ilpType"/>
+				<xs:element name="firmante" type="firmanteType" /> 
+				<xs:element name="datosilp" type="datosilpType" /> 
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-	<xs:complexType name="ilpType">
-		<xs:sequence>
-			<xs:element name="firmante" type="firmanteType"/>
-			<xs:element name="datosilp" type="datosilpType"/>
-		</xs:sequence>
-	</xs:complexType>
 	<xs:complexType name="firmanteType">
 		<xs:sequence>
-			<xs:element name="nomb" type="nombrefirmante"/>
-			<xs:element name="ape1" type="apellidofirmante"/>
-			<xs:element name="ape2" type="apellidofirmante"/>
-			<xs:element name="fnac" type="fechan"/>
-			<xs:element name="tipoid" type="tipoidentificador"/>
-			<xs:element name="id" type="identificador"/>
+			<xs:element name="nomb" type="nombrefirmante" /> 
+			<xs:element name="ape1" type="apellidofirmante" /> 
+			<xs:element name="ape2" type="apellidofirmante" /> 
+			<xs:element name="fnac" type="fechan" /> 
+			<xs:element name="tipoid" type="tipoidentificador" /> 
+			<xs:element name="id" type="identificador" /> 
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="tipoidentificador">
-		<xs:annotation>
-			<xs:documentation>Tipo de documento identificador, 1.-DNI, 2.-Pasaporte</xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:enumeration value="1"/>
-			<xs:enumeration value="2"/>
-		</xs:restriction>
-	</xs:simpleType>
 	<xs:simpleType name="nombrefirmante">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="20"/>
+			<xs:maxLength value="20" /> 
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="apellidofirmante">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="25"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="identificador">
-		<xs:restriction base="xs:string">
-			<xs:maxLength value="9"/>
+			<xs:maxLength value="25" /> 
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="fechan">
 		<xs:annotation>
-			<xs:documentation>
-Formato de la fecha de nacimiento
-"AAAAMMDD", "20120101"
-   </xs:documentation>
+			<xs:documentation>Formato de la fecha de nacimiento "AAAAMMDD", "19901025"</xs:documentation> 
 		</xs:annotation>
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="8"/>
+			<xs:maxLength value="8" /> 
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="tipoidentificador">
+		<xs:annotation>
+			<xs:documentation>1.-Documento Nacional de Identidad (DNI), electrónico o no, expedido por las autoridades españolas</xs:documentation> 
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1" /> 
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="identificador">
+		<xs:annotation>
+			<xs:documentation>Número del DNI, incluída la letra
+                     final</xs:documentation> 
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="9" /> 
+			<xs:pattern value="[0-9]+[a-zA-Z]{1}" /> 
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:complexType name="datosilpType">
 		<xs:sequence>
-			<xs:element ref="tituloilp"/>
-			<xs:element name="codigoilp" type="codilp"/>
+			<xs:element ref="tituloilp" /> 
+			<xs:element name="codigoilp" type="codilp" /> 
 		</xs:sequence>
 	</xs:complexType>
-	<xs:simpleType name="codilp">
-		<xs:annotation>
-			<xs:documentation>Formato del codigoilp "ILPAAAANNN" donde AAAA es el año y NNN un código asignado por la Junta Electoral Central a la ILP
-   </xs:documentation>
-		</xs:annotation>
-		<xs:restriction base="xs:string">
-			<xs:maxLength value="10"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:element name="tituloilp" type="titilp"/>
+	<xs:element name="tituloilp" type="titilp" /> 
+	<xs:annotation>
+		<xs:documentation>Texto del Titulo de la ILP</xs:documentation> 
+	</xs:annotation>
 	<xs:simpleType name="titilp">
 		<xs:restriction base="xs:string">
-			<xs:maxLength value="100"/>
+			<xs:maxLength value="300" /> 
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="codilp">
+		<xs:annotation>
+			<xs:documentation>Formato del codigoilp "ILPAAAANNN" donde AAAA es el año y NNN el numero asignado a la ILP por la Junta Electoral Central, "ILP2012040"</xs:documentation> 
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10" /> 
 		</xs:restriction>
 	</xs:simpleType>
 </xs:schema>
