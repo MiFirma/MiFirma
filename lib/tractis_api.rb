@@ -147,7 +147,6 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
 Si los datos están correctos, por favor, pulsa el botón de 'Firmar'
 Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral Central</notes>
 			<sticky-notes>true</sticky-notes>
-			<score>4</score>
 			<raw-xml-content>
 				#{dataOCE}
 			</raw-xml-content>
