@@ -38,8 +38,8 @@ class IlpSignature < Signature
      :s3_permissions => :private}.merge(PAPERCLIP_CONFIG)
 	
   validate :uniqueness_of_dni
-	validates_presence_of :dni	
-	validates_presence_of :name, :surname, :surname2	
+	validates_presence_of :dni, :name, :surname, :surname2, 
+		:message => "Debes rellenar todos los campos."	
 
 	def uniqueness_of_dni
 		if self.signed? and IlpSignature.where("state > 0 and dni = ? and proposal_id = ? and id <> ?",dni,proposal_id,id).count>0
