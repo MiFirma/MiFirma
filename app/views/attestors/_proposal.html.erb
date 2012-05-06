@@ -4,7 +4,8 @@
       Fedatarios para la <%= link_to proposal.name, proposal_path(proposal) %>
       <span>Acción promovida por: <%= link_to proposal.promoter_name, proposal.promoter_url %></span>
     </h3>
-		   
+	<div class="fb-like" data-send="false" data-width="450" data-show-faces="true" data-font="arial"></div>	   
+	
     <div class="proposal_content">
 			<%= image_tag proposal.banner.url, :width => 150 %> 
 <p>Haciéndote fedatario <strong>ayudas a la organización</strong> en la recogida de firmas en papel.
@@ -25,12 +26,8 @@ Una vez que hayas hecho fedatario, la organización se pondrá en contacto conti
 </div>
     
 
-    <div class="fb-like">
-      <h3>¿Te gustaría ampliar la red de fedatarios?</h3>
-      <h5>Muestra tu apoyo clicando en "Me gusta"</h5>  
-      <iframe src="http://www.facebook.com/plugins/like.php?href=<%= attestor_url(proposal) %>&amp;layout=standard&amp;locale=es_ES&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px; margin-top:15px;" allowTransparency="true"></iframe>
-      
-      <h6>Y comparte esta idea</h6>
+    <div class="fb-like2">
+      <h6>Comparte esta idea</h6>
       
       <ul class="share">
         <li><a href="http://www.facebook.com/sharer.php?u=<%= CGI::escape attestor_url(proposal) %><%= "&t=#{CGI::escape @fb_text}"%>"><img src="/images/share/ico_fb.png" width="86" height="21" alt="Ico Fb"></a></li>
