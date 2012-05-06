@@ -556,7 +556,7 @@ div.proposal div.fb-like {
     top: 1.8em;
 	float:left;
 	width: 556px;
-    
+    margin-bottom: 30px;
 }
 div.proposal div.fb-like h3 {
   font-size: 16px;
@@ -614,7 +614,7 @@ div.proposal .proposal_content {
   line-height: 150%;
   float:left;
   color: #333333;
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 8px;
   border-bottom:1px dashed #89AEC1;
 }
@@ -683,7 +683,7 @@ div.proposal .download p {
 	background: url("../images/arrow_large_right.png") no-repeat scroll right 14px transparent;
     line-height: 21px;
     padding: 8px 22px 0 14px;
-    width: 180px;
+    width: 400px;
 }
 div.proposal .attestor p {
 	background: url("../images/arrow_large_right.png") no-repeat scroll right 2px transparent;
