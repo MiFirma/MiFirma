@@ -454,7 +454,7 @@ div.proposal h3 {
   font-size: 3em;
   font-style: normal;
   line-height: 32px;
-  padding: 0 0 16px;
+  padding: 0 0 0px;
   text-align: left;
   float:left;
   width: 588px;
@@ -530,7 +530,7 @@ div.proposal a.pdf-link:visited {
 }
 div.proposal a.pdf-link:visited img { vertical-align: middle; }
 
-div.proposal div.fb-like {
+div.proposal div.fb-like2 {
 	padding: 15px; 
 	background: #CFDFE7;
 	-webkit-border-radius: 5px;
@@ -558,7 +558,7 @@ div.proposal div.fb-like {
 	width: 556px;
     margin-bottom: 30px;
 }
-div.proposal div.fb-like h3 {
+div.proposal div.fb-like2 h3 {
   font-size: 16px;
   margin-bottom: 8px;
   color: #333333;
@@ -566,7 +566,7 @@ div.proposal div.fb-like h3 {
   padding: 0 0 6px;
   width:558px;
 }
-div.proposal div.fb-like h5 {
+div.proposal div.fb-like2 h5 {
 	border-bottom: 1px solid #89AEC1;
     color: #032638;
     font-size: 18px;
@@ -574,7 +574,7 @@ div.proposal div.fb-like h5 {
     padding: 0 0 8px;
     text-shadow: 1px 1px #FFFFFF;
 }
-div.proposal div.fb-like h6 {
+div.proposal div.fb-like2 h6 {
 	border-bottom: 1px solid #89AEC1;
     color: #032638;
     font-size: 16px;
@@ -583,7 +583,7 @@ div.proposal div.fb-like h6 {
     text-shadow: 1px 1px #FFFFFF;
 	width:100%;
 }
-div.proposal div.fb-like a img {
+div.proposal div.fb-like2 a img {
 	border: 1px solid #89AEC1;
     margin: 0 0 0 1em;
     width: auto;
@@ -591,12 +591,12 @@ div.proposal div.fb-like a img {
     -webkit-border-radius: 5px;
     border-radius: 5px;
 }
-div.proposal div.fb-like .share {
+div.proposal div.fb-like2 .share {
   overflow: hidden;
   margin-bottom: 15px;
 }
-div.proposal div.fb-like .share li { float: left; }
-div.proposal div.fb-like input[type=text] {
+div.proposal div.fb-like2 .share li { float: left; }
+div.proposal div.fb-like2 input[type=text] {
   background: fff;
   border: 1px solid #e8e8e8;
   border-top: 2px solid #e8e8e8;
