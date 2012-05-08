@@ -10,11 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120414143136) do
+ActiveRecord::Schema.define(:version => 20120507103745) do
 
   create_table "elections", :force => true do |t|
     t.string   "name"
     t.date     "signatures_end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "endorsment_proposals", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "endorsment_signatures", :force => true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -98,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20120414143136) do
 
   add_index "signatures", ["dni"], :name => "index_signatures_on_dni"
   add_index "signatures", ["proposal_id", "state"], :name => "index_signatures_on_proposal_id_and_state"
+  add_index "signatures", ["token"], :name => "index_signatures_on_token"
 
   create_table "users", :force => true do |t|
     t.string   "name"
