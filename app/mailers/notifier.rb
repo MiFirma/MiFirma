@@ -8,7 +8,7 @@ class Notifier < ActionMailer::Base
   #
   def ilp_signed (signature)
 		@signature=signature
-    mail :to => signature.email, :subject => 'ILP firmado. Bienvenido a mifirma.com'
+    mail :to => signature.email, :subject => 'ILP firmada. Bienvenido a mifirma.com'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
