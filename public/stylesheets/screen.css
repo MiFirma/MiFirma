@@ -431,7 +431,12 @@ div.page-content {
 div.page-content2 {
   width: 590px;
   float: left;
-	padding:0 0 0 22px;
+  padding:0 0 0 22px;
+}
+
+div.page-content3 {
+  width: 890px;
+  float: left;
 }
 .about-us div.page-content, .about-us div.page-content2 {
   width: 612px;
