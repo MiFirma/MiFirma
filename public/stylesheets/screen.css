@@ -14,6 +14,11 @@ h2 {  }
 h3 { font-size:1.1em; }
 h4 {  }
 h5 {  }
+
+p {
+  text-align: justify;
+}
+
 :focus { outline: 0; }
 body {
   line-height: 1;
@@ -438,6 +443,7 @@ div.page-content3 {
   width: 890px;
   float: left;
 }
+
 .about-us div.page-content, .about-us div.page-content2 {
   width: 612px;
   float: left;
