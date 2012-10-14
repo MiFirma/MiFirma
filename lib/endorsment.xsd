@@ -39,6 +39,7 @@
 <xs:enumeration value="SENADO"/>
 <xs:enumeration value="CONGRESO Y SENADO"/>
 <xs:enumeration value="PARLAMENTO EUROPEO"/>
+<xs:enumeration value="ASAMBLEA AUTONOMICA"/>
 </xs:restriction>
 </xs:simpleType>
 <xs:simpleType name="tipoidentificador">

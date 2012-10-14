@@ -35,7 +35,7 @@ class EndorsmentProposal < Proposal
 	has_many :signatures, :class_name => 'EndorsmentSignature', :foreign_key => "proposal_id"
 	belongs_to :election
 	
-	validates :election_type, :inclusion => { :in => (["CONGRESO","SENADO", "CONGRESO Y SENADO","PARLAMENTO EUROPEO"]),
+	validates :election_type, :inclusion => { :in => (["CONGRESO","SENADO", "CONGRESO Y SENADO","PARLAMENTO EUROPEO","ASAMBLEA AUTONOMICA"]),
     :message => "%{value} no es un tipo de elecciónes válido. Los tipos son:CONGRESO,SENADO, CONGRESO Y SENADO,PARLAMENTO EUROPEO" }
 
 	def signatures_end_date

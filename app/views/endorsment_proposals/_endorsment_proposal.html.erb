@@ -4,30 +4,22 @@
       <%= link_to endorsment_proposal.name, endorsment_proposal_path(endorsment_proposal) %>
       <span>Acción promovida por: <%= link_to endorsment_proposal.promoter_name, endorsment_proposal.promoter_url %></span>
     </h3>
-		<%= image_tag endorsment_proposal.banner.url, :width => 150 %>    
+	<div class="fb-like" data-send="false" data-width="450" data-show-faces="true" data-font="arial"></div>	   
+  
     <div class="proposal_content">
-			
+	  <%= link_to image_tag(endorsment_proposal.banner.url), endorsment_proposal.promoter_url %>		
       <%= endorsment_proposal.howto_solve.html_safe %>
     </div>
     
 
-    <div class="fb-like">
-      <h3>¿Estás a favor?</h3>
-      <h5>Muestra tu apoyo clicando en "Me gusta"</h5>  
-      <iframe src="http://www.facebook.com/plugins/like.php?href=<%= endorsment_proposal_url(endorsment_proposal) %>&amp;layout=standard&amp;locale=es_ES&amp;show_faces=true&amp;width=450&amp;action=like&amp;font=lucida+grande&amp;colorscheme=light&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:80px; margin-top:15px;" allowTransparency="true"></iframe>
-      
+    <div class="fb-like2">
       <h6>Comparte esta propuesta</h6>
-      
+   
       <ul class="share">
         <li><a href="http://www.facebook.com/sharer.php?u=<%= CGI::escape @share_url %><%= "&t=#{CGI::escape @fb_text}"%>"><img src="/images/share/ico_fb.png" width="86" height="21" alt="Ico Fb"></a></li>
         <li><a href="http://meneame.net/submit.php?url=<%= CGI::escape @share_url %>"><img src="/images/share/ico_meneame.png" width="86" height="21" alt="Ico Fb"></a></li>
         <li><a href="http://twitter.com/home?status=<%= CGI::escape @twitter_text %>"><img src="/images/share/ico_twitter.png" width="86" height="21" alt="Ico Fb"></a></li>
       </ul>
-      
-      <h6>Url del partido </h6>
-      
-      <input type="text" name="email" value="<%= endorsment_proposal_url(endorsment_proposal) %>" id="email">
-      
     </div>
     
     <span class="shadow"></span>
