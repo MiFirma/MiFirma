@@ -59,6 +59,7 @@ class TractisApi
     target_url = "https://www.tractis.com/contracts/gateway_raw"
     client.set_auth(target_url, "#{TRACTIS_USER}+#{signature.proposal.promoter_short_name}@#{TRACTIS_DOMAIN}", TRACTIS_PASS)
 
+		
 		dataOCE = createXMLEndorsmentOCE(signature)
 		::Rails.logger.debug(dataOCE)
 		
@@ -70,7 +71,7 @@ class TractisApi
 		end
 
 		dataTRACTIS = "<contract>
-			<name>#{signature.endorsment_proposal.name}</name>dd
+			<name>#{signature.proposal.name}</name>dd
 			<redirect-when-signed>#{signature.return_url}</redirect-when-signed>
 			<notes>A continuación te mostramos el texto que vas a firmar, tal cual se enviará a la Junta Electoral Central. Como verás, incluye los siguientes datos separados por espacios:
 * Nombre completo del avalista
@@ -110,13 +111,8 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
 		::Rails.logger.debug response.reason
 		::Rails.logger.debug "Respuesta - Headers - Location"
 		::Rails.logger.debug response.header["Location"]
-    location = response.header["Location"].first
-		if :location
-			signature.update_attribute :tractis_contract_location, location
-			return true
-		else
-			raise StandardError, "Error de comunicación con Tractis, por favor vuelva a intentarlo."
-		end
+    
+		{:location => response.header["Location"].first}
   end
 	
   def self.signature_request_ilp(signature)
@@ -220,9 +216,9 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
                   <id>#{signature.dni}</id>
               </avalista>
               <candidatura>
-                  <elecciones>#{signature.endorsment_proposal.election_type}</elecciones>
+                  <elecciones>#{signature.proposal.election_type}</elecciones>
                   <circunscripcion>#{signature.province.name}</circunscripcion>
-                  <nombre>#{signature.endorsment_proposal.promoter_name}</nombre>
+                  <nombre>#{signature.proposal.promoter_name}</nombre>
               </candidatura>
           </avalcandidatura>
       </oce>
