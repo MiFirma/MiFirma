@@ -58,25 +58,18 @@
       <%= f.check_box :terms %>
       Acepto los <a href="/terms">términos y condiciones</a>
     </div>
-  
-	<div>
-		<label for="Certificado">Tipo Certificado Electrónico:</label>
-		<br><%= radio_button_tag 'Certificado', 'FNMT', true %> FNMT
-		<br><%= radio_button_tag 'Certificado', 'OTROS' %> Resto Certificados
-	</div>
-  
+    
     </div>
-	
-
 
     <div class="btn_sign">
     <a href="#" onclick="$('#new_endorsment_signature').submit(); return false;">Firma electrónica</a>
     </div>
-    
+        
     <% end %>
   <% else %>
   <h4>No se admiten más firmas para este partido. Se ha superado el plazo de recepción de firmas </h4>
   <% end %>
+
   
 </div>
 
