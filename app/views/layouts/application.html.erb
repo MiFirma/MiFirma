@@ -13,6 +13,7 @@
 
   <%= javascript_include_tag :defaults, "facebox/facebox.js", "jquery.selectbox-0.1.2.min.js" %>
 
+  <%= yield(:head) -%>
 
 </head>
 <body class="<%= yield(:bodyclass) %>">
