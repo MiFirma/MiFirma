@@ -1,107 +1,84 @@
-﻿<%= content_for :bodyclass do %>proposal<% end %> 
+﻿<%= content_for :bodyclass do %>como-funciona<% end %> 
+<% content_for :title, "Proceso de firma electrónica"%>
+
 <%- content_for(:head) do -%>
 <%= javascript_include_tag "miniapplet-full.js", "http://www.java.com/js/deployJava.js" -%>
 <%- end -%>
 
-<div class="page">
+		<script type="text/javascript">
+			cargarMiniApplet('/javascripts');
+		</script>
 
-OK
+	<%= form_for @signature, :url => share_endorsment_signature_path(@signature) do |f| %>
 
-
+		<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
+		<%= hidden_field_tag :xmlSigned2 %>
+	<% end %>
 	<script type="text/javascript">
 		function doSign() {
-			try {
-				var filenameDataB64 = getFileNameContentBase64("Seleccione el fichero que desee firmar", null, null);
-				if (filenameDataB64 == null) {
-					return;
-				}
-			
-				var dataB64;
-				var separatorIdx = filenameDataB64.indexOf("|");
-				if ((separatorIdx + 1) < filenameDataB64.length) {
-					dataB64 = filenameDataB64.substring(separatorIdx + 1);
-				} else {
-					/* El fichero no contenía datos */
-					return;
-				}
+				var dataB64 = document.getElementById("xmlOCE2").value ;
 			
 				var signature = sign(
 					dataB64,
-					document.getElementById("algorithm").value,
-					document.getElementById("format").value,
-					document.getElementById("params").value);
+					"SHA512withRSA",
+					"XAdES",
+					"format=XAdES Detached");
 			
-				saveDataToFile(
-					signature,
-					"Guardar firma electr\u00F3nica",
-					null,
-					null,
-					null);
-					
-			} catch(e) {
-				showLog(getErrorMessage());
-			}
+				document.forms[0].xmlSigned2.value = signature;
+				
+				document.forms[0].submit();
+			
 		}
 		
-		function addExtraParam(extraParam) {
-			var paramsList = document.getElementById("params");
-			paramsList.value = paramsList.value + extraParam + "\n";
-			document.getElementById('newParam').value = "";
-		}
-		
-		function showLog(newLog) {
-			document.getElementById('console').value = document.getElementById('console').value + "\n" + newLog;
-		}
 	</script>
-  </head>
-	<body>
-		<script type="text/javascript">
-			cargarMiniApplet('http://localhost/miniapplet-full');
-		</script>
-		<p>Cargamos el MiniApplet</p>
-		
-		<div>
-		 <label for="format">Formato</label>
-		 <select id="format">
-		 <option value="CAdES">CAdES</option>
-		 <option value="Adobe PDF">PAdES</option>
-		 <option value="XAdES">XAdES</option>
-		 <option value="ODF">ODF</option>
-		 </select>
-		</div>
-		
-		<div>
-		 <label for="algorithm">Algoritmo</label>
-		 <select id="algorithm">
-		 <option value="SHA1withRSA">SHA1 con RSA</option>
-		 </select>
-		</div>
-		
-		<div>
-		 <label for="newParam">ExtraParmas</label>
-		 <input id="newParam" type="text"><input type="button" value="Agregar" onclick="addExtraParam(document.getElementById('newParam').value);">
-		 <span>&nbsp;No insertar m&aacute;s de una propiedad simult&aacute;neamente</span>
-		 <br>
-		 <textarea id="params" cols="50" rows="5" readonly></textarea>
-		</div>
-		
-		<input type="button" value="Firmar" onclick="doSign();">
-		
-		<div>
-		 <span>Consola</span>
-		 <br>
-		 <textarea id="console" cols="150" rows="10">
-		 </textarea>
-		</div>
 
 
 
+	
+<div class="page terms">
+	<div class="page-content3">
 
+	   <h1>
+	   Datos a firmar
+	   </h1>
+	   
+	   
+	   <h6>Aval para <%= @signature.proposal.promoter_name %></h6>
 
+	   <p>A continuación, te mostramos los datos que vas a firmar.</p>
+	   <p>Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral Central</p>
 
-
-
-
-
+	   <div style="padding: 15px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background-color: #F2F2F2;
+margin-left: 1px;">
+	   <p>Nombre: <%= @signature.name %></p>
+	   <p>Apellido: <%= @signature.surname %></p>
+	   <p>DNI: <%= @signature.dni %></p>
+	   <p>Fecha de Nacimiento: <%= @signature.date_of_birth %></p>
+	   <p>Organo al que se presenta el partido avalado: <%= @signature.proposal.election_type %></p>
+	   <p>Circunscripción: <%= @signature.province.name %></p>
+	   </div>
+	   
+	   	    <div class="btn_sign" style="padding: 24px 0 10px;
+text-align: center;
+border: none;">
+				<a href="#" style="background: url('../images/btn_firmar.png') no-repeat scroll 0 0 transparent;
+									color: #495B29;
+									text-decoration: none;
+									font-size: 1.4em;
+									font-weight: bold;
+									display: block;
+									padding: 0.9em 0 0;
+									width: 195px;
+									height: 32px;
+									text-shadow: 1px 1px white;
+									margin: 0 auto;" 
+									onclick="doSign();">Firma electrónica</a>
+			</div>
+	</div>
+	
+	<div class="clear">&nbsp;</div>
 </div>
-

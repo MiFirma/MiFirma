@@ -1,0 +1,33 @@
+﻿<%= content_for :bodyclass do %>proposal<% end %> 
+
+<%= link_to "Compartir firma", share_signature_url(@signature.token), :rel => "facebox", :id => "social_share", :style => "display:none;" %>
+<% javascript_tag do %>
+  $(document).ready(function () {
+    $("#social_share").trigger('click');
+  });
+<% end %>
+
+<div class="page">
+
+  <% if flash[:error] %>
+		<div class="sign_error">
+			<strong>Error al crear la firma.</strong>
+			<%= flash[:error].html_safe %>
+		</div>
+  
+	<% else %>
+	
+		<% if @signature.signed? %>
+			<p><h7>Gracias por dar apoyo a la <%= @signature.proposal.name %>.</h7></p>
+			<p><h7>Tu firma es muy importante para empezar a cambiar las cosas. Ayudanos a difundir el mensaje!</h7></p>
+		<% else %>
+			<h1>
+				Firma incorrecta, vuelva a intentarlo pulsando aquí: <%= link_to "Firmar", @signature.tractis_contract_location %>    
+			</h1>
+		<% end %>
+	<% end %>
+
+</div>
+
+<div class="clear">&nbsp;</div>
+</div>

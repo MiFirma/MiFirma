@@ -54,7 +54,7 @@ class Signature < ActiveRecord::Base
 
   STATES = [:pending, :verified, :canceled]
 
-
+	attr_accessor  :xmlSigned #Sitio temporal donde va a residir la firma de FNMT  del applet de afirma
 
 	
   def return_url
@@ -102,7 +102,19 @@ class Signature < ActiveRecord::Base
 
 	end
 	
+  def check_and_get_afirma_signature
+	
+	  ::Rails.logger.debug "--- Recogiendo firma de afirma ---"
+	
+			
+			copy_afirma_signature
+		
+			self.state = 1
+			self.save
 
+	end
+	
+	
   
   def signed?
     state > 0
@@ -134,4 +146,18 @@ class Signature < ActiveRecord::Base
 		
   end	
 
+	def copy_afirma_signature
+		::Rails.logger.debug "--- Copiando firmas desde applet afirma ---"
+	
+		::Rails.logger.debug "Tamaño del archivo de firma:"
+		::Rails.logger.debug xmlSigned.size
+
+		file = StringIO.new(xmlSigned) #mimic a real upload file
+		file.class.class_eval { attr_accessor :original_filename, :content_type } #add attr's that paperclip needs
+		file.original_filename = "FD#{dni}.xsig"
+		file.content_type = "text/xml"
+
+		self.tractis_signature = file
+
+  end	
 end
