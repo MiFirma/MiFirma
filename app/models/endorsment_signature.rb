@@ -61,8 +61,9 @@ class EndorsmentSignature < Signature
 		end
 	end
 	
+	# Valida que el DNI sea único para este partido en estas elecciones
 	def uniqueness_of_dni
-		if self.signed? and EndorsmentSignature.where("state > 0 and dni = ? and id <> ?",dni,id).count>0
+		if self.signed? and EndorsmentSignature.joins("INNER JOIN proposals ON proposals.id = signatures.proposal_id").where("signatures.state > 0 and signatures.dni = ? and proposals.election_id = ? and signatures.id <> ?",dni,proposal.election_id,id).count>0
 			errors.add :dni, "Sólo puedes firmar un aval una sola vez."
 		end
 	end
