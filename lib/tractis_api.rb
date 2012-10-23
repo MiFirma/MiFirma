@@ -68,6 +68,19 @@ class TractisApi
 		return dataOCE
 	end
 	
+	def self.signature_request_ilp_fnmt(signature)
+		dataOCE = createXMLIlpOCE(signature)
+		::Rails.logger.debug(dataOCE)
+		
+    errors = self.validates_against_xsd(dataOCE,'ilp.xsd')
+		
+		if !errors.empty? then
+			::Rails.logger.debug(errors)
+			raise StandardError, "XML de la ILP	no es correcto. Contacte con mifirma."
+		end
+		return dataOCE
+	end
+	
   def self.signature_request_endorsment(signature)
     client = HTTPClient.new
     target_url = "https://www.tractis.com/contracts/gateway_raw"

@@ -57,7 +57,7 @@ margin-left: 1px;">
 	   <p>Nombre: <%= @signature.name %></p>
 	   <p>Apellido: <%= @signature.surname %></p>
 	   <p>DNI: <%= @signature.dni %></p>
-	   <p>Fecha de Nacimiento: <%= @signature.date_of_birth %></p>
+	   <p>Fecha de Nacimiento: <%= @signature.date_of_birth.strftime("%d-%m-%Y") %></p>
 	   <p>Organo al que se presenta el partido avalado: <%= @signature.proposal.election_type %></p>
 	   <p>Circunscripción: <%= @signature.province.name %></p>
 	   </div>

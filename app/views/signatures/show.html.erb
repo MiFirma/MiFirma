@@ -1,33 +1,81 @@
-﻿<%= content_for :bodyclass do %>proposal<% end %> 
+﻿<%= content_for :bodyclass do %>como-funciona<% end %> 
+<% content_for :title, "Proceso de firma electrónica"%>
 
-<%= link_to "Compartir firma", share_signature_url(@signature.token), :rel => "facebox", :id => "social_share", :style => "display:none;" %>
-<% javascript_tag do %>
-  $(document).ready(function () {
-    $("#social_share").trigger('click');
-  });
-<% end %>
+<%- content_for(:head) do -%>
+<%= javascript_include_tag "miniapplet-full.js", "http://www.java.com/js/deployJava.js" -%>
+<%- end -%>
 
-<div class="page">
+		<script type="text/javascript">
+			cargarMiniApplet('/javascripts');
+		</script>
 
-  <% if flash[:error] %>
-		<div class="sign_error">
-			<strong>Error al crear la firma.</strong>
-			<%= flash[:error].html_safe %>
-		</div>
-  
-	<% else %>
-	
-		<% if @signature.signed? %>
-			<p><h7>Gracias por dar apoyo a la <%= @signature.proposal.name %>.</h7></p>
-			<p><h7>Tu firma es muy importante para empezar a cambiar las cosas. Ayudanos a difundir el mensaje!</h7></p>
-		<% else %>
-			<h1>
-				Firma incorrecta, vuelva a intentarlo pulsando aquí: <%= link_to "Firmar", @signature.tractis_contract_location %>    
-			</h1>
-		<% end %>
+	<%= form_for @signature, :url => share_signature_path(@signature) do |f| %>
+
+		<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
+		<%= hidden_field_tag :xmlSigned2 %>
 	<% end %>
+	<script type="text/javascript">
+		function doSign() {
+				var dataB64 = document.getElementById("xmlOCE2").value ;
+			
+				var signature = sign(
+					dataB64,
+					"SHA512withRSA",
+					"XAdES",
+					"format=XAdES Detached");
+			
+				document.forms[0].xmlSigned2.value = signature;
+				
+				document.forms[0].submit();
+		}
+	</script>
 
-</div>
 
-<div class="clear">&nbsp;</div>
+
+	
+<div class="page terms">
+	<div class="page-content3">
+
+	   <h1>
+	   Datos a firmar
+	   </h1>
+	   
+	   
+	   <h6>Firma para <%= @signature.proposal.name %></h6>
+
+	   <p>A continuación, te mostramos los datos que vas a firmar.</p>
+	   <p>Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral Central</p>
+
+	   <div style="padding: 15px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background-color: #F2F2F2;
+margin-left: 1px;">
+		   <p>Nombre: <%= @signature.name %></p>
+		   <p>Apellido 1: <%= @signature.surname %></p>
+		   <p>Apellido 2: <%= @signature.surname2 %></p>
+		   <p>DNI: <%= @signature.dni %></p>
+		   <p>Fecha de Nacimiento: <%= @signature.date_of_birth.strftime("%d-%m-%Y") %></p>
+	   </div>
+	   
+	   	    <div class="btn_sign" style="padding: 24px 0 10px;
+text-align: center;
+border: none;">
+				<a href="#" style="background: url('../images/btn_firmar.png') no-repeat scroll 0 0 transparent;
+									color: #495B29;
+									text-decoration: none;
+									font-size: 1.4em;
+									font-weight: bold;
+									display: block;
+									padding: 0.9em 0 0;
+									width: 195px;
+									height: 32px;
+									text-shadow: 1px 1px white;
+									margin: 0 auto;" 
+									onclick="doSign();">Firma electrónica</a>
+			</div>
+	</div>
+	
+	<div class="clear">&nbsp;</div>
 </div>

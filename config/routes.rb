@@ -16,7 +16,7 @@
 
   resources :signatures, :only => [:create, :show] do
 		member do
-			get 'share'
+			put 'share'
 		end
 	end
 
