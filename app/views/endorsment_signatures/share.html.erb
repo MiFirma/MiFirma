@@ -1,6 +1,6 @@
 ﻿<%= content_for :bodyclass do %>proposal<% end %> 
 
-<%= link_to "Compartir firma", share_signature_url(@signature.token), :rel => "facebox", :id => "social_share", :style => "display:none;" %>
+<%= link_to "Compartir firma", social_signature_url(@signature.token), :rel => "facebox", :id => "social_share", :style => "display:none;" %>
 <% javascript_tag do %>
   $(document).ready(function () {
     $("#social_share").trigger('click');

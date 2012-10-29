@@ -32,7 +32,7 @@ class SignaturesController < ApplicationController
 			@signature.check_and_get_afirma_signature
 			if @signature.valid?
 				share_texts(@proposal, @signature)    
-				Notifier.endorsment_signed(@signature).deliver
+				Notifier.ilp_signed(@signature).deliver
 			else
 				flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
 			end
@@ -42,4 +42,10 @@ class SignaturesController < ApplicationController
 		end
 	end
 	
+	def social
+    @signature = Signature.find_by_token params[:id]
+    @proposal = @signature.proposal
+    share_texts(@proposal, @signature)    
+    render :layout => false
+  end
 end

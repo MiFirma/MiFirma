@@ -1,0 +1,97 @@
+﻿<%= content_for :bodyclass do %>como-funciona<% end %> 
+<% content_for :title, "Proceso de firma electrónica"%>
+
+<%- content_for(:head) do -%>
+<%= javascript_include_tag "miniapplet-full.js", "http://www.java.com/js/deployJava.js" -%>
+<%- end -%>
+
+		<script type="text/javascript">
+			cargarMiniApplet('/javascripts');
+		</script>
+
+	<%= form_for @signature, :url => share_attestor_signature_path(@signature) do |f| %>
+
+		<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
+		<%= hidden_field_tag :xmlSigned2 %>
+	<% end %>
+	<script type="text/javascript">
+		function doSign() {
+				var data = document.getElementById("datosAFirmar").innerHTML;
+				var dataB64 = getBase64FromText(data);
+			
+				var signature = sign(
+					dataB64,
+					"SHA512withRSA",
+					"XAdES",
+					"format=XAdES Detached");
+			
+				document.forms[0].xmlSigned2.value = signature;
+				
+				document.forms[0].submit();
+			
+		}
+		
+	</script>
+
+
+
+	
+<div class="page terms">
+	<div class="page-content3">
+
+	   <h1>
+	   Datos a firmar
+	   </h1>
+
+
+<div id="datosAFirmar">
+
+<h2 id="1">Declaración jurada de fedatarios y fedatarias especiales</h2>
+<h2 id="1.1"><%= @signature.proposal.name %></h2>
+
+	   <div style="padding: 15px;
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+background-color: #F2F2F2;
+margin-left: 1px;">
+
+<p>El firmante D. <%= @signature.name %>, <%= @signature.surname %> <%= @signature.surname2 %> con DNI <%= @signature.dni %>
+nacido el d&#xED;a <%= @signature.date_of_birth.strftime("%d-%m-%Y") %> 
+en el municipio de <%= @signature.municipality_of_birth.name %> situado en la provincia 
+de <%= @signature.province_of_birth.name %> y con domicilio en la direcci&#xF3;n  <%= @signature.address %>, 
+municipio de <%= @signature.municipality.name %>, situado en la provincia de <%= @signature.municipality.name %>.</p>
+<p><strong>DECLARA</strong> ser ciudadano espa&#xF1;ol, estar en plena posici&#xF3;n de sus derechos civiles y pol&#xED;ticos y carecer de antecedentes penales.</p>
+<p><strong>ACEPTA</strong> el nombramiento como fedatario especial en todo el territorio nacional para la proposici&#xF3;n de la Ley de Iniciativa Legislativa Popular mencionada en el encabezado.</p>
+<p><strong>JURA / PROMETE</strong> que da fe de la autenticidad de las firmas de las personas signatarias de la referida Iniciativa Legislativa Popular.</p>
+<p><strong>SUMINISTRA</strong> la siguiente informaci&#xF3;n adicional para facilitar la coordinaci&#xF3;n de la campa&#xF1;a:<br/></p>
+<ul>
+<li>Tel&#xE9;fono: <%= @signature.telephone %></li>
+<li>Direcci&#xF3;n de e-mail: <%= @signature.email %></li>
+</ul>
+<p><strong>ACEPTA</strong> que estos datos podr&#xE1;n ser incorporados a un fichero de la <%= @signature.proposal.name %>. Al aportar estos datos, el firmante presta su consentimiento para su tratamiento a los efectos indicados. Para ejecutar los derechos de acceso, rectificaci&#xF3;n, 
+cancelaci&#xF3;n y oposici&#xF3;n, el firmante podr&#xE1; dirigirse a XXXXXXXXXXXXXX</p>
+</div>	   
+
+</div>
+	   
+<div class="btn_sign" style="padding: 24px 0 10px;
+text-align: center;
+border: none;">
+				<a href="#" style="background: url('../images/btn_firmar.png') no-repeat scroll 0 0 transparent;
+									color: #495B29;
+									text-decoration: none;
+									font-size: 1.4em;
+									font-weight: bold;
+									display: block;
+									padding: 0.9em 0 0;
+									width: 195px;
+									height: 32px;
+									text-shadow: 1px 1px white;
+									margin: 0 auto;" 
+									onclick="doSign();">Firma electrónica</a>
+			</div>
+	</div>
+	
+	<div class="clear">&nbsp;</div>
+</div>

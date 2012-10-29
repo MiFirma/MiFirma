@@ -6,7 +6,11 @@
 		end
 	end
 	
-  resources :attestor_signatures, :only => [:create, :show]
+  resources :attestor_signatures, :only => [:create, :show] do
+		member do
+			put 'share'
+		end
+	end
 
   resources :endorsment_proposals, :only => [:index, :show, :show_signatures_by_province] do
 		member do
@@ -17,6 +21,7 @@
   resources :signatures, :only => [:create, :show] do
 		member do
 			put 'share'
+			get 'social'
 		end
 	end
 

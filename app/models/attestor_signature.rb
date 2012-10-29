@@ -43,7 +43,7 @@ class AttestorSignature < Signature
 	
   validate :uniqueness_of_dni
   validates_presence_of :municipality_of_birth_id, :province_of_birth_id, 
-		:address, :municipality_id, :message => "Todos los campos son obligatorios excepto el teléfono."
+		:address, :name, :surname, :surname2, :dni, :municipality_id, :message => "Todos los campos son obligatorios excepto el teléfono."
 		
 	validates :telephone, :numericality => { :only_integer => true }, :allow_blank => true
 	validates :number_of_sheets, :numericality => { :only_integer => true, :greater_than => 0, :less_than => 11, :message => "El número de pliegos debe ser entre 1 y 10" }, :allow_blank => true
