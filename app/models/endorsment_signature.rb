@@ -32,6 +32,7 @@
 class EndorsmentSignature < Signature
 	belongs_to :province
   belongs_to :proposal, :class_name => 'EndorsmentProposal'
+	before_create :format_dni
 	
 	has_attached_file :tractis_signature, 
 		{:path => ":rails_root/public/system/firmas/:promoter_name/:province_id/:filename", 

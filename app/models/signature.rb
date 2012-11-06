@@ -49,6 +49,7 @@ class Signature < ActiveRecord::Base
   delegate :tractis_template_code, :attestor_template_code, :to => :proposal
   
   before_validation :generate_token, :set_default_state
+
   
   scope :signed, :conditions => ["state > 0"]
 
@@ -160,4 +161,9 @@ class Signature < ActiveRecord::Base
 		self.tractis_signature = file
 
   end	
+	
+		# format dni with uppercase and leading zeros on the left
+	def format_dni
+			self.dni = self.dni.rjust(9,"0").upcase! if self.dni
+	end
 end

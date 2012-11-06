@@ -49,7 +49,7 @@ class IlpSignature < Signature
 	
 	validate :dni_format
 
-	# Validates NIF
+	# Validates NIF format
 	def dni_format
 		letters = "TRWAGMYFPDXBNJZSQVHLCKE"
 		value = dni.clone
@@ -69,5 +69,6 @@ class IlpSignature < Signature
 	Paperclip.interpolates :promoter_name  do |attachment, style|
 		attachment.instance.proposal.promoter_short_name
 	end
+
 
 end

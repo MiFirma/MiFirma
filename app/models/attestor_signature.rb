@@ -35,6 +35,7 @@ class AttestorSignature < Signature
 	belongs_to :municipality_of_birth, :class_name => 'Municipality', :foreign_key => "municipality_of_birth_id"
 	belongs_to :province_of_birth, :class_name => 'Province', :foreign_key => "province_of_birth_id"
 	belongs_to :province
+	before_create :format_dni
 	
 	has_attached_file :tractis_signature, 
 		{:path => ":rails_root/public/system/firmas/:promoter_name/fedatarios/:filename",
