@@ -31,7 +31,8 @@
 
 class IlpSignature < Signature
   belongs_to :proposal, :class_name => 'IlpProposal'
-
+	before_create :format_dni
+	
 	has_attached_file :tractis_signature, 
 		{:path => ":rails_root/public/system/firmas/:promoter_name/ilp/:filename", 
 		 :url => "/system/firmas/:promoter_name/ilp/:filename",
