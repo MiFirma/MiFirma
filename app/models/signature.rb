@@ -164,6 +164,8 @@ class Signature < ActiveRecord::Base
 	
 		# format dni with uppercase and leading zeros on the left
 	def format_dni
-			self.dni = self.dni.rjust(9,"0").upcase! if self.dni
+	    if self.dni
+				self.dni = self.dni.rjust(9,"0").upcase! if self.dni.length < 9
+			end
 	end
 end
