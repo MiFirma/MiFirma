@@ -55,6 +55,10 @@ class AttestorSignature < Signature
 		end
 	end
 	
+	#No email for now
+	def notifier
+	end
+	
 	private
 	# interpolate in paperclip
 	Paperclip.interpolates :promoter_name  do |attachment, style|

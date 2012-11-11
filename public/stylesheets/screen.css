@@ -1367,10 +1367,19 @@ div.page-sidebar .signature_box .form_container .sign_error, div.page-sidebar2 .
     margin: 0 auto;
     padding: 15px 20px;
     text-align: center;
-    width: 208px;
+    width: 238px;
 }
+
+.error strong{
+	color: #BD362F;
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px
+}
+
 div.page-sidebar .signature_box .form_container .sign_error strong, div.page-sidebar2 .signature_box .form_container .sign_error strong {
-		color: #BD362F;
+	color: #BD362F;
     display: block;
     font-size: 16px;
     font-weight: bold;

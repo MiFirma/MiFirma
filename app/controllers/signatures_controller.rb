@@ -19,26 +19,15 @@ class SignaturesController < ApplicationController
 	def show
 	  @signature = Signature.find_by_token params[:id]
 		@xmlOCEenc = Base64.encode64(::TractisApi.signature_request_ilp_fnmt @signature)
+
 	end
 	
 	#Se obtiene el resultado
 	def share
-	  @signature = IlpSignature.find params[:id]
+		@signature = Signature.find params[:id]
 		
-		if not @signature.signed?
-			@signature.xmlSigned = Base64.decode64(params[:xmlSigned2])
-			logger.debug 'Estamos dentro del metodo share en Signatures'
-			@proposal = @signature.proposal
-			@signature.check_and_get_afirma_signature
-			if @signature.valid?
-				share_texts(@proposal, @signature)    
-				Notifier.ilp_signed(@signature).deliver
-			else
-				flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
-			end
-	
-		else
-			flash[:error] = "Este identificador de firma ya ha sido firmado"
+		if not process_signature? @signature
+			redirect_to signature_url(@signature.token)
 		end
 	end
 	

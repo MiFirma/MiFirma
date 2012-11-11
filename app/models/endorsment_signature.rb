@@ -68,6 +68,9 @@ class EndorsmentSignature < Signature
 		end
 	end
 
+	def notifier
+		Notifier.endorsment_signed(self).deliver
+	end
  
 	private
 		# interpolate in paperclip

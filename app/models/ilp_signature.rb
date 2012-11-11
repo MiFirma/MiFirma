@@ -65,6 +65,10 @@ class IlpSignature < Signature
 		end
 	end
 	
+	def notifier
+		Notifier.ilp_signed(self).deliver
+	end
+	
 	private
 	# interpolate in paperclip
 	Paperclip.interpolates :promoter_name  do |attachment, style|
