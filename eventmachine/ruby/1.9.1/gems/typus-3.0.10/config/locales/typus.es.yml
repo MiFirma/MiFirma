@@ -1,0 +1,82 @@
+# Spanish (es) translations for Typus by:
+# - Felipe Talavera <http://github.com/flype>
+
+es:
+
+  "Actions": "Acciones"
+  "Active": "Activo"
+  "Add": "Añadir"
+  "Add new": "Añadir nuevo"
+  "All": "Todos"
+  "Are you sure?": "¿Estás seguro?"
+  "Are you sure you want to sign out and end your session?": "¿Estás seguro que quieres salir y cerrar la sessión?"
+
+  "Change %{attribute}?": "Cambiar %{attribute}?"
+  "Create %{resource}": "Crear %{resource}"
+
+  "Dashboard": "Panel de control"
+  "Down": "Bajar"
+
+  "Edit": "Editar"
+  "Edit %{resource}": "Editar %{resource}"
+  "Enter your email below to create the first user": "Introduce tu email para crear el primer usuario."
+
+  "False": "Falso"
+  "Filter": "Filtrar"
+
+  "I remember my password": "Recuerdo mi contraseña"
+  "If you didn't request a password update, you can ignore this message": "Si no pediste una actualización de tu contraseña, puedes ignorar este mensaje."
+  "If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost": "Si has relizado algún cambio en los campos sin pulsar en el botón de Guardar/Actualizar, tus cambios se perderán."
+  "Inactive": "Inactivo"
+
+  "Last few days": "Últimos dias"
+  "Last 30 days": "Últimos 30 dias"
+  "Last 7 days": "Últimos 7 dias"
+  "List": "Lista"
+  "Logged as": "Autenticado como"
+  "Login": "Login"
+
+  "New": "Nuevo"
+  "New %{resource}": "Nuevo %{resource}"
+  "Next": "Siguiente"
+  "No %{resources} found": "No se han encontrado %{resources}."
+
+  "Password recovery link sent to your email": "Enlace de recuperación de contraseña enviado a tu correo electrónico."
+  "Previous": "Anterior"
+
+  "Record moved %{to}": "Record moved %{to}."
+  "Recover password": "Recuperar contraseña"
+  "Remove": "Eliminar"
+  "Remove %{resource}?": "¿Borrar %{resource}?"
+  "Reset password": "Cambiar contraseña"
+  "Resources": "Recursos"
+
+  "Save %{resource}": "Guardar %{resource}"
+  "Search": "Buscar"
+  "Show": "Mostrar"
+  "Show all dates": "Mostrar todas las fechas"
+  "Show by %{attribute}": "Mostrar por %{attribute}"
+  "Show %{resource}": "Mostrar %{resource}"
+  "Sign in": "Entrar"
+  "Sign out": "Salir"
+  "Sign up": "Crear cuenta"
+  "System Users Administration": "Administrar usuarios del sistema"
+
+  "Today": "Hoy"
+  "Trash": "Eliminar"
+  "True": "Verdadero"
+
+  "Unrelate": "Desvincular"
+  "Up": "Subir"
+
+  "You can update your password at": "Puedes actualizar tu contraseña en"
+  "You can't change your role": "No puedes cambiar tu propio rol."
+  "You can't toggle your status": "No puedes cambiar tu estado."
+
+  "View all %{attribute}":
+  "View site": "Ver web"
+
+  "%{errors} prohibited this page from being saved:":
+  "%{model} successfully created": "%{model} satisfactoriamente creado."
+  "%{model} successfully removed": "%{model} satisfactoriamente eliminado."
+  "%{model} successfully updated": "%{model} satisfactoriamente actualizado."

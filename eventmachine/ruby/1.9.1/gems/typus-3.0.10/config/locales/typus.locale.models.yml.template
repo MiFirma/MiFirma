@@ -1,0 +1,17 @@
+# <locale> translations for Typus
+# - <your_name> <contact_form>
+
+<locale>:
+  activerecord:
+    models:
+      admin_user:
+    attributes:
+      admin_user:
+        email:
+        first_name:
+        last_name:
+        locale:
+        password:
+        password_confirmation:
+        role:
+        status:

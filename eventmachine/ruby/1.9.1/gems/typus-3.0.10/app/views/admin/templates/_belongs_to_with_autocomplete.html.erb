@@ -1,0 +1,11 @@
+<li id="<%= attribute %>">
+  <%= form.label related_fk, "#{label_text} <small>#{message}</small>".html_safe %>
+  <%= form.hidden_field related_fk %>
+  <input data-autocomplete="<%= "/admin/#{related.to_resource}/autocomplete" %>"
+         id="autocomplete"
+         id_element="#<%= "#{@item.class.model_name.downcase}_#{related_fk}" %>"
+         name="autocomplete"
+         size="30"
+         type="text"
+         value="<%= @item.send(attribute).try(:to_label) %>" />
+</li>

@@ -1,0 +1,82 @@
+# Greek (el) translation for Typus
+# - Spyros Livathinos <livathinos.spyros@gmail.com>
+
+el:
+
+  "Actions": "Ενέργειες"
+  "Active": "Ενεργό"
+  "Add": "Προσθήκη"
+  "Add new": "Προσθήκη νέου"
+  "Are you sure?": "Είσαστε βέβαιοι;"
+  "Are you sure you want to sign out and end your session?": "Είσαστε σίγουροι ότι επιθυμείτε να αποσυνδεθείτε και να τερματίσετε το session;"
+
+  "Change %{attribute}?": "Τροποποίηση του χαρακτηριστικού %{attribute};"
+  "Create %{resource}": "Δημιουργία %{resource}"
+  "Create one now": "Δημιουργία τώρα"
+
+  "Dashboard": "Πανόπτης"
+  "Do you want to cancel it?": "Επιθυμείτε να ακυρώσετε την ενέργεια;"
+  "Down": "Κάτω"
+
+  "Edit": "Επεξεργασία"
+  "Enter your email below to create the first user": "Εισάγετε το email σας παρακάτω για να δημιουργηθεί ο πρώτος χρήστης"
+
+  "False": "Σφάλμα"
+  "Filter": "Φίλτρο"
+
+  "I remember my password": "Θυμάμαι τον κωδικό μου"
+  "If you didn't request a password update, you can ignore this message": "Στην περίπτωση που δεν έχετε ζητήσει ανανέωση του κωδικού σας μπορείτε να αγνοήσετε αυτό το μήνυμα"
+  "If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost": "Εάν έχετε κάνει αλλαγές στα πεδία χωρίς να έχετε επιλέξει το πλήκτρο Αποθήκευσης/Ενημέρωσης οι αλλαγές σας πρόκειται ωα χαθούν" 
+  "Inactive": "Ανενεργός"
+
+  "Last few days": "Τελευταίες ημέρες"
+  "Last 30 days": "Τελευταίες 30 ημέρες"
+  "Last 7 days": "Τελευταίες 7 ημέρες"
+  "List": "Λίστα"
+  "Logged as": "Συνδεδεμένος ως"
+  "Login": "Σύνδεση"
+
+  "New": "Νέο"
+  "Next": "Επόμενο"
+
+  "Password recovery link sent to your email": "Ο σύνδεσμος ανάκτησης κωδικού έχει αποσταλεί στο email σας"
+  "Previous": "Προηγούμενο"
+
+  "Record moved %{to}": "Η εγγραφή μεταφέρθηκε στο σημείο %{to}"
+  "Recover password": "Ανάκτηση κωδικού"
+  "Remove": "Απομάκρυνση"
+  "Remove %{resource}?": "Απομάκρυνση %{resource}"
+  "Reset password": "Επαναφορά κωδικού"
+  "Resources": "Πόροι"
+
+  "Save %{resource}": "Αποθήκευση %{resource}"
+  "Search": "Αναζήτηση"
+  "Show": "Εμφάνιση"
+  "Show all dates":
+  "Show by %{attribute}":
+  "Show %{resource}": "Εμφάνιση %{resource}"
+  "Sign in": "Είσοδος"
+  "Sign out": "Έξοδος"
+  "Sign up": "Εγγραφή"
+  "System Users Administration": "Διαχείριση χρηστών συστήματος"
+
+  "There are no %{records}": "Δεν υπάρχουν %{records}"
+  "There are no %{records} under this filter": "Δεν υπάρχουν εγγραφές %{records} υπό το παρόν φίλτρο"
+  "Today": "Σήμερα"
+  "True": "Σωστό"
+
+  "Unrelate":
+  "Up": "Επάνω"
+
+  "View all %{attribute}": "Εμφάνιση όλων των χαρακτηριστικών τύπου %{attribute}"
+  "View site": "Εμφάνιση ιστοσελίδας"
+
+  "You can update your password at": "Μπορείτε να ανανεώσετε τον κωδικό σας παρακάτω"
+  "You can't change your role": "Δεν έχετε την δυνατότητα να αλλάξετε τον ρόλο σας"
+  "You can't toggle your status": "Δεν επιτρέπεται η αλλαγή της κατάστασής σας"
+
+  "%{errors} prohibited this page from being saved:":
+  "%{model} successfully created": "Το μοντέλο %{model} δημιουργήθηκε επιτυχώς"
+  "%{model} successfully removed": "Το μοντέλο %{model} απομακρύνθηκε επιτυχώς"
+  "%{model} successfully updated": "Το μοντέλο %{model} ανανεώθηκε επιτυχώς"
+  "%{model} %{attribute} changed": "Το χαρακτηριστικό μοντέλου %{model} %{attribute} άλλαξε"

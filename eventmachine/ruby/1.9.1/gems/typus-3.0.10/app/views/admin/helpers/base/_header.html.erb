@@ -1,0 +1,7 @@
+<h1 class="logo">
+  <% if has_root_path? %>
+    <%= link_to Typus.admin_title, root_path, :title => Typus::I18n.t("View site") %>
+  <% else %>
+    <%= Typus.admin_title %>
+  <% end %>
+</h1>

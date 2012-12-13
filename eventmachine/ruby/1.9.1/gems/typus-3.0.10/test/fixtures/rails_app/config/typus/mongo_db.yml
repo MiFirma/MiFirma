@@ -1,0 +1,4 @@
+Hit:
+  fields:
+    default: name, description
+  application: MongoDB

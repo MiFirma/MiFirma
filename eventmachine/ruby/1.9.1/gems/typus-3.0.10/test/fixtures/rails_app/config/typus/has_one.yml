@@ -1,0 +1,12 @@
+Invoice:
+  fields:
+    default: number, order
+  relationships: order
+  application: HasOne
+
+Order:
+  fields:
+    default: number
+    form: number
+  relationships: invoice
+  application: HasOne

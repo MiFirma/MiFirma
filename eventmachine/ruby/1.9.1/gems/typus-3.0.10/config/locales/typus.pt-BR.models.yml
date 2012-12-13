@@ -1,0 +1,17 @@
+# Portuguese (pt-BR) translations for Typus by:
+# - George Guimarães <http://github.com/georgeguimaraes>
+
+pt-BR:
+  activerecord:
+    models:
+      admin_user: "Usuário do sistema"
+    attributes:
+      admin_user:
+        email:
+        first_name: "Primeiro nome"
+        last_name: "Sobrenome"
+        password: "Senha"
+        password_confirmation: "Senha confirmação"
+        status:
+        role:
+        locale:

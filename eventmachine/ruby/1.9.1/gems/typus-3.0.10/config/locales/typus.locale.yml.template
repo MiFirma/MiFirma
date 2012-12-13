@@ -1,0 +1,81 @@
+# <locale> translations for Typus
+# - <your_name> <contact_form>
+
+<locale>:
+
+  "Actions":
+  "Active":
+  "Add":
+  "Add new":
+  "All":
+  "Are you sure?":
+  "Are you sure you want to sign out and end your session?":
+
+  "Change %{attribute}?":
+  "Create %{resource}":
+
+  "Dashboard":
+  "Down":
+
+  "Edit":
+  "Enter your email below to create the first user":
+
+  "False":
+  "Filter":
+
+  "I remember my password":
+  "If you didn't request a password update, you can ignore this message":
+  "If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost":
+  "Inactive":
+
+  "Last few days":
+  "Last 30 days":
+  "Last 7 days":
+  "List":
+  "Logged as":
+  "Login":
+
+  "New":
+  "New %{resource}":
+  "Next":
+  "No %{resources} found":
+
+  "Password recovery link sent to your email":
+  "Previous":
+
+  "Record moved %{to}":
+  "Recover password":
+  "Remove":
+  "Remove %{resource}?":
+  "Reset password":
+  "Resources":
+
+  "Save %{resource}":
+  "Search":
+  "Show":
+  "Show all dates":
+  "Show by %{attribute}":
+  "Show %{resource}":
+  "Sign in":
+  "Sign out":
+  "Sign up":
+  "System Users Administration":
+
+  "Today":
+  "Trash":
+  "True":
+
+  "Unrelate":
+  "Up":
+
+  "View all %{attribute}":
+  "View site":
+
+  "You can update your password at":
+  "You can't change your role":
+  "You can't toggle your status":
+
+  "%{errors} prohibited this page from being saved:":
+  "%{model} successfully created":
+  "%{model} successfully removed":
+  "%{model} successfully updated":

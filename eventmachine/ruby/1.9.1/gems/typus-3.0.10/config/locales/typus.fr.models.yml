@@ -1,0 +1,18 @@
+# French (fr) translations for Typus by:
+# - Ned Baldessin <http://github.com/nedbaldessin>
+# - Jonathan Meiss <http://github.com/jmeiss>
+
+fr:
+  activerecord:
+    models:
+      admin_user: "Utilisateur admin"
+    attributes:
+      admin_user:
+        email:
+        first_name: "Prénom"
+        last_name: "Nom de famille"
+        password: "Mot de passe"
+        password_confirmation: "Confirmation du mot de passe"
+        status: "État"
+        role: "Rôle"
+        locale:

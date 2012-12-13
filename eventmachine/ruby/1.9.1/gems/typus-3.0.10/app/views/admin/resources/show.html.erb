@@ -1,0 +1,23 @@
+<%
+  page_title = Typus::I18n.t("Show %{resource}", :resource => @resource.model_name.human)
+  title(page_title)
+%>
+
+<% content_for :sidebar, build_sidebar %>
+
+<h2>
+  <%= page_title %>
+  <small><%= list_actions %></small>
+</h2>
+
+<%= display_flash_message %>
+<%= render 'show' %>
+
+<dl>
+  <% build_display(@item, fields).each do |attribute, type| %>
+    <dt><%= attribute %></dt>
+    <dd><%= type %></dd>
+  <% end %>
+</dl>
+
+<%= typus_relationships %>

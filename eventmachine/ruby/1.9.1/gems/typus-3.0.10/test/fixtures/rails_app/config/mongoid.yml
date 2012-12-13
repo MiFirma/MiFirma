@@ -1,0 +1,20 @@
+defaults: &defaults
+  host: localhost
+  # slaves:
+  #   - host: slave1.local
+  #     port: 27018
+  #   - host: slave2.local
+  #     port: 27019
+
+development:
+  <<: *defaults
+  database: rails_app_development
+
+test:
+  <<: *defaults
+  database: rails_app_test
+
+# set these environment variables on your prod server
+production:
+  <<: *defaults
+  database: rails_app_production

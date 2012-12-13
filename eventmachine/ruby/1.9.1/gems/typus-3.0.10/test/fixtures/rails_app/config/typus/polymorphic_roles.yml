@@ -1,0 +1,5 @@
+admin:
+  # Animal: all
+  Bird: all
+  Dog: all
+  ImageHolder: all

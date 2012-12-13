@@ -1,0 +1,19 @@
+<% if resources.any? %>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th><%= Typus::I18n.t("Resources") %></th>
+      </tr>
+    </thead>
+
+    <% resources.each do |resource| %>
+      <tr class="<%= cycle("even", "odd") %>">
+        <td><%= link_to Typus::I18n.t(resource.titleize.capitalize), :controller => "/admin/#{resource.underscore}" %></td>
+      </tr>
+    <% end %>
+
+  </table>
+
+<% end %>

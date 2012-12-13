@@ -1,0 +1,17 @@
+# Greek (el) translation for Typus
+# - Spyros Livathinos <livathinos.spyros@gmail.com>
+
+el:
+  activerecord:
+    models:
+      admin_user:
+    attributes:
+      admin_user:
+        email:
+        first_name: "Όνομα"
+        last_name: "Επώνυμο"
+        password: "Κωδικός"
+        password_confirmation: "Επιβεβαίωση κωδικού"
+        status: "Κατάσταση"
+        role: "Ρόλος"
+        locale:

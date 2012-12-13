@@ -1,0 +1,80 @@
+# Portuguese (pt-BR) translations for Typus by:
+# - George Guimarães <http://github.com/georgeguimaraes>
+
+pt-BR:
+
+  "Actions": "Ações"
+  "Active":
+  "Add": "Adicionar"
+  "Add new": "Adicionar novo"
+  "Are you sure?":
+  "Are you sure you want to sign out and end your session?": "Tem certeza que quer sair e encerrar sua sessão?"
+
+  "Change %{attribute}?": "Mudar %{attribute}?"
+  "Create %{resource}": "Criar %{resource}"
+
+  "Dashboard": "Painel"
+  "Down": "Descer"
+
+  "Edit": "Editar"
+  "Edit %{resource}": "Editar %{resource}"
+  "Enter your email below to create the first user": "Escreva seu email para criar o primeiro usuário"
+
+  "False": "Falso"
+  "Filter": "Filtrar"
+
+  "I remember my password": "Lembro minha senha"
+  "If you didn't request a password update, you can ignore this message": "Se você não pediu uma renovação de senha, por favor ignore esta mensagem."
+  "If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost": "Se você fez alterações nos campos e não clicou no botão de Salvar/Atualizar, suas alterações serão perdidas"
+  "Inactive":
+
+  "Last few days": "Últimos dias"
+  "Last 30 days": "Últimos 30 dias"
+  "Last 7 days": "Últimos 7 dias"
+  "List":
+  "Logged as": "Logado como"
+  "Login": "Login"
+
+  "New": "Novo"
+  "New %{resource}": "Novo %{resource}"
+  "Next": "Próximo"
+  "No %{resources} found":
+
+  "Password recovery link sent to your email": "Link para recuperar senha enviado para seu email."
+  "Previous": "Anterior"
+
+  "Record moved %{to}": "Registro movido %{to}."
+  "Recover password": "Recuperar senha"
+  "Remove": "Remover"
+  "Remove %{resource}?": "Remover %{resource}?"
+  "Reset password": "Trocar senha"
+  "Resources": "Recursos"
+
+  "Save %{resource}":
+  "Search": "Busca"
+  "Show": "Mostrar"
+  "Show all dates":
+  "Show by %{attribute}":
+  "Show %{resource}": "Mostrar %{resource}"
+  "Sign in": "Entrar"
+  "Sign out": "Sair"
+  "Sign up": "Criar conta"
+  "System Users Administration": "Administrar usuários do sistema"
+
+  "Today": "Hoje"
+  "True": "Verdadeiro"
+
+  "Unrelate": "Desvincular"
+  "Up": "Subir"
+
+  "View all %{attribute}":
+  "View site": "Ver site"
+
+  "You can't toggle your status": "Você não pode mudar seu status."
+  "You can update your password at": "Você pode atualizar sua senha em"
+  "You can't change your role": "Você não pode mudar sua própria função no sistema."
+
+  "%{errors} prohibited this page from being saved:":
+  "%{model} successfully created": "%{model} criado com sucesso."
+  "%{model} successfully removed": "%{model} removido com sucesso."
+  "%{model} successfully updated": "%{model} atualizado com sucesso."

@@ -1,0 +1,89 @@
+# Italian (it) translations for Typus by:
+# - matteo <wonsys.net>
+
+it:
+
+  "Actions": "Azioni"
+  "Active": "Attivo"
+  "Add": "Inserisci"
+  "Add new": "Inserisci nuovo"
+  "Are you sure?": "Sei sicuro?"
+  "Are you sure you want to sign out and end your session?": "Sei sicuro che vuoi disconnetterti dal sistema?"
+
+  "Change %{attribute}?": "Vuoi cambiare %{attribute}?"
+  "Create %{resource}": "Inserisci %{resource}"
+
+  "Dashboard": "Panoramica"
+  "Developed by": "Realizzato da"
+  "Down": "Giù"
+
+  "Edit": "Modifica"
+  "Edit %{resource}": "Modifica %{resource}"
+  "Enter your email below to create the first user": "Inserisci un'email qui sotto per creare il primo utente"
+  "Error": "Errore"
+  "Errors": "Errori"
+
+  "False": "Falso"
+  "Filter": "Filtra"
+
+  "I remember my password": "Mi ricordo la password"
+  "If you didn't request a password update, you can ignore this message": "Se non hai richiesto l'aggiornamento della password, puoi ignorare questo messaggio"
+  "If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost": "Sei hai fatto dei cambiamenti ai vari campi senza avere cliccato su Salva/Aggiorna, i tuoi cambiamenti verranno persi"
+  "Inactive": "Inattivo"
+
+  "Last few days": "Ultimi giorni"
+  "Last 30 days": "Ultimi 30 giorni"
+  "Last 7 days": "Ultimi 7 giorni"
+  "List": "Lista"
+  "Loading": "Caricamento"
+  "Logged as": "Loggato come"
+  "Login": "Login"
+
+  "New": "Nuovo"
+  "New %{resource}": "Nuovo %{resource}"
+  "Next": "Successivo"
+  "No %{resources} found":
+
+  "Or": "Oppure"
+
+  "Password recovery link sent to your email": "È stata inviata un'email contenente un link per il recupero della password"
+  "Please set a new password.": "Inserisci una nuova password"
+  "Previous": "Precedente"
+
+  "Record moved %{to}": "Record spostato %{to}"
+  "Recover password": "Recupera la password"
+  "Remove": "Elimina"
+  "Remove %{resource}?": "Elimina %{resource}"
+  "Reset password": "Resetta la password"
+  "Resources": "Risorse"
+
+  "Save %{resource}": "Salva %{resource}"
+  "Search": "Cerca"
+  "Show": "Mostra"
+  "Show all dates": "Filtra per data"
+  "Show by %{attribute}": "Filtra per %{attribute}"
+  "Show %{resource}": "Mostra %{resource}"
+  "Sign in": "Accedi"
+  "Sign out": "Esci"
+  "Sign up": "Registrazione"
+  "Submit": "Invia"
+  "System Users Administration": "Amministrazione utenti del sistema"
+
+  "Today": "Oggi"
+  "Trash": "Elimina"
+  "True": "Vero"
+
+  "Unrelate":
+  "Up": "Su"
+
+  "View all %{attribute}": "Filtra per %{attribute}"
+  "View site": "Visita il sito"
+
+  "You can update your password at": "Puoi aggiornare la tua password qui"
+  "You can't change your role": "Non puoi cambiare il tuo ruolo"
+  "You can't toggle your status": "Non puoi modificare il tuo stato"
+  "Your new password is %{password}": "La tua nuova password è %{password}"
+
+  "%{model} successfully created": "Creazione avvenuta con successo"
+  "%{model} successfully removed": "Eliminazione avvenuta con successo"
+  "%{model} successfully updated": "Aggiornamento avvenuto con successo"

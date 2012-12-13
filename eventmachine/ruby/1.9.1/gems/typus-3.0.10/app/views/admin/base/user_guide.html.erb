@@ -1,0 +1,85 @@
+<% content_for :sidebar do %>
+
+  <h3>User Guide</h3>
+
+  <ul>
+    <li><%= link_to "Introduction", "#introduction" %></li>
+    <li><%= link_to "Basics", "#basics" %></li>
+    <li><%= link_to "Registered Users", "#registered-users" %></li>
+  </ul>
+
+<% end %>
+
+<a name="introduction"></a>
+
+<h2>Introduction</h2>
+
+<p>
+This website is powered by <%= link_to "Ruby on Rails", "http://rubyonrails.org/" %> and <%= link_to "Typus", "http://core.typuscms.com/" %>.
+</p>
+
+<p>With <%= link_to "Typus", "http://core.typuscms.com/" %>, also known as the application backend or admin interface, you'll be able to update your application contents and perform the most common operations for the site maintenance.</p>
+
+<p>
+You can get more information at <%= link_to "http://core.typuscms.com/", "http://core.typuscms.com/" %>.
+</p>
+
+<a name="basics"></a>
+
+<h2>Basic Actions</h2>
+
+<h3>Create Entries</h3>
+
+<p>
+To create a new entry:
+</p>
+
+<ul>
+<li>Click on entries tab.</li>
+<li>Click "Add new" sub tab.</li>
+<li>Start filling in the blanks.</li>
+<li>When you are ready, click "Save Entry".</li>
+</ul>
+
+<h3>Editing &amp; Updating Entries</h3>
+
+<p>
+To edit entries:
+</p>
+
+<ul>
+  <li>Click on entries tab.</li>
+  <li>You'll see a list of entries, if you have already create some.</li>
+  <li>Click on "Edit".</li>
+  <li>Edit the entry.</li>
+  <li>When you are ready, click "Update Entry".</li>
+</ul>
+
+<h3>Removing Entries</h3>
+
+<p>
+To remove entries:
+</p>
+
+<ul>
+  <li>Click on entries tab.</li>
+  <li>You'll see a list of entries, if you have already create some.</li>
+  <li>Click on "Trash".</li>
+  <li>Click "Ok" on the dialog to confirm you want to remove the entry.</li>
+</ul>
+
+<p>
+Removing entries will be only available if you have permissions to do so.
+</p>
+
+<a name="registered-users"></a>
+
+<h2>Registered Users</h2>
+
+<p>
+Registered users can do a variety of different things on a <strong>Typus</strong> driven site. The various elements available to the user are determined by their user level. </p>
+
+<p>When <code>:session</code> authentication is enabled <strong>Typus</strong> will enable a a default role which will allow registered users perform all kind of operations on entries: create, read, update and destroy.
+</p>
+
+<p>It's usually recommended having an extra role which some restrictions.</p>

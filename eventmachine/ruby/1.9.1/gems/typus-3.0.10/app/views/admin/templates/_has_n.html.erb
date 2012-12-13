@@ -1,0 +1,17 @@
+<div class="box_relationships" id="<%= association_name %>">
+
+  <h2>
+    <%= association_name.titleize.humanize.pluralize %>
+    <small><%= add_new %></small>
+  </h2>
+
+  <%= form %>
+
+  <% if @items.any? -%>
+    <%= table %>
+    <%= will_paginate(@items, Typus.pagination.merge(:anchor => association_name)) %>
+  <% else %>
+    <p><%= Typus::I18n.t("No %{resources} found.", :resources => association_name.humanize.downcase.pluralize) %></p>
+  <% end %>
+
+</div>

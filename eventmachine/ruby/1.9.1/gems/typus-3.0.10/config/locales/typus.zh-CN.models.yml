@@ -1,0 +1,17 @@
+# Chinese (zh-CN) translations for Typus
+# - ZoOL <http://github.com/zhooul>
+
+zh-CN:
+  activerecord:
+    models:
+      admin_user:
+    attributes:
+      admin_user:
+        email: " 邮箱"
+        first_name: " 姓"
+        last_name: " 名"
+        password: " 密码"
+        password_confirmation: " 密码确认"
+        status: " 状态"
+        role: " 角色"
+        locale:

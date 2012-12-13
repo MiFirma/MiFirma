@@ -1,0 +1,29 @@
+<% admin_user.applications.each do |app| %>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th><%= Typus::I18n.t(app) %></th>
+      </tr>
+    </thead>
+
+    <% admin_user.application(app).each do |model| %>
+
+      <%
+        klass = model.typus_constantize
+        klass_human_name = klass.model_name.human.pluralize
+        admin_items_path = { :controller => "/admin/#{klass.to_resource}" }
+      %>
+
+      <tr class="<%= cycle("even", "odd") %>">
+        <td>
+          <%= link_to klass_human_name, admin_items_path %>
+        </td>
+      </tr>
+
+    <% end %>
+
+  </table>
+
+<% end %>

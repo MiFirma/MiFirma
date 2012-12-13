@@ -1,0 +1,17 @@
+# Catalan (ca) translations for Typus by:
+# - Lleïr Borràs <http://github.com/lleirborras>
+
+ca:
+  activerecord:
+    models:
+      admin_user: Usuari
+    attributes:
+      admin_user:
+        email: "Correu electrònic"
+        first_name: "Nom"
+        last_name: "Cognoms"
+        password: "Contrassenya"
+        password_confirmation: "Confirmar contrasenya"
+        status: "Estat"
+        role: "Rol"
+        locale: "Idioma"

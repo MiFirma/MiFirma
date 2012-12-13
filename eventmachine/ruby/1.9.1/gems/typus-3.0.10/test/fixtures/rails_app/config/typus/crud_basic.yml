@@ -1,0 +1,10 @@
+Entry:
+  fields:
+    default: title, published
+    form: title, content, published
+    options:
+      booleans:
+        published: ["Yes", "No"]
+  search: title
+  filters: published
+  application: CRUD

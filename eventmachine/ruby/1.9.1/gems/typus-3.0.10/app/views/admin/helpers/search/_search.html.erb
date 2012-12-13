@@ -1,0 +1,15 @@
+<div id="search">
+
+  <%= form_tag nil, :method => :get do %>
+
+    <ul>
+      <li><%= search_field_tag "search", nil, :id => "quicksearch", :title => (params[:search] || Typus::I18n.t("Search")) %></li>
+    </ul>
+
+    <% hidden_filters.each do |key, value| %>
+      <%= hidden_field_tag key, value %>
+    <% end %>
+
+  <% end %>
+
+</div>

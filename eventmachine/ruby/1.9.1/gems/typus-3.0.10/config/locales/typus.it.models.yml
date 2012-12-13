@@ -1,0 +1,18 @@
+# Hungarian (hu) translations for Typus by:
+# - Tompa Gábor <http://github.com/tompagabor>
+
+it:
+  activerecord:
+    models:
+      admin_user:
+    attributes:
+      admin_user:
+        email:
+        first_name: "Nome"
+        last_name: "Cognome"
+        role: "Ruolo"
+        status: "Stato"
+        preferences: "Preferenze"
+        locale: "Lingua"
+        password: "Password"
+        password_confirmation: "Ripeti la password"

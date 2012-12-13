@@ -1,0 +1,17 @@
+# Russian (ru) translations for Typus by:
+# - Alexey Noskov <http://github.com/alno>
+
+ru:
+  activerecord:
+    models:
+      admin_user:
+    attributes:
+      admin_user:
+        email:
+        first_name: "Имя"
+        last_name: "Фамлия"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        status: "Статус"
+        role:
+        locale:

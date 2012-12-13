@@ -1,0 +1,20 @@
+<%= form_for @item, :url => options, :html => { :class => "resource", :multipart => true } do |form| %>
+
+  <%= render "admin/helpers/resources/errors" %>
+
+  <fieldset class="inputs">
+    <ol>
+      <%= build_form(fields, form) %>
+    </ol>
+  </fieldset>
+
+  <fieldset class="buttons">
+    <ol>
+      <li><%= submit_tag button,
+                         :class => "commit",
+                         :onclick => "setConfirmUnload(false);",
+                         :disable_with => Typus::I18n.t("Sending data ...") %></li>
+    </ol>
+  </fieldset>
+
+<% end %>

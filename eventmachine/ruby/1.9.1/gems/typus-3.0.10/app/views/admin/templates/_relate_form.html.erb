@@ -1,0 +1,5 @@
+<%= form_tag :action => :relate, :id => @item.id do %>
+  <%= hidden_field :related, :model, :value => model_to_relate %>
+  <%= hidden_field :related, :association_name, :value => association_name %>
+  <p><%= select :related, :id, items_to_relate.map { |f| [f.to_label, f.id] } %> &nbsp; <%= submit_tag Typus::I18n.t("Assign"), :class => "button", :disable_with => Typus::I18n.t("Sending data ...") %></p>
+<% end %>

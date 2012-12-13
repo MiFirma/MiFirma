@@ -1,0 +1,14 @@
+<div class="box_relationships" id="<%= association_name %>">
+
+  <h2>
+    <%= association_name.humanize %>
+    <small><%= add_new %></small>
+  </h2>
+
+  <% if @items.any? -%>
+    <%= table %>
+  <% else %>
+    <p><%= Typus::I18n.t("No %{resources} found.", :resources => association_name.humanize.downcase) %></p>
+  <% end %>
+
+</div>

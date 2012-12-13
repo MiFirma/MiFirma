@@ -1,0 +1,80 @@
+# Hungarian (hu) translations for Typus by:
+# - Tompa Gábor <http://github.com/tompagabor>
+
+hu:
+
+  "Actions": "Akciók"
+  "Active": "Aktív"
+  "Add": "Hozzáad"
+  "Add new": "Új hozzáadása"
+  "Are you sure?": "Biztos vagy benne?"
+  "Are you sure you want to sign out and end your session?": "Biztosan ki akarsz lépni?"
+
+  "Change %{attribute}?": "Megváltoztatod ezt: %{attribute}?"
+  "Create %{resource}": "%{resource} létrehozása"
+
+  "Dashboard": "Admin nyitólap"
+  "Down": "Le"
+
+  "Edit": "Szerkesztés"
+  "Edit %{resource}": "Szerkesztés %{resource}"
+  "Enter your email below to create the first user": "Írd be az e-mail címed az első felhasználó létrehozásához"
+
+  "False": "Hamis"
+  "Filter":
+
+  "I remember my password": "Emlékszem a jelszavamra"
+  "If you didn't request a password update, you can ignore this message": "Hogyha nem kértél jelszó emlékesztetőt, nyugodtan töröld ki ezt a levelet."
+  "If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost": "Ha a módosítások után nem kattintassz a Mentés/Firssítés gombra, el fognak veszni a változtatások."
+  "Inactive": "Inaktív"
+
+  "Last few days": "Utóbbi néhány nap"
+  "Last 30 days": "Az elmúlt 30 nap"
+  "Last 7 days": "Az elmúlt 7 nap"
+  "List":
+  "Logged as": "Bejelentkezve"
+  "Login": "Belépés"
+
+  "New": "Új"
+  "New %{resource}": "Új %{resource}"
+  "Next": "Következő"
+  "No %{resources} found":
+
+  "Password recovery link sent to your email": "A jelszó helyreállító linket elküldtük az email címedre."
+  "Previous": "Előző"
+
+  "Record moved %{to}": "A bejegyzés áthelyezve: %{to}"
+  "Recover password": "Jelszó helyreállítás"
+  "Remove": "Eltávolítás"
+  "Remove %{resource}?": "Eltávolítod %{resource}?"
+  "Reset password": "Jelszó módosítása"
+  "Resources": "Források"
+
+  "Save %{resource}": "%{resource} mentése"
+  "Search": "Keresés"
+  "Show": "Mutatás"
+  "Show all dates":
+  "Show by %{attribute}":
+  "Show %{resource}": "%{resource} mutatása"
+  "Sign in": "Bejelentkezés"
+  "Sign out": "Kijelentkezés"
+  "Sign up": "Regisztráció"
+  "System Users Administration": "Rendszeradminisztrátorok kezelése"
+
+  "Today": "Ma"
+  "True": "Igaz"
+
+  "Unrelate":
+  "Up": "Fel"
+
+  "View all %{attribute}":
+  "View site": "A weboldal megtekintése"
+
+  "You can update your password at": "Frissítheted a jelszavad"
+  "You can't change your role": "Nincsen jogod megváltoztatni a jogosultsági szintedet"
+  "You can't toggle your status": "Nincs jogod változtatni a státuszodat"
+
+  "%{errors} prohibited this page from being saved:":
+  "%{model} successfully created": "%{model} sikeresen létrehozva"
+  "%{model} successfully removed": "%{model} sikeresen törölve"
+  "%{model} successfully updated": "%{model} sikereseb frissítve"

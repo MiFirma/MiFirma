@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="<%= I18n.locale %>">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="generator" content="Typus <%= Typus::VERSION %>" />
+
+  <%= favicon_link_tag %>
+
+  <title><%= Typus.admin_title %> &mdash; <%= yield :title %></title>
+
+  <%= stylesheet_link_tag "/vendor/typus/stylesheets/reset",
+                          "/vendor/jquery-ui-1.8.9.custom/css/ui-lightness/jquery-ui-1.8.9.custom.css",
+                          "/vendor/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.css",
+                          "/vendor/typus/stylesheets/screen",
+                          "/vendor/typus/stylesheets/application" %>
+
+  <%= yield :stylesheets -%>
+
+  <%= javascript_include_tag "/vendor/jquery-ui-1.8.9.custom/js/jquery-1.4.4.min.js",
+                             "/vendor/jquery-ui-1.8.9.custom/js/jquery-ui-1.8.9.custom.min.js",
+                             "/vendor/jquery.fancybox-1.3.4/fancybox/jquery.fancybox-1.3.4.pack.js",
+                             "/vendor/typus/javascripts/jquery.searchField.js",
+                             "/vendor/typus/javascripts/jquery.rails.js",
+                             "/vendor/typus/javascripts/jquery.rails.autocomplete.js",
+                             "/vendor/typus/javascripts/jquery.application.js",
+                             "/vendor/typus/javascripts/application" %>
+
+  <%= yield :javascripts -%>
+
+  <%= csrf_meta_tag %>
+
+</head>
+
+<body>
+
+  <div id="content" class="headless">
+    <%= yield :layout %>
+  </div>
+
+</body>
+
+</html>

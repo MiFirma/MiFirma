@@ -1,0 +1,21 @@
+<%
+  page_title = Typus::I18n.t("New %{resource}", :resource => @resource.model_name.human)
+  title(page_title)
+%>
+
+<% content_for :sidebar, build_sidebar %>
+
+<h2>
+  <%= page_title %>
+  <small><%= list_actions %></small>
+</h2>
+
+<%= display_link_to_previous %>
+<%= render 'new' %>
+
+<%
+  options = params.dup.cleanup.merge(:action => 'create')
+  button = Typus::I18n.t("Create %{resource}", :resource => @resource.model_name.human)
+%>
+
+<%= render :partial => 'form', :locals => { :options => options, :button => button } %>

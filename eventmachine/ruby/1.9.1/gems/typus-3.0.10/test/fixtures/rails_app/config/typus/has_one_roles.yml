@@ -1,0 +1,3 @@
+admin:
+  Invoice: all
+  Order: all

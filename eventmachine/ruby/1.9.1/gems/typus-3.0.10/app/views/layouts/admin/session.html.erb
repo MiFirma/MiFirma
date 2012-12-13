@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="<%= I18n.locale %>">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="generator" content="Typus <%= Typus::VERSION %>" />
+
+  <%= favicon_link_tag %>
+
+  <title><%= Typus.admin_title %> &mdash; <%= yield :title %></title>
+
+  <%= stylesheet_link_tag "/vendor/typus/stylesheets/reset",
+                          "/vendor/typus/stylesheets/screen",
+                          "/vendor/typus/stylesheets/application" %>
+
+  <%= javascript_include_tag "/vendor/jquery-ui-1.8.9.custom/js/jquery-1.4.4.min.js",
+                             "/vendor/typus/javascripts/jquery.rails.js",
+                             "/vendor/typus/javascripts/application" %>
+
+  <%= csrf_meta_tag %>
+
+</head>
+
+<body id="account">
+
+  <div id="wrapper">
+
+    <div id="box">
+      <h1 class="logo"><%= Typus.admin_title %></h1>
+      <%= display_flash_message %>
+      <%= yield :layout %>
+    </div>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+# French (fr) translations for Typus by:
+# - Ned Baldessin <http://github.com/nedbaldessin>
+# - Jonathan Meiss <http://github.com/jmeiss>
+
+fr:
+
+  "Actions": "Actions"
+  "Active": "Actif"
+  "Add": "Ajouter"
+  "Add new": "Ajouter nouveau"
+  "Are you sure?": "Êtes-vous sûre ?"
+  "Are you sure you want to sign out and end your session?": "Etes-vous sûre de vouloir vous déconnecter et mettre fin à votre session ?"
+
+  "Bottom": "À la fin"
+
+  "Change %{attribute}?": "Changer %{attribute} ?"
+  "Create %{resource}": "Créer %{resource}"
+
+  "Dashboard": "Tableau de bord"
+  "Down": "Descendre"
+
+  "Edit": "Éditer"
+  "Edit %{resource}": "Éditer %{resource}"
+  "Enter your email below to create the first user": "Entrez votre adresse email pour créer le premier utilisateur"
+  "Export as %{mime}": "Exporter en %{mime}"
+
+  "False": "Faux"
+  "Filter": "Filtrer"
+
+  "I remember my password": "Je me souviens du mot de passe"
+  "If you didn't request a password update, you can ignore this message": "Si vous n'avez pas demandé à mettre à jour votre mot de passe, vous pouvez ignorer ce message"
+  "If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost": "Si vous avez effectué des modifications sans cliquer sur le bouton Enregistrer ou Mettre à jour, ces modifications seront perdues."
+  "Inactive": "Inactif"
+
+  "Last few days": "Ces derniers jours"
+  "Last 30 days": "30 derniers jours"
+  "Last 7 days": "7 derniers jours"
+  "List": "Liste"
+  "Logged as": "Identifié comme"
+  "Login": "Identification"
+
+  "New": "Nouveau"
+  "New %{resource}": "Nouveau %{resource}"
+  "Next": "Suivant"
+  "No %{resources} found": "Aucun(e) %{resources} trouvé(e)"
+
+  "Password recovery link sent to your email": "Le lien pour retrouver votre mot de passe vous a été envoyé par email"
+  "Previous": "Précédent"
+
+  "Record moved %{to}": "Entrées réordonnées"
+  "Recover password": "Retrouver mon mot de passe"
+  "Remove": "Supprimer"
+  "Remove %{resource}?": "Supprimer %{resource}?"
+  "Reset password": "Renouveler le mot de passe"
+  "Resources": "Ressources"
+
+  "Save %{resource}": "Sauvegarder %{resource}"
+  "Search": "Recherche"
+  "Show": "Voir"
+  "Show all dates":
+  "Show by %{attribute}":
+  "Show %{resource}": "Voir %{resource}"
+  "Show by %{attribute}": "Afficher par %{attribute}"
+  "Sign in": "Entrer"
+  "Sign out": "Déconnexion"
+  "Sign up": "Ouvrir un compte"
+  "System Users Administration": "Modifier les utilisateurs de l'admin"
+
+  "Today": "Aujourd'hui"
+  "Top": "Au début"
+  "Trash": "Supprimer"
+  "True": "Vrai"
+
+  "Unrelate": "Dissocier"
+  "Up": "Monter"
+
+  "View all %{attribute}": "Voir tou(s/tes) %{attribute}"
+  "View site": "Voir le site"
+
+  "You can update your password at": "Vous pouvez modifier votre mot de passe ici"
+  "You can't change your role": "Vous ne pouvez pas changer votre propre rôle."
+  "You can't toggle your status": "Vous ne pouvez pas basculer votre statut"
+
+  "%{errors} prohibited this page from being saved:":
+  "%{model} successfully created": "%{model} correctement créé(e)."
+  "%{model} successfully removed": "%{model} correctement supprimé(e)."
+  "%{model} successfully updated": "%{model} correctement mis(e)-à-jour."

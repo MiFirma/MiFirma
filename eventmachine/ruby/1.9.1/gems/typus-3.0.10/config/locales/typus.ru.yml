@@ -1,0 +1,80 @@
+# Russian (ru) translations for Typus by:
+# - Alexey Noskov <http://github.com/alno>
+
+ru:
+
+  "Actions": "Действия"
+  "Active":
+  "Add": "Добавить"
+  "Add new": "Добавить новый"
+  "Are you sure?":
+  "Are you sure you want to sign out and end your session?":
+
+  "Change %{attribute}?": "Изменить %{attribute}?"
+  "Create %{resource}": "Создать %{resource}"
+
+  "Dashboard": "Обзор"
+  "Down": "Вниз"
+
+  "Edit": "Изменить"
+  "Edit %{resource}": "Изменить %{resource}"
+  "Enter your email below to create the first user":
+
+  "False":
+  "Filter": "фильтр"
+
+  "I remember my password": "Запомнить пароль"
+  "If you didn't request a password update, you can ignore this message": "Если Вы не запрашивали обновление пароля, Вы можете проигнорировать это сообщение."
+  "If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost": "Если вы сделали какие-то изменения, не кликая на Обновить/Сохранить, то они будут утеряны."
+  "Inactive":
+
+  "Last few days": "Последние дней"
+  "Last 7 days": "Последние 7 дней"
+  "Last 30 days": "Последние 30 дней"
+  "List":
+  "Logged as": "Вы вошли как"
+  "Login": "Редактировать"
+
+  "New": "Новый"
+  "New %{resource}": "Новый %{resource}"
+  "Next": "Следующий"
+  "No %{resources} found":
+
+  "Password recovery link sent to your email": "Ссылка для восставновления пароля выслана по указанному E-Mail"
+  "Previous": "Предыдующий"
+
+  "Record moved %{to}": "Запись перемещена в %{to}."
+  "Recover password": "Восстановить пароль"
+  "Remove": "Удалить"
+  "Remove %{resource}?": "Удалить %{resource}?"
+  "Reset password": "Сбросить пароль"
+  "Resources": "Ресурсы"
+
+  "Save %{resource}":
+  "Search": "Поиск"
+  "Show": "Показать"
+  "Show all dates":
+  "Show by %{attribute}":
+  "Show %{resource}": "Показать %{resource}"
+  "Sign in": "Войти"
+  "Sign out": "Выйти"
+  "Sign up": "Зарегистрироваться"
+  "System Users Administration": "Администрирование системных пользователей"
+
+  "Today": "Сегодня"
+  "True": "ВЕРНО"
+
+  "Unrelate":
+  "Up": "Вверх"
+
+  "View all %{attribute}":
+  "View site": "Перейти к сайту"
+
+  "You can update your password at": "Вы можете установить свой пароль на"
+  "You can't change your role": "Вы не можете менять свою собственную роль"
+  "You can't toggle your status": "Вы не можете менять свой статус"
+
+  "%{errors} prohibited this page from being saved:":
+  "%{model} successfully created": "%{model} создан"
+  "%{model} successfully removed": "%{model} удален"
+  "%{model} successfully updated": "%{model} успешно обновлен"

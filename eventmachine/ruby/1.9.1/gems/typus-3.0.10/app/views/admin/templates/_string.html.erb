@@ -1,0 +1,22 @@
+<%
+
+  # Read only fields.
+  if @resource.typus_field_options_for(:read_only).include?(attribute.to_sym)
+    custom = { :readonly => 'readonly' }
+    label_text << " <small>#{Typus::I18n.t("Read only")}</small>"
+  end
+
+  # Auto generated fields.
+  if @resource.typus_field_options_for(:auto_generated).include?(attribute.to_sym)
+    custom = { :auto_generated => true }
+    label_text << " <small>#{Typus::I18n.t("Auto generated")}</small>"
+  end
+
+  options.merge!(custom) if custom
+
+%>
+
+<li id="<%= attribute %>">
+  <%= form.label attribute, label_text.html_safe %>
+  <%= form.text_field attribute, options %>
+</li>

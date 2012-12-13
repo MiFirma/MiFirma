@@ -1,0 +1,4 @@
+<ul>
+  <li><%= Typus::I18n.t("Logged as") %> <%= link_to admin_user.to_label, { :controller => "/admin/#{Typus.user_class.to_resource}", :action => 'edit', :id => admin_user.id } %></li>
+  <li><%= link_to Typus::I18n.t("Sign out"), admin_sign_out_path, :confirm => Typus::I18n.t("Are you sure you want to sign out and end your session?") %></li>
+</ul>

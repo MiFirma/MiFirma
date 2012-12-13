@@ -1,0 +1,34 @@
+<table>
+
+  <thead>
+    <tr>
+      <% headers.each do |header| %>
+        <th><%= header %></th>
+      <% end %>
+    </tr>
+  </thead>
+
+  <% items.each do |item| %>
+    <tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id(item) %>">
+      <% table_fields_for_item(item, fields).each_with_index do |field, index| %>
+        <td>
+          <%= field %>
+          <% if index.zero? %>
+            <div class="actions">
+              <%= table_actions(model, item, association_name) %>
+            </div>
+          <% end %>
+        </td>
+      <% end %>
+    </tr>
+  <% end %>
+
+  <thead>
+    <tr>
+      <% headers.each do |header| %>
+        <th><%= header %></th>
+      <% end %>
+    </tr>
+  </thead>
+
+</table>

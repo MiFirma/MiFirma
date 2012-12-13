@@ -1,0 +1,7 @@
+admin:
+  Git: index, commit
+  Status: index
+  WatchDog: index, cleanup
+
+editor:
+  Git: index

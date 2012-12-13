@@ -1,0 +1,18 @@
+# Spanish (es) translations for Typus by:
+# - Felipe Talavera <http://github.com/flype>
+
+es:
+  activerecord:
+    models:
+      admin_user: "Usuario Admin"
+    attributes:
+      admin_user:
+        email: "Correo electrónico"
+        first_name: "Nombre"
+        locale: "Idioma"
+        last_name: "Apellidos"
+        password: "Contraseña"
+        password_confirmation: "Confirmar contraseña"
+        role: "Rol"
+        status: "Estado"
+        locale:

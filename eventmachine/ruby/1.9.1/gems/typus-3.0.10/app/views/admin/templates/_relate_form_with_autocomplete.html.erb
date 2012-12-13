@@ -1,0 +1,26 @@
+<%= form_tag :action => :relate, :id => @item.id do %>
+
+  <fieldset class="inputs">
+
+    <%= hidden_field :related, :id %>
+    <%= hidden_field :related, :model, :value => model_to_relate %>
+    <%= hidden_field :related, :association_name, :value => association_name %>
+
+    <ol>
+      <li>
+        <input data-autocomplete="<%= "/admin/#{model_to_relate.to_resource}/autocomplete" %>"
+               id="autocomplete"
+               id_element="<%= "##{association_name} #related_id" %>"
+               name="autocomplete"
+               size="30"
+               type="text"
+               value="" />
+        <%= submit_tag Typus::I18n.t("Assign"),
+                       :class => "button",
+                       :disable_with => Typus::I18n.t("Sending data ...") %>
+      </li>
+    </ol>
+
+  </fieldset>
+
+<% end %>

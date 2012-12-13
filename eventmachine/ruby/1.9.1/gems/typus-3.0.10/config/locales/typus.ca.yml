@@ -1,0 +1,81 @@
+# Catalan (ca) translations for Typus by:
+# - Lleïr Borràs <http://github.com/lleirborras>
+
+ca:
+
+  "Actions": "Accions"
+  "Active": "Actiu"
+  "Add": "Afegir"
+  "Add new": "Afegir nou"
+  "All": "Tots"
+  "Are you sure?": "Estàs segur?"
+  "Are you sure you want to sign out and end your session?": "Estàs segur que vols sortir i tancar la sessió?"
+
+  "Change %{attribute}?": "Canviar %{attribute}?"
+  "Create %{resource}": "Crear %{resource}"
+
+  "Dashboard": "Panell de control"
+  "Down": "Baixar"
+
+  "Edit": "Editar"
+  "Edit %{resource}": "Edit %{resource}"
+  "Enter your email below to create the first user": "Introdueix el teu email per crear el primer usuari."
+
+  "False": "Fals"
+  "Filter": "Filtrar"
+
+  "I remember my password": "Recordo la meva contrasenya"
+  "If you didn't request a password update, you can ignore this message": "Si no has demanat una actualització de la teva contrasenya, pots ignorar aquest missatge."
+  "If you have made any changes to the fields without clicking the Save/Update entry button, your changes will be lost": "Si has realitzat algun canvi en els camps sense premer el botó Guardar/Actualitzar, els teus canvis es perdran."
+  "Inactive": "Inactiu"
+
+  "Last few days": "Últims dies"
+  "Last 30 days": "Últims 30 dies"
+  "Last 7 days": "Últims 7 dies"
+  "List": "Llista"
+  "Logged as": "Identificat com"
+  "Login": "Login"
+
+  "New": "Nou"
+  "New %{resource}": "Nou %{resource}"
+  "Next": "Següent"
+  "No %{resources} found": "No s'han trobat %{resources}."
+
+  "Password recovery link sent to your email": "L'enllaç de recuperació de contrasenya enviat al teu correu electrònic."
+  "Previous": "Anterior"
+
+  "Record moved %{to}": "Registre desplaçat %{to}."
+  "Recover password": "Recuperar contrasenya"
+  "Remove": "Eliminar"
+  "Remove %{resource}?": "Esborrar %{resource}?"
+  "Reset password": "Canviar contrasenya"
+  "Resources": "Recursos"
+
+  "Save %{resource}": "Guardar %{resource}"
+  "Search": "Cercar"
+  "Show": "Mostrar"
+  "Show all dates":
+  "Show by %{attribute}":
+  "Show %{resource}": "Mostrar %{resource}"
+  "Sign in": "Entrar"
+  "Sign out": "Sortir"
+  "Sign up": "Crear compte"
+  "System Users Administration": "Administrar usuaris del sistema"
+
+  "Today": "Avui"
+  "True": "Cert"
+
+  "Unrelate": "Deslligar"
+  "Up": "Pujar"
+
+  "You can update your password at": "Pots actualitzar la teva contrasenya a"
+  "You can't change your role": "No pots canviar-te tu mateix el rol."
+  "You can't toggle your status": "No pots canviar-te l'estat."
+
+  "View all %{attribute}":
+  "View site": "Veure la web"
+
+  "%{errors} prohibited this page from being saved:":
+  "%{model} successfully created": "%{model} satisfactòriament creat."
+  "%{model} successfully removed": "%{model} satisfactòriament eliminat."
+  "%{model} successfully updated": "%{model} satisfactòriament actualitzat."

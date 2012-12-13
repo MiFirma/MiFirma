@@ -1,0 +1,22 @@
+<%
+  page_title = Typus::I18n.t("Dashboard")
+  title(page_title)
+%>
+
+<% content_for :sidebar do %>
+  <%= render "sidebar" %>
+<% end %>
+
+<h2>
+  <%= page_title %>
+</h2>
+
+<% if admin_user.applications.any? %>
+  <%= render 'applications' %>
+<% else %>
+  <div class="notice">
+    No applications detected.
+  </div>
+<% end %>
+
+<%= resources(admin_user) %>

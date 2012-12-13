@@ -1,0 +1,23 @@
+<ul>
+
+  <% dashboard = 'active' if params[:controller].include?('dashboard') %>
+
+  <li><%= link_to Typus::I18n.t("Dashboard"), admin_dashboard_path, :class => dashboard %></li>
+
+  <% admin_user.applications.each do |application| %>
+
+    <%
+      apps = admin_user.application(application)
+      klass = (@resource && apps.include?(@resource.model_name)) ? 'active' : nil
+    %>
+
+    <%
+      url = { :controller => "/admin/#{apps.first.tableize}" }
+      html_options = { :class => klass }
+    %>
+
+    <li><%= link_to Typus::I18n.t(application), url, html_options %></li>
+
+  <% end %>
+
+</ul>
