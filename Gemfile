@@ -15,6 +15,7 @@ gem 'validates_timeliness', '~> 3.0.2'
 gem 'aws-s3'
 gem 'nokogiri'
 gem 'rubyzip'
+gem 'eventmachine'
 
 # Use thin as the web server
 gem 'thin'
