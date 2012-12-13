@@ -12,3 +12,14 @@ admin:
   Election: create, read, update, delete
   AttestorSignature: create, read, update, delete
   User: read
+  
+basic:
+  Municipality: read
+  IlpProposal: read  
+  Province: read
+  IlpSignature: read, update
+  EndorsmentProposal: read
+  EndorsmentSignature: read, update
+  Election: read
+  AttestorSignature: read, update
+  User: read
