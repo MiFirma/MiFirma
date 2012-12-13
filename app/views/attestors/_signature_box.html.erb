@@ -17,8 +17,28 @@
   
   <% if @proposal.on_signature_time? %>
 	  <%= form_for @signature, :url => attestor_signatures_path(@signature) do |f| %>
-	  <div class="txt_advertencia"><label>El nombre y apellido se recogerán del certificado electrónico</label></div>
 	  <div class="form">
+	  
+	      <label for="name">Tu nombre</label>
+			<div class="input">
+			  <%= f.text_field :name %>
+			</div>
+			
+			<label for="surname">Tu primer apellido</label>
+			<div class="input">
+			  <%= f.text_field :surname %>
+			</div>
+			
+			<label for="surname2">Tu segundo apellido</label>
+			<div class="input">
+			  <%= f.text_field :surname2 %>
+			</div>
+
+			<label for="dni">Tu NIF (DNI + letra)</label>
+			<div class="input">
+			  <%= f.text_field :dni %>
+			</div>
+	
 		<label><strong>Domicilio (donde se está censado)</strong></label>
 		<label for="province">Provincia</label>
 		<div class="input">

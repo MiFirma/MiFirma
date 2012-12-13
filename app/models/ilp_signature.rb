@@ -31,7 +31,8 @@
 
 class IlpSignature < Signature
   belongs_to :proposal, :class_name => 'IlpProposal'
-
+	before_create :format_dni
+	
 	has_attached_file :tractis_signature, 
 		{:path => ":rails_root/public/system/firmas/:promoter_name/ilp/:filename", 
 		 :url => "/system/firmas/:promoter_name/ilp/:filename",
@@ -49,7 +50,7 @@ class IlpSignature < Signature
 	
 	validate :dni_format
 
-	# Validates NIF
+	# Validates NIF format
 	def dni_format
 		letters = "TRWAGMYFPDXBNJZSQVHLCKE"
 		value = dni.clone
@@ -64,10 +65,15 @@ class IlpSignature < Signature
 		end
 	end
 	
+	def notifier
+		Notifier.ilp_signed(self).deliver
+	end
+	
 	private
 	# interpolate in paperclip
 	Paperclip.interpolates :promoter_name  do |attachment, style|
 		attachment.instance.proposal.promoter_short_name
 	end
+
 
 end

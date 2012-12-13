@@ -35,6 +35,7 @@ class AttestorSignature < Signature
 	belongs_to :municipality_of_birth, :class_name => 'Municipality', :foreign_key => "municipality_of_birth_id"
 	belongs_to :province_of_birth, :class_name => 'Province', :foreign_key => "province_of_birth_id"
 	belongs_to :province
+	before_create :format_dni
 	
 	has_attached_file :tractis_signature, 
 		{:path => ":rails_root/public/system/firmas/:promoter_name/fedatarios/:filename",
@@ -43,7 +44,7 @@ class AttestorSignature < Signature
 	
   validate :uniqueness_of_dni
   validates_presence_of :municipality_of_birth_id, :province_of_birth_id, 
-		:address, :municipality_id, :message => "Todos los campos son obligatorios excepto el teléfono."
+		:address, :name, :surname, :surname2, :dni, :municipality_id, :message => "Todos los campos son obligatorios excepto el teléfono."
 		
 	validates :telephone, :numericality => { :only_integer => true }, :allow_blank => true
 	validates :number_of_sheets, :numericality => { :only_integer => true, :greater_than => 0, :less_than => 11, :message => "El número de pliegos debe ser entre 1 y 10" }, :allow_blank => true
@@ -52,6 +53,10 @@ class AttestorSignature < Signature
 		if self.signed? and AttestorSignature.where("state > 0 and dni = ? and proposal_id = ? and id <> ?",dni,proposal_id,id).count>0
 			errors.add :dni, "Sólo puedes firmar como fedatario una sola vez."
 		end
+	end
+	
+	#No email for now
+	def notifier
 	end
 	
 	private

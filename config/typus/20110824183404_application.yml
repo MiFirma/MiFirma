@@ -78,7 +78,7 @@ EndorsmentSignature:
 EndorsmentProposal:
   fields:
     default: name, signatures.size, num_signatures_signed
-    form: name, problem, howto_solve,tractis_template_code, promoter_name, promoter_url, banner, promoter_short_name, election_type, election
+    form: name, problem, howto_solve,tractis_template_code, promoter_name, promoter_url, banner, promoter_short_name, election_type, election, user
   order_by: position
   relationships: signatures
   filters: created_at

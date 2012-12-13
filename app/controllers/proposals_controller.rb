@@ -42,7 +42,7 @@
 	
   # GET /proposals/1/signatures
 	def signatures
-	  proposal = IlpProposal.find(params[:id])
+	  proposal = Proposal.find(params[:id])
 		get_zip_signatures(proposal.signatures.signed)
 	end	
 	

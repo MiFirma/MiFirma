@@ -48,7 +48,42 @@ class ApplicationController < ActionController::Base
                              :filename => file_name
 
     end	
+  end	
+	
+	# Process the signature and returns false if errors
+	def process_signature? (signature)
+	
+		logger.debug 'Estamos procesando la firma'	
 		
-		
-	end	
+		if not signature.signed?
+
+			@signature.xmlSigned = Base64.decode64(params[:xmlSigned2])
+			
+			validation = @signature.validate_signature
+			
+			if not validation.isValid?
+				flash[:error] = "La firma no es válida. Compruebe que el certificado no esté caducado o revocado"
+				return false
+			end
+			
+			if validation.psisNIF != signature.dni
+				flash[:error] = "El DNI introducido en el formulario no coincide con el DNI del Certificado"
+				return false			
+			end
+
+			if @signature.valid?
+				@proposal = @signature.proposal
+				@signature.get_afirma_signature		
+				share_texts(@proposal, @signature)
+				signature.notifier
+				return true
+			else
+				flash[:error] = @signature.errors.map {|a,m| "#{m.capitalize}"}.uniq.join("<br/>\n")
+				return false
+			end
+		else
+			flash[:error] = "Este identificador de firma ya ha sido firmado"
+			return false
+		end
+	end
 end

@@ -9,7 +9,7 @@
 			cargarMiniApplet('/javascripts');
 		</script>
 
-	<%= form_for @signature, :url => share_signature_path(@signature) do |f| %>
+	<%= form_for @signature, :url => share_endorsment_signature_path(@signature) do |f| %>
 
 		<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
 		<%= hidden_field_tag :xmlSigned2 %>
@@ -27,7 +27,9 @@
 				document.forms[0].xmlSigned2.value = signature;
 				
 				document.forms[0].submit();
+			
 		}
+		
 	</script>
 
 
@@ -41,12 +43,13 @@
 				<%= flash[:error].html_safe %>
 			</div>
 		<% end %>
+	
 	   <h1>
 	   Datos a firmar
 	   </h1>
 	   
 	   
-	   <h6>Firma para <%= @signature.proposal.name %></h6>
+	   <h6>Aval para <%= @signature.proposal.promoter_name %></h6>
 
 	   <p>A continuación, te mostramos los datos que vas a firmar.</p>
 	   <p>Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral Central</p>
@@ -57,11 +60,12 @@
 border-radius: 5px;
 background-color: #F2F2F2;
 margin-left: 1px;">
-		   <p>Nombre: <%= @signature.name %></p>
-		   <p>Apellido 1: <%= @signature.surname %></p>
-		   <p>Apellido 2: <%= @signature.surname2 %></p>
-		   <p>DNI: <%= @signature.dni %></p>
-		   <p>Fecha de Nacimiento: <%= @signature.date_of_birth.strftime("%d-%m-%Y") %></p>
+	   <p>Nombre: <%= @signature.name %></p>
+	   <p>Apellido: <%= @signature.surname %></p>
+	   <p>DNI: <%= @signature.dni %></p>
+	   <p>Fecha de Nacimiento: <%= @signature.date_of_birth.strftime("%d-%m-%Y") %></p>
+	   <p>Organo al que se presenta el partido avalado: <%= @signature.proposal.election_type %></p>
+	   <p>Circunscripción: <%= @signature.province.name %></p>
 	   </div>
 	   
 	   	    <div class="btn_sign" style="padding: 24px 0 10px;

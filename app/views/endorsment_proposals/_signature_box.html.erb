@@ -1,7 +1,7 @@
 <div class="signatures_counter">
   <h4><strong><%= @endorsment_proposal.num_signatures %></strong> firma<%= "s" if @endorsment_proposal.num_signatures != 1 %></h4>
   
-  <%= link_to 'Firmas por Provincia', {:action => "show_signatures_by_province"}, :class => "by_provincias"  %>
+  <%= link_to "Firmas por Provincia", {:action => "show_signatures_by_province"}, :class => "by_provincias"  %>
 </div>
 
 <div class="form_container">
@@ -60,7 +60,7 @@
     </div>
     
     </div>
-
+	
     <div class="btn_sign">
     <a href="#" onclick="$('#new_endorsment_signature').submit(); return false;">Firma electrónica</a>
     </div>

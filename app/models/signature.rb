@@ -31,7 +31,8 @@
 
 
 require 'hpricot'
-require 'tractis_api'
+require 'psis_api'
+require 'nokogiri'
 
 class Signature < ActiveRecord::Base
 	
@@ -49,12 +50,13 @@ class Signature < ActiveRecord::Base
   delegate :tractis_template_code, :attestor_template_code, :to => :proposal
   
   before_validation :generate_token, :set_default_state
+
   
   scope :signed, :conditions => ["state > 0"]
 
   STATES = [:pending, :verified, :canceled]
 
-
+	attr_accessor  :xmlSigned #Sitio temporal donde va a residir la firma de FNMT  del applet de afirma
 
 	
   def return_url
@@ -74,35 +76,28 @@ class Signature < ActiveRecord::Base
 		end
   end
   
-  def check_and_get_tractis_signature
-	
-	  ::Rails.logger.debug "--- Comprobando firma de tractis ---"
-		contract_response = TractisApi.contract contract_code,self
-		doc = Hpricot(contract_response)
-    signed = TractisApi.contract_signed? contract_response
-		if signed then
-			
-			#Si es una firma de fedatario recogemos el nombre
-		  if self.class.name == 'AttestorSignature'
-				self.name = (doc/"signature"/"name").text
-				logger.debug "Nombre recuperado"
-				logger.debug self.name
-			end
-			
-			self.dni = (doc/"signature"/"serialnumber").text
-			logger.debug "DNI recuperado"
-			logger.debug self.dni
-
-			
-			copy_tractis_signature
+	#Validates againts PSIS the digital signature
+	def validate_signature
+		::Rails.logger.debug "--- Realizando comprobación de la firma con PSEIS ---"
+		doc = Nokogiri::XML(xmlSigned)
+		doc.remove_namespaces!
 		
-			self.state = 1
-			self.save
-		end
-
+		cert = doc.xpath('//X509Data/X509Certificate').first.inner_text
+		
+		myValidation = PSISApi.new
+		myValidation.validate cert
+		return myValidation
 	end
 	
-
+	
+  def get_afirma_signature
+	  copy_afirma_signature
+			
+		self.state = 1
+		self.save
+	end
+	
+	
   
   def signed?
     state > 0
@@ -120,18 +115,27 @@ class Signature < ActiveRecord::Base
   end
  
   private
-	def copy_tractis_signature
-		::Rails.logger.debug "--- Copiando firmas desde tractis ---"
-		contract_response = TractisApi.get_signatures contract_code,self
-		::Rails.logger.debug "Tamaño del archivo de firmas:"
-		::Rails.logger.debug contract_response.body.size
-		file = StringIO.new(contract_response.body) #mimic a real upload file
+
+	def copy_afirma_signature
+		::Rails.logger.debug "--- Copiando firmas desde applet afirma ---"
+	
+		::Rails.logger.debug "Tamaño del archivo de firma:"
+		::Rails.logger.debug xmlSigned.size
+
+		file = StringIO.new(xmlSigned) #mimic a real upload file
 		file.class.class_eval { attr_accessor :original_filename, :content_type } #add attr's that paperclip needs
-		file.original_filename = "FD#{dni}.zip"
-		file.content_type = "application/zip"
+		file.original_filename = "FD#{dni}.xsig"
+		file.content_type = "text/xml"
 
 		self.tractis_signature = file
-		
-  end	
 
+  end	
+	
+		# format dni with uppercase and leading zeros on the left
+	def format_dni
+	    if self.dni
+				self.dni.upcase!
+				self.dni = self.dni.rjust(9,"0") if self.dni.length < 9
+			end
+	end
 end

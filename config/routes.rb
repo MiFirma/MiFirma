@@ -1,7 +1,16 @@
 ﻿MiFirma2::Application.routes.draw do
 
-  resources :endorsment_signatures, :only => [:create, :show]
-  resources :attestor_signatures, :only => [:create, :show]
+  resources :endorsment_signatures, :only => [:create, :show, :share] do
+		member do
+			put 'share'
+		end
+	end
+	
+  resources :attestor_signatures, :only => [:create, :show] do
+		member do
+			put 'share'
+		end
+	end
 
   resources :endorsment_proposals, :only => [:index, :show, :show_signatures_by_province] do
 		member do
@@ -11,7 +20,8 @@
 
   resources :signatures, :only => [:create, :show] do
 		member do
-			get 'share'
+			put 'share'
+			get 'social'
 		end
 	end
 
