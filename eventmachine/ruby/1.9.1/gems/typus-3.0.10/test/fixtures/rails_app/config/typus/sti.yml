@@ -1,5 +1,0 @@
-Case:
-  fields:
-    default: title
-    form: title, content
-  application: STI

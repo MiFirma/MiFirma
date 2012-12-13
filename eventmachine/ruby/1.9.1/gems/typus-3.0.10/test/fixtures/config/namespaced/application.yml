@@ -1,5 +1,0 @@
-Delayed::Task:
-  fields:
-    default: name
-  search: name
-  application: System
