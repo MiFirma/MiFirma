@@ -71,6 +71,8 @@ class ApplicationController < ActionController::Base
 				return false			
 			end
 
+			@signature.state = 1
+			
 			if @signature.valid?
 				@proposal = @signature.proposal
 				@signature.get_afirma_signature		
