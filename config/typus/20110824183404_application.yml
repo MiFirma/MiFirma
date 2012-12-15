@@ -53,7 +53,7 @@ IlpSignature:
   order_by: 
   relationships: proposal
   filters: created_at
-  search: e
+  search: surname, email
   application: MiFirma
 
 AttestorSignature:
@@ -63,7 +63,7 @@ AttestorSignature:
   order_by: 
   relationships: municipality, proposal
   filters: created_at
-  search: name
+  search: surname, email
   application: MiFirma
 
 EndorsmentSignature:
@@ -73,7 +73,7 @@ EndorsmentSignature:
   order_by: 
   relationships: province, proposal
   filters: created_at
-  search: name
+  search: surname, email
   application: MiFirma
 
 EndorsmentProposal:
