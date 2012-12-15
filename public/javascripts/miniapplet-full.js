@@ -30,7 +30,7 @@ function cargarMiniApplet(base, keystore)
 		separate_jvm: true
 	};
 
- 	deployJava.runApplet(attributes, parameters, '1.7_02');
+ 	deployJava.runApplet(attributes, parameters, '1.7');
 
 	clienteFirma = document.getElementById("miniApplet");
 }

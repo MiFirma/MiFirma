@@ -5,15 +5,12 @@
 <%= javascript_include_tag "miniapplet-full.js", "http://www.java.com/js/deployJava.js" -%>
 <%- end -%>
 
-		<script type="text/javascript">
-			cargarMiniApplet('/javascripts');
-		</script>
+	<script type="text/javascript">
+		cargarMiniApplet('/javascripts');
+	</script>
 
-	<%= form_for @signature, :url => share_signature_path(@signature) do |f| %>
 
-		<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
-		<%= hidden_field_tag :xmlSigned2 %>
-	<% end %>
+	
 	<script type="text/javascript">
 		function doSign() {
 				var dataB64 = document.getElementById("xmlOCE2").value ;
@@ -31,7 +28,10 @@
 	</script>
 
 
-
+<%= form_for @signature, :url => share_signature_path(@signature) do |f| %>
+	<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
+	<%= hidden_field_tag :xmlSigned2 %>
+<% end %>
 	
 <div class="page terms">
 	<div class="page-content3">
