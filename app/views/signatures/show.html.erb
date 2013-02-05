@@ -1,32 +1,5 @@
-﻿<%= content_for :bodyclass do %>como-funciona<% end %> 
-<% content_for :title, "Proceso de firma electrónica"%>
-
-<%- content_for(:head) do -%>
-<%= javascript_include_tag "miniapplet-full.js", "http://www.java.com/js/deployJava.js" -%>
-<%- end -%>
-
-	<script type="text/javascript">
-		cargarMiniApplet('/javascripts');
-	</script>
-
-
-	
-	<script type="text/javascript">
-		function doSign() {
-				var dataB64 = document.getElementById("xmlOCE2").value ;
-			
-				var signature = sign(
-					dataB64,
-					"SHA512withRSA",
-					"XAdES",
-					"format=XAdES Detached");
-			
-				document.forms[0].xmlSigned2.value = signature;
-				
-				document.forms[0].submit();
-		}
-	</script>
-
+﻿<!-- En la siguiente línea va el código javascript común a todos los procesos de firma -->
+<%= render :partial => "shared/signature_process"%>
 
 <%= form_for @signature, :url => share_signature_path(@signature) do |f| %>
 	<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
