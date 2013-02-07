@@ -12,7 +12,6 @@
 		end
 		
 		@proposal = @proposals.first
-		@provinces = Province.order("name").where("only_circunscription = ?", false)
 		@signature = @proposal.signatures.new(params[:signature])
 
     share_texts(@proposals.first)
@@ -27,7 +26,7 @@
   # GET /proposals/1.xml
   def show
     @proposal = IlpProposal.find(params[:id])
-		@provinces = Province.order("name").where("only_circunscription = ?", false)
+		@provinces = Province.order("name").find(@proposal.subtype_provinces.split(",").map { |s| s.to_i }) if @proposal.subtype_provinces
 		@signature = @proposal.signatures.new(params[:signature])
 		@title = @proposal.problem
 		

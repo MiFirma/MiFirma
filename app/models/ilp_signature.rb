@@ -30,6 +30,8 @@
 #
 
 class IlpSignature < Signature
+	belongs_to :province
+	belongs_to :municipality
   belongs_to :proposal, :class_name => 'IlpProposal'
 	before_create :format_dni
 	
@@ -41,6 +43,8 @@ class IlpSignature < Signature
   validate :uniqueness_of_dni, :if => :signed?
 	validates_presence_of :dni, :name, :surname, :surname2, 
 		:message => "Debes rellenar todos los campos."	
+	
+	validates_presence_of :province, :municipality, :if => "proposal.autonomica?"
 
 	def uniqueness_of_dni
 		if IlpSignature.where("state > 0 and dni = ? and proposal_id = ? and id <> ?",dni,proposal_id,id).count>0
@@ -68,8 +72,12 @@ class IlpSignature < Signature
 	def notifier
 		Notifier.ilp_signed(self).deliver
 	end
+
+
 	
 	private
+	
+
 	# interpolate in paperclip
 	Paperclip.interpolates :promoter_name  do |attachment, style|
 		attachment.instance.proposal.promoter_short_name

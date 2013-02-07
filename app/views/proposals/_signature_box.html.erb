@@ -50,16 +50,35 @@
       <%= f.text_field :date_of_birth %>
     </div>
 		
-  	<label for="email">Tu email</label>
+	<% if (@proposal.autonomica? ) %>	
+		<label><strong>Domicilio (donde se está censado)</strong></label>
+		<label for="province">Provincia</label>
 		<div class="input">
-		  <%= f.hidden_field :proposal_id %>
-		  <%= f.text_field :email %>
+				<%= f.select :province_id, @provinces.collect {|p| [p.name,p.id]}, { :include_blank => true } %>
 		</div>
 
-		<div class="tos">
-		  <%= f.check_box :terms %>
-		  Acepto los <a href="/terms">términos y condiciones</a>
+		<label for="municipality">Municipio</label>
+		<div class="input">
+			<% if not (@signature.province_id.nil? ) %>
+				<%= f.select :municipality_id, Municipality.find_all_by_province_id(@signature.province.id_ine).collect {|p| [p.name,p.id]}, { :include_blank => true } %>
+			<% else %>
+				<%= f.select :municipality_id, [] , { :prompt => "Seleccione Provincia" } %>
+			<% end %>
 		</div>
+	<% end %>
+	
+	<br/>
+	<label><strong>Datos de contacto</strong></label>	
+  	<label for="email">Tu email</label>
+	<div class="input">
+	  <%= f.hidden_field :proposal_id %>
+	  <%= f.text_field :email %>
+	</div>
+
+	<div class="tos">
+	  <%= f.check_box :terms %>
+	  Acepto los <a href="/terms">términos y condiciones</a>
+	</div>
 		
 	  </div>
 

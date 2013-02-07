@@ -37,6 +37,8 @@ class IlpProposal < Proposal
 	
 	has_attached_file :pdf, PAPERCLIP_CONFIG
 	
+	validates :subtype, :inclusion => { :in => (["NACIONAL","AUTONOMICA"]),
+    :message => "%{value} no es un tipo de elecciónes válido. Los tipos son:CONGRESO,SENADO, CONGRESO Y SENADO,PARLAMENTO EUROPEO" }
 	validates_presence_of :pdf_file_name, :pdf_content_type,
 		:pdf_file_size, :pdf_updated_at, :num_required_signatures,
 		:handwritten_signatures, :signatures_end_date
@@ -71,5 +73,9 @@ class IlpProposal < Proposal
   def num_attestors
     @num_attestors ||= attestors_signatures.signed.size
   end	
+	
+	def autonomica?
+		subtype == "AUTONOMICA"
+	end
 	
 end

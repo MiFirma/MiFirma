@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121213195116) do
+ActiveRecord::Schema.define(:version => 20130207191941) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",       :default => "",    :null => false
@@ -83,6 +84,8 @@ ActiveRecord::Schema.define(:version => 20121213195116) do
     t.string   "attestor_template_code"
     t.integer  "user_id"
     t.string   "ilp_code"
+    t.string   "subtype"
+    t.string   "subtype_provinces"
   end
 
   create_table "provinces", :force => true do |t|
