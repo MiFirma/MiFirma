@@ -35,6 +35,7 @@ require 'psis_api'
 require 'nokogiri'
 
 class Signature < ActiveRecord::Base
+	belongs_to :proposal
 	
 	validates_presence_of :proposal_id, :state, :token
   validates_presence_of :email, :date_of_birth, :message => "Debes rellenar todos los campos."
@@ -124,7 +125,7 @@ class Signature < ActiveRecord::Base
 
 		file = StringIO.new(xmlSigned) #mimic a real upload file
 		file.class.class_eval { attr_accessor :original_filename, :content_type } #add attr's that paperclip needs
-		file.original_filename = "FD#{dni}.xsig"
+		file.original_filename = "#{proposal.ilp_code}.#{dni}.xml"
 		file.content_type = "text/xml"
 
 		self.tractis_signature = file

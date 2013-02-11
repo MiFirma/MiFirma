@@ -9,7 +9,7 @@
 	var errorJava = "No tiene instalado Java, no está actualizado en su navegador o no está activado el plug-in. Para acceder con certificado necesita tener instalado el componente Java. Puede descargarlo e instalarlo desde http://www.java.com";
 
 	if (deployJava.isPluginInstalled()) {
-		cargarMiniApplet('/javascripts');
+		MiniApplet.cargarMiniApplet('/javascripts');
 	}
 	else {
 		alert(errorJava);
@@ -17,49 +17,37 @@
 	
 	function doSign() {
 		
-		if (clienteFirma.toString().indexOf ("miniapplet") == -1) {
-			alert("No se ha cargado el applet, no se puede continuar. Actualice su versión de java en www.java.com");
+		var dataB64 = document.getElementById("xmlOCE2").value ;
+		try {
+			var signature = MiniApplet.sign(
+				dataB64,
+				"SHA512withRSA",
+				"XAdES",
+				"format=XAdES Detached");
+		
+			if (signature != null) {
+				document.forms[0].xmlSigned2.value = signature;
+				document.forms[0].submit();
+			}
+			else {
+				alert("Error en el proceso de firma");
+			}
 		}
-		else {
-			var dataB64 = document.getElementById("xmlOCE2").value ;
-			try {
-				var signature = sign(
-					dataB64,
-					"SHA512withRSA",
-					"XAdES",
-					"format=XAdES Detached");
-			
-				if (signature != null) {
-					document.forms[0].xmlSigned2.value = signature;
-					document.forms[0].submit();
+		catch (e) {
+			var msg;
+			msg = getErrorMessage();
+			if (msg != null) {
+				if (msg.indexOf("AOCertificatesNotFoundException") != -1) {
+					alert("Error: No se ha encontrado ningún certificado de firma válido");
 				}
 				else {
-					alert("Error en el proceso de firma");
-				}
-			}
-			catch (e) {
-				var msg;
-				msg = getErrorMessage();
-				if (msg != null) {
-					if (msg.indexOf("AOCertificatesNotFoundException") != -1) {
-						alert("Error: No se ha encontrado ningún certificado de firma válido");
-					}
-					else {
-						alert("Error: Se produjo un error durante la operación de firma");
-					}
+					alert("Error: Se produjo un error durante la operación de firma");
 				}
 			}
 		}
+		
 	}
 	
-	function loginAutomatico() {
-		if (!deployJava.isPluginInstalled()) {
-			alert(errorJava);
-		}
-		else {
-			loginCertificado(10);
-		}
-	}
 </script>
 
 	
