@@ -35,7 +35,7 @@
 		}
 		catch (e) {
 			var msg;
-			msg = getErrorMessage();
+			msg = MiniApplet.getErrorMessage();
 			if (msg != null) {
 				if (msg.indexOf("AOCertificatesNotFoundException") != -1) {
 					alert("Error: No se ha encontrado ningún certificado de firma válido");
