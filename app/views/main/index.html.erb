@@ -5,7 +5,7 @@
   <div class="page-content2 home-content ">
 
 	<% news_ne = News.not_expirated %>
-	<% if news_ne %>
+	<% if news_ne.count > 0 %>
 		<h6>Novedades:</h6>
 		<ul class="home_proposals">
 			<ul class="noticias">
