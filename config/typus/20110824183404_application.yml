@@ -97,3 +97,13 @@ Election:
   search: name
   application: MiFirma
   export: csv, xml
+  
+News:
+  fields:
+    default: title, description, expiration_date
+    form: title, description, expiration_date
+  order_by: 
+  filters: created_at
+  search: title
+  application: MiFirma
+  export: csv, xml

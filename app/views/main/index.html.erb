@@ -3,10 +3,27 @@
 <div class="page">
   
   <div class="page-content2 home-content ">
-    <h6>Iniciativas en curso:</h6>
-		
 
+	<% news_ne = News.not_expirated %>
+	<% if news_ne %>
+		<h6>Novedades:</h6>
+		<ul class="home_proposals">
+			<ul class="noticias">
+			<% news_ne.each do |news| %>
+				<li>
+				<h5><%=news.title.html_safe%></h5>
+				<div class="small_news">
+					<%=news.description.html_safe %>
+				</div>
+				</li>
+			<% end %>
+			</ul>
+		</ul>
 		
+	<% end %>
+
+	<h6>Iniciativas en curso:</h6>
+
     <ul class="home_proposals">
 		
 		<% if @endorsment_proposals.count == 0 and @ilp_proposals.count == 0 then %>
@@ -16,7 +33,7 @@
 			<ul class="partidos">		
 			<% if @endorsment_proposals then %>
 					<% @endorsment_proposals.each do |endorsment_proposal| %>
-						<li>
+					<li>
 						<h5>
 							<%= link_to endorsment_proposal.name, endorsment_proposal_path(endorsment_proposal) %>
 							<span>Acción promovida por: <%= link_to endorsment_proposal.promoter_name, endorsment_proposal.promoter_url %></span>

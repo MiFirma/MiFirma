@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130207191941) do
+ActiveRecord::Schema.define(:version => 20130222164334) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",       :default => "",    :null => false
@@ -55,6 +55,14 @@ ActiveRecord::Schema.define(:version => 20130207191941) do
   end
 
   add_index "municipalities", ["province_id"], :name => "index_municipalities_on_province_id"
+
+  create_table "news", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.date     "expiration_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "proposals", :force => true do |t|
     t.string   "name"

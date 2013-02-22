@@ -12,6 +12,7 @@ admin:
   Election: create, read, update, delete
   AttestorSignature: create, read, update, delete
   User: read
+  News: create, read, update, delete
   
 basic:
   Municipality: read
@@ -22,4 +23,4 @@ basic:
   EndorsmentSignature: read, update
   Election: read
   AttestorSignature: read, update
-  User: read
+  News: create, read, update, delete

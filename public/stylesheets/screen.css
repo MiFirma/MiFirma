@@ -1482,6 +1482,12 @@ h3 {
   line-height: 150%;
   margin-bottom: 8px;
 }
+.home_proposals li .small_news p {
+  color: #333333;
+  font-size: 12px;
+  line-height: 150%;
+  margin-bottom: 8px;
+}
 .partidos { padding-right: 10px; }
 .partidos li {
   border-bottom: 1px dotted #dddddd;
