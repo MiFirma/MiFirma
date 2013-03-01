@@ -1,11 +1,19 @@
 ﻿# coding: utf-8
 require 'zip/zip'
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  before_filter :authenticate
+	protect_from_forgery
 	include SessionsHelper
-	
+	  
+
 	@provinces = Province.order("name")
 	
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "asociacionmifirma" && password == "asociacionmifirma"
+    end if Rails.env.staging?
+  end
 
 	def share_texts(proposal, user=nil)
     @share_title = "Ya he firmado la propuesta #{proposal.name}, ¡únete!"
