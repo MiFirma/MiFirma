@@ -896,7 +896,7 @@ div.page-sidebar2 {
   /* min-height: 400px; */
   /*background: url(../images/line_gradient.png) no-repeat left;*/
 }
-div.page-sidebar dl.reasons, div.page-sidebar2 dl.reasons {
+div.page-sidebar dl.reasons, div.page-sidebar2 dl.reasons , div.page-sidebar2 form.email_subscription{
   padding: 15px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -904,7 +904,7 @@ div.page-sidebar dl.reasons, div.page-sidebar2 dl.reasons {
   background-color: #f2f2f2;
   margin-left: 1px;
 }
-div.page-sidebar dl.reasons dt,div.page-sidebar2 dl.reasons dt {
+div.page-sidebar dl.reasons dt,div.page-sidebar2 dl.reasons dt, div.page-sidebar2 form.email_subscription div.title_email_subscription{
   font-size: 14px;
   font-weight: bold;
   padding-bottom: 10px;
