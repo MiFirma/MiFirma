@@ -10,6 +10,9 @@ PAPERCLIP_CONFIG = {
 MiFirma2::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
 
+	# Redirecting to SSL
+	config.middleware.insert_before ActionDispatch::Static, "Rack::SSL"
+	
   # The production environment is meant for finished, "live" apps.
   # Code is not reloaded between requests
   config.cache_classes = true
