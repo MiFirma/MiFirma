@@ -6,8 +6,13 @@
 	<%= hidden_field_tag :xmlSigned2 %>
 <% end %>
 	
+<% content_for :onload, "document.getElementById('Espera').style.visibility='hidden';" %>	
+	
 <div class="page terms">
 	<div class="page-content3">
+		<div id="Espera" align="center">
+			<strong>POR FAVOR, ESPERE MIENTRAS SE CARGA EL APPLET DE JAVA</strong>
+		</div>
 		<% if flash[:error] %>
 			<div class="error">
 				<strong>Error al crear la firma</strong>
@@ -53,7 +58,6 @@ border: none;">
 									margin: 0 auto;" 
 									onclick="doSign();">Firma electrónica</a>
 			</div>
-			
 			Para poder firmar es necesario <a href="http://www.java.com/es/download/index.jsp">actualizar</a> la máquina virtual de java a la última versión.
 	</div>
 	
