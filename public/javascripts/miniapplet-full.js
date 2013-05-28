@@ -105,7 +105,7 @@ var MiniApplet = {
 				separate_jvm: false
 			};
 
-		 	deployJava.runApplet(attributes, parameters, '1.7');
+		 	deployJava.runApplet(attributes, parameters, '1.6');
 
 			clienteFirma = document.getElementById("miniApplet");
 		},
