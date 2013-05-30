@@ -6,20 +6,26 @@
 <%- end -%>
 
 		<script type="text/javascript">
-			cargarMiniApplet('/javascripts');
+			var errorJava = "No tiene instalado Java, no está actualizado en su navegador o no está activado el plug-in. Para acceder con certificado necesita tener instalado el componente Java. Puede descargarlo e instalarlo desde http://www.java.com";
+
+			if (deployJava.isPluginInstalled()) {
+				MiniApplet.cargarMiniApplet('/javascripts');
+			}
+			else {
+				alert(errorJava);
+			}
 		</script>
 
 	<%= form_for @signature, :url => share_attestor_signature_path(@signature) do |f| %>
-
 		<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
 		<%= hidden_field_tag :xmlSigned2 %>
 	<% end %>
 	<script type="text/javascript">
 		function doSign() {
 				var data = document.getElementById("datosAFirmar").innerHTML;
-				var dataB64 = getBase64FromText(data);
+				var dataB64 = MiniApplet.getBase64FromText(data);
 			
-				var signature = sign(
+				var signature = MiniApplet.sign(
 					dataB64,
 					"SHA512withRSA",
 					"XAdES",
@@ -28,7 +34,7 @@
 				document.forms[0].xmlSigned2.value = signature;
 				
 				document.forms[0].submit();
-			
+		
 		}
 		
 	</script>
@@ -77,7 +83,7 @@ municipio de <%= @signature.municipality.name %>, situado en la provincia de <%=
 <li>Direcci&#xF3;n de e-mail: <%= @signature.email %></li>
 </ul>
 <p><strong>ACEPTA</strong> que estos datos podr&#xE1;n ser incorporados a un fichero de la <%= @signature.proposal.name %>. Al aportar estos datos, el firmante presta su consentimiento para su tratamiento a los efectos indicados. Para ejecutar los derechos de acceso, rectificaci&#xF3;n, 
-cancelaci&#xF3;n y oposici&#xF3;n, el firmante podr&#xE1; dirigirse a XXXXXXXXXXXXXX</p>
+cancelaci&#xF3;n y oposici&#xF3;n, el firmante podr&#xE1; dirigirse a la comisión promotora de la ILP.</p>
 </div>	   
 
 </div>
