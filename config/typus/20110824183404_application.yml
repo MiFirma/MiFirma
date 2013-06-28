@@ -19,7 +19,7 @@ IlpProposal:
     form: name, problem, subtype, subtype_provinces, howto_solve, tractis_template_code, attestor_template_code, pdf, num_required_signatures, promoter_name, promoter_url, handwritten_signatures, banner, promoter_short_name, signatures_end_date, ilp_code, user
   order_by: position
   filters: created_at
-  relationships: signatures, attestors_signatures
+  relationships: signatures, attestors_signatures, user
   search: name
   application: MiFirma
   export: csv, xml
