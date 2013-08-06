@@ -35,10 +35,13 @@
 		}
 		catch (e) {
 			var msg;
-			msg = MiniApplet.getErrorMessage();
+			msg = MiniApplet.getErrorType();
 			if (msg != null) {
 				if (msg.indexOf("AOCertificatesNotFoundException") != -1) {
 					alert("Error: No se ha encontrado ningún certificado de firma válido");
+				}
+				else if (msg.indexOf("AOCancelledOperationException") != -1) {
+					alert("Se ha cancelado la operación");
 				}
 				else {
 					alert("Error: Se produjo un error durante la operación de firma");
