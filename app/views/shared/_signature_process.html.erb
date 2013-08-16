@@ -6,6 +6,10 @@
 <%- end -%>
 
 <script type="text/javascript">
+	$(window).load(function() {
+		$('#Espera').hide();
+	});
+	
 	var errorJava = "No tiene instalado Java, no está actualizado en su navegador o no está activado el plug-in. Para acceder con certificado necesita tener instalado el componente Java. Puede descargarlo e instalarlo desde http://www.java.com";
 
 	if (deployJava.isPluginInstalled()) {
