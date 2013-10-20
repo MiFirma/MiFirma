@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130222164334) do
+ActiveRecord::Schema.define(:version => 20130829094253) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",       :default => "",    :null => false
@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(:version => 20130222164334) do
   end
 
   create_table "endorsment_signatures", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "feedback_signatures", :force => true do |t|
+    t.integer  "reason_feedback_id"
+    t.integer  "signature_id"
+    t.integer  "proposal_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -102,6 +110,12 @@ ActiveRecord::Schema.define(:version => 20130222164334) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "only_circunscription"
+  end
+
+  create_table "reason_feedbacks", :force => true do |t|
+    t.text     "reason"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "signatures", :force => true do |t|

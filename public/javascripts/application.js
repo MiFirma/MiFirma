@@ -1,4 +1,8 @@
-﻿$(document).ready(function() {
+﻿jQuery.ajaxSetup({
+  'beforeSend': function(xhr) { xhr.setRequestHeader("Accept", "text/javascript") }
+});
+
+$(document).ready(function() {
   $('a[rel*=facebox]').facebox({
     loadingImage : '/images/loading.gif',
     closeImage   : '/images/closelabel.png'
@@ -89,5 +93,5 @@
   $("#ilp_signature_municipality_of_birth_id").selectbox();
 
   $("#endorsment_signature_province_id").selectbox();
-
+  $("#feedback_signature_reason_feedback_id").selectbox();
 });

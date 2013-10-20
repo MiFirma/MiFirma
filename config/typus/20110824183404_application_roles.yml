@@ -13,6 +13,8 @@ admin:
   AttestorSignature: create, read, update, delete
   User: read
   News: create, read, update, delete
+  ReasonFeedback: create, read, update, delete
+  FeedbackSignature: create, read, delete  
   
 basic:
   Municipality: read

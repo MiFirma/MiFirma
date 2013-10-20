@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  reason_feedback: 
+  signature: 
+  proposal: 
+
+two:
+  reason_feedback: 
+  signature: 
+  proposal: 

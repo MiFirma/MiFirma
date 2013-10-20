@@ -107,3 +107,25 @@ News:
   search: title
   application: MiFirma
   export: csv, xml
+
+ReasonFeedback:
+  fields:
+    default: reason
+    form: reason
+  order_by: 
+  filters: created_at
+  search: title
+  application: MiFirma
+  export: csv, xml
+
+FeedbackSignature:
+  fields:
+    default: reason_feedback.reason,proposal.name
+    form: reason_feedback,proposal_id,signature_id
+  order_by:
+  relationships: reason_feedbacks, signature, proposal  
+  filters: created_at
+  search: title
+  application: MiFirma
+  export: csv, xml 
+  

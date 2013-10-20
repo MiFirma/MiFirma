@@ -1,0 +1,2 @@
+/* Inserta un texto de agradecimiento cuando nos dan feedback */
+$("#feedback").html('<div class="flash notice"><%= escape_javascript(flash.delete(:notice)) %></div>');

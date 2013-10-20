@@ -107,5 +107,27 @@
 		<img alt="" border="0" src="https://www.paypalobjects.com/es_ES/i/scr/pixel.gif" width="1" height="1">
 	</form>
 </div>
+</div>
 
+<div id="feedback" class="tradicional">
+  <p>¿Algún problema para continuar?</p>
+  <p>Nos gustaría contar con tu ayuda para poder seguir mejorando</p>
+  <div align="center" >
+	<%= form_for @feedback_signature, :remote => true do |f| %>
+		<%= f.collection_select :reason_feedback_id, @reasons, :id, :reason, { :include_blank => true } %>
+		<script>
+			$('#feedback_signature_reason_feedback_id').change(function() {
+				$.ajax({
+					type: "POST",
+					url: "<%= feedback_signatures_path %>",
+					data: {feedback_signature: {
+							  reason_feedback_id : $('#feedback_signature_reason_feedback_id').val(),
+							  proposal_id : "<%= @proposal.id %>"
+						}},
+					dataType: "script"
+				});
+			});
+		</script>
+	<% end %>
+  </div>
 </div>

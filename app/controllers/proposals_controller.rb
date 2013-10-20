@@ -26,9 +26,13 @@
   # GET /proposals/1.xml
   def show
     @proposal = IlpProposal.find(params[:id])
-		@provinces = Province.order("name").find(@proposal.subtype_provinces.split(",").map { |s| s.to_i }) if @proposal.subtype_provinces
-		@signature = @proposal.signatures.new(params[:signature])
-		@title = @proposal.problem
+	@provinces = Province.order("name").find(@proposal.subtype_provinces.split(",").map { |s| s.to_i }) if @proposal.subtype_provinces
+	@signature = @proposal.signatures.new(params[:signature])
+	@title = @proposal.problem
+	@reasons = ReasonFeedback.all
+	@feedback_signature = FeedbackSignature.new
+	@feedback_signature.proposal = @proposal
+	@feedback_signature.signature = @signature
 		
     share_texts(@proposal)
 		
