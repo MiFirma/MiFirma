@@ -20,8 +20,13 @@ $(document).ready(function() {
       else {
         // Send the request and update sub category dropdown
         $.ajax({
-          dataType: "json",
+          dataType: 'json',
           cache: false,
+		  type: "POST", 
+		  headers: { 
+			Accept : "application/json",
+		  },
+		  contentType: "application/json; charset=utf-8", 
           url: '/province/municipalities_for_provinceid/' + id_value_string,
           timeout: 2000,
           error: function(XMLHttpRequest, errorTextStatus, error){
@@ -59,8 +64,13 @@ $(document).ready(function() {
       else {
         // Send the request and update sub category dropdown
         $.ajax({
-          dataType: "json",
+          dataType: 'json',
+		  headers: { 
+			Accept : "application/json",
+		  },
           cache: false,
+		  type: "POST", 
+		  contentType: "application/json; charset=utf-8", 
           url: '/province/municipalities_for_provinceid/' + id_value_string,
           timeout: 2000,
           error: function(XMLHttpRequest, errorTextStatus, error){
