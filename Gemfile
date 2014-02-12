@@ -47,10 +47,11 @@ end
 
 # Bundle gems for heroku
 group :staging, :production do
-	 gem 'newrelic_rpm'
-	 platforms :ruby do # linux
-		gem 'unicorn'
-	 end
+	gem 'newrelic_rpm'
+end
+
+platforms :ruby do # linux
+	gem 'unicorn'
 end
 
 gem 'rack-ssl', :require => 'rack/ssl'
