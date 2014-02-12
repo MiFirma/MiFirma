@@ -5,7 +5,6 @@ gem 'rails', '3.0.20'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'paperclip'
 gem 'acts_as_list'
 gem 'httpclient'
@@ -40,6 +39,7 @@ gem 'rubyzip'
 group :development, :test do
    # Use thin as the web server
    gem 'thin'
+   gem 'sqlite3'
 
    gem 'ruby-debug19', :require => 'ruby-debug'
    gem 'annotate'
@@ -48,10 +48,9 @@ end
 # Bundle gems for heroku
 group :staging, :production do
 	gem 'newrelic_rpm'
+	platforms :ruby do # linux
+	  gem 'unicorn'
+	end
 end
-
-platforms :ruby do # linux
-	gem 'unicorn'
-end
-
+	
 gem 'rack-ssl', :require => 'rack/ssl'
