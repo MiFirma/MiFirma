@@ -151,5 +151,4 @@ DEPENDENCIES
   sqlite3
   thin
   typus (= 3.0.10)
-  unicorn
   validates_timeliness (~> 3.0.2)
