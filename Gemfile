@@ -16,8 +16,6 @@ gem 'aws-s3'
 gem 'nokogiri'
 gem 'rubyzip'
 
-# Use thin as the web server
-gem 'thin'
 
 # Deploy with Capistrano
 # gem 'capistrano'
@@ -40,6 +38,9 @@ gem 'thin'
 # end
 
 group :development, :test do
+   # Use thin as the web server
+   gem 'thin'
+
    gem 'ruby-debug19', :require => 'ruby-debug'
    gem 'annotate'
 end
@@ -47,6 +48,9 @@ end
 # Bundle gems for heroku
 group :staging, :production do
 	 gem 'newrelic_rpm'
+	 platforms :ruby do # linux
+		gem 'unicorn'
+	 end
 end
 
 gem 'rack-ssl', :require => 'rack/ssl'
