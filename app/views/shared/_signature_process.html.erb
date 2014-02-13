@@ -2,7 +2,7 @@
 <% content_for :title, "Proceso de firma electrónica"%>
 
 <%- content_for(:head) do -%>
-<%= javascript_include_tag "miniapplet-full.js", "deployJava.js" -%>
+<%= javascript_include_tag "miniapplet-full.js", "https://www.java.com/js/deployJava.js" -%>
 <%- end -%>
 
 <script type="text/javascript">
@@ -17,6 +17,7 @@
 	}
 	else {
 		alert(errorJava);
+		MiniApplet.cargarMiniApplet('/javascripts');
 	}
 	
 	function doSign() {
