@@ -40,7 +40,7 @@
 							<%= link_to "Leer más", endorsment_proposal_path(endorsment_proposal), {:class => "read_more"} %>
 						</h5>
 						<div class="small_proposal">
-							<%= image_tag endorsment_proposal.banner.url, :width => 150, :class => "thumb" %>
+							<%= image_tag endorsment_proposal.banner.url, :width => 150, :class => "thumb", :protocol => request.protocol %>
 							<%= endorsment_proposal.problem.html_safe %>
 						</div>
 					</li>
@@ -55,7 +55,7 @@
 						<%= link_to "Leer más", proposal_path(ilp_proposal), {:class => "read_more"} %>
 					</h5>
 					<div class="small_proposal">
-						<%= image_tag ilp_proposal.banner.url, :width => 150, :class => "thumb" %>
+						<%= image_tag ilp_proposal.banner.url, :width => 150, :class => "thumb", :protocol => request.protocol  %>
 						<%= ilp_proposal.problem.html_safe %>
 					</div>
 				</li>

@@ -7,7 +7,7 @@
 	<div class="fb-like" data-send="false" data-width="450" data-show-faces="true" data-font="arial"></div>	   
     
 	<div class="proposal_content">
-	  <%= link_to image_tag(proposal.banner.url), proposal.promoter_url %>
+	  <%= link_to image_tag(proposal.banner.url, :protocol => request.protocol ), proposal.promoter_url %>
       <%= proposal.howto_solve.html_safe %>
     </div>
     
