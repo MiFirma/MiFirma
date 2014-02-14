@@ -1,1 +1,1 @@
-web: bundle exec thin -p $PORT -e $RACK_ENV -R $HEROKU_RACK start
+web: bundle exec unicorn -p $PORT -E $RACK_ENV -c config/unicorn.rb
