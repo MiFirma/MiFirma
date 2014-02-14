@@ -49,6 +49,7 @@ end
 group :staging, :production do
 	gem 'newrelic_rpm'
 	gem 'thin'
+	gem 'pg'
 end
 	
 gem 'rack-ssl', :require => 'rack/ssl'
