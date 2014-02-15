@@ -7,13 +7,13 @@ gem 'rails', '3.0.20'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'paperclip'
+gem 'paperclip', '2.3.15'
 gem 'acts_as_list'
 gem 'httpclient'
 gem 'hpricot'
 gem 'typus', '3.0.10'
 gem 'validates_timeliness', '~> 3.0.2'
-gem 'aws-s3'
+gem 'aws-s3', '0.6.2'
 gem 'nokogiri'
 gem 'rubyzip', '0.9.6.1'
 

@@ -146,12 +146,12 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list
   annotate
-  aws-s3
+  aws-s3 (= 0.6.2)
   hpricot
   httpclient
   newrelic_rpm
   nokogiri
-  paperclip
+  paperclip (= 2.3.15)
   pg
   rack-ssl
   rails (= 3.0.20)
