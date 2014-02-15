@@ -15,7 +15,7 @@ gem 'typus', '3.0.10'
 gem 'validates_timeliness', '~> 3.0.2'
 gem 'aws-s3'
 gem 'nokogiri'
-gem 'rubyzip'
+gem 'rubyzip', '0.9.6.1'
 
 
 group :development, :test do
