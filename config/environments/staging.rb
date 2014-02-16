@@ -1,4 +1,4 @@
-﻿MIFIRMA_HOST = "mifirma-stage.heroku.com"
+﻿MIFIRMA_HOST = "pruebas.heroku.com"
 
 PAPERCLIP_CONFIG = {
   :storage => :s3,
