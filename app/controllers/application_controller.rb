@@ -39,15 +39,15 @@ class ApplicationController < ActionController::Base
 	def get_zip_signatures (signatures)
 	
 		if !signatures.blank?
-      file_name = "signatures.zip"
-      t = Tempfile.new("my-temp-filename-#{Time.now.to_i}")
-      Zip::ZipOutputStream.open(t.path) do |z|
-        signatures.each do |signature|
-          title = signature.tractis_signature_file_name
-          z.put_next_entry(title)
-					file = signature.tractis_signature.to_file
-          z.print file.read
-					file.close
+		  file_name = "signatures.zip"
+		  t = Tempfile.new("my-temp-filename-#{Time.now.to_i}","#{Rails.root}/tmp")
+		  Zip::ZipOutputStream.open(t.path) do |z|
+			signatures.each do |signature|
+			  title = signature.tractis_signature_file_name
+			  z.put_next_entry(title)
+						file = signature.tractis_signature.to_file
+			  z.print file.read
+						file.close
         end
       end
       t.close
