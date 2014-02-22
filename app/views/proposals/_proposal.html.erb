@@ -3,6 +3,8 @@
     <h3> 
       <%= link_to proposal.name, proposal_path(proposal) %>
       <span>Acción promovida por: <%= link_to proposal.promoter_name, proposal.promoter_url %></span>
+	  <span>Iniciado el <%= l proposal.signatures_end_date - 9.months, format: :long %></span>
+	  <span>Finaliza el <%= l proposal.signatures_end_date, format: :long %></span>
     </h3>
 	<div class="fb-like" data-send="false" data-width="450" data-show-faces="true" data-font="arial"></div>	   
     

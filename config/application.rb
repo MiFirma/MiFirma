@@ -32,7 +32,7 @@ module MiFirma2
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :es
 		#Adding the below makes it work as expected at heroku
-		#config.i18n.locale = :es 
+		config.i18n.locale = :es 
 		
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
