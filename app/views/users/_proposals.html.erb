@@ -15,7 +15,13 @@
 	
   <tr>
 
-		<td><%= link_to proposal.name, edit_proposal_path(proposal.id) %></td>
+		<td><% if proposal.class.name == "IlpProposal" %>
+				<%= link_to proposal.name, edit_proposal_path(proposal.id) %>
+			<% end %>
+			<% if proposal.class.name == "EndorsmentProposal" %>
+				<%= link_to proposal.name, edit_endorsment_proposal_path(proposal.id) %>
+			<% end %>
+		</td>
 
 		<td><div class="numeracion"><%= proposal.num_signatures_signed %></div>
 			<div class="iconos_tabla">

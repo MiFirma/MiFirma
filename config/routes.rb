@@ -14,7 +14,7 @@
 		end
 	end
 
-  resources :endorsment_proposals, :only => [:index, :show, :show_signatures_by_province] do
+  resources :endorsment_proposals do
 		member do
 			get 'show_signatures_by_province'
 		end

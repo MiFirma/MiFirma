@@ -231,6 +231,7 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
 	# Generates XML for endorsments for the OCE
 	#
 	def self.createXMLEndorsmentOCE(signature)
+			
 	    dataOCE = <<-XML
       <oce>
           <avalcandidatura>
@@ -244,7 +245,7 @@ Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral
               </avalista>
               <candidatura>
                   <elecciones>#{signature.proposal.election_type}</elecciones>
-                  <circunscripcion>#{signature.province.name}</circunscripcion>
+                  <circunscripcion>#{signature.circunscripcion}</circunscripcion>
                   <nombre>#{signature.proposal.promoter_name}</nombre>
               </candidatura>
           </avalcandidatura>

@@ -45,7 +45,13 @@ class EndorsmentSignature < Signature
 	
 	validate :dni_format
 	
- 
+  def circunscripcion
+			if proposal.election_type == "PARLAMENTO EUROPEO" then
+				circunscripcion = "Circunscripción Nacional"
+			else
+				circunscripcion = signature.province.name 
+			end
+	end
 	
 	# Validates NIF
 	def dni_format

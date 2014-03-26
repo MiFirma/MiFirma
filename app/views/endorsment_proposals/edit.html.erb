@@ -1,0 +1,51 @@
+<% content_for :bodyclass do %>proposal<% end %> 
+<% content_for :title, @proposal.name%>
+
+<div class="page">
+<div class="page-sidebar">
+
+
+<div class="form ancho596">
+	<% if @proposal.errors.any? %>
+	<div class="sign_error">
+		<%= render "error_messages" %>
+	</div>
+	<% end %>
+	
+	<label><h5>Edición Propuesta: <%= @proposal.name %></h5></label>	
+
+	<%= form_for(@proposal, :url => endorsment_proposal_path, :html => { :multipart => true }) do |f| %>
+		<%= f.label :name, "Nombre" %><br />
+		<div class="input ancho592">
+			<%= f.text_field :name %>
+		</div>
+
+		<%= f.label :problem, "Breve Descripción" %><br />
+		<div class="input ancho592">
+			<%= f.text_area :problem %>
+		</div>
+
+		<%= f.label :howto_solve, "Detalle Propuesta" %><br />
+		<div class="input ancho592">
+			<%= f.text_area :howto_solve %>
+		</div>
+
+		<%= f.label :handwritten_signatures, "Número de firmas manuscritas" %><br />
+		<div class="input ancho592">
+			<%= f.text_field :handwritten_signatures %>
+		</div>
+
+		<%= f.label :banner, "Banner de la Iniciativa o Comisión Promotora" %><br />
+		<div class="input ancho592">
+			<%= f.file_field  :banner %>
+		</div>
+
+		<div class="btn_sign">
+			<%= f.submit "Actualizar" %>
+		</div>		
+		</div>
+
+	<% end %>
+	
+</div>
+</div>

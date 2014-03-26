@@ -24,11 +24,14 @@
 		
 		var dataB64 = document.getElementById("xmlOCE2").value ;
 		try {
+		
+			var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit"
+		
 			var signature = MiniApplet.sign(
 				dataB64,
 				"SHA512withRSA",
 				"XAdES",
-				"format=XAdES Detached");
+				params);
 		
 			if (signature != null) {
 				document.forms[0].xmlSigned2.value = signature;
