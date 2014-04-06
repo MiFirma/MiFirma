@@ -10,7 +10,7 @@
 		$('#Espera').hide();
 	});
 	
-	var errorJava = "No tiene instalado Java, no está actualizado en su navegador o no está activado el plug-in. Para acceder con certificado necesita tener instalado el componente Java. Puede descargarlo e instalarlo desde http://www.java.com";
+	var errorJava = "No se ha detectato Java, no está actualizado en su navegador o no está activado el plug-in. Para acceder con certificado necesita tener instalado el componente Java. Puede descargarlo e instalarlo desde http://www.java.com. Se va a intentar CONTINUAR con el proceso de carga del componente de FIRMA pero puede haber problemas";
 
 	if (deployJava.isPluginInstalled()) {
 		MiniApplet.cargarMiniApplet('/javascripts');
