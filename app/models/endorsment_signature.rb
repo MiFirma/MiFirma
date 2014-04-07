@@ -66,6 +66,10 @@ class EndorsmentSignature < Signature
 		value = dni.clone
 		if value.length > 1
 			check = value.slice!(value.length - 1..value.length - 1).upcase
+			if (value.to_i == 0) then
+				return false
+			end
+			
 			calculated_letter = letters[value.to_i % 23].chr
 			if !(check === calculated_letter)
 				return false
@@ -85,12 +89,15 @@ class EndorsmentSignature < Signature
 			check = value.slice!(value.length - 1..value.length - 1).upcase
 			checkI = value.slice!(0).upcase
 			
-			if (checkI == "Y") then
-				value = "1" + value
-			elsif (checkI == "Z") then
-				value = "2" + value
+			if (value.to_i == 0) then
+				return false
 			end
-		
+			
+			if (checkI == "Y") then
+				value = "1".concat(value)
+			elsif (checkI == "Z") then
+				value = "2".concat(value)
+			end
 			calculated_letter = letters[value.to_i % 23].chr
 			if !(check === calculated_letter)
 				return false
