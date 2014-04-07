@@ -1,5 +1,5 @@
 ﻿<!-- En la siguiente línea va el código javascript común a todos los procesos de firma -->
-<%= render :partial => "shared/signature_process" %>
+
 
 <%= form_for @signature, :url => share_signature_path(@signature) do |f| %>
 	<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
@@ -70,3 +70,4 @@ border: none;">
 	
 	<div class="clear">&nbsp;</div>
 </div>
+<%= render :partial => "shared/signature_process" %>

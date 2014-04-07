@@ -1,6 +1,4 @@
 ﻿<!-- En la siguiente línea se cargan los javascripts -->
-<%= render :partial => "shared/signature_process" %>
-
 
 <%= form_for @signature, :url => share_endorsment_signature_path(@signature) do |f| %>
 	<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
@@ -9,6 +7,10 @@
 	
 <div class="page terms">
 	<div class="page-content3">
+		<div id="Espera" align="center">
+			<strong>POR FAVOR, ESPERE MIENTRAS SE CARGA EL APPLET DE JAVA</strong>
+			<img id="loading-image" src="/images/loading.gif" alt="Loading..." />
+		</div>
 		<% if flash[:error] %>
 			<div class="error">
 				<strong>Error al crear la firma</strong>
@@ -63,3 +65,4 @@ border: none;">
 	
 	<div class="clear">&nbsp;</div>
 </div>
+<%= render :partial => "shared/signature_process" %>

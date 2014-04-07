@@ -2,62 +2,40 @@
 <% content_for :title, "Proceso de firma electrónica"%>
 
 <%- content_for(:head) do -%>
-<%= javascript_include_tag "miniapplet-full.js", "https://www.java.com/js/deployJava.js" -%>
+<%= javascript_include_tag "Cliente_Firma_3.3.1_u5/constantes.js", "Cliente_Firma_3.3.1_u5/common-js/instalador.js" -%>
 <%- end -%>
 
 <script type="text/javascript">
-	$(window).load(function() {
-		$('#Espera').hide();
-	});
-	
-	var errorJava = "No se ha detectato Java, no está actualizado en su navegador o no está activado el plug-in. Para acceder con certificado necesita tener instalado el componente Java. Puede descargarlo e instalarlo desde http://www.java.com. Se va a intentar CONTINUAR con el proceso de carga del componente de FIRMA pero puede haber problemas";
 
-	if (deployJava.isPluginInstalled()) {
-		MiniApplet.cargarMiniApplet('/javascripts');
-	}
-	else {
-		alert(errorJava);
-		MiniApplet.cargarMiniApplet('/javascripts');
-	}
+	cargarAppletFirma('MEDIA');
+	
+	clienteFirma.initialize();
+	
+	document.getElementById("Espera").style.display = "none";
 	
 	function doSign() {
 		
+		clienteFirma.initialize();
+						
 		var dataB64 = document.getElementById("xmlOCE2").value ;
-		try {
 		
-			var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit"
+		clienteFirma.setCertFilter('{SUBJECT.DN#NOT_MATCHES#{".*(AUTENTICACIÓN).*"}}}');
+		clienteFirma.setSignatureFormat("XAdES Detached");
+		clienteFirma.setSignatureAlgorithm("sha1WithRsaEncryption");
+		clienteFirma.setSignatureMode("IMPLICIT");
 		
-			var signature = MiniApplet.sign(
-				dataB64,
-				"SHA512withRSA",
-				"XAdES",
-				params);
+		clienteFirma.setData(dataB64);
+		clienteFirma.sign();
 		
-			if (signature != null) {
-				document.forms[0].xmlSigned2.value = signature;
-				document.forms[0].submit();
-			}
+		if(!clienteFirma.isError()) {
+			document.forms[0].xmlSigned2.value = clienteFirma.getSignatureBase64Encoded();
+			document.forms[0].submit();
+		}
 			else {
-				alert("Error en el proceso de firma. Compruebe que tiene algún certificado instalado o que el DNIe funcione correctamente.");
-			}
+				alert("No se ha podido firmar: "+clienteFirma.getErrorMessage());
+				return false;
 		}
-		catch (e) {
-			var msg;
-			msg = MiniApplet.getErrorType();
-			if (msg != null) {
-				if (msg.indexOf("AOCertificatesNotFoundException") != -1) {
-					alert("Error: No se ha encontrado ningún certificado de firma válido");
-				}
-				else if (msg.indexOf("AOCancelledOperationException") != -1) {
-					alert("Se ha cancelado la operación");
-				}
-				else {
-					alert("Error: Se produjo un error durante la operación de firma");
-					alert(MiniApplet.getErrorMessage());
-				}
-			}
-		}
-		
+
 	}
 	
 </script>
