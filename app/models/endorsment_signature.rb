@@ -43,14 +43,21 @@ class EndorsmentSignature < Signature
 	validates_presence_of :name, :surname, :surname2
 	validate :uniqueness_of_dni
 	
-	validate :dni_format
+	validate :dni_or_nie_format
 	
-  def circunscripcion
+	def circunscripcion
 			if proposal.election_type == "PARLAMENTO EUROPEO" then
 				circunscripcion = "Circunscripción Nacional"
 			else
 				circunscripcion = signature.province.name 
 			end
+	end
+	
+	
+	def dni_or_nie_format
+		if !(dni_format or nie_format)
+			errors.add(:dni, "Formato DNI o NIE no válido.")
+		end
 	end
 	
 	# Validates NIF
@@ -61,12 +68,40 @@ class EndorsmentSignature < Signature
 			check = value.slice!(value.length - 1..value.length - 1).upcase
 			calculated_letter = letters[value.to_i % 23].chr
 			if !(check === calculated_letter)
-				errors.add(:dni, "Formato DNI no válido.")
+				return false
+			else
+				return true
 			end
 		else
-			errors.add(:dni, "Formato DNI no válido.")
+			return false
 		end
 	end
+	
+	# Validates NIE
+	def nie_format
+		letters = "TRWAGMYFPDXBNJZSQVHLCKE"
+		value = dni.clone
+		if value.length > 1 then
+			check = value.slice!(value.length - 1..value.length - 1).upcase
+			checkI = value.slice!(0).upcase
+			
+			if (checkI == "Y") then
+				value = "1" + value
+			elsif (checkI == "Z") then
+				value = "2" + value
+			end
+		
+			calculated_letter = letters[value.to_i % 23].chr
+			if !(check === calculated_letter)
+				return false
+			else
+				return true
+			end
+		else
+			return false
+		end
+	end
+	
 	
 	# Valida que el DNI sea único para este partido en estas elecciones
 	def uniqueness_of_dni
