@@ -125,7 +125,11 @@ class Signature < ActiveRecord::Base
 
 		file = StringIO.new(xmlSigned) #mimic a real upload file
 		file.class.class_eval { attr_accessor :original_filename, :content_type } #add attr's that paperclip needs
-		file.original_filename = "#{proposal.ilp_code}.#{dni}.xml"
+		if proposal.ilp_code.blank?
+			file.original_filename = "#{dni}.xml"
+		else
+			file.original_filename = "#{proposal.ilp_code}.#{dni}.xml"
+		end
 		file.content_type = "text/xml"
 
 		self.tractis_signature = file
