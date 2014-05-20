@@ -69,6 +69,14 @@ border-radius: 5px;
 background-color: #F2F2F2;
 margin-left: 1px;">
 
+
+<% if @signature.proposal.subtype =="AUTONOMICA" %>
+<p>De conformidad con lo establecido en el artículo 12.2 de la Ley 5/1988, de 17 de octubre, de Iniciativa Legislativa Popular 
+y de los Ayuntamientos, <%= @signature.name %> <%= @signature.surname %> <%= @signature.surname2 %>, con DNI <%= @signature.dni %> 
+<strong>JURA o PROMETE</strong> ante la Junta Electoral de Andalucía 
+dar fe de la autenticidad de las firmas de los signatarios de la <%= @signature.proposal.name %>.
+</p>
+<% else %>
 <p>El firmante D. <%= @signature.name %>, <%= @signature.surname %> <%= @signature.surname2 %> con DNI <%= @signature.dni %>
 nacido el d&#xED;a <%= @signature.date_of_birth.strftime("%d-%m-%Y") %> 
 en el municipio de <%= @signature.municipality_of_birth.name %> situado en la provincia 
@@ -84,6 +92,8 @@ municipio de <%= @signature.municipality.name %>, situado en la provincia de <%=
 </ul>
 <p><strong>ACEPTA</strong> que estos datos podr&#xE1;n ser incorporados a un fichero de la <%= @signature.proposal.name %>. Al aportar estos datos, el firmante presta su consentimiento para su tratamiento a los efectos indicados. Para ejecutar los derechos de acceso, rectificaci&#xF3;n, 
 cancelaci&#xF3;n y oposici&#xF3;n, el firmante podr&#xE1; dirigirse a la comisión promotora de la ILP.</p>
+<% end %>
+
 </div>	   
 
 </div>

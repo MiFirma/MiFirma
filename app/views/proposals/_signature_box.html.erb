@@ -1,3 +1,5 @@
+
+<% if @proposal.on_signature_time? %>
 <div class="signatures_counter">
   <h4>
     <strong><%= @proposal.num_signatures %></strong> firma<%= "s" if @proposal.num_signatures != 1 %>
@@ -10,6 +12,8 @@
   </div>
   
 </div>
+<% end %>
+
 
 <div class="form_container">
 
@@ -98,7 +102,7 @@
 </div>
 
 
-
+<% if @proposal.on_signature_time? %>
 <div id="feedback" class="tradicional" style="padding:10px 10px 40px 10px;">
   <p>¿Algún problema para continuar?</p>
   <p>Nos gustaría contar con tu ayuda para poder seguir mejorando</p>
@@ -121,6 +125,7 @@
 	<% end %>
   </div>
 </div>
+<% end %>
 
 <div class="tradicional">
   <p><a href="http://blog.mifirma.com/question/para-que-utiliza-mifirma-com-el-dinero-de-los-donativos-recibidos/">¿Para qué utiliza Mifirma.com el dinero de los donativos recibidos?</a></p>

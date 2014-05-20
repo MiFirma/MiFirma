@@ -1,10 +1,10 @@
+<% if @proposal.on_signature_time? %>
 <div class="signatures_counter">
   <h4>
     <strong><%= pluralize(@proposal.num_attestors, "fedatario")%> electrónico<%= "s" if @proposal.num_attestors != 1 %></strong>
   </h4>
-  
- 
 </div>
+<% end %>
 
 <div class="form_container">
 
