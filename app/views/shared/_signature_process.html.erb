@@ -2,40 +2,68 @@
 <% content_for :title, "Proceso de firma electrónica"%>
 
 <%- content_for(:head) do -%>
-<%= javascript_include_tag "Cliente_Firma_3.3.1_u5/constantes.js", "Cliente_Firma_3.3.1_u5/common-js/instalador.js" -%>
+<%= javascript_include_tag "miniapplet.js" -%>
 <%- end -%>
 
 <script type="text/javascript">
 
-	cargarAppletFirma('MEDIA');
-	
-	clienteFirma.initialize();
-	
+	MiniApplet.cargarMiniApplet('/javascripts');
+
 	document.getElementById("Espera").style.display = "none";
 	
+	// Función que se ejecutará si la firma termina correctamente
+	function saveSignatureFunction (signature) {
+		// Guardamos la firma en un campo de un formulario
+		document.forms[0].xmlSigned2.value = signature;
+		document.forms[0].submit();
+	}
+
+	// Función que se ejecutará si el proceso de firma falla
+	function showErrorFunction (type, message) {
+	// Mostramos un mensaje con el resultado de la operación
+		if (type=="AOCertificatesNotFoundException") {
+			alert("Error: No se ha encontrado ningún certificado de firma válido");
+		}
+		else if (type=="AOCancelledOperationException") {
+			alert("Se ha cancelado la operación");
+		}
+		else {
+			alert("Error: Se produjo un error durante la operación de firma");
+			alert(MiniApplet.getErrorMessage());
+		}
+	}
+	
 	function doSign() {
+		var dataB64 = document.getElementById("xmlOCE2").value ;
+	
+		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit"
+	
+		MiniApplet.sign(
+			dataB64,
+			"SHA512withRSA",
+			"XAdES",
+			params,
+			saveSignatureFunction,
+			showErrorFunction);
+	}
+	
+	function doMobileSign() {
 		
-		clienteFirma.initialize();
-						
+		MiniApplet.cargarAppAfirma('/javascripts');
+		MiniApplet.setServlets(
+"http://ec2-54-77-105-213.eu-west-1.compute.amazonaws.com:8080/SignatureStorageServer/StorageService",
+"http://ec2-54-77-105-213.eu-west-1.compute.amazonaws.com:8080/SignatureRetrieverServer/RetrieveService");
 		var dataB64 = document.getElementById("xmlOCE2").value ;
 		
-		clienteFirma.setCertFilter('{SUBJECT.DN#NOT_MATCHES#{".*(AUTENTICACIÓN).*"}}}');
-		clienteFirma.setSignatureFormat("XAdES Detached");
-		clienteFirma.setSignatureAlgorithm("sha1WithRsaEncryption");
-		clienteFirma.setSignatureMode("IMPLICIT");
+		var params = "mode=implicit"
 		
-		clienteFirma.setData(dataB64);
-		clienteFirma.sign();
-		
-		if(!clienteFirma.isError()) {
-			document.forms[0].xmlSigned2.value = clienteFirma.getSignatureBase64Encoded();
-			document.forms[0].submit();
-		}
-			else {
-				alert("No se ha podido firmar: "+clienteFirma.getErrorMessage());
-				return false;
-		}
-
+		MiniApplet.sign(
+			dataB64,
+			"SHA512withRSA",
+			"CAdES",
+			null,
+			saveSignatureFunction,
+			showErrorFunction);
 	}
 	
 </script>
