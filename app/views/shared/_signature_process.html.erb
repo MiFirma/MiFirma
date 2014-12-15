@@ -55,6 +55,8 @@
 "http://ec2-54-171-67-123.eu-west-1.compute.amazonaws.com:8080/SignatureRetrieverServer/RetrieveService");
 		var dataB64 = document.getElementById("xmlOCE2").value ;
 		
+		var params = null;
+		
 		MiniApplet.sign(
 			dataB64,
 			"SHA512withRSA",
