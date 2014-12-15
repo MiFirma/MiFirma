@@ -61,12 +61,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
-    mini_portile (0.6.1)
     newrelic_rpm (3.3.3)
-    nokogiri (1.6.5)
-      mini_portile (~> 0.6.0)
-    nokogiri (1.6.5-x86-mingw32)
-      mini_portile (~> 0.6.0)
+    nokogiri (1.5.2-x86-mingw32)
     paperclip (2.3.15)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -154,7 +150,7 @@ DEPENDENCIES
   hpricot
   httpclient
   newrelic_rpm
-  nokogiri
+  nokogiri (= 1.5.2)
   paperclip (= 2.3.15)
   pg
   rack-ssl

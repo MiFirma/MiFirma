@@ -14,7 +14,7 @@ gem 'hpricot'
 gem 'typus', '3.0.10'
 gem 'validates_timeliness', '~> 3.0.2'
 gem 'aws-s3', '0.6.2'
-gem 'nokogiri'
+gem 'nokogiri', '1.5.2'
 gem 'rubyzip', '0.9.6.1'
 
 
