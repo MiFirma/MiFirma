@@ -18,7 +18,7 @@ class EndorsmentSignaturesController < ApplicationController
 	#Se obtiene el xml del aval y se envía a firmar
 	def show
 	  @signature = Signature.find_by_token params[:id]
-		@xmlOCEenc = Base64.encode64(::TractisApi.signature_request_endorsment_fnmt @signature)
+		@xmlOCEenc = Base64.strict_encode64(::TractisApi.signature_request_endorsment_fnmt @signature)
 
 	end
 	
