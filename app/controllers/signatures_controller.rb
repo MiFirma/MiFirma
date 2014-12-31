@@ -7,7 +7,7 @@ class SignaturesController < ApplicationController
 		@signature = IlpSignature.new params[:ilp_signature]
 		
 	if @signature.valid?
-	    @signature.save
+	  @signature.save
 		#Enviamos el nuevo registro a la lista de acumbamail
 		client = HTTPClient.new
 		target_url = "http://acumbamail.com/list/subscribe/url/call/12654/"
@@ -24,7 +24,7 @@ class SignaturesController < ApplicationController
   #Se obtiene el xml del aval y se envía a firmar
   def show
 	@signature = Signature.find_by_token params[:id]
-	@xmlOCEenc = Base64.encode64(::TractisApi.signature_request_ilp_fnmt @signature)                                                                                                                                                          
+	@xmlOCEenc = ::TractisApi.signature_request_ilp_fnmt @signature                                                                                                                                                          
   end
 	
   #Se obtiene el resultado

@@ -8,6 +8,7 @@
 <script type="text/javascript">
 
 	MiniApplet.cargarMiniApplet('/javascripts');
+	MiniApplet.setServlets("http://sint.mifirma.com:8080/SignatureStorageServer/StorageService","http://sint.mifirma.com:8080/SignatureRetrieverServer/RetrieveService");
 
 	document.getElementById("Espera").style.display = "none";
 	
@@ -34,8 +35,7 @@
 	}
 	
 	function doSign() {
-		var dataB64 = document.getElementById("xmlOCE2").value ;
-	
+		var dataB64 = MiniApplet.getBase64FromText(document.getElementById("xmlOCE2").value, "utf-8");
 		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit"
 	
 		MiniApplet.sign(
@@ -51,8 +51,7 @@
 		
 		MiniApplet.cargarAppAfirma('/javascripts');
 		MiniApplet.setServlets("http://sint.mifirma.com:8080/SignatureStorageServer/StorageService","http://sint.mifirma.com:8080/SignatureRetrieverServer/RetrieveService");
-		//var dataB64 = document.getElementById("xmlOCE2").value;
-		var dataB64 = MiniApplet.getBase64FromText("prueba", "utf-8");
+		var dataB64 = MiniApplet.getBase64FromText(document.getElementById("xmlOCE2").value, "utf-8");
 		var params = null;
 		
 		MiniApplet.sign(
