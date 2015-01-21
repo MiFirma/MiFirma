@@ -35,6 +35,7 @@
 	}
 	
 	function doSign() {
+	
 		var dataB64 = MiniApplet.getBase64FromText(document.getElementById("xmlOCE2").value, null);
 		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit"
 	
