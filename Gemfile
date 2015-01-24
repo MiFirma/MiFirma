@@ -23,7 +23,7 @@ group :development, :test do
    gem 'thin'
    gem 'sqlite3'
 
-   gem 'ruby-debug19', :require => 'ruby-debug'
+   gem 'debugger'
    gem 'annotate'
 end
 
