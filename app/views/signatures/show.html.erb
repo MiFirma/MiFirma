@@ -26,14 +26,12 @@
 	   <h6>Firma para <%= @signature.proposal.name %></h6>
 
 	   <p>A continuación, te mostramos los datos que vas a firmar.</p>
-	   <p>Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral Central</p>
+	   <p>Este documento a firmar sigue la estructura <a href="#" onclick="$('#xml').toggle();">(XML)</a> exigida por la Junta Electoral Central.</p>
 
-	   <div style="padding: 15px;
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
-border-radius: 5px;
-background-color: #F2F2F2;
-margin-left: 1px;">
+	   <div id="xml" style="display: none; padding: 15px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background-color: #F2F2F2;margin-left: 1px;">
+	   <%= @xmlOCEenc %>
+	   </div>
+	   <div style="padding: 15px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background-color: #F2F2F2;margin-left: 1px;">
 		   <p>Nombre: <%= @signature.name %></p>
 		   <p>Apellido 1: <%= @signature.surname %></p>
 		   <p>Apellido 2: <%= @signature.surname2 %></p>
