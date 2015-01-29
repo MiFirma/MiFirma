@@ -54,7 +54,7 @@
 		MiniApplet.setServlets("http://sint.mifirma.com:8080/SignatureStorageServer/StorageService","http://sint.mifirma.com:8080/SignatureRetrieverServer/RetrieveService");
 		var dataB64 = MiniApplet.getBase64FromText(document.getElementById("xmlOCE2").value,  "utf-8");
 
-		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit\nserverUrl=http://miweb.com/TriPhaseSignerServer/SignatureService";
+		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit\nserverUrl=http://sint.mifirma.com:8080/TriPhaseSignerServer/SignatureService";
 		
 		MiniApplet.sign(
 			dataB64,
