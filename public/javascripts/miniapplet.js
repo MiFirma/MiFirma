@@ -12,7 +12,11 @@ if (document.all && !window.setTimeout.isPolyfill) {
 
 var MiniApplet = {
 
-		JAR_NAME : 'miniapplet-full_1_2.jar',
+		VERSION : "1.3",
+		
+		JAR_NAME : 'miniapplet-full_1_3.jar',
+
+		JAVA_ARGUMENTS : '-Xms512M -Xmx512M',
 		
 		CUSTOM_JAVA_ARGUMENTS : null,
 		
@@ -131,6 +135,10 @@ var MiniApplet = {
 					|| !!(navigator.userAgent.match(/Trident/) && navigator.userAgent.match(/rv:11/)); /* Internet Explorer 11 o superior */
 		},
 		
+		isFirefoxUAM : function () {
+		    return navigator.userAgent.indexOf("UAM") > 0;
+		},
+		
 		/** Determina con un boolean si nos encontramos en un entorno Windows 8 en modo "Modern UI".
 		 * Este metodo no es infalible dado que el navegador no ofrece forma de saberlo.
 		 * La comprobacion . */
@@ -144,20 +152,6 @@ var MiniApplet = {
 		isChrome : function () {
 			return navigator.userAgent.toUpperCase().indexOf("CHROME") != -1 ||
 				navigator.userAgent.toUpperCase().indexOf("CHROMIUM") != -1;
-		},
-
-		/**
-		 * Determina con un boolean si el navegador es Internet Explorer 7
-		 */
-		isIE7 : function () {
-			return navigator.appVersion.toUpperCase().indexOf("MSIE 7.0") != -1;
-		},
-		
-		/**
-		 * Determina con un boolean si el navegador es Internet Explorer 8
-		 */
-		isIE8 : function () {
-			return navigator.appVersion.toUpperCase().indexOf("MSIE 8.0") != -1;
 		},
 		
 		/**
@@ -223,7 +217,7 @@ var MiniApplet = {
 			}
 
 			var delay =  Math.abs(clientDate.getTime() - serverDate.getTime());
-			if(delay > maxMillis){
+			if (delay > maxMillis) {
 				 if (checkType == MiniApplet.CHECKTIME_RECOMMENDED) {
 					 alert("Se ha detectado un desfase horario entre su sistema y el servidor. Se recomienda que se corrija antes de pulsar Aceptar para continuar." +
 							 "\nHora de su sistema: " + clientDate.toLocaleString() +
@@ -235,6 +229,17 @@ var MiniApplet = {
 							 "\nHora de su sistema: " + clientDate.toLocaleString() +
 							 "\nHora del servidor: " + serverDate.toLocaleString());
 				 }
+			}
+		},
+
+		/** Establece los parametros de configuracion para la correcta seleccion del almacen
+		 * de claves que se debe cargar. */
+		configureKeyStore : function () {
+			if (MiniApplet.isFirefoxUAM()) {
+				if (MiniApplet.CUSTOM_JAVA_ARGUMENTS == null) {
+					MiniApplet.CUSTOM_JAVA_ARGUMENTS = "";
+				}
+				MiniApplet.CUSTOM_JAVA_ARGUMENTS += " -Des.gob.afirma.keystores.mozilla.UseEnvironmentVariables=true";
 			}
 		},
 		
@@ -261,6 +266,9 @@ var MiniApplet = {
 				return;
 			}
 
+			// Configuramos los argumentos para la seleccion de almacen
+			MiniApplet.configureKeyStore();
+			
 			// Incluso si el navegador informa que hay Java, puede no haberlo (Internet Explorer
 			// siempre dice que hay), asi que cargamos el applet, pero tenemos en cuenta que en
 			// caso de error debemos cargar el cliente JavaScript
@@ -272,31 +280,31 @@ var MiniApplet = {
 			}
 			
 			var attributes = {
-					id: 'miniApplet',
-					name: 'MiniApplet @firma (Gobierno de Espa\u00F1a)',
-					type: 'application/x-java-applet',
-					width: 1,
-					height: 1
+					'id': 'miniApplet',
+					'name': 'MiniApplet @firma (Gobierno de Espa\u00F1a)',
+					'type': 'application/x-java-applet',
+					'width': 1,
+					'height': 1
 			};
 			
 			// Los argumentos de java no llegan al propio applet en las pruebas con Java 6 y 7,
 			// asi que (salvo los argumentos de carga) vamos a pasarlos como un parametro mas al
-			// applet para luego establecerlos internamente
-			
+			// applet para luego establecerlos internamente.
 			var parameters = {
-					keystore: keystoreConfig,
-					userAgent: window.navigator.userAgent,
-					archive: MiniApplet.codeBase + '/' + MiniApplet.JAR_NAME,
-					code: 'es.gob.afirma.miniapplet.MiniAfirmaApplet',
-					java_arguments: '-Xms512M -Xmx512M',
-					custom_java_arguments: MiniApplet.CUSTOM_JAVA_ARGUMENTS,
-					codebase_lookup: false,
-					separate_jvm: true,
-					locale: MiniApplet.selectedLocale
+					'keystore': keystoreConfig,
+					'userAgent': window.navigator.userAgent,
+					'archive': MiniApplet.codeBase + '/' + MiniApplet.JAR_NAME,
+					'code': 'es.gob.afirma.miniapplet.MiniAfirmaApplet',
+					'java-vm-args': MiniApplet.JAVA_ARGUMENTS,
+					'java_arguments': MiniApplet.JAVA_ARGUMENTS,
+					'custom_java_arguments': MiniApplet.CUSTOM_JAVA_ARGUMENTS,
+					'codebase_lookup': false,
+					'separate_jvm': true,
+					'locale': MiniApplet.selectedLocale
 			};
-			
-			this.loadMiniApplet(attributes, parameters);
 
+			MiniApplet.loadMiniApplet(attributes, parameters);
+			
 			MiniApplet.clienteFirma = document.getElementById("miniApplet");
 			
 			// Si no esta definido el cliente es porque se ha intentado cargar el applet
@@ -305,7 +313,7 @@ var MiniApplet = {
 				MiniApplet.cargarAppAfirma(MiniApplet.codeBase);
 			}
 		},
-		
+				
 		sign : function (dataB64, algorithm, format, params, successCallback, errorCallback) {
 			
 			this.forceLoad();
@@ -430,7 +438,17 @@ var MiniApplet = {
 
 		getCurrentLog : function () {
 			this.forceLoad();
-			return MiniApplet.clienteFirma.getCurrentLog();
+			return	" === JAVASCRIPT INFORMATION === " +
+					"\nnavigator.appCodeName: " + navigator.appCodeName +
+					"\nnavigator.appName: " +  navigator.appName +
+					"\nnavigator.appVersion: " + navigator.appVersion +
+					"\nnavigator.platform: " + navigator.platform +
+					"\nnavigator.userAgent: " + navigator.userAgent+
+					"\nnavigator.javaEnabled(): " + navigator.javaEnabled() +
+					"\nscreen.width: " + (window.screen ? screen.width : 0) +
+					"\nscreen.height: " + (window.screen ? screen.height : 0) +
+					"\n\n   === CLIENTE LOG === \n" + 
+					MiniApplet.clienteFirma.getCurrentLog();
 		},
 		
 		setServlets : function (storageServlet,  retrieverServlet) {
@@ -448,27 +466,37 @@ var MiniApplet = {
 		 **************************************************************/
 		
 		loadMiniApplet : function (attributes, parameters) {
-
 			// Internet Explorer (a excepcion de la version 10) se carga mediante un
 			// elemento <object>. El resto con un <embed>.
-			if (MiniApplet.isInternetExplorer() && !MiniApplet.isIE10()) {
+			if (MiniApplet.isInternetExplorer()) { // && !MiniApplet.isIE10()) {
 				
-				var appletTag = "<object classid='clsid:8AD9C840-044E-11D1-B3E9-00805F499D93' width='1' height='1' id='" + attributes["id"] + "'>";
-					
+				var appletTag = "<object classid='clsid:8AD9C840-044E-11D1-B3E9-00805F499D93' width='" + attributes["width"] + "' height='" + attributes["height"] + "' id='" + attributes["id"] + "'>";
+
 				if (attributes != undefined && attributes != null) {
 					for (var attribute in attributes) {
 						appletTag += "<param name='" + attribute + "' value='" + attributes[attribute] + "' />";
 					}
 				}
-	
+
 				if (parameters != undefined && parameters != null) {
 					for (var parameter in parameters) {
 						appletTag += "<param name='" + parameter + "' value='" + parameters[parameter] + "' />";
 					}
 				}
-	
+
 				appletTag += "</object>";
-				document.write(appletTag);
+
+				// Al agregar con append() estos nodos no se carga automaticamente el applet en IE10 e inferiores, así que
+				// hay que usar document.write() o innerHTML. Para asegurarnos de no pisar HTML previo, crearemos un <div>
+				// en la pagina, lo recogeremos e insertaremos dentro suyo el codigo del applet.
+				var divElem = document.createElement("div");
+				var idAtt = document.createAttribute("id");
+				idAtt.value = 'divAfirmaApplet';
+				divElem.setAttributeNode(idAtt);
+
+				document.body.appendChild(divElem);
+				
+				document.getElementById("divAfirmaApplet").innerHTML = appletTag;
 			}
 			else {
 				var embed = document.createElement("embed");
@@ -477,7 +505,16 @@ var MiniApplet = {
 					for (var attribute in attributes) {
 						var att = document.createAttribute(attribute);
 						att.value = attributes[attribute];
-						embed.setAttributeNode(att);
+						try {
+							embed.setAttributeNode(att);
+						}
+						catch (e) {
+							// Probamos este como alternativa en caso de error. Caso detectado en:
+							// - IE10 sin modo de compabilidad con el Document Mode de IE7.
+							// - Firefox en Mac OS X
+							// Este intento no soluciona el error, pero evita que se propague 
+							embed.setAttribute(attribute, attributes[attribute]);
+						}
 					}
 				}
 
@@ -503,11 +540,8 @@ var MiniApplet = {
 			if (MiniApplet.severeTimeDelay) {
 				return;
 			}
-			
 			if (MiniApplet.clientType == null) {
-				if (MiniApplet.clienteFirma == null) {
-					MiniApplet.clienteFirma = document.getElementById("miniApplet");
-				}
+				MiniApplet.clienteFirma = document.getElementById("miniApplet");
 				try {
 					MiniApplet.clienteFirma.echo();
 					MiniApplet.clientType = MiniApplet.TYPE_APPLET;
@@ -712,6 +746,7 @@ var MiniApplet = {
 				
 				var i = 0;
 				var params = new Array();
+				params[i++] = {key:"op", value:"save"};
 				if (idSession != null && idSession != undefined) {		params[i++] = {key:"id", value:encodeURIComponent(idSession)}; }
 				if (cipherKey != null && cipherKey != undefined) {		params[i++] = {key:"key", value:encodeURIComponent(cipherKey)}; }
 				if (this.storageServletAddress != null && this.storageServletAddress != undefined) {	params[i++] = {key:"stservlet", value:this.storageServletAddress}; }
@@ -753,7 +788,7 @@ var MiniApplet = {
 			 * Implementada en el applet Java de firma.
 			 */
 			this.getFileNameContentBase64 = function(title, extensions, description) {
-				throwException(UnsupportedOperationException, "La operacion de carga de ficheros no esta soportada");
+				this.throwException(UnsupportedOperationException, "La operacion de carga de ficheros no esta soportada");
 			};
 
 			/**
@@ -761,7 +796,7 @@ var MiniApplet = {
 			 * Implementada en el applet Java de firma.
 			 */
 			this.getMultiFileNameContentBase64 = function(title, extensions, description) {
-				throwException(UnsupportedOperationException, "La operacion de carga de multiples ficheros no esta soportada");
+				this.throwException(UnsupportedOperationException, "La operacion de carga de multiples ficheros no esta soportada");
 			};
 
 			/** 
@@ -779,7 +814,7 @@ var MiniApplet = {
 			this.setStickySignatory = function(sticky) {
 				// No hace nada
 			};
-
+			
 			/**
 			 * Recupera el mensaje de error asociado al ultimo error capturado.
 			 * Implementada en el applet Java de firma.
@@ -801,7 +836,7 @@ var MiniApplet = {
 			 * disponible en el applet, no en las aplicacion moviles.
 			 */
 			this.getCurrentLog = function() {
-				return "El log solo esta disponible en el MiniApplet";
+				return "Applet no cargado";
 			};
 
 			/**
@@ -897,8 +932,8 @@ var MiniApplet = {
 			 * Por ejemplo, que XAdEStri sea igual a XAdES.
 			 **/
 			function compareFormats(format, supportedFormat) {
-				format = format.toUpperCase()
-				supportedFormat = supportedFormat.toUpperCase()
+				format = format.toUpperCase();
+				supportedFormat = supportedFormat.toUpperCase();
 				return format == supportedFormat ||
 						(format.length > supportedFormat.length &&
 								format.substr(0, supportedFormat.length) == supportedFormat);
@@ -945,7 +980,8 @@ var MiniApplet = {
 						intentURL += (i != 0 ? '&' : '') + params[i].key + '=' + params[i].value; 
 					}
 				}
-				return encodeURI(intentURL);
+
+				return intentURL;
 			};
 			
 			this.getProtocol = function () {
@@ -972,7 +1008,7 @@ var MiniApplet = {
 				// Identificador del fichero (equivalente a un id de sesion) del que deben recuperarse los datos
 				var fileId = generateNewIdSession(); 
 
-				var httpRequest = ajaxRequest();
+				var httpRequest = getHttpRequest();
 				if (!httpRequest) {
 					this.throwException("java.lang.Exception", "Su navegador no permite preprocesar los datos que desea tratar");
 				}
@@ -1003,7 +1039,7 @@ var MiniApplet = {
 			 * @returns XML.
 			 */
 			function buildXML (op, params) {
-				op = (op == null ? "op" : op)
+				op = (op == null ? "op" : op);
 				var xml = '<' + op +'>';
 				for (var i = 0; i < params.length; i++) {
 					xml += '<e k="' + params[i].key + '" v="' + params[i].value + '"/>';
@@ -1122,7 +1158,7 @@ var MiniApplet = {
 
 			this.getStoredFileFromServlet = function (idDocument, servletAddress, cipherKey, successCallback, errorCallback) {
 
-				var httpRequest = ajaxRequest();
+				var httpRequest = getHttpRequest();
 				if (!httpRequest) {
 					this.throwException("java.lang.Exception", "Su navegador no permite obtener el resulado de la operaci\u00F3n");
 				}
@@ -1172,8 +1208,8 @@ var MiniApplet = {
 				setTimeout(retrieveRequest, 4000, httpRequest, url, params.replace("&it=" + (iterations-1), "&it=" + iterations), cipherKey, successCallback, errorCallback);
 			}
 
-			// ajaxRequest     Uso:  new ajaxRequest()
-			function ajaxRequest() {
+			// getHttpRequest
+			function getHttpRequest() {
 				var activexmodes=["Msxml2.XMLHTTP", "Microsoft.XMLHTTP"]; //activeX versions to check for in IE
 				if (window.ActiveXObject){ //Test for support for ActiveXObject in IE first (as XMLHttpRequest in IE7 is broken)
 					for (var i=0; i<activexmodes.length; i++) {
