@@ -1,0 +1,68 @@
+SIEMPRE Cabecera como text/xml
+SIEMPRE con Content-type como Application/xml
+
+/proposals - GET
+
+Lista todas las ILPs que están activas en XML
+
+
+/proposals/<id> - GET
+
+Lista la ILP marcada como <id>
+
+/signatures - POST
+
+Crea el primer paso de la firma. Es necesario enviar el siguiente XML
+<ilp-signature>
+	<date-of-birth type="date">1974-09-20</date-of-birth>
+	<dni>07504500Z</dni>
+	<email>jpenamar@gmail.com</email>
+	<name>Javier</name>
+	<proposal-id type="integer">3</proposal-id>
+	<surname>Peña</surname>
+	<surname2>Martínez</surname2>
+	<terms type="boolean">true</terms>
+</ilp-signature>
+
+Si no es correcto devolverá una lista de errores de este tipo:
+<errors>
+	<error>Email Email no válido. Por favor, comprueba que has introducido correctamente tu dirección de correo electrónico.</error>
+	<error>Dni Formato DNI no válido.</error>
+</errors>
+
+Si es correcto devuelve un token como este:
+9cb337b17f8aadace60b438023ec24
+
+
+
+
+/signatures/<token> - GET
+
+Con el token anterior llamando a este método se nos devuelve el XML que nos obliga a firmar la Junta Electoral Central
+Ejemplo:
+<ilp>
+ <firmante>
+<nomb>Javier</nomb>
+<ape1>Peña</ape1>
+<ape2>Martínez</ape2>
+<fnac>19740920</fnac>
+<tipoid>1</tipoid>
+<id>07504500Z</id>
+ </firmante>
+ <datosilp>
+<tituloilp>ILP de Prueba 33212</tituloilp>
+<codigoilp>ILP2012002</codigoilp>
+ </datosilp>
+</ilp>
+
+Este XML hay que firmarlo con firma XaDES Detached Implicit en un texto en Base64. Yo tengo esto en el MiniApplet: "format=XAdES Detached\nfilter=signingcert\nmode=implicit";
+
+
+
+
+/signatures/<token>/share - PUT
+Es la última llamada. debemos enviar el siguiente XML
+<ilp-signature>
+	<token>codigo del token</token>
+	<xmlSigned>texto en base64 del resultado de la firma</xmlSigned>
+</ilp-signature>

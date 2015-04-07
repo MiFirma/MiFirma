@@ -66,7 +66,12 @@ class ApplicationController < ActionController::Base
 
 			@signature.xmlSigned = Base64.decode64(params[:xmlSigned2])
 			
-			validation = @signature.validate_signature
+			begin
+				validation = @signature.validate_signature
+			rescue
+				flash[:error] = "Ha ocurrido un error al intentar validar el certificado"
+				return false
+			end
 			
 			if not validation.isValid?
 				flash[:error] = "La firma no es válida. Compruebe que el certificado no esté caducado o revocado"
