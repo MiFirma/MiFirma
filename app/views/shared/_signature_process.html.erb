@@ -37,15 +37,26 @@
 	function doSign() {
 	
 		var dataB64 = MiniApplet.getBase64FromText(document.getElementById("xmlOCE2").value, "utf-8");
-		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit";
-	
-		MiniApplet.sign(
-			dataB64,
-			"SHA512withRSA",
-			"XAdES",
-			params,
-			saveSignatureFunction,
-			showErrorFunction);
+		//var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit";
+		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit\nserverUrl=http://sint.mifirma.com:8080/TriPhaseSignerServer/SignatureService";
+		
+		if (MiniApplet.isIOS() || MiniApplet.isAndroid()) {
+			MiniApplet.sign(
+				dataB64,
+				"SHA512withRSA",
+				"XAdEStri",
+				params,
+				saveSignatureFunction,
+				showErrorFunction);
+		} else {
+			MiniApplet.sign(
+				dataB64,
+				"SHA512withRSA",
+				"XAdES",
+				params,
+				saveSignatureFunction,
+				showErrorFunction);
+		}
 	}
 	
 	function doMobileSign() {
