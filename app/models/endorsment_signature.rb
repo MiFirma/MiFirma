@@ -49,7 +49,7 @@ class EndorsmentSignature < Signature
 			if proposal.election_type == "PARLAMENTO EUROPEO" then
 				circunscripcion = "Circunscripción Nacional"
 			else
-				circunscripcion = signature.province.name 
+				circunscripcion = province.name 
 			end
 	end
 	
