@@ -5,7 +5,8 @@
 	<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
 	<%= hidden_field_tag :xmlSigned2 %>
 <% end %>
-	
+
+
 <div class="page terms">
 	<div class="page-content3">
 		<div id="Espera" align="center">
@@ -57,9 +58,15 @@ border: none;">
 
 
 			</div>
-<!-- 			<p><%= link_to "Firma Móvil", "#", :onclick => "doMobileSign();" %> </p> -->
+			<div id="java">
 			<p>Para poder firmar en el navegador es necesario <a href="http://www.java.com/es/download/index.jsp">actualizar</a> la máquina virtual de java a la última versión.</p>
-<!-- 			<p>Si no dispones de o no te funciona la máquina virtual de Java entonces necesitas instalar previamente la aplicación <a href="http://mifirma-pro.s3.amazonaws.com/Instalador_FirmaFacil1.4_Beta_2.exe">Firma Fácil</a>.</p> -->
+			</div>
+			<div id="nojava">
+				<p>INSTRUCCIONES IMPORTANTES:</p>
+				<p>1º No dispones o no te funciona la máquina virtual de Java. Necesitas instalar previamente la aplicación <a href="http://mifirma-pro.s3.amazonaws.com/AutoFirma1.4.1.exe">Auto Firma</a></p>
+				<p>2º Una vez instalada, pulsa el botón de firma y acepta la llamada para la invocación de la aplicación instalada.</p>
+				<p>3º Realiza el proceso de firma en la nueva aplicación eligiendo el certificado y pulsando en firmar.</p>				
+			</div>
 			<p>Si va a utilizar el DNI Electrónico introduzcalo en el lector.</p>
 			<p>Si tienes algún problema, revisa nuestra <a href="http://blog.mifirma.com/question/que-necesito-para-realizar-una-firma-con-certificado-electronico/" target="_blank"> FAQ</a>.</p>
 	</div>
@@ -67,4 +74,16 @@ border: none;">
 	
 	<div class="clear">&nbsp;</div>
 </div>
+
+<script>
+	if (MiniApplet.clienteFirma == null) {
+		document.getElementById('nojava').style.display = "";
+		document.getElementById('java').style.display = "none";
+	} else {
+		document.getElementById('nojava').style.display = "none";
+		document.getElementById('java').style.display = "";
+	}
+</script>	
+	
+
 <%= render :partial => "shared/signature_process" %>

@@ -40,15 +40,6 @@
 		//var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit";
 		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit\nserverUrl=http://sint.mifirma.com:8080/TriPhaseSignerServer/SignatureService";
 		
-		if (MiniApplet.isIOS() || MiniApplet.isAndroid()) {
-			MiniApplet.sign(
-				dataB64,
-				"SHA512withRSA",
-				"XAdEStri",
-				params,
-				saveSignatureFunction,
-				showErrorFunction);
-		} else {
 			MiniApplet.sign(
 				dataB64,
 				"SHA512withRSA",
@@ -56,7 +47,7 @@
 				params,
 				saveSignatureFunction,
 				showErrorFunction);
-		}
+
 	}
 	
 	function doMobileSign() {
