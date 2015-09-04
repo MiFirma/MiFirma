@@ -1,11 +1,7 @@
-﻿<!-- En la siguiente línea va el código javascript común a todos los procesos de firma -->
-
-
-<%= form_for @signature, :html => {:id => @signature.token}, :url => share_signature_path do |f| %>
+﻿<%= form_for @signature, :html => {:id => @signature.token}, :url => share_signature_path do |f| %>
 	<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
 	<%= hidden_field_tag :xmlSigned2 %>
 <% end %>
-
 
 <div class="page terms">
 	<div class="page-content3">
@@ -58,6 +54,7 @@ border: none;">
 
 
 			</div>
+			
 			<div id="java">
 			<p>Para poder firmar en el navegador es necesario <a href="http://www.java.com/es/download/index.jsp">actualizar</a> la máquina virtual de java a la última versión.</p>
 			</div>
