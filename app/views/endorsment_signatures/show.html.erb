@@ -1,6 +1,4 @@
-﻿<!-- En la siguiente línea se cargan los javascripts -->
-
-<%= form_for @signature, :url => share_endorsment_signature_path(@signature) do |f| %>
+﻿<%= form_for @signature, :url => share_endorsment_signature_path(@signature) do |f| %>
 	<%= hidden_field_tag :xmlOCE2, @xmlOCEenc %>
 	<%= hidden_field_tag :xmlSigned2 %>
 <% end %>
@@ -16,7 +14,6 @@
 				<%= flash[:error].html_safe %>
 			</div>
 		<% end %>
-	
 	   <h1>
 	   Datos a firmar
 	   </h1>
@@ -25,20 +22,18 @@
 	   <h6>Aval para <%= @signature.proposal.promoter_name %></h6>
 
 	   <p>A continuación, te mostramos los datos que vas a firmar.</p>
-	   <p>Este documento a firmar sigue la estructura (XML) exigida por la Junta Electoral Central</p>
+	   <p>Este documento a firmar sigue la estructura <a href="#" onclick="$('#xml').toggle();">(XML)</a> exigida por la Junta Electoral Central.</p>
 
-	   <div style="padding: 15px;
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
-border-radius: 5px;
-background-color: #F2F2F2;
-margin-left: 1px;">
-	   <p>Nombre: <%= @signature.name %></p>
-	   <p>Apellido: <%= @signature.surname %></p>
-	   <p>DNI: <%= @signature.dni %></p>
-	   <p>Fecha de Nacimiento: <%= @signature.date_of_birth.strftime("%d-%m-%Y") %></p>
-	   <p>Organo al que se presenta el partido avalado: <%= @signature.proposal.election_type %></p>
-	   <p>Circunscripción: <%= @signature.circunscripcion %></p>
+	   <div id="xml" style="display: none; padding: 15px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background-color: #F2F2F2;margin-left: 1px;">
+	   <%= @xmlOCEenc %>
+	   </div>
+	   <div style="padding: 15px;-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px;background-color: #F2F2F2;margin-left: 1px;">
+		   <p>Nombre: <%= @signature.name %></p>
+		   <p>Apellido: <%= @signature.surname %></p>
+		   <p>DNI: <%= @signature.dni %></p>
+		   <p>Fecha de Nacimiento: <%= @signature.date_of_birth.strftime("%d-%m-%Y") %></p>
+		   <p>Organo al que se presenta el partido avalado: <%= @signature.proposal.election_type %></p>
+		   <p>Circunscripción: <%= @signature.circunscripcion %></p>
 	   </div>
 	   
 	   	    <div class="btn_sign" style="padding: 24px 0 10px;
@@ -58,10 +53,30 @@ border: none;">
 									onclick="doSign();">Firma electrónica</a>
 			</div>
 			
-			Para poder firmar es necesario <a href="http://www.java.com/es/download/index.jsp">actualizar</a> la máquina virtual de java a la última versión.
-
+			<div id="java">
+			<p>Para poder firmar en el navegador es necesario <a href="http://www.java.com/es/download/index.jsp">actualizar</a> la máquina virtual de java a la última versión.</p>
+			</div>
+			<div id="nojava">
+				<p>INSTRUCCIONES IMPORTANTES:</p>
+				<p>1º No dispones o no te funciona la máquina virtual de Java. Necesitas instalar previamente la aplicación <a href="http://mifirma-pro.s3.amazonaws.com/AutoFirma1.4.1.exe">Auto Firma</a></p>
+				<p>2º Una vez instalada, pulsa el botón de firma y acepta la llamada para la invocación de la aplicación instalada.</p>
+				<p>3º Realiza el proceso de firma en la nueva aplicación eligiendo el certificado y pulsando en firmar.</p>				
+			</div>
+			<p>Si va a utilizar el DNI Electrónico introduzcalo en el lector.</p>
+			<p>Si tienes algún problema, revisa nuestra <a href="http://blog.mifirma.com/question/que-necesito-para-realizar-una-firma-con-certificado-electronico/" target="_blank"> FAQ</a>.</p>
 	</div>
 	
 	<div class="clear">&nbsp;</div>
 </div>
+
+<script>
+	if (MiniApplet.clienteFirma == null) {
+		document.getElementById('nojava').style.display = "";
+		document.getElementById('java').style.display = "none";
+	} else {
+		document.getElementById('nojava').style.display = "none";
+		document.getElementById('java').style.display = "";
+	}
+</script>	
+
 <%= render :partial => "shared/signature_process" %>
