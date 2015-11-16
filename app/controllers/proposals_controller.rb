@@ -58,7 +58,7 @@
     end
 		
 		def correct_user
-			@proposal = IlpProposal.find(params[:id])
+			@proposal = Proposal.find(params[:id])
 			@user = @proposal.user
 			redirect_to(root_path) unless current_user?(@user)
 		end	
