@@ -7,8 +7,9 @@
 
 <script type="text/javascript">
 
+	MiniApplet.setForceWSMode(true);
 	MiniApplet.cargarMiniApplet('/javascripts');
-	MiniApplet.setServlets("https://sint.mifirma.com/SignatureStorageServer/StorageService","https://sint.mifirma.com/SignatureRetrieverServer/RetrieveService");
+	MiniApplet.setServlets("https://sint.mifirma.com/afirma-signature-storage/StorageService","https://sint.mifirma.com//afirma-signature-retriever/RetrieveService");
 
 	document.getElementById("Espera").style.display = "none";
 	
@@ -34,29 +35,28 @@
 		}
 	}
 	
+	
+	// Esta versión es para si no queremos servidores intermedios
+	// function doSign() {
+	
+		// var dataB64 = MiniApplet.getBase64FromText(document.getElementById("xmlOCE2").value, "utf-8");
+		////var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit";
+		// var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit\nserverUrl=https://sint.mifirma.com/afirma-server-triphase-signer/SignatureService";
+		
+			// MiniApplet.sign(
+				// dataB64,
+				// "SHA512withRSA",
+				// "XAdES",
+				// params,
+				// saveSignatureFunction,
+				// showErrorFunction);
+
+	// }
+	
 	function doSign() {
-	
-		var dataB64 = MiniApplet.getBase64FromText(document.getElementById("xmlOCE2").value, "utf-8");
-		//var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit";
-		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit\nserverUrl=https://sint.mifirma.com/TriPhaseSignerServer/SignatureService";
 		
-			MiniApplet.sign(
-				dataB64,
-				"SHA512withRSA",
-				"XAdES",
-				params,
-				saveSignatureFunction,
-				showErrorFunction);
-
-	}
-	
-	function doMobileSign() {
-		
-		MiniApplet.cargarAppAfirma('/javascripts');
-		MiniApplet.setServlets("https://sint.mifirma.com/SignatureStorageServer/StorageService","https://sint.mifirma.com/SignatureRetrieverServer/RetrieveService");
 		var dataB64 = MiniApplet.getBase64FromText(document.getElementById("xmlOCE2").value,  "utf-8");
-
-		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit\nserverUrl=https://sint.mifirma.com/TriPhaseSignerServer/SignatureService";
+		var params = "format=XAdES Detached\nfilter=signingcert\nmode=implicit\nserverUrl=https://sint.mifirma.com/afirma-server-triphase-signer/SignatureService";
 		
 		MiniApplet.sign(
 			dataB64,
