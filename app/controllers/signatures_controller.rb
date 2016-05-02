@@ -6,6 +6,8 @@ class SignaturesController < ApplicationController
 	  
 		@signature = IlpSignature.new params[:ilp_signature]
 		
+		debugger
+		
 		if @signature.valid?
 			@signature.save
 			#Enviamos el nuevo registro a la lista de acumbamail
