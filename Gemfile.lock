@@ -122,11 +122,12 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    typus (3.0.10)
+    typus (3.0.12)
       bcrypt-ruby
       fastercsv (~> 1.5)
+      rails (~> 3.0.9)
       render_inheritable
-      will_paginate (~> 3.0.pre2)
+      will_paginate (~> 3.0.0)
     tzinfo (0.3.49)
     unicorn (4.8.2)
       kgio (~> 2.6)
@@ -134,7 +135,7 @@ GEM
       raindrops (~> 0.7)
     validates_timeliness (3.0.6)
       timeliness (~> 0.3.3)
-    will_paginate (3.1.0)
+    will_paginate (3.0.7)
     xml-simple (1.1.0)
 
 PLATFORMS
@@ -157,7 +158,7 @@ DEPENDENCIES
   rubyzip (= 0.9.6.1)
   sqlite3
   thin
-  typus (= 3.0.10)
+  typus
   unicorn
   validates_timeliness (~> 3.0.2)
 
