@@ -114,6 +114,8 @@ Crea el primer paso de la firma. Es necesario enviar el siguiente XML
 	<surname>Peña</surname>
 	<surname2>Martínez</surname2>
 	<terms type="boolean">true</terms>
+	<province_id>X</province_id> /*solo para autonómicas*/
+	<municipality_id>YYY</municipality_id> /*solo para autonómicas*/
 </ilp-signature>
 
 Si no es correcto devolverá una lista de errores de este tipo:
