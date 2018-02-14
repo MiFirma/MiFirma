@@ -9,10 +9,10 @@ class SignaturesController < ApplicationController
 		if @signature.valid?
 			@signature.save
 			#Enviamos el nuevo registro a la lista de acumbamail
-			client = HTTPClient.new
-			target_url = "http://acumbamail.com/list/subscribe/url/call/12654/"
-			url_query = ["token","qYGq4ZI7lKi3unQFYwG4"],["email_1", @signature.email], ["char_01", @signature.name], ["char_02", @signature.surname], ["integer_1", @signature.proposal_id]
-			client.get(target_url,url_query)
+			#client = HTTPClient.new
+			#target_url = "http://acumbamail.com/list/subscribe/url/call/12654/"
+			#url_query = ["token","qYGq4ZI7lKi3unQFYwG4"],["email_1", @signature.email], ["char_01", @signature.name], ["char_02", @signature.surname], ["integer_1", @signature.proposal_id]
+			#client.get(target_url,url_query)
 			respond_to do |format|
 				format.html {
 						redirect_to signature_url(@signature.token)

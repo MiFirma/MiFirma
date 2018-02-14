@@ -56,6 +56,8 @@ GEM
       abstract (>= 1.0.0)
     eventmachine (1.0.0)
     eventmachine (1.0.0-x86-mingw32)
+    faraday (0.14.0)
+      multipart-post (>= 1.2, < 3)
     fastercsv (1.5.5)
     hpricot (0.8.4)
     httpclient (2.2.1)
@@ -68,6 +70,8 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mimemagic (0.3.2)
+    multipart-post (2.0.0)
     newrelic_rpm (3.3.3)
     nokogiri (1.5.2)
     nokogiri (1.5.2-x86-mingw32)
@@ -106,10 +110,12 @@ GEM
       json (~> 1.4)
     render_inheritable (1.0.0)
       rails (~> 3.0)
-    ruby_http_client (3.0.2)
     rubyzip (0.9.6.1)
-    sendgrid-ruby (4.0.8)
-      ruby_http_client (~> 3.0.1)
+    sendgrid-ruby (1.1.6)
+      faraday (~> 0.9)
+      mimemagic
+      smtpapi (~> 0.1)
+    smtpapi (0.1.0)
     sqlite3 (1.3.3)
     sqlite3 (1.3.3-x86-mingw32)
     thin (1.2.11)
@@ -159,7 +165,7 @@ DEPENDENCIES
   rack-ssl
   rails (= 3.0.20)
   rubyzip (= 0.9.6.1)
-  sendgrid-ruby
+  sendgrid-ruby (= 1.1.6)
   sqlite3
   thin
   typus

@@ -12,11 +12,11 @@ gem 'acts_as_list'
 gem 'httpclient'
 gem 'hpricot'
 gem 'typus'
-gem 'sendgrid-ruby'
 gem 'validates_timeliness', '~> 3.0.2'
 gem 'aws-s3', '0.6.2'
 gem 'nokogiri', '1.5.2'
 gem 'rubyzip', '0.9.6.1'
+gem 'sendgrid-ruby', '1.1.6'
 
 
 group :development, :test do
