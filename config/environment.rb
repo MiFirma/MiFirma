@@ -23,7 +23,7 @@ MiFirma2::Application.initialize!
 ActionMailer::Base.smtp_settings = {
  :address        => 'smtp.sendgrid.net',
  :port           => '587',
- :domain   		 => 'mifirma.com'
+ :domain   		 => 'mifirma.com',
  :authentication => :plain,
  :user_name      => ENV['SENDGRID_USERNAME'],
  :password       => ENV['SENDGRID_PASSWORD'],
