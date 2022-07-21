@@ -70,7 +70,9 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mimemagic (0.3.2)
+    mimemagic (0.4.3)
+      nokogiri (~> 1)
+      rake
     multipart-post (2.0.0)
     newrelic_rpm (3.3.3)
     nokogiri (1.5.2)
@@ -137,7 +139,7 @@ GEM
       rails (~> 3.0.9)
       render_inheritable
       will_paginate (~> 3.0.0)
-    tzinfo (0.3.52)
+    tzinfo (0.3.61)
     unicorn (4.8.2)
       kgio (~> 2.6)
       rack
