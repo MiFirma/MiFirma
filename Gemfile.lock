@@ -70,9 +70,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
-    mimemagic (0.3.2)
+    mimemagic (0.4.3)
+      nokogiri (~> 1)
+      rake
     multipart-post (2.0.0)
-    newrelic_rpm (3.3.3)
+    newrelic_rpm (3.5.3.24)
     nokogiri (1.5.2)
     nokogiri (1.5.2-x86-mingw32)
     paperclip (2.3.15)
